@@ -1,106 +1,652 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>YouTube Automation Course Details</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Automation - Coded Mind Technology Incubator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3a86ff;
+            --secondary: #8338ec;
+            --accent: #ff006e;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7ff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(rgba(58, 134, 255, 0.9), rgba(131, 56, 236, 0.9)), url('https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #ff2d87;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Course Overview */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .course-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .course-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-img {
+            height: 200px;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+        }
+        
+        .card-content {
+            padding: 25px;
+        }
+        
+        .card-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .card-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        /* Curriculum */
+        .curriculum {
+            background-color: var(--light);
+        }
+        
+        .modules {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .module {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .module-header {
+            padding: 20px;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        
+        .module-header h3 {
+            font-size: 20px;
+        }
+        
+        .module-content {
+            padding: 20px;
+            display: none;
+        }
+        
+        .module-content.active {
+            display: block;
+        }
+        
+        .module-content ul {
+            list-style: none;
+        }
+        
+        .module-content ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+        }
+        
+        .module-content ul li i {
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: linear-gradient(to right, #3a86ff, #8338ec);
+            color: white;
+        }
+        
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .testimonial-card p {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: white;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* CTA Section */
+        .cta {
+            text-align: center;
+            padding: 80px 0;
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0d0d1a;
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ccc;
+            font-size: 14px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0 10px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
-    <header class="site-header">
-        <div class="header-content">
-            <div style="display:flex;align-items:center;">
-                <img src="https://drive.google.com/file/d/11_YnXQRWHljym17YyFvj6NNz6gR7tXW_/view?usp=sharing" alt="Logo" class="logo">
-                <h1 style="margin-left:12px;">Coded Mind Technology Incubator</h1>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>Coded Mind</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav>
-                <a href="index.html" class="active">Home</a>
-                <a href="#courses">Courses</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
-            </nav>
         </div>
     </header>
-    <a href="index.html" style="margin:20px;display:inline-block;">← Back to Courses</a>
-    <div class="course-detail">
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="YouTube Automation" style="width:100%;max-width:600px;border-radius:10px;margin-bottom:20px;">
-        <h1>YouTube Automation</h1>
-        <p>
-            Discover strategies and tools to automate content creation, channel management, and growth on YouTube.
-        </p>
-        <h2>Course Content</h2>
-        <ul>
-            <li>Channel Setup & Optimization</li>
-            <li>Content Planning & Automation Tools</li>
-            <li>Video Editing Automation</li>
-            <li>SEO for YouTube</li>
-            <li>Monetization Strategies</li>
-            <li>Analytics & Growth Tracking</li>
-            <li>Copyright & Community Guidelines</li>
-            <li>Practical Channel Project</li>
-        </ul>
-        <h2>Duration</h2>
-        <p>2 Months</p>
-        <h2>Fee</h2>
-        <p>PKR 15,000 (Installments available)</p>
-        <a href="https://form.jotform.com/252090931090451" class="enroll-btn" target="_blank" rel="noopener">Enroll Now</a>
-        <h2>Register for this Course</h2>
-        <iframe id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c" title="Sana: Registration Assistant"
-  onload="window.parent.scrollTo(0,0)" allowtransparency="true"
-  allow="geolocation; microphone; camera; fullscreen"
-  src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
-  frameborder="0" style="
-    max-width:100%;
-    height:688px;
-    border:none;
-    width:100%;
-  " scrolling="no">
-</iframe>
-<script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-<script>
-  window.jotformEmbedHandler("iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
-    "https://www.jotform.com")
-</script>
-        <h2>Local Payment Methods</h2>
-        <ul>
-            <li>Bank Transfer: Meezan Bank, Acc# 123456789, Title: Coded Mind Technology Incubator</li>
-            <li>EasyPaisa/JazzCash: 0300-1234567</li>
-            <li>Visit our office for cash payment</li>
-        </ul>
-        <p>After payment, send your receipt to <b>info@codedmind.com</b> or WhatsApp 0300-1234567 for registration.</p>
-    </div>
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-col">
-                <h3>Contact Us</h3>
-                <ul>
-                    <li>Email: <a href="mailto:info@codedmind.com">info@codedmind.com</a></li>
-                    <li>Phone: <a href="tel:+923488850059">+92 348 8850059</a></li>
-                    <li>Location: Lahore, Pakistan</li>
-                </ul>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>YouTube Automation Mastery</h1>
+                <p>Learn how to build and scale a profitable YouTube channel with automation strategies. Turn your passion into passive income!</p>
+                <a href="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
+  frameborder="0" style =" " class="btn">Enroll Now</a>
+
+
             </div>
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+        </div>
+    </section>
+
+    <!-- Course Overview -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Course Overview</h2>
+                <p>Our comprehensive YouTube Automation course covers everything from channel creation to advanced monetization strategies</p>
             </div>
-            <div class="footer-col">
-                <h3>Follow Us</h3>
-                <div class="footer-social">
-                    <a href="#" title="Facebook"><span style="font-size:1.5em;">&#x1F426;</span></a>
-                    <a href="#" title="Twitter"><span style="font-size:1.5em;">&#x1F426;</span></a>
-                    <a href="#" title="LinkedIn"><span style="font-size:1.5em;">&#x1F426;</span></a>
+            <div class="course-cards">
+                <div class="course-card">
+                    <div class="card-img">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Automation Fundamentals</h3>
+                        <p>Learn the core principles of YouTube automation and how to implement systems that work while you sleep.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="card-img">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Monetization Strategies</h3>
+                        <p>Discover multiple revenue streams including ads, sponsorships, affiliate marketing, and digital products.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="card-img">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Growth & Analytics</h3>
+                        <p>Master YouTube analytics and growth hacking techniques to rapidly expand your channel's reach.</p>
+                        <a href="#" class="btn">Learn More</a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2024 Coded Mind Technology Incubator. All rights reserved.
+    </section>
+
+    <!-- Curriculum -->
+    <section class="section curriculum">
+        <div class="container">
+            <div class="section-title">
+                <h2>Course Curriculum</h2>
+                <p>A detailed breakdown of what you'll learn in our YouTube Automation course</p>
+            </div>
+            <div class="modules">
+                <div class="module">
+                    <div class="module-header">
+                        <h3>Module 1: YouTube Fundamentals</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Understanding the YouTube algorithm</li>
+                            <li><i class="fas fa-check-circle"></i> Niche selection and research</li>
+                            <li><i class="fas fa-check-circle"></i> Channel branding and setup</li>
+                            <li><i class="fas fa-check-circle"></i> Content planning and strategy</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="module">
+                    <div class="module-header">
+                        <h3>Module 2: Content Creation Automation</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> AI-powered content ideas</li>
+                            <li><i class="fas fa-check-circle"></i> Automated video editing workflows</li>
+                            <li><i class="fas fa-check-circle"></i> Voice synthesis and text-to-speech</li>
+                            <li><i class="fas fa-check-circle"></i> Batch content creation</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="module">
+                    <div class="module-header">
+                        <h3>Module 3: Growth & Monetization</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="module-content">
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> SEO optimization for YouTube</li>
+                            <li><i class="fas fa-check-circle"></i> Automated audience engagement</li>
+                            <li><i class="fas fa-check-circle"></i> Multiple revenue streams</li>
+                            <li><i class="fas fa-check-circle"></i> Affiliate marketing automation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Student Success Stories</h2>
+                <p>Hear from our students who have transformed their YouTube channels using our automation strategies</p>
+            </div>
+            <div class="testimonial-cards">
+                <div class="testimonial-card">
+                    <p>"This course completely changed how I approach YouTube. I've gone from 500 to 50,000 subscribers in just 6 months using the automation techniques taught here."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">JD</div>
+                        <div>
+                            <h4>John Doe</h4>
+                            <p>Tech Review Channel</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The monetization module alone was worth the investment. I'm now making full-time income from my automated YouTube channels."</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">SM</div>
+                        <div>
+                            <h4>Sarah Miller</h4>
+                            <p>Education Niche</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"I was skeptical about YouTube automation, but this course showed me how to do it right. My channel growth has been incredible!"</p>
+                    <div class="testimonial-author">
+                        <div class="author-img">RJ</div>
+                        <div>
+                            <h4>Robert Johnson</h4>
+                            <p>Travel Vlog</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="enroll">
+        <div class="container">
+            <h2>Ready to Transform Your YouTube Channel?</h2>
+            <p>Join thousands of successful students who have mastered YouTube automation. Enroll today and start building your passive income stream!</p>
+            <a href="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
+  frameborder="0" style =" " class="btn">Enroll in the Course</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Coded Mind</h3>
+                    <p>Technology Incubator helping creators and entrepreneurs build sustainable online businesses through education and innovation.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Courses</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Courses</h3>
+                    <ul>
+                        <li><a href="#">YouTube Automation</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">AI Content Creation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Coded Mind Technology Incubator. All rights reserved.</p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Simple JavaScript to toggle module content
+        document.querySelectorAll('.module-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                content.classList.toggle('active');
+                
+                const icon = header.querySelector('i');
+                if (content.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

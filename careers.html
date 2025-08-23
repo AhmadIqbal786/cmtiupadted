@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers - Coded Mind Technology Incubator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        .site-header {
+            background: linear-gradient(135deg, #2c3e50, #4a6580);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-content > div {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 50px;
+        }
+        
+        .header-content h1 {
+            font-size: 1.8rem;
+            margin-left: 12px;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            color: #ff7e5f;
+        }
+        
+        .career-btn {
+            background: #ff7e5f;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .career-btn:hover {
+            background: #ff6b4a;
+        }
+        
+        /* Hero Section */
+        .career-hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.9), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .career-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .career-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .career-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: #ff7e5f;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #ff6b4a;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: #2c3e50;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        .breadcrumb a {
+            color: #4a6580;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Main Content */
+        .career-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Why Join Us */
+        .benefits-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .benefit-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            color: #ff7e5f;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        /* Open Positions */
+        .jobs-container {
+            margin-bottom: 60px;
+        }
+        
+        .job-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .job-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .job-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+        }
+        
+        .job-meta {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .job-tag {
+            background: #f0f5f9;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #4a6580;
+        }
+        
+        .job-description {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        /* Culture Section */
+        .culture-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .culture-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .culture-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .culture-content {
+            padding: 25px;
+            background: white;
+        }
+        
+        .culture-content h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        /* Application Process */
+        .process-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .process-step:not(:last-child):after {
+            content: "→";
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            color: #ccc;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #ff7e5f;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 15px;
+        }
+        
+        /* Testimonials */
+        .testimonials-container {
+            margin-bottom: 60px;
+        }
+        
+        .testimonial {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .testimonial-info h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .testimonial-info p {
+            color: #777;
+        }
+        
+        /* Contact Section */
+        .contact-career {
+            background: linear-gradient(135deg, #2c3e50, #4a6580);
+            color: white;
+            padding: 60px 20px;
+            border-radius: 10px;
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .contact-career h2 {
+            margin-bottom: 20px;
+        }
+        
+        .contact-career p {
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Footer */
+        .site-footer {
+            background: linear-gradient(to right, #2c3e50, #4a6580);
+            color: #fff;
+            padding: 50px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-col {
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            margin-right: 12px;
+        }
+
+        .footer-logo h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .footer-description {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #ff7e5f;
+            transform: translateY(-3px);
+        }
+
+        .footer-col h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background: #ff7e5f;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #fff;
+            opacity: 0.9;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            opacity: 1;
+            color: #ff7e5f;
+            padding-left: 5px;
+        }
+
+        .contact-info {
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            margin-right: 10px;
+            opacity: 0.9;
+            width: 20px;
+        }
+
+        .contact-item span a {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-item span a:hover {
+            opacity: 1;
+            color: #ff7e5f;
+        }
+
+        .newsletter h4 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .newsletter-form button {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            background: #ff7e5f;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: #ff6b4a;
+        }
+
+        .footer-bottom {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .legal-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .legal-links a {
+            color: #fff;
+            opacity: 0.8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: opacity 0.3s ease;
+        }
+
+        .legal-links a:hover {
+            opacity: 1;
+            color: #ff7e5f;
+        }
+
+        .copyright {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav a {
+                margin: 5px 10px;
+            }
+            
+            .process-step:not(:last-child):after {
+                display: none;
+            }
+            
+            .process-step {
+                min-width: 100%;
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .career-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .job-header .btn {
+                margin-top: 15px;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .legal-links {
+                justify-content: center;
+            }
+        }
+    </style>
+    <head>
+    <meta charset="UTF-8">
+    <title>CMTI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+</head>
+<body>
+    <!-- Header -->
+   <header class="site-header">
+        <div class="header-content">
+            <div style="display:flex;align-items:center;">
+                <img src="logo.png" alt="Logo" class="logo">
+                <h1 style="margin-left:12px;">Coded Mind Technology Incubator</h1>
+            </div>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <div class="nav-dropdown" style="display:inline-block;position:relative;">
+                    <a href="courses.html" class="dropdown-toggle" style="cursor:pointer;">Courses ▼</a>
+                    <div class="dropdown-menu" style="display:none;position:absolute;top:100%;left:0;background:#490eee00;min-width:220px;box-shadow:0 2px 8px rgba(55, 238, 110, 0.12);border-radius:0 0 8px 8px;z-index:10;">
+                        <a href="course-dit.html">DIT</a>
+                        <a href="course-cit.html">CIT</a>
+                        <a href="course-english.html">English Language</a>
+                        <a href="course-webdev.html">Web Development</a>
+                        <a href="course-youtube.html">YouTube Automation</a>
+                        <a href="course-amazon-fba.html">Amazon FBA</a>
+                        <a href="course-amazon-ecommerce.html">Amazon E-Commerce</a>
+                        <a href="course-graphic-design.html">Graphic Design</a>
+                        <a href="course-seo.html">SEO</a>
+                        <a href="course-digital-marketing.html">Digital Marketing</a>
+                        <a href="course-data-science.html">Data Science</a>
+                        <a href="course-python.html">Python Programming</a>
+                        <a href="course-networking.html">Networking</a>
+                        <a href="course-cyber-security.html">Cyber Security</a>
+                        <a href="course-mobile-app.html">Mobile App Development</a>
+                        <a href="course-wordpress.html">WordPress</a>
+                        <a href="course-video-editing.html">Video Editing</a>
+                        <a href="course-ms-office.html">MS Office</a>
+                        <a href="course-cloud-computing.html">Cloud Computing</a>
+                        <a href="course-ai-ml.html">AI & Machine Learning</a>
+                    </div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="careers.html" class="career-btn" style="background:#ff7e5f;color:#fff;padding:8px 18px;border-radius:5px;margin-left:10px;font-weight:600;text-decoration:none;">Career</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="career-hero">
+        <div class="career-hero-content">
+            <h1>Build Your Career in Tech</h1>
+            <p>Join our mission to empower the next generation of technology professionals. At Coded Mind, we're not just teaching skills - we're building futures.</p>
+            <div class="hero-buttons">
+                <a href="#openings" class="btn btn-primary">View Open Positions</a>
+                <a href="#culture" class="btn btn-outline">Our Culture</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> > <a href="career.html">Career</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="career-container">
+        <!-- Why Join Us Section -->
+        <section id="why-join">
+            <div class="section-title">
+                <h2>Why Join Coded Mind?</h2>
+                <p>We're building a community of innovators, educators, and technology enthusiasts who are passionate about shaping the future of tech education.</p>
+            </div>
+            
+            <div class="benefits-container">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Continuous Learning</h3>
+                    <p>Free access to all our courses and workshops to keep your skills sharp and up-to-date.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaborative Environment</h3>
+                    <p>Work with like-minded professionals in a supportive and innovative atmosphere.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Growth Opportunities</h3>
+                    <p>Clear career progression paths and opportunities to take on leadership roles.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Work-Life Balance</h3>
+                    <p>Flexible working hours and remote work options to maintain a healthy balance.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Impactful Work</h3>
+                    <p>Make a real difference in students' lives and contribute to the tech ecosystem.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Competitive Compensation</h3>
+                    <p>Attractive salary packages, performance bonuses, and comprehensive benefits.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Open Positions -->
+        <section id="openings">
+            <div class="section-title">
+                <h2>Current Openings</h2>
+                <p>Join our team of passionate educators and technology professionals. Check out our available positions below.</p>
+            </div>
+            
+            <div class="jobs-container">
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3 class="job-title">Web Development Instructor</h3>
+                        <a href="#apply" class="btn btn-primary">Apply Now</a>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-tag"><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</span>
+                        <span class="job-tag"><i class="fas fa-briefcase"></i> Full-time</span>
+                        <span class="job-tag"><i class="fas fa-clock"></i> 3+ years experience</span>
+                    </div>
+                    <div class="job-description">
+                        <p>We're looking for an experienced Web Developer to join our instructional team. You'll be teaching modern web technologies including HTML5, CSS3, JavaScript, React, and Node.js to aspiring developers.</p>
+                    </div>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3 class="job-title">Data Science Mentor</h3>
+                        <a href="#apply" class="btn btn-primary">Apply Now</a>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-tag"><i class="fas fa-map-marker-alt"></i> Remote</span>
+                        <span class="job-tag"><i class="fas fa-briefcase"></i> Part-time</span>
+                        <span class="job-tag"><i class="fas fa-clock"></i> 4+ years experience</span>
+                    </div>
+                    <div class="job-description">
+                        <p>Guide students through the complexities of data science. You should be proficient in Python, Pandas, NumPy, Matplotlib, and machine learning libraries. Teaching experience is a plus.</p>
+                    </div>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3 class="job-title">Student Success Coordinator</h3>
+                        <a href="#apply" class="btn btn-primary">Apply Now</a>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-tag"><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</span>
+                        <span class="job-tag"><i class="fas fa-briefcase"></i> Full-time</span>
+                        <span class="job-tag"><i class="fas fa-clock"></i> 2+ years experience</span>
+                    </div>
+                    <div class="job-description">
+                        <p>Support our students throughout their learning journey. You'll be the main point of contact for student inquiries, progress tracking, and ensuring overall student satisfaction.</p>
+                    </div>
+                </div>
+                
+                <div class="job-card">
+                    <div class="job-header">
+                        <h3 class="job-title">Digital Marketing Specialist</h3>
+                        <a href="#apply" class="btn btn-primary">Apply Now</a>
+                    </div>
+                    <div class="job-meta">
+                        <span class="job-tag"><i class="fas fa-map-marker-alt"></i> Remote</span>
+                        <span class="job-tag"><i class="fas fa-briefcase"></i> Contract</span>
+                        <span class="job-tag"><i class="fas fa-clock"></i> 3+ years experience</span>
+                    </div>
+                    <div class="job-description">
+                        <p>Help us reach more students through effective digital marketing strategies. You'll manage our social media presence, run targeted ad campaigns, and develop content strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Culture Section -->
+        <section id="culture">
+            <div class="section-title">
+                <h2>Our Culture</h2>
+                <p>At Coded Mind, we believe that a positive and inclusive culture is the foundation of innovation and excellence.</p>
+            </div>
+            
+            <div class="culture-container">
+                <div class="culture-card">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Team Collaboration" class="culture-img">
+                    <div class="culture-content">
+                        <h3>Collaborative Spirit</h3>
+                        <p>We believe in the power of teamwork and regularly collaborate across departments to achieve our goals.</p>
+                    </div>
+                </div>
+                
+                <div class="culture-card">
+                    <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=600&q=80" alt="Learning Environment" class="culture-img">
+                    <div class="culture-content">
+                        <h3>Learning Environment</h3>
+                        <p>We're committed to continuous learning and encourage our team to explore new technologies and methodologies.</p>
+                    </div>
+                </div>
+                
+                <div class="culture-card">
+                    <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=600&q=80" alt="Innovation" class="culture-img">
+                    <div class="culture-content">
+                        <h3>Innovation Focus</h3>
+                        <p>We encourage creative thinking and reward innovative solutions to challenges in education and technology.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Application Process -->
+        <section id="process">
+            <div class="section-title">
+                <h2>Application Process</h2>
+                <p>Our hiring process is designed to be transparent, efficient, and respectful of your time.</p>
+            </div>
+            
+            <div class="process-container">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Apply</h3>
+                    <p>Submit your application through our portal</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Screening</h3>
+                    <p>Initial phone screening with HR</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Interview</h3>
+                    <p>Technical and cultural fit interviews</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Offer</h3>
+                    <p>Receive and review your offer letter</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Onboarding</h3>
+                    <p>Join the team and begin your journey</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials -->
+        <section id="testimonials">
+            <div class="section-title">
+                <h2>Team Testimonials</h2>
+                <p>Hear from current team members about their experience at Coded Mind.</p>
+            </div>
+            
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "Working at Coded Mind has been transformative for my career. The opportunity to teach while continuing to learn keeps me at the forefront of technology trends. The supportive environment and commitment to student success make every day rewarding."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Ayesha Khan" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Ayesha Khan</h4>
+                            <p>Senior Python Instructor, 3 years at Coded Mind</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "I joined Coded Mind as a fresh graduate, and the growth opportunities have been incredible. The mentorship I received helped me develop not just technically, but as a communicator and educator. It's inspiring to work with a team that's so passionate about making quality education accessible."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Bilal Ahmed" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <h4>Bilal Ahmed</h4>
+                            <p>Web Development Instructor, 2 years at Coded Mind</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact-career">
+            <div class="contact-career">
+                <h2>Have Questions About Working at Coded Mind?</h2>
+                <p>Our HR team is here to answer any questions you might have about our culture, open positions, or application process.</p>
+                <a href="https://ahmadiqbalportfolio.netlify.app/" class="btn btn-primary">Contact Our HR Team</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="CMTI Logo">
+                    <h3>CMTI</h3>
+                </div>
+                <p class="footer-description">
+                    Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
+                </p>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" title="Facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" title="Twitter" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" title="Instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" title="YouTube" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact Information</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Tech Street, Lahore, Pakistan</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span><a href="tel:+923488850059">+92 348 8850059</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <div class="newsletter">
+                    <p>Subscribe to our newsletter for updates on courses, events, and career opportunities.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    &copy; 2024 Coded Mind Technology Incubator. All rights reserved.
+                </div>
+                <div class="legal-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="refund.html">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

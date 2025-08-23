@@ -10,14 +10,14 @@
     <header class="site-header">
         <div class="header-content">
             <div style="display:flex;align-items:center;">
-                <img src="https://akti.com.pk/wp-content/uploads/2022/09/AKTI-Logo.png" alt="Logo" class="logo">
+                <img src="logo.png" alt="Logo" class="logo">
                 <h1 style="margin-left:12px;">Coded Mind Technology Incubator</h1>
             </div>
             <nav>
                 <a href="index.html" class="active">Home</a>
                 <a href="#courses">Courses</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
@@ -70,37 +70,129 @@
         <p>After payment, send your receipt to <b>info@codedmind.com</b> or WhatsApp 0300-1234567 for registration.</p>
     </div>
     <!-- Footer -->
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-col">
-                <h3>Contact Us</h3>
-                <ul>
-                    <li>Email: <a href="mailto:info@codedmind.com">info@codedmind.com</a></li>
-                    <li>Phone: <a href="tel:+923488850059">+92 348 8850059</a></li>
-                    <li>Location: Lahore, Pakistan</li>
-                </ul>
+                <div class="footer-logo">
+                    <img src="logo.png" alt="CMTI Logo">
+                    <h3>Coded Mind Technology Incubator</h3>
+                </div>
+                <p class="footer-description">
+                    Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
+                </p>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" title="Facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" title="Twitter" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" title="Instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" title="YouTube" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
+            
             <div class="footer-col">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#courses">All Courses</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="careers.html">Career Opportunities</a></li>
+                    <li><a href="#testimonials">Student Testimonials</a></li>
+                    <li><a href="#blog">Blog & Resources</a></li>
                 </ul>
             </div>
+            
             <div class="footer-col">
-                <h3>Follow Us</h3>
-                <div class="footer-social">
-                    <a href="#" title="Facebook"><span style="font-size:1.5em;">&#x1F426;</span></a>
-                    <a href="#" title="Twitter"><span style="font-size:1.5em;">&#x1F426;</span></a>
-                    <a href="#" title="LinkedIn"><span style="font-size:1.5em;">&#x1F426;</span></a>
+                <h3>Popular Courses</h3>
+                <ul>
+                    <li><a href="course-webdev.html">Web Development</a></li>
+                    <li><a href="course-data-science.html">Data Science</a></li>
+                    <li><a href="course-cyber-security.html">Cyber Security</a></li>
+                    <li><a href="course-digital-marketing.html">Digital Marketing</a></li>
+                    <li><a href="course-python.html">Python Programming</a></li>
+                    <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact Information</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Tech Street, Lahore, Pakistan</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span><a href="tel:+923488850059">+92 348 8850059</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
+                    </div>
+                </div>
+                
+                <div class="newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
                 </div>
             </div>
         </div>
+        
         <div class="footer-bottom">
-            &copy; 2024 Coded Mind Technology Incubator. All rights reserved.
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    &copy; 2024 Coded Mind Technology Incubator. All rights reserved.
+                </div>
+                <div class="legal-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#refund">Refund Policy</a>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Dropdown menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggle = document.querySelector('.dropdown-toggle');
+            var menu = document.querySelector('.dropdown-menu');
+            if (toggle && menu) {
+                toggle.addEventListener('mouseenter', function() {
+                    menu.style.display = 'block';
+                });
+                toggle.addEventListener('mouseleave', function() {
+                    setTimeout(function() { menu.style.display = 'none'; }, 200);
+                });
+                menu.addEventListener('mouseenter', function() {
+                    menu.style.display = 'block';
+                });
+                menu.addEventListener('mouseleave', function() {
+                    menu.style.display = 'none';
+                });
+            }
+        });
+    </script>
 </body>
 </html>

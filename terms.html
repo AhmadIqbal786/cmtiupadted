@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - Coded Mind Technology Incubator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #777;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 5rem 1rem;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            background-color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .breadcrumb-content {
+            display: flex;
+            align-items: center;
+        }
+        
+        .breadcrumb-content a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+        
+        .breadcrumb-content span {
+            margin: 0 10px;
+            color: var(--text-light);
+        }
+        
+        /* Terms Content */
+        .terms-content {
+            padding: 4rem 0;
+            background: white;
+        }
+        
+        .terms-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .terms-section {
+            margin-bottom: 3rem;
+        }
+        
+        .terms-section h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--light);
+        }
+        
+        .terms-section p {
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+        
+        .terms-section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .terms-section li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .highlight {
+            background-color: var(--light);
+            padding: 1.5rem;
+            border-left: 4px solid var(--secondary);
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        /* Contact Box */
+        .contact-box {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .contact-box h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+        
+        .btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column a:hover {
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: background 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .terms-section h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<head>
+    <meta charset="UTF-8">
+    <title>CMTI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-content">
+            <div style="display:flex;align-items:center;">
+                <img src="logo.png" alt="Logo" class="logo">
+                <h1 style="margin-left:12px;">Coded Mind Technology Incubator</h1>
+            </div>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <div class="nav-dropdown" style="display:inline-block;position:relative;">
+                    <a href="courses.html" class="dropdown-toggle" style="cursor:pointer;">Courses ▼</a>
+                    <div class="dropdown-menu" style="display:none;position:absolute;top:100%;left:0;background:#490eee00;min-width:220px;box-shadow:0 2px 8px rgba(55, 238, 110, 0.12);border-radius:0 0 8px 8px;z-index:10;">
+                        <a href="course-dit.html">DIT</a>
+                        <a href="course-cit.html">CIT</a>
+                        <a href="course-english.html">English Language</a>
+                        <a href="course-webdev.html">Web Development</a>
+                        <a href="course-youtube.html">YouTube Automation</a>
+                        <a href="course-amazon-fba.html">Amazon FBA</a>
+                        <a href="course-amazon-ecommerce.html">Amazon E-Commerce</a>
+                        <a href="course-graphic-design.html">Graphic Design</a>
+                        <a href="course-seo.html">SEO</a>
+                        <a href="course-digital-marketing.html">Digital Marketing</a>
+                        <a href="course-data-science.html">Data Science</a>
+                        <a href="course-python.html">Python Programming</a>
+                        <a href="course-networking.html">Networking</a>
+                        <a href="course-cyber-security.html">Cyber Security</a>
+                        <a href="course-mobile-app.html">Mobile App Development</a>
+                        <a href="course-wordpress.html">WordPress</a>
+                        <a href="course-video-editing.html">Video Editing</a>
+                        <a href="course-ms-office.html">MS Office</a>
+                        <a href="course-cloud-computing.html">Cloud Computing</a>
+                        <a href="course-ai-ml.html">AI & Machine Learning</a>
+                    </div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="careers.html" class="career-btn" style="background:#ff7e5f;color:#fff;padding:8px 18px;border-radius:5px;margin-left:10px;font-weight:600;text-decoration:none;">Career</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Terms & Conditions</h1>
+            <p>Please read these terms carefully before using our services</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-content">
+                <a href="#">Home</a>
+                <span>/</span>
+                <a href="#">Legal</a>
+                <span>/</span>
+                <span>Terms & Conditions</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="terms-content">
+        <div class="container terms-container">
+            <div class="terms-section">
+                <h2>1. Acceptance of Terms</h2>
+                <p>By accessing or using any services provided by Coded Mind Technology Incubator ("we," "us," or "our"), you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our services.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>2. Services Description</h2>
+                <p>Coded Mind Technology Incubator provides technology education, incubation services, mentorship, and related resources. We reserve the right to modify, suspend, or discontinue any aspect of our services at any time.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>3. User Accounts</h2>
+                <p>To access certain features, you may need to create an account. You are responsible for:</p>
+                <ul>
+                    <li>Maintaining the confidentiality of your account credentials</li>
+                    <li>All activities that occur under your account</li>
+                    <li>Providing accurate and complete information</li>
+                </ul>
+                <p>We reserve the right to suspend or terminate accounts that violate these terms.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>4. Intellectual Property</h2>
+                <p>All content provided through our services, including but not limited to text, graphics, logos, images, course materials, and software, is the property of Coded Mind Technology Incubator or its content suppliers and protected by intellectual property laws.</p>
+                
+                <div class="highlight">
+                    <p>You may access and use our content for personal, non-commercial purposes only. Any other use, including reproduction, modification, distribution, or republication, without our prior written consent is strictly prohibited.</p>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <h2>5. User Conduct</h2>
+                <p>While using our services, you agree not to:</p>
+                <ul>
+                    <li>Violate any applicable laws or regulations</li>
+                    <li>Infringe upon the rights of others</li>
+                    <li>Post or transmit any malicious code, spam, or unlawful material</li>
+                    <li>Interfere with or disrupt our services or servers</li>
+                    <li>Attempt to gain unauthorized access to any portion of our services</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2>6. Payments and Refunds</h2>
+                <p>Certain services require payment. You agree to pay all applicable fees as described when you purchase those services.</p>
+                <p>Refund policies vary by program and are detailed at the time of purchase. Generally, we offer:</p>
+                <ul>
+                    <li>Full refund within 14 days of purchase for most courses if no more than 20% of content has been accessed</li>
+                    <li>No refunds for customized incubation programs after work has commenced</li>
+                    <li>Pro-rated refunds in certain circumstances at our discretion</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2>7. Disclaimer of Warranties</h2>
+                <p>Our services are provided "as is" and "as available" without warranties of any kind, either express or implied. We do not guarantee that:</p>
+                <ul>
+                    <li>The services will meet all your requirements</li>
+                    <li>The services will be uninterrupted, timely, secure, or error-free</li>
+                    <li>The results obtained from using our services will be effective or reliable</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2>8. Limitation of Liability</h2>
+                <p>To the fullest extent permitted by law, Coded Mind Technology Incubator shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from:</p>
+                <ul>
+                    <li>Your access to or use of our services</li>
+                    <li>Any conduct or content of any third party on our services</li>
+                    <li>Unauthorized access to or use of our servers and/or any personal information</li>
+                    <li>Interruption or cessation of transmission to or from our services</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2>9. Privacy</h2>
+                <p>Your privacy is important to us. Our Privacy Policy explains how we collect, use, and protect your personal information and is incorporated into these Terms by reference.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>10. Modifications to Terms</h2>
+                <p>We reserve the right to modify these Terms at any time. We will provide notice of significant changes through our website or by email. Continued use of our services after changes constitutes acceptance of the modified Terms.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>11. Governing Law</h2>
+                <p>These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which Coded Mind Technology Incubator is established, without regard to its conflict of law provisions.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>12. Contact Information</h2>
+                <p>If you have any questions about these Terms, please contact us:</p>
+                <ul>
+                    <li>Email: legal@codedmind.com</li>
+                    <li>Address: Katlang District Mardan kpk Pakistan</li>
+                    <li>Phone: 0348-8850059</li>
+                </ul>
+            </div>
+            
+            <div class="contact-box">
+                <h3>Have Questions About Our Terms?</h3>
+                <p>Our legal team is here to help clarify any part of our Terms and Conditions.</p>
+                <a href="#" class="btn">Contact Us</a>
+            </div>
+            
+            <div class="highlight">
+                <p><strong>Last Updated:</strong> January 1, 2023</p>
+                <p>These Terms and Conditions supersede all previous versions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Coded Mind</h3>
+                    <p>Transforming tech education through innovative learning approaches and incubation support.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="courses.html">Courses</a></li>
+                        <li><a href="careers.html">Career</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="terms.html">Terms & Conditions</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Coded Mind Technology Incubator. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

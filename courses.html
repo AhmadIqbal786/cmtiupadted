@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CMTI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Your existing CSS styles would go here */
+        /* I've included only the essential styles for this example */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        .site-header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content h1 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+        }
+        
+        .logo {
+            height: 50px;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            color: #3498db;
+        }
+        
+        .career-btn {
+            background: #ff7e5f;
+            color: #fff;
+            padding: 8px 18px;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            min-width: 220px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            border-radius: 0 0 8px 8px;
+            z-index: 10;
+            flex-direction: column;
+        }
+        
+        .dropdown-menu a {
+            padding: 12px 15px;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        
+        /* Banner Section */
+        .site-head-banner {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .head-banner-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .head-banner-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Courses Container */
+        .courses-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .course-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .course-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .course-card-content {
+            padding: 20px;
+        }
+        
+        .course-card-content h2 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        
+        .course-card-content p {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        .details-btn, .enroll-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .details-btn {
+            background: #3498db;
+            color: white;
+        }
+        
+        .enroll-btn {
+            background: #ff7e5f;
+            color: white;
+        }
+        
+        /* Search and Filter */
+        .courses-filter {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .search-box {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-size: 16px;
+        }
+        
+        .category-filter {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .category-btn {
+            padding: 8px 16px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-btn.active, .category-btn:hover {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+        
+        /* Footer Styles */
+        .site-footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 60px 0 0;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .footer-logo h3 {
+            color: #fff;
+            font-size: 1.5rem;
+        }
+        
+        .footer-description {
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .footer-social h4 {
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: #fff;
+            transition: background 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background: #3498db;
+        }
+        
+        .footer-col h3 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: #3498db;
+        }
+        
+        .contact-info .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info .contact-item i {
+            margin-right: 10px;
+            color: #3498db;
+            width: 20px;
+        }
+        
+        .contact-info .contact-item span a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-info .contact-item span a:hover {
+            color: #3498db;
+        }
+        
+        .newsletter p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+        }
+        
+        .newsletter-form button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background: #2980b9;
+        }
+        
+        .footer-bottom {
+            background: rgba(0,0,0,0.2);
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .copyright {
+            color: #bdc3c7;
+        }
+        
+        .legal-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .legal-links a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .legal-links a:hover {
+            color: #3498db;
+        }
+        
+        /* Toast notifications */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2c3e50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Loading spinner */
+        .loader {
+            display: none;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+        
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav a {
+                margin: 5px 10px;
+            }
+            
+            .head-banner-content h2 {
+                font-size: 2rem;
+            }
+            
+            .head-banner-content p {
+                font-size: 1rem;
+            }
+            
+            .courses-filter {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<head>
+    <meta charset="UTF-8">
+    <title>CMTI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-content">
+            <div style="display:flex;align-items:center;">
+                <img src="logo.png" alt="Logo" class="logo">
+                <h1 style="margin-left:12px;">Coded Mind Technology Incubator</h1>
+            </div>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <div class="nav-dropdown">
+                    <a href="courses.html" class="dropdown-toggle" style="cursor:pointer;">Courses ▼</a>
+                    <div class="dropdown-menu">
+                        <a href="course-dit.html">DIT</a>
+                        <a href="course-cit.html">CIT</a>
+                        <a href="course-english.html">English Language</a>
+                        <a href="course-webdev.html">Web Development</a>
+                        <a href="course-youtube.html">YouTube Automation</a>
+                        <a href="course-amazon-fba.html">Amazon FBA</a>
+                        <a href="course-amazon-ecommerce.html">Amazon E-Commerce</a>
+                        <a href="course-graphic-design.html">Graphic Design</a>
+                        <a href="course-seo.html">SEO</a>
+                        <a href="course-digital-marketing.html">Digital Marketing</a>
+                        <a href="course-data-science.html">Data Science</a>
+                        <a href="course-python.html">Python Programming</a>
+                        <a href="course-networking.html">Networking</a>
+                        <a href="course-cyber-security.html">Cyber Security</a>
+                        <a href="course-mobile-app.html">Mobile App Development</a>
+                        <a href="course-wordpress.html">WordPress</a>
+                        <a href="course-video-editing.html">Video Editing</a>
+                        <a href="course-ms-office.html">MS Office</a>
+                        <a href="course-cloud-computing.html">Cloud Computing</a>
+                        <a href="course-ai-ml.html">AI & Machine Learning</a>
+                    </div>
+                </div>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="careers.html" class="career-btn">Career</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner Section -->
+    <div class="site-head-banner">
+        <div class="head-banner-content">
+            <h2>Empowering Future Tech Leaders</h2>
+            <p>Join CMTI to gain cutting-Edge skills in technology and business. Our expert-led courses prepare you for the digital future.</p>
+        </div>
+    </div>
+    
+    <!-- Search and Filter Section -->
+    <div class="courses-filter">
+        <div class="search-box">
+            <input type="text" id="course-search" placeholder="Search courses...">
+        </div>
+        <div class="category-filter">
+            <button class="category-btn active" data-category="all">All Courses</button>
+            <button class="category-btn" data-category="technology">Technology</button>
+            <button class="category-btn" data-category="business">Business</button>
+            <button class="category-btn" data-category="language">Language</button>
+        </div>
+    </div>
+   
+    <!-- Courses Container -->
+    <div class="courses-container" id="courses-container">
+        <!-- Course cards will be dynamically filtered by JavaScript -->
+        <div class="course-card" data-categories="technology">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="DIT">
+            <div class="course-card-content">
+                <h2>DIT (Diploma in Information Technology)</h2>
+                <p>Learn the fundamentals of IT.</p>
+                <a href="course-dit.html" class="details-btn">Course Details</a>
+                <a href="https://form.jotform.com/252090931090451" class="enroll-btn" target="_blank" rel="noopener">Enroll Now</a>
+            </div>
+        </div>
+
+        <div class="course-card" data-categories="technology">
+            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="CIT">
+            <div class="course-card-content">
+                <h2>CIT (Certificate in Information Technology)</h2>
+                <p>Basic IT skills for beginners.</p>
+                <a href="course-cit.html" class="details-btn">Course Details</a>
+                <a href="https://form.jotform.com/252090931090451" class="enroll-btn" target="_blank" rel="noopener">Enroll Now</a>
+            </div>
+        </div>
+
+        <div class="course-card" data-categories="language">
+            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=400&q=80" alt="English">
+            <div class="course-card-content">
+                <h2>English Language</h2>
+                <p>Improve your English communication.</p>
+                <a href="course-english.html" class="details-btn">Course Details</a>
+                <a href="https://form.jotform.com/252090931090451" class="enroll-btn" target="_blank" rel="noopener">Enroll Now</a>
+            </div>
+        </div>
+        
+        <div class="course-card" data-categories="technology">
+            <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Web Development">
+            <div class="course-card-content">
+                <h2>Web Development</h2>
+                <p>Build modern websites and web apps.</p>
+                <a href="course-webdev.html" class="details-btn">Course Details</a>
+                <a href="https://form.jotform.com/252090931090451" class="enroll-btn" target="_blank" rel="noopener">Enroll Now</a>
+            </div>
+        </div>
+        
+        <div class="course-card" data-categories="business">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="YouTube Automation">
+            <div class="course-card-content">
+                <h2>YouTube Automation</h2>
+                <p>Automate and grow your YouTube channel.</p>
+                <a href="course-youtube.html" class="details-btn">Course Details</a>
+                <a href="https://form.jotform.com/252090931090451" class="enroll-btn" target="_blank" rel="noopener">Enroll Now</a>
+            </div>
+        </div>
+        
+        <div class="course-card" data-categories="business">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Amazon FBA">
+            <div class="course-card-content">
+                <h2>Amazon FBA</h2>
+                <p>Start selling on Amazon with FBA.</p>
+                <a href="course-amazon-fba.html" class="details-btn">Course Details</a>
+                <a href="https://form.jotform.com/252090931090451" class="enroll-btn" target="_blank" rel="noopener">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader"></div>
+    
+    <!-- Toast Notification -->
+    <div class="toast" id="toast"></div>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="CMTI Logo">
+                    <h3>Coded Mind Technology Incubator</h3>
+                </div>
+                <p class="footer-description">
+                    Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
+                </p>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" title="Facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" title="Twitter" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" title="Instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" title="YouTube" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">All Courses</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="careers.html">Career Opportunities</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Popular Courses</h3>
+                <ul>
+                    <li><a href="course-webdev.html">Web Development</a></li>
+                    <li><a href="course-data-science.html">Data Science</a></li>
+                    <li><a href="course-cyber-security.html">Cyber Security</a></li>
+                    <li><a href="course-digital-marketing.html">Digital Marketing</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact Information</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span> Katlang District Mardan Pakistan</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span><a href="tel:+923488850059">+92 348 8850059</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
+                    </div>
+                </div>
+                
+                <div class="newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    &copy; 2024 Coded Mind Technology Incubator. All rights reserved.
+                </div>
+                <div class="legal-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#refund">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // DOM Ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize all functionality
+            initNavigation();
+            initCourseFilter();
+            initNewsletter();
+            initBackToTop();
+            initScrollEffects();
+            initFormValidation();
+            initLoader();
+            
+            console.log('CMTI Website JavaScript initialized successfully');
+        });
+
+        // Navigation functionality
+        function initNavigation() {
+            // Dropdown menu functionality
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            
+            if (dropdownToggle && dropdownMenu) {
+                dropdownToggle.addEventListener('mouseenter', function() {
+                    dropdownMenu.style.display = 'block';
+                });
+                
+                dropdownToggle.addEventListener('mouseleave', function() {
+                    setTimeout(function() { 
+                        if (!dropdownMenu.matches(':hover')) {
+                            dropdownMenu.style.display = 'none';
+                        }
+                    }, 200);
+                });
+                
+                dropdownMenu.addEventListener('mouseenter', function() {
+                    dropdownMenu.style.display = 'block';
+                });
+                
+                dropdownMenu.addEventListener('mouseleave', function() {
+                    setTimeout(function() { 
+                        dropdownMenu.style.display = 'none';
+                    }, 200);
+                });
+            }
+            
+            // Active link highlighting
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (linkPage === currentPage || 
+                    (currentPage === '' && linkPage === 'index.html')) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Course filtering and search functionality
+        function initCourseFilter() {
+            const searchInput = document.getElementById('course-search');
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const courseCards = document.querySelectorAll('.course-card');
+            
+            // Search functionality
+            if (searchInput) {
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    
+                    courseCards.forEach(card => {
+                        const title = card.querySelector('h2').textContent.toLowerCase();
+                        const description = card.querySelector('p').textContent.toLowerCase();
+                        
+                        if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            }
+            
+            // Category filtering
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update active button
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // Filter courses
+                    courseCards.forEach(card => {
+                        const categories = card.getAttribute('data-categories');
+                        
+                        if (category === 'all' || categories.includes(category)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        }
+
+        // Newsletter subscription
+        function initNewsletter() {
+            const newsletterForm = document.getElementById('newsletterForm');
+            
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const emailInput = this.querySelector('input[type="email"]');
+                    const email = emailInput.value.trim();
+                    
+                    if (validateEmail(email)) {
+                        showLoader();
+                        
+                        // Simulate API call
+                        setTimeout(() => {
+                            hideLoader();
+                            showToast('Thank you for subscribing to our newsletter!');
+                            emailInput.value = '';
+                        }, 1500);
+                    } else {
+                        showToast('Please enter a valid email address.', 'error');
+                    }
+                });
+            }
+        }
+
+        // Back to top button
+        function initBackToTop() {
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            if (backToTopBtn) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTopBtn.classList.add('show');
+                    } else {
+                        backToTopBtn.classList.remove('show');
+                    }
+                });
+                
+                backToTopBtn.addEventListener('click', function() {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        }
+
+        // Scroll effects
+        function initScrollEffects() {
+            // Add animation to course cards on scroll
+            const courseCards = document.querySelectorAll('.course-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            courseCards.forEach(card => {
+                card.style.opacity = 0;
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(card);
+            });
+        }
+
+        // Form validation
+        function initFormValidation() {
+            // This would be expanded for actual forms on contact and other pages
+            const forms = document.querySelectorAll('form');
+            
+            forms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    const inputs = this.querySelectorAll('input[required], textarea[required]');
+                    let isValid = true;
+                    
+                    inputs.forEach(input => {
+                        if (!input.value.trim()) {
+                            isValid = false;
+                            highlightField(input, false);
+                        } else {
+                            highlightField(input, true);
+                            
+                            // Email validation
+                            if (input.type === 'email' && !validateEmail(input.value)) {
+                                isValid = false;
+                                highlightField(input, false);
+                            }
+                        }
+                    });
+                    
+                    if (!isValid) {
+                        e.preventDefault();
+                        showToast('Please fill all required fields correctly.', 'error');
+                    }
+                });
+            });
+        }
+
+        // Loader functionality
+        function initLoader() {
+            // Global loader for API calls or page transitions
+            window.showLoader = function() {
+                const loader = document.getElementById('loader');
+                if (loader) loader.style.display = 'block';
+            };
+            
+            window.hideLoader = function() {
+                const loader = document.getElementById('loader');
+                if (loader) loader.style.display = 'none';
+            };
+        }
+
+        // Utility functions
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+        
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            if (toast) {
+                toast.textContent = message;
+                toast.className = 'toast show';
+                
+                if (type === 'error') {
+                    toast.style.background = '#e74c3c';
+                } else {
+                    toast.style.background = '#2c3e50';
+                }
+                
+                setTimeout(() => {
+                    toast.className = 'toast';
+                }, 3000);
+            }
+        }
+        
+        function highlightField(field, isValid) {
+            if (isValid) {
+                field.style.borderColor = '#27ae60';
+            } else {
+                field.style.borderColor = '#e74c3c';
+            }
+            
+            // Remove highlighting after 2 seconds
+            setTimeout(() => {
+                field.style.borderColor = '';
+            }, 2000);
+        }
+        
+        // Course enrollment tracking
+        function trackEnrollment(courseName) {
+            // This would typically connect to analytics software
+            console.log(`Enrollment clicked for: ${courseName}`);
+            
+            // Example: Send to Google Analytics
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'course_enrollment', {
+                    'event_category': 'Engagement',
+                    'event_label': courseName
+                });
+            }
+        }
+        
+        // Add event listeners to enrollment buttons
+        const enrollButtons = document.querySelectorAll('.enroll-btn');
+        enrollButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const courseName = this.closest('.course-card').querySelector('h2').textContent;
+                trackEnrollment(courseName);
+            });
+        });
+    </script>
+</body>
+</html>
