@@ -2,7 +2,404 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CIT Course Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIT Course Details - Coded Mind Technology Incubator</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        .site-header {
+            background: linear-gradient(135deg, #1565c0, #1976d2, #42a5f5);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover, nav a.active {
+            color: #ffd700;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 5px;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 20px;
+            color: #1565c0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Hero Section */
+        .course-hero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .course-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .course-intro {
+            flex: 1;
+            padding: 30px;
+            min-width: 300px;
+        }
+        
+        .course-intro h1 {
+            color: #1565c0;
+            margin-bottom: 15px;
+            font-size: 2.2rem;
+        }
+        
+        .course-intro p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .course-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .highlight-card {
+            background: #e3f2fd;
+            padding: 15px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+        }
+        
+        .highlight-card h3 {
+            color: #1565c0;
+            margin-bottom: 5px;
+        }
+        
+        .enroll-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #1565c0, #1976d2);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .enroll-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Cards Section */
+        .section-title {
+            color: #1565c0;
+            margin: 40px 0 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #1565c0, #42a5f5);
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #1565c0, #1976d2);
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        /* Course Outline */
+        .module-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .module-item::before {
+            content: "•";
+            color: #1976d2;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Testimonials */
+        .testimonial-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .testimonial-text {
+            flex-grow: 1;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        
+        /* Instructor */
+        .instructor-card {
+            text-align: center;
+        }
+        
+        .instructor-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border: 3px solid #1565c0;
+        }
+        
+        /* Payment Section */
+        .payment-methods {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+        
+        .payment-option {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .payment-option:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        /* Jotform */
+        .form-container {
+            margin: 40px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        /* Career Opportunities */
+        .career-opportunities {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+        
+        .career-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #e3f2fd;
+            border-radius: 8px;
+            border-left: 4px solid #1976d2;
+        }
+        
+        /* Footer */
+        .site-footer {
+            background: #1565c0;
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h3 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #42a5f5;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-col a:hover {
+            color: #90caf9;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .footer-social a {
+            display: inline-block;
+            font-size: 1.5rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav {
+                margin-top: 15px;
+            }
+            
+            nav a {
+                margin: 0 10px;
+            }
+            
+            .course-hero {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<head>
+    <meta charset="UTF-8">
+    <title>CMTI</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,95 +407,394 @@
     <header class="site-header">
         <div class="header-content">
             <div style="display:flex;align-items:center;">
-                <img src="https://drive.google.com/uc?id=11_YnXQRWHljym17YyFvj6NNz6gR7tXW_" alt="Logo" class="logo">
+                <img src="logo.png" alt="Logo" class="logo">
                 <h1 style="margin-left:12px;">Coded Mind Technology Incubator</h1>
             </div>
             <nav>
-                <a href="index.html" class="active">Home</a>
-                <a href="#courses">Courses</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a href="index.html">Home</a>
+                <a href="courses.html" class="active">Courses</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
-    <a href="index.html" style="margin:20px;display:inline-block;">← Back to Courses</a>
-    <div class="course-detail">
-        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80" alt="CIT" style="width:100%;max-width:600px;border-radius:10px;margin-bottom:20px;">
-        <h1>CIT (Certificate in Information Technology)</h1>
-        <p>
-            The CIT course provides essential IT skills for beginners, covering computer operation, internet usage, and office productivity tools.
-        </p>
-        <h2>Course Content</h2>
-        <ul>
-            <li>Computer Fundamentals</li>
-            <li>Windows Operating System</li>
-            <li>MS Word, Excel, PowerPoint</li>
-            <li>Internet Basics & Email Communication</li>
-            <li>Introduction to Social Media</li>
-            <li>Basic Troubleshooting</li>
-            <li>Practical Assignments</li>
-        </ul>
-        <h2>Duration</h2>
-        <p>3 Months</p>
-        <h2>Fee</h2>
-        <p>PKR 15,000 (Installments available)</p>
-        <a href="https://form.jotform.com/252090931090451" class="enroll-btn" target="_blank" rel="noopener">Enroll Now</a>
-        <h2>Register for this Course</h2>
-        <iframe id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c" title="Sana: Registration Assistant"
-  onload="window.parent.scrollTo(0,0)" allowtransparency="true"
-  allow="geolocation; microphone; camera; fullscreen"
-  src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
-  frameborder="0" style=""
-    max-width:100%;
-    height:688px;
-    border:none;
-    width:100%;
-  " scrolling="no">
-</iframe>
-<script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-<script>
-  window.jotformEmbedHandler("iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
-    "https://www.jotform.com")
-</script>
-        <h2>Local Payment Methods</h2>
-        <ul>
-            <li>Bank Transfer: Meezan Bank, Acc# 123456789, Title: Coded Mind Technology Incubator</li>
-            <li>EasyPaisa/JazzCash: 0300-1234567</li>
-            <li>Visit our office for cash payment</li>
-        </ul>
-        <p>After payment, send your receipt to <b>info@codedmind.com</b> or WhatsApp 0300-1234567 for registration.</p>
+
+    <a href="index.html" class="back-link">← Back to Courses</a>
+
+    <div class="container">
+        <!-- Course Hero Section -->
+        <section class="course-hero">
+            <div class="course-image">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="CIT Course">
+            </div>
+            <div class="course-intro">
+                <h1>CIT (Computer Information Technology) Course</h1>
+                <p>Master the fundamentals of computer systems, networking, and information management with our comprehensive CIT course. Develop practical skills in hardware, software, networking, and database management for a successful IT career.</p>
+                
+                <div class="course-highlights">
+                    <div class="highlight-card">
+                        <h3>Duration</h3>
+                        <p>6 Months</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Fee</h3>
+                        <p>PKR 30,000</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Format</h3>
+                        <p>Hybrid</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Level</h3>
+                        <p>Beginner to Intermediate</p>
+                    </div>
+                </div>
+                
+                <a href="#enroll" class="enroll-btn">Enroll Now</a>
+            </div>
+        </section>
+
+        <!-- Course Details Cards -->
+        <h2 class="section-title">Course Details</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Course Overview</h3>
+                </div>
+                <div class="card-body">
+                    <p>Our CIT course provides a comprehensive foundation in computer information technology, covering hardware, software, networking, and database management. You'll gain practical skills through hands-on labs and real-world projects.</p>
+                    <p>This course is designed to prepare you for various IT roles, from technical support to network administration, with a focus on practical, industry-relevant skills.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Learning Outcomes</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Understand computer hardware components and troubleshooting</li>
+                        <li>Install and configure operating systems and software</li>
+                        <li>Set up and manage computer networks</li>
+                        <li>Design and implement database systems</li>
+                        <li>Develop basic web applications</li>
+                        <li>Implement cybersecurity best practices</li>
+                        <li>Provide technical support and troubleshooting</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Who Should Enroll?</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Beginners interested in starting an IT career</li>
+                        <li>Office workers wanting to enhance technical skills</li>
+                        <li>Students pursuing computer science education</li>
+                        <li>Career changers looking to enter the IT field</li>
+                        <li>Small business owners managing their own IT</li>
+                        <li>Anyone interested in understanding computer systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Outline -->
+        <h2 class="section-title">Course Outline</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 1: Computer Fundamentals</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">Introduction to computer systems</div>
+                    <div class="module-item">Hardware components and peripherals</div>
+                    <div class="module-item">Operating systems overview</div>
+                    <div class="module-item">File management and storage</div>
+                    <div class="module-item">Basic troubleshooting techniques</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 2: Software Applications</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">Office productivity software</div>
+                    <div class="module-item">Software installation and configuration</div>
+                    <div class="module-item">Introduction to programming concepts</div>
+                    <div class="module-item">Web browsers and internet applications</div>
+                    <div class="module-item">Software troubleshooting</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 3: Networking Essentials</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">Network fundamentals and concepts</div>
+                    <div class="module-item">Network devices and topologies</div>
+                    <div class="module-item">TCP/IP protocols and addressing</div>
+                    <div class="module-item">Wireless networking</div>
+                    <div class="module-item">Network troubleshooting</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 4: Database Management</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">Database concepts and design</div>
+                    <div class="module-item">SQL fundamentals</div>
+                    <div class="module-item">Database administration basics</div>
+                    <div class="module-item">Data backup and recovery</div>
+                    <div class="module-item">Introduction to NoSQL databases</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 5: Web Technologies</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">HTML and CSS fundamentals</div>
+                    <div class="module-item">JavaScript basics</div>
+                    <div class="module-item">Web hosting and domain management</div>
+                    <div class="module-item">Content Management Systems (CMS)</div>
+                    <div class="module-item">Web security principles</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 6: IT Professional Skills</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">Technical support best practices</div>
+                    <div class="module-item">IT project management basics</div>
+                    <div class="module-item">Documentation and reporting</div>
+                    <div class="module-item">IT ethics and professional conduct</div>
+                    <div class="module-item">Career preparation and certifications</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Career Opportunities -->
+        <h2 class="section-title">Career Opportunities</h2>
+        <div class="career-opportunities">
+            <div class="career-item">
+                <h3>IT Support Specialist</h3>
+                <p>Provide technical assistance and support for computer systems, hardware, and software.</p>
+            </div>
+            <div class="career-item">
+                <h3>Network Administrator</h3>
+                <p>Manage and maintain an organization's computer networks.</p>
+            </div>
+            <div class="career-item">
+                <h3>Database Administrator</h3>
+                <p>Install, configure, and maintain database systems.</p>
+            </div>
+            <div class="career-item">
+                <h3>Systems Analyst</h3>
+                <p>Analyze and design technology solutions to meet business requirements.</p>
+            </div>
+            <div class="career-item">
+                <h3>Technical Support Engineer</h3>
+                <p>Resolve technical issues and provide customer support for technology products.</p>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <h2 class="section-title">Student Testimonials</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-body testimonial-card">
+                    <div class="testimonial-text">
+                        "This CIT course gave me the foundational knowledge I needed to start my IT career. The hands-on approach with real equipment and scenarios prepared me for my current role as an IT support specialist. I was able to get a job just two weeks after completing the course!"
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
+                        <div>
+                            <strong>Usman Ali</strong>
+                            <p>IT Support Specialist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body testimonial-card">
+                    <div class="testimonial-text">
+                        "As a small business owner, I enrolled to better understand and manage my company's IT infrastructure. This course gave me the confidence to handle day-to-day technical issues and make informed decisions about our technology investments."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
+                        <div>
+                            <strong>Ayesha Malik</strong>
+                            <p>Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body testimonial-card">
+                    <div class="testimonial-text">
+                        "The comprehensive curriculum covered everything from hardware to networking to databases. The instructors were knowledgeable and always available to help. I particularly appreciated the career guidance and resume workshops that helped me land my first IT job."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
+                        <div>
+                            <strong>Hassan Raza</strong>
+                            <p>Network Technician</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructor Section -->
+        <h2 class="section-title">Meet Your Instructor</h2>
+        <div class="cards-container">
+            <div class="card instructor-card">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Instructor" class="instructor-image">
+                <div class="card-body">
+                    <h3>Farhan Ahmed</h3>
+                    <p>IT Specialist & Certified Trainer</p>
+                    <p>With over 15 years of experience in IT training and consulting, Farhan has helped thousands of students launch successful careers in information technology. He holds multiple certifications including CompTIA A+, Network+, Security+, and Microsoft Certified Trainer (MCT). Farhan has worked with organizations of all sizes, from startups to multinational corporations, implementing and managing IT infrastructure. His teaching approach focuses on practical, hands-on learning that prepares students for real-world IT challenges.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Information -->
+        <h2 class="section-title" id="enroll">Payment Methods</h2>
+        <div class="payment-methods">
+            <div class="payment-option">
+                <h3>Bank Transfer</h3>
+                <p>Meezan Bank, Acc# 123456789, Title: Coded Mind Technology Incubator</p>
+            </div>
+            
+            <div class="payment-option">
+                <h3>EasyPaisa/JazzCash</h3>
+                <p>0300-1234567</p>
+            </div>
+            
+            <div class="payment-option">
+                <h3>Cash Payment</h3>
+                <p>Visit our office for cash payment</p>
+                <p><strong>Office Hours:</strong> Monday to Saturday, 9:00 AM to 6:00 PM</p>
+                <p><strong>Address:</strong> 123 Tech Street, Lahore, Pakistan</p>
+            </div>
+            
+            <div class="payment-option">
+                <h3>Installment Plan</h3>
+                <p>We offer flexible installment options:</p>
+                <ul>
+                    <li>Option 1: Full payment of PKR 30,000 (5% discount available)</li>
+                    <li>Option 2: Two installments of PKR 15,500</li>
+                    <li>Option 3: Three installments of PKR 10,500</li>
+                    <li>Option 4: Four installments of PKR 8,000</li>
+                </ul>
+                <p>After payment, send your receipt to <b>info@codedmind.com</b> or WhatsApp 0300-1234567 for registration confirmation.</p>
+            </div>
+        </div>
+
+        <!-- Jotform Registration -->
+        <h2 class="section-title">Register for This Course</h2>
+        <div class="form-container">
+            <iframe id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c" title="Sana: Registration Assistant"
+                onload="window.parent.scrollTo(0,0)" allowtransparency="true"
+                allow="geolocation; microphone; camera; fullscreen"
+                src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
+                frameborder="0" style="
+                max-width:100%;
+                height:688px;
+                border:none;
+                width:100%;
+                " scrolling="no">
+            </iframe>
+            <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+            <script>
+                window.jotformEmbedHandler("iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
+                "https://www.jotform.com")
+            </script>
+        </div>
     </div>
+
     <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-col">
-                <h3>Contact Us</h3>
-                <ul>
-                    <li>Email: <a href="mailto:info@codedmind.com">info@codedmind.com</a></li>
-                    <li>Phone: <a href="tel:+923488850059">+92 348 8850059</a></li>
-                    <li>Location: Lahore, Pakistan</li>
-                </ul>
+                <div class="footer-logo">
+                    <img src="logo.png" alt="CMTI Logo">
+                    <h3>Coded Mind Technology Incubator</h3>
+                </div>
+                <p class="footer-description">
+                    Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
+                </p>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" title="Facebook" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" title="Twitter" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10C2.38 10 2.38 10 2.38 10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.46 14.34 5.08 14.39 4.69 14.39C4.42 14.39 4.15 14.36 3.89 14.31C4.43 16 6 17.26 7.89 17.29C6.43 18.45 4.58 19.13 2.56 19.13C2.22 19.13 1.88 19.11 1.54 19.07C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
+            
             <div class="footer-col">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
                 </ul>
             </div>
+            
             <div class="footer-col">
-                <h3>Follow Us</h3>
-                <div class="footer-social">
-                    <a href="#" title="Facebook"><span style="font-size:1.5em;">&#x1F426;</span></a>
-                    <a href="#" title="Twitter"><span style="font-size:1.5em;">&#x1F426;</span></a>
-                    <a href="#" title="LinkedIn"><span style="font-size:1.5em;">&#x1F426;</span></a>
-                </div>
+                <h3>Popular Courses</h3>
+                <ul>
+                    <li><a href="cyber-security.html">Cyber Security</a></li>
+                    <li><a href="cit.html">CIT</a></li>
+                    <li><a href="english-language.html">English Language</a></li>
+                    <li><a href="graphic-design.html">Graphic Design</a></li>
+                    <li><a href="web-development.html">Web Development</a></li>
+                    <li><a href="data-science.html">Data Science</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li>123 Tech Street, Lahore, Pakistan</li>
+                    <li>Phone: +92 300 1234567</li>
+                    <li>Email: info@codedmind.com</li>
+                </ul>
+                
             </div>
         </div>
+        
         <div class="footer-bottom">
-            &copy; 2024 Coded Mind Technology Incubator. All rights reserved.
+            <p>&copy; 2023 Coded Mind Technology Incubator. All rights reserved.</p>
         </div>
     </footer>
 </body>

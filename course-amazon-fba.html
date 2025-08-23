@@ -1,8 +1,406 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Amazon FBA Course Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon FBA Course Details - Coded Mind Technology Incubator</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        .site-header {
+            background: linear-gradient(135deg, #232f3e, #146eb4);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover, nav a.active {
+            color: #ff9900;
+            border-bottom: 2px solid #ff9900;
+            padding-bottom: 5px;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 20px;
+            color: #146eb4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Hero Section */
+        .course-hero {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .course-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .course-intro {
+            flex: 1;
+            padding: 30px;
+            min-width: 300px;
+        }
+        
+        .course-intro h1 {
+            color: #146eb4;
+            margin-bottom: 15px;
+            font-size: 2.2rem;
+        }
+        
+        .course-intro p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .course-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .highlight-card {
+            background: #e6f0fa;
+            padding: 15px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+        }
+        
+        .highlight-card h3 {
+            color: #146eb4;
+            margin-bottom: 5px;
+        }
+        
+        .enroll-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #232f3e, #146eb4);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .enroll-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Cards Section */
+        .section-title {
+            color: #146eb4;
+            margin: 40px 0 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #232f3e, #146eb4);
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #232f3e, #146eb4);
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        /* Course Outline */
+        .module-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .module-item::before {
+            content: "•";
+            color: #ff9900;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Testimonials */
+        .testimonial-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .testimonial-text {
+            flex-grow: 1;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        
+        /* Instructor */
+        .instructor-card {
+            text-align: center;
+        }
+        
+        .instructor-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border: 3px solid #146eb4;
+        }
+        
+        /* Payment Section */
+        .payment-methods {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+        
+        .payment-option {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .payment-option:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        /* Jotform */
+        .form-container {
+            margin: 40px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        /* Career Opportunities */
+        .career-opportunities {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+        
+        .career-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #e6f0fa;
+            border-radius: 8px;
+            border-left: 4px solid #146eb4;
+        }
+        
+        /* Footer */
+        .site-footer {
+            background: #232f3e;
+            color: white;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-col h3 {
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: #ff9900;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-col a:hover {
+            color: #ff9900;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .footer-social a {
+            display: inline-block;
+            font-size: 1.5rem;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav {
+                margin-top: 15px;
+            }
+            
+            nav a {
+                margin: 0 10px;
+            }
+            
+            .course-hero {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<head>
+    <meta charset="UTF-8">
+    <title>CMTI</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -10,76 +408,441 @@
     <header class="site-header">
         <div class="header-content">
             <div style="display:flex;align-items:center;">
-                <img src="https://akti.com.pk/wp-content/uploads/2022/09/AKTI-Logo.png" alt="Logo" class="logo">
+                <img src="logo.png" alt="Logo" class="logo">
                 <h1 style="margin-left:12px;">Coded Mind Technology Incubator</h1>
             </div>
             <nav>
-                <a href="index.html" class="active">Home</a>
-                <a href="#courses">Courses</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a href="index.html">Home</a>
+                <a href="courses.html" class="active">Courses</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
-    <a href="index.html" style="margin:20px;display:inline-block;">← Back to Courses</a>
-    <div class="course-detail">
-        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Amazon FBA" style="width:100%;max-width:600px;border-radius:10px;margin-bottom:20px;">
-        <h1>Amazon FBA</h1>
-        <p>
-            Learn how to start and scale your business using Amazon's Fulfillment by Amazon (FBA) platform.
-        </p>
-        <h2>Course Content</h2>
-        <ul>
-            <li>Introduction to Amazon FBA</li>
-            <li>Product Research & Selection</li>
-            <li>Listing Optimization</li>
-            <li>Inventory Management</li>
-            <li>Marketing & Sales Strategies</li>
-            <li>Order Fulfillment Process</li>
-            <li>Customer Service & Feedback</li>
-            <li>Practical Store Setup</li>
-        </ul>
-        <h2>Duration</h2>
-        <p>3 Months</p>
-        <h2>Fee</h2>
-        <p>PKR 25,000 (Installments available)</p>
-        <a href="https://form.jotform.com/252090931090451" class="enroll-btn" target="_blank" rel="noopener">Enroll Now</a>
-        <h2>Register for this Course</h2>
-        <iframe id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c" title="Sana: Registration Assistant"
-  onload="window.parent.scrollTo(0,0)" allowtransparency="true"
-  allow="geolocation; microphone; camera; fullscreen"
-  src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
-  frameborder="0" style="
-    max-width:100%;
-    height:688px;
-    border:none;
-    width:100%;
-  " scrolling="no">
-</iframe>
-<script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-<script>
-  window.jotformEmbedHandler("iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
-    "https://www.jotform.com")
-</script>
-        <h2>Local Payment Methods</h2>
-        <ul>
-            <li>Bank Transfer: Meezan Bank, Acc# 123456789, Title: Coded Mind Technology Incubator</li>
-            <li>EasyPaisa/JazzCash: 0300-1234567</li>
-            <li>Visit our office for cash payment</li>
-        </ul>
-        <p>After payment, send your receipt to <b>info@codedmind.com</b> or WhatsApp 0300-1234567 for registration.</p>
+
+    <a href="index.html" class="back-link">← Back to Courses</a>
+
+    <div class="container">
+        <!-- Course Hero Section -->
+        <section class="course-hero">
+            <div class="course-image">
+                <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=600&q=80" alt="Amazon FBA Course">
+            </div>
+            <div class="course-intro">
+                <h1>Amazon FBA Mastery Course</h1>
+                <p>Learn how to build a profitable e-commerce business using Amazon's Fulfillment by Amazon (FBA) program. From product research to launching and scaling your brand, this course covers everything you need to succeed as an Amazon seller.</p>
+                
+                <div class="course-highlights">
+                    <div class="highlight-card">
+                        <h3>Duration</h3>
+                        <p>4 Months</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Fee</h3>
+                        <p>PKR 25,000</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Format</h3>
+                        <p>Hybrid</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Level</h3>
+                        <p>Beginner to Advanced</p>
+                    </div>
+                </div>
+                
+                <a href="#enroll" class="enroll-btn">Enroll Now</a>
+            </div>
+        </section>
+
+        <!-- Course Details Cards -->
+        <h2 class="section-title">Course Details</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Course Overview</h3>
+                </div>
+                <div class="card-body">
+                    <p>Our Amazon FBA Mastery course provides comprehensive training in building a successful e-commerce business on Amazon. You'll learn product research strategies, sourcing techniques, listing optimization, PPC advertising, inventory management, and brand scaling strategies.</p>
+                    <p>This practical course combines theoretical knowledge with hands-on exercises, real-world case studies, and live account management to prepare you for success as an Amazon seller.</p>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Learning Outcomes</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Master product research and validation techniques</li>
+                        <li>Develop effective sourcing strategies from local and international suppliers</li>
+                        <li>Create optimized Amazon listings that convert</li>
+                        <li>Manage Amazon PPC campaigns effectively</li>
+                        <li>Understand inventory management and forecasting</li>
+                        <li>Navigate Amazon's policies and compliance requirements</li>
+                        <li>Scale your Amazon business into a sustainable brand</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Who Should Enroll?</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Aspiring entrepreneurs wanting to start an e-commerce business</li>
+                        <li>Existing business owners looking to expand to Amazon</li>
+                        <li>Students interested in e-commerce careers</li>
+                        <li>Freelancers seeking to offer Amazon FBA services</li>
+                        <li>Anyone looking to create passive income streams</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Outline -->
+        <h2 class="section-title">Course Outline</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 1: Amazon FBA Fundamentals</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">Introduction to Amazon FBA business model</div>
+                    <div class="module-item">Understanding Amazon's ecosystem</div>
+                    <div class="module-item">Setting up your seller account</div>
+                    <div class="module-item">Amazon policies and compliance</div>
+                    <div class="module-item">Creating your business plan</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 2: Product Research & Validation</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">Niche selection strategies</div>
+                    <div class="module-item">Product research techniques</div>
+                    <div class="module-item">Competitor analysis</div>
+                    <div class="module-item">Product validation methods</div>
+                    <div class="module-item">Finding profitable products</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 3: Sourcing & Supply Chain</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">Finding reliable suppliers</div>
+                    <div class="module-item">Negotiating with manufacturers</div>
+                    <div class="module-item">Quality control procedures</div>
+                    <div class="module-item">Shipping and logistics</div>
+                    <div class="module-item">Customs and import regulations</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 4: Listing Optimization</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">Keyword research for Amazon</div>
+                    <div class="module-item">Writing compelling product titles</div>
+                    <div class="module-item">Creating persuasive product descriptions</div>
+                    <div class="module-item">Professional photography guidelines</div>
+                    <div class="module-item">A+ Content creation</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 5: Amazon PPC Advertising</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">Amazon advertising ecosystem</div>
+                    <div class="module-item">Setting up sponsored product campaigns</div>
+                    <div class="module-item">Keyword targeting strategies</div>
+                    <div class="module-item">Budget management and optimization</div>
+                    <div class="module-item">Analyzing advertising performance</div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 6: Business Management & Scaling</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">Inventory management techniques</div>
+                    <div class="module-item">Financial management and accounting</div>
+                    <div class="module-item">Customer service excellence</div>
+                    <div class="module-item">Brand registry and protection</div>
+                    <div class="module-item">Scaling strategies for growth</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Career Opportunities -->
+        <h2 class="section-title">Career Opportunities</h2>
+        <div class="career-opportunities">
+            <div class="career-item">
+                <h3>Amazon FBA Seller</h3>
+                <p>Build and manage your own profitable Amazon business.</p>
+            </div>
+            <div class="career-item">
+                <h3>E-commerce Consultant</h3>
+                <p>Help other businesses succeed on Amazon and other platforms.</p>
+            </div>
+            <div class="career-item">
+                <h3>Product Sourcing Specialist</h3>
+                <p>Specialize in finding profitable products for Amazon sellers.</p>
+            </div>
+            <div class="career-item">
+                <h3>Amazon PPC Manager</h3>
+                <p>Manage advertising campaigns for multiple Amazon sellers.</p>
+            </div>
+            <div class="career-item">
+                <h3>E-commerce Operations Manager</h3>
+                <p>Oversee the entire e-commerce operation for brands selling on Amazon.</p>
+            </div>
+        </div>
+
+        <!-- Testimonials -->
+        <h2 class="section-title">Student Testimonials</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-body testimonial-card">
+                    <div class="testimonial-text">
+                        "This course completely changed my financial future. I went from knowing nothing about Amazon to making over $10,000 in profit in my first six months. The step-by-step guidance on product research was particularly invaluable - it helped me avoid costly mistakes."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
+                        <div>
+                            <strong>Fatima Khan</strong>
+                            <p>Amazon FBA Seller</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body testimonial-card">
+                    <div class="testimonial-text">
+                        "As someone with no prior business experience, I was hesitant at first. But the structured approach and mentor support made all the difference. I now run a successful Amazon business that generates passive income while I focus on my studies."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
+                        <div>
+                            <strong>Bilal Ahmed</strong>
+                            <p>Student & Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body testimonial-card">
+                    <div class="testimonial-text">
+                        "The PPC module alone was worth the entire course fee. I reduced my ACoS from 45% to 22% while increasing sales by 300% after implementing the strategies taught in this course. The instructors are truly experts in Amazon advertising."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
+                        <div>
+                            <strong>Sara Rizwan</strong>
+                            <p>E-commerce Manager</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructor Section -->
+        <h2 class="section-title">Meet Your Instructor</h2>
+        <div class="cards-container">
+            <div class="card instructor-card">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Instructor" class="instructor-image">
+                <div class="card-body">
+                    <h3>Mr. Ali Raza</h3>
+                    <p>Amazon FBA Expert & E-commerce Consultant</p>
+                    <p>With over 8 years of experience in Amazon FBA, Ali has built multiple seven-figure Amazon businesses and helped hundreds of students launch their own successful e-commerce ventures. He specializes in product research, supply chain optimization, and Amazon PPC advertising. Ali holds certifications in Amazon Advertising and Global Sourcing strategies.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Information -->
+        <h2 class="section-title" id="enroll">Payment Methods</h2>
+        <div class="payment-methods">
+            <div class="payment-option">
+                <h3>Bank Transfer</h3>
+                <p>Meezan Bank, Acc# 123456789, Title: Coded Mind Technology Incubator</p>
+            </div>
+            
+            <div class="payment-option">
+                <h3>EasyPaisa/JazzCash</h3>
+                <p>0300-1234567</p>
+            </div>
+            
+            <div class="payment-option">
+                <h3>Cash Payment</h3>
+                <p>Visit our office for cash payment</p>
+                <p><strong>Office Hours:</strong> Monday to Saturday, 9:00 AM to 6:00 PM</p>
+                <p><strong>Address:</strong> 123 Tech Street, Lahore, Pakistan</p>
+            </div>
+            
+            <div class="payment-option">
+                <h3>Installment Plan</h3>
+                <p>We offer flexible installment options:</p>
+                <ul>
+                    <li>Option 1: Full payment of PKR 25,000 (5% discount available)</li>
+                    <li>Option 2: Two installments of PKR 13,000</li>
+                    <li>Option 3: Three installments of PKR 9,000</li>
+                </ul>
+                <p>After payment, send your receipt to <b>info@codedmind.com</b> or WhatsApp 0300-1234567 for registration confirmation.</p>
+            </div>
+        </div>
+
+        <!-- Jotform Registration -->
+        <h2 class="section-title">Register for This Course</h2>
+        <div class="form-container">
+            <iframe id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c" title="Sana: Registration Assistant"
+                onload="window.parent.scrollTo(0,0)" allowtransparency="true"
+                allow="geolocation; microphone; camera; fullscreen"
+                src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
+                frameborder="0" style="
+                max-width:100%;
+                height:688px;
+                border:none;
+                width:100%;
+                " scrolling="no">
+            </iframe>
+            <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+            <script>
+                window.jotformEmbedHandler("iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
+                "https://www.jotform.com")
+            </script>
+        </div>
     </div>
+
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="footer-content">
-            <p>&copy; 2024 Coded Mind Technology Incubator. All rights reserved.</p>
-            <p>Contact: info@codedmind.com | Phone: +923488850059 </p>
-            <p>Follow us:
-                <a href="#">Facebook</a> |
-                <a href="#">Twitter</a> |
-                <a href="#">LinkedIn</a>
+    <div class="footer-content">
+        <div class="footer-col">
+            <div class="footer-logo">
+                <img src="logo.png" alt="CMTI Logo">
+                <h3>Coded Mind Technology Incubator</h3>
+            </div>
+            <p class="footer-description">
+                Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
             </p>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" title="Facebook" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
+                        </svg>
+                    </a>
+                    <a href="#" title="Twitter" aria-label="Twitter">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10C2.38 10 2.38 10 2.38 10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.46 14.34 5.08 14.39 4.69 14.39C4.42 14.39 4.15 14.36 3.89 14.31C4.43 16 6 17.26 7.89 17.29C6.43 18.45 4.58 19.13 2.56 19.13C2.22 19.13 1.88 19.11 1.54 19.07C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z"/>
+                        </svg>
+                    </a>
+                    <a href="#" title="Instagram" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2C22 19.4 19.4 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2ZM7.6 4C5.6 4 4 5.6 4 7.6V16.4C4 18.4 5.6 20 7.6 20H16.4C18.4 20 20 18.4 20 16.4V7.6C20 5.6 18.4 4 16.4 4H7.6ZM12 7C14.8 7 17 9.2 17 12C17 14.8 14.8 17 12 17C9.2 17 7 14.8 7 12C7 9.2 9.2 7 12 7ZM12 9C10.3 9 9 10.3 9 12C9 13.7 10.3 15 12 15C13.7 15 15 13.7 15 12C15 10.3 13.7 9 12 9ZM17.5 6C18.1 6 18.5 5.6 18.5 5C18.5 4.4 18.1 4 17.5 4C16.9 4 16.5 4.4 16.5 5C16.5 5.6 16.9 6 17.5 6Z"/>
+                        </svg>
+                    </a>
+                    <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+                        </svg>
+                    </a>
+                    <a href="#" title="YouTube" aria-label="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
-    </footer>
+        
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">All Courses</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="careers.html">Career Opportunities</a></li>
+                <li><a href="#testimonials">Student Testimonials</a></li>
+                <li><a href="#blog">Blog & Resources</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h3>Popular Courses</h3>
+            <ul>
+                <li><a href="course-webdev.html">Web Development</a></li>
+                <li><a href="course-data-science.html">Data Science</a></li>
+                <li><a href="course-cyber-security.html">Cyber Security</a></li>
+                <li><a href="course-digital-marketing.html">Digital Marketing</a></li>
+                <li><a href="course-python.html">Python Programming</a></li>
+                <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h3>Contact Information</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
+                    </svg>
+                    <span> Katlang District Mardan Pakistan</span>
+                </div>
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                    </svg>
+                    <span><a href="tel:+923488850059">+92 348 8850059</a></span>
+                </div>
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6M20 6L12 11L4 6H20M20 18H4V8L12 13L20 8V18Z"/>
+                    </svg>
+                    <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
+                </div>
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
+                    </svg>
+                    <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
+                </div>
+            </div>
+            
+            <div class="newsletter">
+                <h4>Subscribe to Our Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <div class="copyright">
+                &copy; 2024 Coded Mind Technology Incubator. All rights reserved.
+            </div>
+            <div class="legal-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="#refund">Refund Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
