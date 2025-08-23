@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI & Machine Learning Course Details - Coded Mind Technology Incubator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        .site-header {
+            background: linear-gradient(135deg, #2c3e50, #4a6580);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header-content > div {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 50px;
+        }
+        
+        .header-content h1 {
+            font-size: 1.8rem;
+            margin-left: 12px;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            color: #ff7e5f;
+        }
+        
+        .career-btn {
+            background: #ff7e5f;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 5px;
+            margin-left: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .career-btn:hover {
+            background: #ff6b4a;
+        }
+        
+        /* Course Hero Section */
+        .course-hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .course-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .course-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .course-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary {
+            background: #ff7e5f;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #ff6b4a;
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: #2c3e50;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        
+        .breadcrumb a {
+            color: #4a6580;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Main Content */
+        .course-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+        
+        /* Course Details Cards */
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .card h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ff7e5f;
+        }
+        
+        /* Course Content */
+        .module {
+            margin-bottom: 15px;
+            border-left: 3px solid #4a6580;
+            padding-left: 15px;
+        }
+        
+        .module h3 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .topics {
+            list-style-type: none;
+        }
+        
+        .topics li {
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .topics li:before {
+            content: "•";
+            color: #ff7e5f;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        /* Instructor Card */
+        .instructor-card {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .instructor-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .instructor-info h3 {
+            margin-bottom: 5px;
+        }
+        
+        .instructor-title {
+            color: #ff7e5f;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .social-links a {
+            color: #4a6580;
+            font-size: 1.2rem;
+        }
+        
+        /* Testimonials */
+        .testimonial {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .testimonial-content {
+            flex: 1;
+        }
+        
+        .testimonial-text {
+            background: #f5f7fa;
+            padding: 15px;
+            border-radius: 8px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        
+        .testimonial-text:after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 20px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: #f5f7fa transparent transparent transparent;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        
+        /* Sidebar */
+        .sidebar-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        
+        .course-info-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .course-info-item:last-child {
+            border-bottom: none;
+        }
+        
+        .info-label {
+            color: #6c757d;
+        }
+        
+        .info-value {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        
+        .price {
+            font-size: 1.8rem;
+            color: #ff7e5f;
+            font-weight: 700;
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .installment {
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 20px;
+        }
+        
+        /* Payment Methods */
+        .payment-methods {
+            list-style-type: none;
+        }
+        
+        .payment-methods li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .payment-methods li i {
+            color: #ff7e5f;
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        /* Footer */
+        .site-footer {
+            background: linear-gradient(to right, #2c3e50, #4a6580);
+            color: #fff;
+            padding: 50px 0 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-col {
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            margin-right: 12px;
+        }
+
+        .footer-logo h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .footer-description {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #ff7e5f;
+            transform: translateY(-3px);
+        }
+
+        .footer-col h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background: #ff7e5f;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #fff;
+            opacity: 0.9;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            opacity: 1;
+            color: #ff7e5f;
+            padding-left: 5px;
+        }
+
+        .contact-info {
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-item svg {
+            margin-right: 10px;
+            opacity: 0.9;
+        }
+
+        .contact-item span a {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-item span a:hover {
+            opacity: 1;
+            color: #ff7e5f;
+        }
+
+        .newsletter h4 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .newsletter-form button {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            background: #ff7e5f;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: #ff6b4a;
+        }
+
+        .footer-bottom {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .legal-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .legal-links a {
+            color: #fff;
+            opacity: 0.8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: opacity 0.3s ease;
+        }
+
+        .legal-links a:hover {
+            opacity: 1;
+            color: #ff7e5f;
+        }
+
+        .copyright {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .course-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav a {
+                margin: 5px 10px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .course-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .instructor-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .legal-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="header-content">
+            <div style="display:flex;align-items:center;">
+                <img src="https://akti.com.pk/wp-content/uploads/2022/09/AKTI-Logo.png" alt="Logo" class="logo">
+                <h1 style="margin-left:12px;">Coded Mind Technology Incubator</h1>
+            </div>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <div class="nav-dropdown" style="display:inline-block;position:relative;">
+                    <a href="#courses" class="dropdown-toggle" style="cursor:pointer;">Courses ▼</a>
+                    <div class="dropdown-menu" style="display:none;position:absolute;top:100%;left:0;background:#fff;min-width:220px;box-shadow:0 2px 8px rgba(0,0,0,0.12);border-radius:0 0 8px 8px;z-index:10;">
+                        <a href="course-dit.html">DIT</a>
+                        <a href="course-cit.html">CIT</a>
+                        <a href="course-english.html">English Language</a>
+                        <a href="course-webdev.html">Web Development</a>
+                        <a href="course-youtube.html">YouTube Automation</a>
+                        <a href="course-amazon-fba.html">Amazon FBA</a>
+                        <a href="course-amazon-ecommerce.html">Amazon E-Commerce</a>
+                        <a href="course-graphic-design.html">Graphic Design</a>
+                        <a href="course-seo.html">SEO</a>
+                        <a href="course-digital-marketing.html">Digital Marketing</a>
+                        <a href="course-data-science.html">Data Science</a>
+                        <a href="course-python.html">Python Programming</a>
+                        <a href="course-networking.html">Networking</a>
+                        <a href="course-cyber-security.html">Cyber Security</a>
+                        <a href="course-mobile-app.html">Mobile App Development</a>
+                        <a href="course-wordpress.html">WordPress</a>
+                        <a href="course-video-editing.html">Video Editing</a>
+                        <a href="course-ms-office.html">MS Office</a>
+                        <a href="course-cloud-computing.html">Cloud Computing</a>
+                        <a href="course-ai-ml.html">AI & Machine Learning</a>
+                    </div>
+                </div>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#career" class="career-btn">Career</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Course Hero Section -->
+    <section class="course-hero">
+        <div class="course-hero-content">
+            <h1>AI & Machine Learning Course</h1>
+            <p>Master the fundamentals of Artificial Intelligence and Machine Learning. Build intelligent systems, work with real datasets, and launch your career in one of the most sought-after tech fields.</p>
+            <div class="hero-buttons">
+                <a href="#enroll" class="btn btn-primary">Enroll Now</a>
+                <a href="#curriculum" class="btn btn-outline">View Curriculum</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> > <a href="index.html#courses">Courses</a> > AI & Machine Learning
+    </div>
+
+    <!-- Main Content -->
+    <div class="course-container">
+        <!-- Left Column - Course Details -->
+        <div class="left-column">
+            <!-- Course Overview -->
+            <div class="card">
+                <h2>Course Overview</h2>
+                <p>This comprehensive AI & Machine Learning course is designed to take you from beginner to job-ready in 4 months. You'll learn both the theory and practical application of machine learning algorithms, neural networks, and AI concepts.</p>
+                <p>Our project-based approach ensures you build a portfolio of work that demonstrates your skills to potential employers. By the end of the course, you'll be able to design, train, and deploy machine learning models to solve real-world problems.</p>
+            </div>
+
+            <!-- What You'll Learn -->
+            <div class="card">
+                <h2>What You'll Learn</h2>
+                <div class="module">
+                    <h3>Module 1: Python for Data Science</h3>
+                    <ul class="topics">
+                        <li>Python programming fundamentals</li>
+                        <li>NumPy for numerical computing</li>
+                        <li>Pandas for data manipulation</li>
+                        <li>Data visualization with Matplotlib and Seaborn</li>
+                    </ul>
+                </div>
+                
+                <div class="module">
+                    <h3>Module 2: Mathematics for Machine Learning</h3>
+                    <ul class="topics">
+                        <li>Linear algebra</li>
+                        <li>Calculus for optimization</li>
+                        <li>Probability and statistics</li>
+                        <li>Information theory</li>
+                    </ul>
+                </div>
+                
+                <div class="module">
+                    <h3>Module 3: Machine Learning Fundamentals</h3>
+                    <ul class="topics">
+                        <li>Supervised vs unsupervised learning</li>
+                        <li>Regression algorithms</li>
+                        <li>Classification algorithms</li>
+                        <li>Model evaluation and validation</li>
+                    </ul>
+                </div>
+                
+                <div class="module">
+                    <h3>Module 4: Deep Learning</h3>
+                    <ul class="topics">
+                        <li>Neural networks fundamentals</li>
+                        <li>TensorFlow and Keras</li>
+                        <li>Convolutional Neural Networks (CNNs)</li>
+                        <li>Recurrent Neural Networks (RNNs)</li>
+                    </ul>
+                </div>
+                
+                <div class="module">
+                    <h3>Module 5: Advanced Topics & Deployment</h3>
+                    <ul class="topics">
+                        <li>Natural Language Processing (NLP)</li>
+                        <li>Computer vision</li>
+                        <li>Model deployment</li>
+                        <li>Ethics in AI</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Projects -->
+            <div class="card">
+                <h2>Projects You'll Build</h2>
+                <div class="module">
+                    <h3>Predictive Analytics System</h3>
+                    <p>Build a machine learning model to predict housing prices based on historical data.</p>
+                </div>
+                
+                <div class="module">
+                    <h3>Image Classification App</h3>
+                    <p>Create a convolutional neural network that can classify images into different categories.</p>
+                </div>
+                
+                <div class="module">
+                    <h3>Sentiment Analysis Tool</h3>
+                    <p>Develop an NLP system that can analyze and classify the sentiment of text data.</p>
+                </div>
+                
+                <div class="module">
+                    <h3>Recommendation Engine</h3>
+                    <p>Build a recommendation system similar to those used by Netflix and Amazon.</p>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="card">
+                <h2>Student Testimonials</h2>
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student" class="testimonial-img">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "This course completely transformed my career. I went from knowing nothing about AI to landing a job as a Machine Learning Engineer in just 5 months after completion."
+                        </div>
+                        <div class="testimonial-author">Ahmed Raza</div>
+                        <div class="testimonial-role">Machine Learning Engineer at TechSolutions</div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Student" class="testimonial-img">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "The projects were challenging but extremely rewarding. The instructor's guidance and the hands-on approach made complex concepts easy to understand."
+                        </div>
+                        <div class="testimonial-author">Fatima Ali</div>
+                        <div class="testimonial-role">Data Scientist at DataWorks</div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/men/62.jpg" alt="Student" class="testimonial-img">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "The curriculum is well-structured and covers everything you need to know to start a career in AI. The career support after the course was exceptional."
+                        </div>
+                        <div class="testimonial-author">Bilal Khan</div>
+                        <div class="testimonial-role">AI Researcher at EduTech</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column - Sidebar -->
+        <div class="right-column">
+            <!-- Course Info -->
+            <div class="sidebar-card">
+                <h2>Course Details</h2>
+                <div class="course-info-item">
+                    <span class="info-label">Duration:</span>
+                    <span class="info-value">4 Months</span>
+                </div>
+                <div class="course-info-item">
+                    <span class="info-label">Effort:</span>
+                    <span class="info-value">10-15 hours/week</span>
+                </div>
+                <div class="course-info-item">
+                    <span class="info-label">Format:</span>
+                    <span class="info-value">Online + Live Sessions</span>
+                </div>
+                <div class="course-info-item">
+                    <span class="info-label">Prerequisites:</span>
+                    <span class="info-value">Basic programming knowledge</span>
+                </div>
+                <div class="course-info-item">
+                    <span class="info-label">Certificate:</span>
+                    <span class="info-value">Yes</span>
+                </div>
+                
+                <div class="price">PKR 30,000</div>
+                <div class="installment">Installment plans available</div>
+                
+                <a href="https://form.jotform.com/252090931090451" class="btn btn-primary" style="display:block;text-align:center;" target="_blank" rel="noopener">Enroll Now</a>
+            </div>
+
+            <!-- Instructor -->
+            <div class="sidebar-card">
+                <h2>Instructor</h2>
+                <div class="instructor-card">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Instructor" class="instructor-img">
+                    <div class="instructor-info">
+                        <h3>Dr. Usman Ahmed</h3>
+                        <div class="instructor-title">PhD in Artificial Intelligence</div>
+                        <p>10+ years of experience in ML and AI research. Former Senior AI Engineer at Google.</p>
+                        
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="sidebar-card">
+                <h2>Payment Methods</h2>
+                <ul class="payment-methods">
+                    <li><i class="fas fa-university"></i> Bank Transfer: Meezan Bank, Acc# 123456789</li>
+                    <li><i class="fas fa-mobile-alt"></i> EasyPaisa: 0300-1234567</li>
+                    <li><i class="fas fa-money-bill-wave"></i> JazzCash: 0300-1234567</li>
+                    <li><i class="fas fa-building"></i> Cash at Office</li>
+                </ul>
+                <p style="margin-top:15px;">After payment, send receipt to <b>info@codedmind.com</b> or WhatsApp 0300-1234567</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="https://akti.com.pk/wp-content/uploads/2022/09/AKTI-Logo.png" alt="CMTI Logo">
+                    <h3>Coded Mind Technology Incubator</h3>
+                </div>
+                <p class="footer-description">
+                    Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
+                </p>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" title="Facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" title="Twitter" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" title="Instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" title="YouTube" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#courses">All Courses</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#career">Career Opportunities</a></li>
+                    <li><a href="#testimonials">Student Testimonials</a></li>
+                    <li><a href="#blog">Blog & Resources</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Popular Courses</h3>
+                <ul>
+                    <li><a href="course-webdev.html">Web Development</a></li>
+                    <li><a href="course-data-science.html">Data Science</a></li>
+                    <li><a href="course-cyber-security.html">Cyber Security</a></li>
+                    <li><a href="course-digital-marketing.html">Digital Marketing</a></li>
+                    <li><a href="course-python.html">Python Programming</a></li>
+                    <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Contact Information</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Tech Street, Lahore, Pakistan</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span><a href="tel:+923488850059">+92 348 8850059</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
+                    </div>
+                </div>
+                
+                <div class="newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    &copy; 2024 Coded Mind Technology Incubator. All rights reserved.
+                </div>
+                <div class="legal-links">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#refund">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dropdown menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggle = document.querySelector('.dropdown-toggle');
+            var menu = document.querySelector('.dropdown-menu');
+            if (toggle && menu) {
+                toggle.addEventListener('mouseenter', function() {
+                    menu.style.display = 'block';
+                });
+                toggle.addEventListener('mouseleave', function() {
+                    setTimeout(function() { menu.style.display = 'none'; }, 200);
+                });
+                menu.addEventListener('mouseenter', function() {
+                    menu.style.display = 'block';
+                });
+                menu.addEventListener('mouseleave', function() {
+                    menu.style.display = 'none';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
