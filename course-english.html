@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -303,807 +304,114 @@
         }
         
         /* Footer */
-        .site-footer {
-            background: #5e35b1;
-            color: white;
-            padding: 40px 0 20px;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding: 0 20px;
-        }
-        
-        .footer-col {
-            flex: 1;
-            min-width: 250px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-col h3 {
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: #9575cd;
-        }
-        
-        .footer-col ul {
-            list-style: none;
-        }
-        
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-col a {
-            color: #ddd;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-col a:hover {
-            color: #b39ddb;
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .footer-social a {
-            display: inline-block;
-            font-size: 1.5rem;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            margin-top: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav {
-                margin-top: 15px;
-            }
-            
-            nav a {
-                margin: 0 10px;
-            }
-            
-            .course-hero {
-                flex-direction: column;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Header -->
-    <header class="site-header">
-        <div class="header-content">
-            <div style="display:flex;align-items:center;">
-                <img src="logo.png" alt="Logo" class="logo">
-                <h1 style="margin-left:12px;">Coded Mind Technology Incubator</h1>
-            </div>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="courses.html" class="active">Courses</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </div>
-    </header>
+       .site-footer {
+    background: linear-gradient(to right, #2c3e50, #4a6580);
+    color: #fff;
+    padding: 50px 0 0;
+    margin-top: 40px;
+}
 
-    <a href="index.html" class="back-link">← Back to Courses</a>
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-    <div class="container">
-        <!-- Course Hero Section -->
-        <section class="course-hero">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=600&q=80" alt="English Language Course">
-            </div>
-            <div class="course-intro">
-                <h1>English Language Course</h1>
-                <p>Master the English language with our comprehensive course designed for all proficiency levels. Develop fluency in speaking, writing, reading, and listening while building confidence for academic, professional, and social contexts.</p>
-                
-                <div class="course-highlights">
-                    <div class="highlight-card">
-                        <h3>Duration</h3>
-                        <p>3 Months</p>
-                    </div>
-                    <div class="highlight-card">
-                        <h3>Fee</h3>
-                        <p>PKR 15,000</p>
-                    </div>
-                    <div class="highlight-card">
-                        <h3>Format</h3>
-                        <p>Hybrid</p>
-                    </div>
-                    <div class="highlight-card">
-                        <h3>Levels</h3>
-                        <p>Beginner to Advanced</p>
-                    </div>
-                </div>
-                
-                <a href="#enroll" class="enroll-btn">Enroll Now</a>
-            </div>
-        </section>
+.footer-col {
+    margin-bottom: 30px;
+}
 
-        <!-- Course Details Cards -->
-        <h2 class="section-title">Course Details</h2>
-        <div class="cards-container">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Course Overview</h3>
-                </div>
-                <div class="card-body">
-                    <p>Our English Language course offers a comprehensive approach to mastering English communication skills. Through interactive lessons, practical exercises, and immersive activities, you'll develop fluency in all language domains: speaking, listening, reading, and writing.</p>
-                    <p>Whether you're preparing for academic studies, professional advancement, or personal growth, our course is tailored to meet your specific language learning goals.</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h3>Learning Outcomes</h3>
-                </div>
-                <div class="card-body">
-                    <ul>
-                        <li>Communicate confidently in various social and professional situations</li>
-                        <li>Write clear, well-structured texts for different purposes</li>
-                        <li>Understand and interpret complex written and spoken English</li>
-                        <li>Expand vocabulary and use idiomatic expressions appropriately</li>
-                        <li>Improve pronunciation and speaking fluency</li>
-                        <li>Develop critical thinking and analytical skills in English</li>
-                        <li>Prepare for international English proficiency exams</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h3>Who Should Enroll?</h3>
-                </div>
-                <div class="card-body">
-                    <ul>
-                        <li>Students preparing for higher education in English-medium institutions</li>
-                        <li>Professionals seeking career advancement in international environments</li>
-                        <li>Individuals planning to immigrate to English-speaking countries</li>
-                        <li>Anyone wanting to improve their English for personal growth</li>
-                        <li>Business professionals needing English for international communication</li>
-                        <li>Test takers preparing for IELTS, TOEFL, or other proficiency exams</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
 
-        <!-- Course Outline -->
-        <h2 class="section-title">Course Outline</h2>
-        <div class="cards-container">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Module 1: Foundation Building</h3>
-                </div>
-                <div class="card-body">
-                    <div class="module-item">Grammar fundamentals and sentence structure</div>
-                    <div class="module-item">Essential vocabulary for everyday communication</div>
-                    <div class="module-item">Pronunciation and phonetics basics</div>
-                    <div class="module-item">Simple conversations and introductions</div>
-                    <div class="module-item">Reading comprehension strategies</div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h3>Module 2: Intermediate Development</h3>
-                </div>
-                <div class="card-body">
-                    <div class="module-item">Complex grammar structures</div>
-                    <div class="module-item">Idioms and phrasal verbs</div>
-                    <div class="module-item">Fluency building and conversation practice</div>
-                    <div class="module-item">Writing coherent paragraphs and essays</div>
-                    <div class="module-item">Listening comprehension of native speakers</div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h3>Module 3: Advanced Proficiency</h3>
-                </div>
-                <div class="card-body">
-                    <div class="module-item">Advanced grammar and syntax</div>
-                    <div class="module-item">Academic and professional vocabulary</div>
-                    <div class="module-item">Debating and persuasive speaking</div>
-                    <div class="module-item">Critical analysis of complex texts</div>
-                    <div class="module-item">Formal writing and report preparation</div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h3>Module 4: Specialized Communication</h3>
-                </div>
-                <div class="card-body">
-                    <div class="module-item">Business English and professional correspondence</div>
-                    <div class="module-item">Presentation skills and public speaking</div>
-                    <div class="module-item">Academic writing and research papers</div>
-                    <div class="module-item">Negotiation and meeting participation</div>
-                    <div class="module-item">Cultural nuances in communication</div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h3>Module 5: Exam Preparation</h3>
-                </div>
-                <div class="card-body">
-                    <div class="module-item">IELTS/TOEFL test strategies</div>
-                    <div class="module-item">Timed practice tests</div>
-                    <div class="module-item">Writing task approaches</div>
-                    <div class="module-item">Speaking test simulations</div>
-                    <div class="module-item">Listening and reading test techniques</div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h3>Module 6: Practical Application</h3>
-                </div>
-                <div class="card-body">
-                    <div class="module-item">Real-world communication scenarios</div>
-                    <div class="module-item">Group discussions and debates</div>
-                    <div class="module-item">Presentation delivery and feedback</div>
-                    <div class="module-item">Portfolio development</div>
-                    <div class="module-item">Final proficiency assessment</div>
-                </div>
-            </div>
-        </div>
+.footer-logo img {
+    height: 40px;
+    margin-right: 12px;
+}
 
-        <!-- Career Opportunities -->
-        <h2 class="section-title">Career Opportunities</h2>
-        <div class="career-opportunities">
-            <div class="career-item">
-                <h3>International Business Professional</h3>
-                <p>Communicate effectively in global business environments with enhanced English proficiency.</p>
-            </div>
-            <div class="career-item">
-                <h3>Academic Researcher</h3>
-                <p>Publish and present research in international journals and conferences.</p>
-            </div>
-            <div class="career-item">
-                <h3>Customer Service Representative</h3>
-                <p>Serve international clients with confidence and cultural sensitivity.</p>
-            </div>
-            <div class="career-item">
-                <h3>Content Writer/Editor</h3>
-                <p>Create and refine English content for diverse audiences and purposes.</p>
-            </div>
-            <div class="career-item">
-                <h3>Interpreter/Translator</h3>
-                <p>Bridge language gaps in professional settings with advanced bilingual skills.</p>
-            </div>
-        </div>
+.footer-logo h3 {
+    font-size: 18px;
+    margin: 0;
+}
 
-        <!-- Testimonials -->
-        <h2 class="section-title">Student Testimonials</h2>
-        <div class="cards-container">
-            <div class="card">
-                <div class="card-body testimonial-card">
-                    <div class="testimonial-text">
-                        "This course completely transformed my confidence in speaking English. Before enrolling, I struggled with conversations at work. Now I can lead meetings with international clients without hesitation. The teachers are incredibly supportive and the practical approach really works!"
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
-                        <div>
-                            <strong>Amina Hassan</strong>
-                            <p>Marketing Executive</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-body testimonial-card">
-                    <div class="testimonial-text">
-                        "I needed to improve my IELTS score for university admission abroad. This course provided exactly what I needed - targeted practice, expert feedback, and test strategies that actually work. I improved my overall band score by 1.5 points and got into my dream university!"
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
-                        <div>
-                            <strong>Omar Farooq</strong>
-                            <p>University Student</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-body testimonial-card">
-                    <div class="testimonial-text">
-                        "As a professional expanding my business internationally, I needed to enhance my communication skills. This course didn't just teach me English; it taught me how to communicate effectively in global business contexts. The specialized business English module was particularly valuable for negotiations and presentations."
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
-                        <div>
-                            <strong>Sarah Malik</strong>
-                            <p>Business Owner</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+.footer-description {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
 
-        <!-- Instructor Section -->
-        <h2 class="section-title">Meet Your Instructor</h2>
-        <div class="cards-container">
-            <div class="card instructor-card">
-                <img src="https://images.unsplash.com/photo-1544717291-f6c6bb86ba5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Instructor" class="instructor-image">
-                <div class="card-body">
-                    <h3>Dr. Emily Richardson</h3>
-                    <p>Linguistics and Language Education Specialist</p>
-                    <p>With over 15 years of experience teaching English as a second language, Dr. Richardson brings a wealth of knowledge to the classroom. She holds a PhD in Applied Linguistics from the University of London and has designed language programs for institutions across three continents. Her research on second language acquisition has been published in international journals, and she is passionate about making English learning accessible and effective for all students.</p>
-                </div>
-            </div>
-        </div>
+.footer-social h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
 
-        <!-- Payment Information -->
-        <h2 class="section-title" id="enroll">Payment Methods</h2>
-        <div class="payment-methods">
-            <div class="payment-option">
-                <h3>Bank Transfer</h3>
-                <p>Meezan Bank, Acc# 123456789, Title: Coded Mind Technology Incubator</p>
-            </div>
-            
-            <div class="payment-option">
-                <h3>EasyPaisa/JazzCash</h3>
-                <p>0300-1234567</p>
-            </div>
-            
-            <div class="payment-option">
-                <h3>Cash Payment</h3>
-                <p>Visit our office for cash payment</p>
-                <p><strong>Office Hours:</strong> Monday to Saturday, 9:00 AM to 6:00 PM</p>
-                <p><strong>Address:</strong> 123 Tech Street, Lahore, Pakistan</p>
-            </div>
-            
-            <div class="payment-option">
-                <h3>Installment Plan</h3>
-                <p>We offer flexible installment options:</p>
-                <ul>
-                    <li>Option 1: Full payment of PKR 15,000 (5% discount available)</li>
-                    <li>Option 2: Two installments of PKR 8,000</li>
-                    <li>Option 3: Three installments of PKR 5,500</li>
-                </ul>
-                <p>After payment, send your receipt to <b>info@codedmind.com</b> or WhatsApp 0300-1234567 for registration confirmation.</p>
-            </div>
-        </div>
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
 
-        <!-- Jotform Registration -->
-        <h2 class="section-title">Register for This Course</h2>
-        <div class="form-container">
-            <iframe id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c" title="Sana: Registration Assistant"
-                onload="window.parent.scrollTo(0,0)" allowtransparency="true"
-                allow="geolocation; microphone; camera; fullscreen"
-                src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
-                frameborder="0" style="
-                max-width:100%;
-                height:688px;
-                border:none;
-                width:100%;
-                " scrolling="no">
-            </iframe>
-            <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-            <script>
-                window.jotformEmbedHandler("iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
-                "https://www.jotform.com")
-            </script>
-        </div>
-    </div>
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.3s ease;
+}
 
-    <!-- Footer -->
-    # English Language Course Page
+.social-icons a:hover {
+    background: #ff7e5f;
+    transform: translateY(-3px);
+}
 
-I'll create a similar page for an English Language course, maintaining the same design aesthetic and structure as the previous course pages.
+.footer-col h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Language Course Details - Coded Mind Technology Incubator</title>
-    <style>
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        /* Header Styles */
-        .site-header {
-            background: linear-gradient(135deg, #5e35b1, #7e57c2, #9575cd);
-            color: white;
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-        
-        .logo {
-            height: 50px;
-            width: auto;
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        nav a:hover, nav a.active {
-            color: #ffd700;
-            border-bottom: 2px solid #ffd700;
-            padding-bottom: 5px;
-        }
-        
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-        
-        .back-link {
-            display: inline-block;
-            margin: 20px;
-            color: #5e35b1;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        
-        /* Hero Section */
-        .course-hero {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 40px;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .course-image {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .course-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .course-intro {
-            flex: 1;
-            padding: 30px;
-            min-width: 300px;
-        }
-        
-        .course-intro h1 {
-            color: #5e35b1;
-            margin-bottom: 15px;
-            font-size: 2.2rem;
-        }
-        
-        .course-intro p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-        
-        .course-highlights {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .highlight-card {
-            background: #ede7f6;
-            padding: 15px;
-            border-radius: 8px;
-            flex: 1;
-            min-width: 150px;
-            text-align: center;
-        }
-        
-        .highlight-card h3 {
-            color: #5e35b1;
-            margin-bottom: 5px;
-        }
-        
-        .enroll-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #5e35b1, #7e57c2);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: all 0.3s ease;
-        }
-        
-        .enroll-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        /* Cards Section */
-        .section-title {
-            color: #5e35b1;
-            margin: 40px 0 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(to right, #5e35b1, #9575cd);
-        }
-        
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .card-header {
-            background: linear-gradient(135deg, #5e35b1, #7e57c2);
-            color: white;
-            padding: 15px 20px;
-        }
-        
-        .card-body {
-            padding: 20px;
-        }
-        
-        /* Course Outline */
-        .module-item {
-            margin-bottom: 15px;
-            padding-left: 20px;
-            position: relative;
-        }
-        
-        .module-item::before {
-            content: "•";
-            color: #7e57c2;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-        
-        /* Testimonials */
-        .testimonial-card {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        
-        .testimonial-text {
-            flex-grow: 1;
-            font-style: italic;
-            margin-bottom: 15px;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-            object-fit: cover;
-        }
-        
-        /* Instructor */
-        .instructor-card {
-            text-align: center;
-        }
-        
-        .instructor-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 15px;
-            border: 3px solid #5e35b1;
-        }
-        
-        /* Payment Section */
-        .payment-methods {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            margin-bottom: 40px;
-        }
-        
-        .payment-option {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .payment-option:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        /* Jotform */
-        .form-container {
-            margin: 40px 0;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-        
-        /* Career Opportunities */
-        .career-opportunities {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            margin-bottom: 40px;
-        }
-        
-        .career-item {
-            margin-bottom: 15px;
-            padding: 15px;
-            background: #ede7f6;
-            border-radius: 8px;
-            border-left: 4px solid #7e57c2;
-        }
-        
-        /* Footer */
-        .site-footer {
-            background: #5e35b1;
-            color: white;
-            padding: 40px 0 20px;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            padding: 0 20px;
-        }
-        
-        .footer-col {
-            flex: 1;
-            min-width: 250px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-col h3 {
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 2px;
-            background: #9575cd;
-        }
-        
-        .footer-col ul {
-            list-style: none;
-        }
-        
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-col a {
-            color: #ddd;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-col a:hover {
-            color: #b39ddb;
-        }
-        
-        .footer-social {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .footer-social a {
-            display: inline-block;
-            font-size: 1.5rem;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            margin-top: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background: #ff7e5f;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #fff;
+    opacity: 0.9;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    opacity: 1;
+    color: #ff7e5f;
+    padding-left: 5px;
+}
+
         /* Responsive */
         @media (max-width: 768px) {
             .header-content {
@@ -1127,7 +435,6 @@ I'll create a similar page for an English Language course, maintaining the same 
 </head>
 <head>
     <meta charset="UTF-8">
-    <title>CMTI</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -1458,10 +765,11 @@ I'll create a similar page for an English Language course, maintaining the same 
         <div class="footer-col">
             <div class="footer-logo">
                 <img src="logo.png" alt="CMTI Logo">
-                <h3>Coded Mind Technology Incubator</h3>
+                <h3> CMTI </h3>
             </div>
             <p class="footer-description">
                 Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
+                Join CMTI to gain cutting-Edge skills in technology and business. Our expert-led courses prepare you for the digital future.
             </p>
             <div class="footer-social">
                 <h4>Follow Us</h4>
@@ -1562,7 +870,7 @@ I'll create a similar page for an English Language course, maintaining the same 
     <div class="footer-bottom">
         <div class="footer-bottom-content">
             <div class="copyright">
-                &copy; 2024 Coded Mind Technology Incubator. All rights reserved.
+                &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
             </div>
             <div class="legal-links">
                 <a href="privacy.html">Privacy Policy</a>
