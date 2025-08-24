@@ -538,3 +538,20 @@ function debounce(func, wait) {
         // Initialize the slideshow
         startSlideshow();
     });
+
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const overlay = document.querySelector('.menu-overlay');
+            
+            function toggleMenu() {
+                navMenu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+            }
+            
+            menuToggle.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+        });
+    
