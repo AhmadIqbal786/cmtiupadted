@@ -148,7 +148,7 @@ h1 {
     left: 0;
     width: 100%;
     height: calc(100vh - 80px);
-    background: #fff;
+    background: #ffffff;
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     z-index: 999;
@@ -581,12 +581,12 @@ h1 {
     background: #005fa3;
 }
 .enroll-btn {
-    background: #00dfd8;
-    color: #222;
+    background: #4a6580;
+    color: #fff;
 }
 .enroll-btn:hover {
-    background: #007cf0;
-    color: #fff;
+    background: #037df7;
+    
 }
 
 .course-detail {
