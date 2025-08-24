@@ -461,3 +461,80 @@ function debounce(func, wait) {
             }
         });
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Carousel functionality
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const prevArrow = document.querySelector('.carousel-arrow.prev');
+        const nextArrow = document.querySelector('.carousel-arrow.next');
+        
+        let currentSlide = 0;
+        let slideInterval;
+        
+        // Function to show a specific slide
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Show the selected slide
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            
+            currentSlide = index;
+        }
+        
+        // Function to go to next slide
+        function nextSlide() {
+            let nextIndex = (currentSlide + 1) % slides.length;
+            showSlide(nextIndex);
+        }
+        
+        // Function to go to previous slide
+        function prevSlide() {
+            let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prevIndex);
+        }
+        
+        // Start automatic slideshow
+        function startSlideshow() {
+            slideInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        }
+        
+        // Stop automatic slideshow
+        function stopSlideshow() {
+            clearInterval(slideInterval);
+        }
+        
+        // Event listeners for controls
+        prevArrow.addEventListener('click', function() {
+            stopSlideshow();
+            prevSlide();
+            startSlideshow();
+        });
+        
+        nextArrow.addEventListener('click', function() {
+            stopSlideshow();
+            nextSlide();
+            startSlideshow();
+        });
+        
+        // Add click events to dots
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                stopSlideshow();
+                let slideIndex = parseInt(this.getAttribute('data-index'));
+                showSlide(slideIndex);
+                startSlideshow();
+            });
+        });
+        
+        // Pause slideshow when hovering over carousel
+        const carousel = document.querySelector('.banner-carousel');
+        carousel.addEventListener('mouseenter', stopSlideshow);
+        carousel.addEventListener('mouseleave', startSlideshow);
+        
+        // Initialize the slideshow
+        startSlideshow();
+    });
