@@ -119,7 +119,7 @@
         </div>
 
         <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=400&q=80" alt="English">
+            <img src="https://images.unsplash.com/photo-1751452020438-81d67e8ef314?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="English">
             <div class="course-card-content">
                 <h2>English Language</h2>
                 <p>Improve your English communication.</p>
@@ -137,7 +137,7 @@
             </div>
         </div>
         <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="YouTube Automation">
+            <img src="https://plus.unsplash.com/premium_photo-1683287925874-f8b46c6437ae?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="YouTube Automation">
             <div class="course-card-content">
                 <h2>YouTube Automation</h2>
                 <p>Automate and grow your YouTube channel.</p>
@@ -146,7 +146,7 @@
             </div>
         </div>
         <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Amazon FBA">
+            <img src="https://images.unsplash.com/photo-1662947368791-8630979e964b?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Amazon FBA">
             <div class="course-card-content">
                 <h2>Amazon FBA</h2>
                 <p>Start selling on Amazon with FBA.</p>
@@ -155,7 +155,7 @@
             </div>
         </div>
         <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Amazon E-Commerce">
+            <img src="https://images.unsplash.com/photo-1602359337719-a8bcbd1f7b51?q=80&w=299&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Amazon E-Commerce">
             <div class="course-card-content">
                 <h2>Amazon E-Commerce</h2>
                 <p>Master e-commerce on Amazon.</p>
@@ -164,7 +164,7 @@
             </div>
         </div>
         <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=400&q=80" alt="Graphic Design">
+            <img src="https://plus.unsplash.com/premium_photo-1661284886711-4eaee4fa7771?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8R3JhcGhpYyUyMERlc2lnbnxlbnwwfHwwfHx8MA%3D%3D" alt="Graphic Design">
             <div class="course-card-content">
                 <h2>Graphic Design</h2>
                 <p>Design stunning graphics.</p>
@@ -182,7 +182,7 @@
             </div>
         </div>
         <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1482062364825-616fd23b8fc1?auto=format&fit=crop&w=400&q=80" alt="Digital Marketing">
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGlnaXRhbCUyMG1hcmtldGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Digital Marketing">
             <div class="course-card-content">
                 <h2>Digital Marketing</h2>
                 <p>Promote brands online.</p>
@@ -416,67 +416,11 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="legal-links">
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
-                <a href="#refund">Refund Policy</a>
+                <a href="refund.html">Refund Policy</a>
             </div>
         </div>
     </div>
 </footer>
-<script>
-// 7. Scroll animations for elements
-function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.fade-in, .slide-in, .zoom-in');
-    
-    if (animatedElements.length === 0) return;
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    
-    animatedElements.forEach(el => {
-        observer.observe(el);
-    });
-}
-
-// 8. Mobile menu functionality
-function initMobileMenu() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-links');
-    
-    if (!hamburger || !navMenu) return;
-    
-    hamburger.addEventListener('click', function() {
-        this.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        
-        // Toggle body scroll
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-    });
-    
-    // Close menu when clicking on links
-    const navLinks = navMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    });
-    
-    // Close menu when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!hamburger.contains(e.target) && !navMenu.contains(e.target) && navMenu.classList.contains('active')) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-}
-</script>
 <script src="codedmind-enhancements.js"></script>
 </body>
 </html>
