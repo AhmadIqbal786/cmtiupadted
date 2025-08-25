@@ -310,13 +310,14 @@ h1 {
 
 .footer-logo {
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-bottom: 15px;
 }
 
 .footer-logo img {
-    height: 100px;
-    margin-right: 10px;
+    height: 80px;
+    margin-right: 5px;
 }
 
 .footer-logo h3 {
