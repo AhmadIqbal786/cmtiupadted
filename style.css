@@ -135,7 +135,7 @@ h1 {
 }
 
 .hamburger span {
-    height: 6%;
+    height: 3px;
     width: 100%;
     background: #333;
     border-radius: 3px;
@@ -150,7 +150,7 @@ h1 {
     left: 0;
     width: 100%;
     height: calc(100vh - 80px);
-    background: rgba(10, 10, 26, 0.85);
+    background: #ffffff;
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     z-index: 999;
@@ -163,22 +163,15 @@ h1 {
 
 .mobile-nav {
     list-style: none;
-    padding: 20px;
-    margin: 10px 0;
-    border: 1px solid;
-    border-radius: 4px;
-    background: rgba(255, 255, 255, 0.1);
 }
 
 .mobile-nav li {
     margin-bottom: 15px;
-    padding: 10px 15px;
-    border-bottom: 1px solid #f87272;
 }
 
 .mobile-nav a {
     text-decoration: none;
-    color: #eee;
+    color: #318dd8;
     font-size: 18px;
     font-weight: 500;
     display: block;
@@ -249,7 +242,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 30px;
     height: 70px;
