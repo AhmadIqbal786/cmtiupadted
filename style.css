@@ -135,7 +135,7 @@ h1 {
 }
 
 .hamburger span {
-    height: 3px;
+    height: 6%;
     width: 100%;
     background: #333;
     border-radius: 3px;
@@ -150,7 +150,7 @@ h1 {
     left: 0;
     width: 100%;
     height: calc(100vh - 80px);
-    background: #38caee;
+    background: linear-gradient(45deg, #6e45e2, #88d3ce);;
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     z-index: 999;
@@ -171,7 +171,7 @@ h1 {
 
 .mobile-nav a {
     text-decoration: none;
-    color: #fff;
+    color: #eee;
     font-size: 18px;
     font-weight: 500;
     display: block;
