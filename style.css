@@ -194,20 +194,27 @@ h1 {
 
 .mobile-nav a:hover {
     color: #6e45e2;
+    background: rgba(110, 69, 226, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 8px;
 
 }
 
 .mobile-actions {
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px;
+    margin-bottom: 40px;
 }
 
 .mobile-actions .login-btn,
 .mobile-actions .signup-btn {
     text-align: center;
     width: 100%;
+    padding: 12px 0;
+    border-radius: 8px;
+    font-size: 18px;    
 }
 
 /* Responsive design */
@@ -303,7 +310,8 @@ h1 {
 }
 /* Enhanced Footer Styles */
 .site-footer {
-    background: linear-gradient(to right, #2c3e50, #4a6580);
+   /* background: linear-gradient(to right, #2c3e50, #4a6580);*/
+    background: linear-gradient(to right, #6e45e2, #88d3ce);
     color: #fff;
     padding: 50px 0 0;
     margin-top: 40px;
