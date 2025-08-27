@@ -165,7 +165,7 @@ h1 {
     list-style: none;
     padding: 20px;
     margin: 10px 0;
-    border: 1px solid #f87272;
+    border: 1px solid;
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.1);
 }
