@@ -150,7 +150,7 @@ h1 {
     left: 0;
     width: 100%;
     height: calc(100vh - 80px);
-    background: #ffffff;
+    background: #38caee;
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     z-index: 999;
@@ -171,7 +171,7 @@ h1 {
 
 .mobile-nav a {
     text-decoration: none;
-    color: #333;
+    color: #fff;
     font-size: 18px;
     font-weight: 500;
     display: block;
