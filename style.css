@@ -32,10 +32,12 @@ h1 {
 .logo-container {
     display: flex;
     align-items: center;
+
 }
 
 .logo {
     height: 50px;
+
 }
 
 .logo-text {
@@ -52,6 +54,9 @@ h1 {
     display: flex;
     list-style: none;
     gap: 30px;
+    color: linear-gradient(90deg, #6e45e2, #88d3ce);
+    align-items: center;
+    margin: 10px;
 }
 
 .nav-menu a {
@@ -75,10 +80,12 @@ h1 {
     width: 100%;
     height: 2px;
     background: #6e45e2;
+    padding: auto;
 }
 
 .nav-menu a.active {
     color: #6e45e2;
+
 }
 
 .nav-menu a.active::after {
@@ -159,14 +166,20 @@ h1 {
 
 .mobile-menu.active {
     display: block;
+    padding: 20px;
+
 }
 
 .mobile-nav {
     list-style: none;
+    padding: 20px;
 }
 
 .mobile-nav li {
     margin-bottom: 15px;
+    padding: 10px 0;
+    color: #318dd8;
+
 }
 
 .mobile-nav a {
@@ -181,6 +194,7 @@ h1 {
 
 .mobile-nav a:hover {
     color: #6e45e2;
+
 }
 
 .mobile-actions {
@@ -531,7 +545,7 @@ h1 {
 
 .course-card {
     background: #fff;
-    border-radius: 12px;
+    border-radius: 20px;
     box-shadow: 0 4px 16px rgba(0,0,0,0.10);
     padding: 0;
     overflow: hidden;
@@ -545,9 +559,9 @@ h1 {
 }
 .course-card img {
     width: 100%;
-    height: 100%;
+    height: 280px;  
     object-fit: cover;
-    border-radius: 12px 12px 0 0;
+    border-radius: 20px 20px 0 0;
 }
 .course-card-content {
     padding: 22px 18px 18px 18px;
