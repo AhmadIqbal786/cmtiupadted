@@ -150,7 +150,7 @@ h1 {
     left: 0;
     width: 100%;
     height: calc(100vh - 80px);
-    background: linear-gradient(45deg, #6e45e2, #88d3ce);;
+    background: rgba(10, 10, 26, 0.85);
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     z-index: 999;
@@ -163,10 +163,17 @@ h1 {
 
 .mobile-nav {
     list-style: none;
+    padding: 20px;
+    margin: 10px 0;
+    border: 1px solid #f87272;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .mobile-nav li {
     margin-bottom: 15px;
+    padding: 10px 15px;
+    border-bottom: 1px solid #f87272;
 }
 
 .mobile-nav a {
