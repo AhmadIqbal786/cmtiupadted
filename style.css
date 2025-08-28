@@ -762,17 +762,7 @@ h1 {
             position: absolute;
             left: 0;
         }
-        
-/*.details-btn, .enroll-btn {
-    display: inline-block;
-    padding: 9px 22px;
-    margin: 4px 8px 0 0;
-    border-radius: 5px;
-    font-size: 1em;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    border: none;*/
+
 .details-btn, .enroll-btn  {
     display: inline-block;
     padding: 12px 30px;
@@ -794,22 +784,6 @@ h1 {
     box-shadow: 0 10px 20px rgba(110, 69, 226, 0.3);
 }
 
-/*}
-.details-btn {
-    background: #007cf0;
-    color: #fff;
-}
-.details-btn:hover {
-    background: #005fa3;
-}
-.enroll-btn {
-    background: #4a6580;
-    color: #fff;
-}
-.enroll-btn:hover {
-    background: #037df7;
-    
-}*/
 
 .course-detail {
     max-width: 900px;
@@ -1635,6 +1609,7 @@ body::before {
   background-clip: text;
   color: transparent;
   font-weight: 700;
+  
 }
 
 .course-card p {
@@ -1643,6 +1618,7 @@ body::before {
   font-size: 1em;
   flex: 1;
   line-height: 1.5;
+    
 }
 
 /* Enhanced Buttons */
@@ -1696,6 +1672,9 @@ body::before {
   font-size: 14px;
   position: relative;
   overflow: hidden;
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--glass-border);
+
 }
 
 .site-footer::before {
@@ -1706,6 +1685,8 @@ body::before {
   width: 100%;
   height: 5px;
   background: var(--primary-gradient);
+    z-index: 2;
+
 }
 
 .footer-content {
@@ -1717,6 +1698,7 @@ body::before {
   padding: 0 20px;
   position: relative;
   z-index: 1;
+    
 }
 
 .footer-col {
@@ -1753,6 +1735,8 @@ body::before {
   line-height: 1.6;
   margin-bottom: 20px;
   opacity: 0.9;
+    text-align: center;
+
 }
 
 .footer-social h4 {
@@ -1763,6 +1747,7 @@ body::before {
 .social-icons {
   display: flex;
   gap: 15px;
+    
 }
 
 .social-icons a {
@@ -1792,6 +1777,7 @@ body::before {
   margin-bottom: 20px;
   position: relative;
   padding-bottom: 10px;
+    
 }
 
 .footer-col h3::after {
@@ -1947,12 +1933,18 @@ body::before {
 .copyright {
   opacity: 0.8;
   font-size: 14px;
+    
 }
 
 /* Crystal Shine Effects */
 .crystal-shine {
   position: relative;
   overflow: hidden;
+    border-radius: 12px;
+    box-shadow: var(--crystal-shadow);
+    transition: all 0.3s ease;
+    cursor: pointer;
+
 }
 
 .crystal-shine::after {
@@ -1971,16 +1963,36 @@ body::before {
     rgba(255, 255, 255, 0.2) 55%,
     rgba(255, 255, 255, 0) 60%,
     rgba(255, 255, 255, 0) 100%
+
   );
   transform: rotate(30deg);
   transition: all 0.5s ease;
   opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+
 }
 
 .crystal-shine:hover::after {
   opacity: 1;
   top: -30%;
   left: -30%;
+}
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+.hamburger .bar {
+  height: 3px;
+  width: 100%;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 /* Responsive Design */
@@ -2024,6 +2036,19 @@ body::before {
     justify-content: center;
   }
 }
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}   
+.margin-top-lg {
+  margin-top: 60px;
+}
+.margin-bottom-lg {
+  margin-bottom: 60px;
+}
+.margin-top-md {
+  margin-top: 40px;
+}
 
 /* Animations */
 @keyframes fadeIn {
@@ -2038,6 +2063,15 @@ body::before {
 
 .animate-fade {
   animation: fadeIn 0.6s ease forwards;
+}
+/* Shimmer effect for loading states */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+  background: #f6f7f8;
+  background: linear-gradient(90deg, #f6f7f8 25%, #edeef1 50%, #f6f7f8 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
 }
 
 /* Enhanced Page Titles */
@@ -2117,5 +2151,52 @@ h1::after {
   margin-bottom: 0;
   text-shadow: 0 1px 4px rgba(0,0,0,0.15);
   line-height: 1.6;
+}
+/* Dropdown Menu Styles */
+.nav-dropdown {
+    position: relative;
+}
+.nav-dropdown .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.nav-dropdown .dropdown-toggle::after {
+    content: '▼';
+    font-size: 0.6em;
+    transition: transform 0.3s;
+}
+.nav-dropdown:hover .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--glass-shadow);
+    border-radius: 10px;
+    min-width: 180px;
+    z-index: 1000;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.nav-dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s, color 0.3s;
+}
+.dropdown-menu a:hover {
+    background: var(--primary-gradient);
+    color: white;
 }
 
