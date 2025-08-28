@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #2c3e50, #4a6580);
+    background: linear-gradient(90deg, #f4f6f8 0%, #e1dfe8 50%, #e7eef0 100%);
     margin: 0;
     padding: 0;
 
@@ -8,7 +8,7 @@ body {
 h1 {
     text-align: center;
     margin-top: 30px;
-    color: linear-gradient(90deg, #6e45e2, #88d3ce);
+    color: linear-gradient(to right, #6e45e2, #88d3ce);
 }
 
 /* New Header Styles - Enablers.org inspired */
@@ -342,7 +342,7 @@ h1 {
 }
 /* Enhanced Footer Styles */
 .site-footer {
-    background: linear-gradient(to right, #2c3e50, #4a6580,);
+    background: linear-gradient(to right, #2c3e50, #4a6580);
     color: #fff;
     padding: 50px 0 0;
     margin-top: 40px;
