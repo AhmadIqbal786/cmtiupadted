@@ -2,13 +2,19 @@ body {
     font-family: Arial, sans-serif;
     background: linear-gradient(90deg, #f4f6f8 0%, #e1dfe8 50%, #e7eef0 100%);
     margin: 0;
-
-    
-
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;    
+}
 h1 {
     text-align: center;
     margin-top: 30px;
     color: linear-gradient(to right, #6e45e2, #88d3ce);
+    font-size: 2.5em;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
 }
 
 /* New Header Styles - Enablers.org inspired */
@@ -20,6 +26,9 @@ h1 {
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(10px);
+    border-bottom: 1px solid #eee;
+    transition: background 0.3s, box-shadow 0.3s;
+
 
 }
 
@@ -30,16 +39,27 @@ h1 {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    height: 70px;
+
 }
 
 .logo-container {
     display: flex;
     align-items: center;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: color 0.3s;
 
 }
 
 .logo {
     height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 
 }
 
@@ -162,6 +182,9 @@ h1 {
     width: 30px;
     height: 21px;
     cursor: pointer;
+    z-index: 1001;
+    margin-right: 10px;
+
 }
 
 .hamburger span {
@@ -170,6 +193,7 @@ h1 {
     background: #333;
     border-radius: 3px;
     transition: all 0.3s;
+
 }
 
 /* Mobile menu */
@@ -185,6 +209,8 @@ h1 {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     z-index: 999;
     overflow-y: auto;
+    display: none;
+
 }
 
 .mobile-menu.active {
@@ -192,6 +218,9 @@ h1 {
     padding: 20px;
     border-radius: 8px;
     backdrop-filter: blur(5px);
+    animation: slideDown 0.3s ease forwards;
+    color: linear-gradient(90deg, #6e45e2, #88d3ce);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
 
 }
 
@@ -200,6 +229,10 @@ h1 {
     padding: 20px;
     margin: 0;
     border-radius: 8px;
+    background: rgba(110, 69, 226, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    margin-bottom: 30px;
 
 }
 
@@ -254,20 +287,26 @@ h1 {
 @media (max-width: 992px) {
     .nav-menu {
         gap: 20px;
+        font-size: 14px;
+
     }
 }
 
 @media (max-width: 768px) {
     .nav-menu, .header-actions {
         display: none;
+
     }
     
     .hamburger {
         display: flex;
+
     }
     
     .logo-text {
         font-size: 18px;
+        margin-left: 5px;
+
     }
 }
 
@@ -278,6 +317,7 @@ h1 {
 
 .hamburger.active span:nth-child(2) {
     opacity: 0;
+
 }
 
 .hamburger.active span:nth-child(3) {
@@ -306,6 +346,9 @@ h1 {
     height: 48px;
     border-radius: 50%;
     margin-right: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+
 }
 .header-content h1 {
     font-size: 1.6em;
@@ -313,10 +356,18 @@ h1 {
     margin: 0;
     letter-spacing: 1px;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    cursor: pointer;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
 }
 .header-content nav {
     flex: 1;
     text-align: right;
+    display: flex;
+
 }
 .header-content nav a {
     color: #fff;
@@ -330,6 +381,11 @@ h1 {
 .header-content nav a:hover,
 .header-content nav a.active {
     color: #ff7e5f;
+    font-weight: 600;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+    padding: 8px 12px;
+
 }
 .header-content nav a.active::after {
     content: '';
@@ -347,6 +403,7 @@ h1 {
     color: #fff;
     padding: 50px 0 0;
     margin-top: 40px;
+    font-size: 14px;
 }
 
 .footer-content {
@@ -360,6 +417,7 @@ h1 {
 
 .footer-col {
     margin-bottom: 30px;
+    
 }
 
 .footer-logo {
@@ -367,11 +425,13 @@ h1 {
     justify-content: center;
     align-items: center;
     margin-bottom: 15px;
+    
 }
 
 .footer-logo img {
     height: 80px;
     margin-right: 5px;
+    
 }
 
 .footer-logo h3 {
@@ -582,6 +642,7 @@ h1 {
     margin: 40px auto;
     padding: 0 30px;
 
+
 }
 
 .course-card {
@@ -592,9 +653,11 @@ h1 {
     box-shadow: 0 0 25px rgba(102,166,255,0.7), 0 0 50px rgb(102, 166,255,0.5);
     color: linear-gradient(90deg, #6e45e2, #88d3ce);
     text-align: center;
+    margin: 0 auto; 
     display: flex;
     flex-direction: column;
     transition: 0.3s, box shadow 0.3s;
+    cursor: pointer;
 
 }
 .course-card:hover {
@@ -605,6 +668,7 @@ h1 {
 .course-title{
     font-size: 22px;
     font-weight: bold;
+    color: linear-gradient(45deg, #6e45e2, #88d3ce);
     margin-bottom: 10px;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
