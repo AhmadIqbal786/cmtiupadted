@@ -3,8 +3,12 @@ body {
     background: linear-gradient(90deg, #f4f6f8 0%, #e1dfe8 50%, #e7eef0 100%);
     margin: 0;
     padding: 0;
-
+    
 }
+    .page contaner{
+    text-align: center;
+    color: #0a0a1a;
+    }
 h1 {
     text-align: center;
     margin-top: 30px;
@@ -13,7 +17,7 @@ h1 {
 
 /* New Header Styles - Enablers.org inspired */
 .new-header {
-    background: #fff;
+    background: linear-gradient(90deg, #f9f9fa, #e5f6f5);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 15px 0;
     position: sticky;
@@ -580,21 +584,29 @@ h1 {
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 30px;
+
 }
 
 .course-card {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+    width: 300px;
+    padding: 20px;
+    background: linear-gradien(135 deg, #89f7fe, #66a6ff);
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(102,166,255,0.7);
     padding: 0;
     overflow: hidden;
     transition: box-shadow 0.2s, transform 0.2s;
+    color: white;
+    text-align: center;
     display: flex;
     flex-direction: column;
+    transition: 0.3s, box shadow 0.3s;
+
 }
 .course-card:hover {
-    box-shadow: 0 8px 32px rgba(0,124,240,0.12);
-    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 0px 40px rgba(102,166,255,0.7);
+    transform: scale(1.05);
+
 }
 .course-card img {
     width: 180;
