@@ -2,13 +2,9 @@ body {
     font-family: Arial, sans-serif;
     background: linear-gradient(90deg, #f4f6f8 0%, #e1dfe8 50%, #e7eef0 100%);
     margin: 0;
-    padding: 0;
+
     
-}
-    .page contaner{
-    text-align: center;
-    color: #0a0a1a;
-    }
+
 h1 {
     text-align: center;
     margin-top: 30px;
@@ -83,6 +79,7 @@ h1 {
 .nav-menu a:hover {
     color: #6e45e2;
     backdrop-filter: blur(5px);
+
     
 }
 
@@ -183,7 +180,7 @@ h1 {
     left: 0;
     width: 100%;
     height: calc(100vh - 80px);
-    background: #ffffff;
+    background: linear-gradient(90deg, #f4f6f8 0%, #e1dfe8 50%, #e7eef0 100%);fff;
     padding: 20px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     z-index: 999;
@@ -592,10 +589,7 @@ h1 {
     padding: 20px;
     background: linear-gradien(135 deg, #89f7fe, #66a6ff);
     border-radius: 20px;
-    box-shadow: 0 0 25px rgba(102,166,255,0.7);
-    padding: 0;
-    overflow: hidden;
-    transition: box-shadow 0.2s, transform 0.2s;
+    box-shadow: 0 0 25px rgba(102,166,255,0.7), 0 0 50px rgb(102, 166,255,0.5);
     color: white;
     text-align: center;
     display: flex;
@@ -604,9 +598,15 @@ h1 {
 
 }
 .course-card:hover {
-    box-shadow: 0 0px 40px rgba(102,166,255,0.7);
+    box-shadow: 0 0px 40px rgba(102,166,255,0.9), 0 0 80px rgba(102,166,255,0.7);
     transform: scale(1.05);
 
+}
+.course-title{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
 .course-card img {
     width: 180;
