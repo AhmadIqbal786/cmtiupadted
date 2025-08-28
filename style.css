@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    background: linear-gradient(to right, #2c3e50, #4a6580);
     margin: 0;
     padding: 0;
 
@@ -342,8 +342,7 @@ h1 {
 }
 /* Enhanced Footer Styles */
 .site-footer {
-   /* background: linear-gradient(to right, #2c3e50, #4a6580);*/
-    background: linear-gradient(to right, #6e45e2, #88d3ce);
+    background: linear-gradient(to right, #2c3e50, #4a6580,);
     color: #fff;
     padding: 50px 0 0;
     margin-top: 40px;
