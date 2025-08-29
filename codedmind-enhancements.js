@@ -578,7 +578,7 @@ function debounce(func, wait) {
             
             // Auto advance slides
             setInterval(nextSlide, 5000);
-                
+
             
             // Add click events to dots
             bannerDots.forEach((dot, index) => {
@@ -675,5 +675,84 @@ function debounce(func, wait) {
             indicator.addEventListener('click', () => {
                 showSlide(index);
                 resetInterval();
+            });
+        });
+// Banner Slider Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.banner-slide');
+            const dots = document.querySelectorAll('.banner-dot');
+            let currentSlide = 0;
+            let slideInterval;
+            
+            function showSlide(n) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                currentSlide = (n + slides.length) % slides.length;
+                
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+            
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+            
+            function startSlideshow() {
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+            
+            // Add click events to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    showSlide(index);
+                    startSlideshow();
+                });
+            });
+            
+            // Start the slideshow
+            startSlideshow();
+            
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('nav ul');
+            
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+            
+            // Header scroll effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                    header.style.background = 'rgba(255, 255, 255, 0.97)';
+                } else {
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.05)';
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                }
+            });
+            
+            // Animate elements on scroll
+            const animatedElements = document.querySelectorAll('.crystal-card, .section-title, .section-subtitle');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Set initial state for animation
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
             });
         });

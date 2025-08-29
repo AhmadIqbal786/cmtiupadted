@@ -3,898 +3,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coded Mind Technology Incubator</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #6e45e2;
-            --primary-gradient: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);
-            --secondary: #6a7c92;
-            --accent: #00c3ff;
-            --dark: #1d2144;
-            --light: #f8f9ff;
-            --success: #34c759;
-            --purple: #8a2be2;
-            --cyan: #00ffff;
-            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
-            --gradient-purple: linear-gradient(135deg, var(--purple), var(--primary));
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        body {
-            background-color: #f5f7ff;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            text-align: center;
-            border: none;
-            background: var(--primary-gradient);
-            color: white;
-            box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(110, 69, 226, 0.4);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-            text-align: center;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-        }
-        
-        .section-subtitle {
-            font-size: 1.2rem;
-            color: var(--secondary);
-            text-align: center;
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* Crystal Card Effect */
-        .crystal-card {
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .crystal-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                45deg,
-                transparent, 
-                rgba(255, 255, 255, 0.1), 
-                rgba(255, 255, 255, 0.2),
-                rgba(255, 255, 255, 0.1),
-                transparent
-            );
-            transform: rotate(45deg);
-            transition: all 0.5s ease;
-            z-index: 1;
-        }
-        
-        .crystal-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(31, 38, 135, 0.25);
-        }
-        
-        .crystal-card:hover::before {
-            animation: shine 1.5s forwards;
-        }
-        
-        @keyframes shine {
-            0% {
-                left: -50%;
-            }
-            100% {
-                left: 150%;
-            }
-        }
-        
-        .card-content {
-            position: relative;
-            z-index: 2;
-            padding: 30px;
-        }
-        
-        /* Header Styles */
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-        
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo img {
-            height: 50px;
-            margin-right: 10px;
-        }
-        
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--dark);
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .logo-text span {
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin-left: 30px;
-        }
-        
-        nav ul li a {
-            text-decoration: none;
-            color: var(--secondary);
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-        
-        nav ul li a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background: var(--primary-gradient);
-            transition: width 0.3s ease;
-        }
-        
-        nav ul li a:hover {
-            color: var(--primary);
-        }
-        
-        nav ul li a:hover:after {
-            width: 100%;
-        }
-        
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--dark);
-            margin: 3px 0;
-            transition: all 0.3s ease;
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 160px 0 100px;
-            background: linear-gradient(135deg, #f5f7ff 0%, #e6e9ff 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-content {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-badge {
-            display: inline-block;
-            background: rgba(74, 108, 247, 0.1);
-            color: var(--primary);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        
-        .hero-title {
-            font-size: 3.5rem;
-            color: var(--dark);
-            margin-bottom: 20px;
-            line-height: 1.2;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-        }
-        
-        .hero-description {
-            font-size: 1.2rem;
-            color: var(--secondary);
-            margin-bottom: 40px;
-        }
-        
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        .hero-visual {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            overflow: hidden;
-        }
-        
-        .floating-shape {
-            position: absolute;
-            border-radius: 50%;
-            background: linear-gradient(135deg, rgba(74, 108, 247, 0.2), rgba(0, 195, 255, 0.2));
-            animation: float 8s infinite ease-in-out;
-        }
-        
-        .shape-1 {
-            width: 300px;
-            height: 300px;
-            top: -150px;
-            right: -150px;
-            animation-delay: 0s;
-        }
-        
-        .shape-2 {
-            width: 200px;
-            height: 200px;
-            bottom: 50px;
-            left: 10%;
-            animation-delay: 1s;
-        }
-        
-        .shape-3 {
-            width: 150px;
-            height: 150px;
-            top: 40%;
-            right: 20%;
-            animation-delay: 2s;
-        }
-        
-        /* Banner Slider */
-        .banner-slider {
-            margin: 40px 0;
-            position: relative;
-            height: 400px;
-            overflow: hidden;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-        }
-        
-        .banner-slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            padding: 0 60px;
-        }
-        
-        .banner-slide.active {
-            opacity: 1;
-        }
-        
-        .banner-content {
-            max-width: 600px;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-        }
-        
-        .banner-title {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-family: 'Montserrat', sans-serif;
-        }
-        
-        .banner-description {
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-        }
-        
-        .banner-nav {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-        }
-        
-        .banner-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        
-        .banner-dot.active {
-            background: white;
-        }
-        
-        /* Why CMTI Section */
-        .why-cmti {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .feature-card {
-            text-align: center;
-            padding: 40px 30px;
-        }
-        
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(74, 108, 247, 0.1);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-        }
-        
-        .feature-icon i {
-            font-size: 2rem;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .feature-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-        
-        .feature-description {
-            color: var(--secondary);
-        }
-        
-        .benefits-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        
-        .benefit-card {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .benefit-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .benefit-icon {
-            font-size: 3rem;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 20px;
-        }
-        
-        .benefit-card h3 {
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-        
-        /* Programs Section */
-        .programs {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #f5f7ff 0%, #e6e9ff 100%);
-        }
-        
-        .program-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 50px;
-        }
-        
-        .program-card {
-            text-align: center;
-            padding: 30px 25px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .program-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: var(--primary-gradient);
-        }
-        
-        .program-icon {
-            width: 70px;
-            height: 70px;
-            background: rgba(74, 108, 247, 0.1);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-        }
-        
-        .program-icon i {
-            font-size: 1.8rem;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .program-title {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-        
-        .program-explore {
-            margin-top: 20px;
-        }
-        
-        /* Moving Courses Section */
-        .moving-courses {
-            padding: 100px 0;
-            background: white;
-            overflow: hidden;
-        }
-        
-        .course-track-container {
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .course-track {
-            display: flex;
-            animation: moveCourses 30s linear infinite;
-            width: max-content;
-        }
-        
-        .course-card {
-            flex: 0 0 300px;
-            margin: 0 15px;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-        
-        .course-image {
-            height: 180px;
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .course-content {
-            padding: 20px;
-        }
-        
-        .course-title {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-        
-        .course-desc {
-            color: var(--secondary);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-        }
-        
-        /* Culture Section */
-        .culture {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #f5f7ff 0%, #e6e9ff 100%);
-        }
-        
-        .culture-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        
-        .culture-card {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .culture-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .culture-content {
-            padding: 25px;
-            background: white;
-        }
-        
-        .culture-content h3 {
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-        
-        /* Highlights Section */
-        .highlights {
-            padding: 100px 0;
-            background: white;
-        }
-        
-        .quote-cards {
-            display: flex;
-            gap: 30px;
-            overflow-x: auto;
-            padding: 20px 0;
-            scrollbar-width: none;
-        }
-        
-        .quote-cards::-webkit-scrollbar {
-            display: none;
-        }
-        
-        .quote-card {
-            flex: 0 0 350px;
-            background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        
-        .quote-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
-        
-        .quote-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-image {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-size: cover;
-            background-position: center;
-            margin-right: 15px;
-        }
-        
-        .author-info h4 {
-            color: var(--dark);
-            margin-bottom: 5px;
-        }
-        
-        .author-info p {
-            color: var(--secondary);
-            font-size: 0.9rem;
-        }
-        
-        /* CTA Sections */
-        .cta-section {
-            padding: 100px 0;
-            text-align: center;
-            background: linear-gradient(135deg, #f5f7ff 0%, #e6e9ff 100%);
-        }
-        
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
-        }
-        
-        /* Final CTA */
-        .final-cta {
-            padding: 100px 0;
-            text-align: center;
-            background: var(--primary-gradient);
-            color: white;
-        }
-        
-        .final-cta .section-title,
-        .final-cta .section-subtitle {
-            color: white;
-        }
-        
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 80px 0 30px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-        
-        .footer-column h3 {
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            color: white;
-        }
-        
-        .footer-column h4 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: white;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column ul li {
-            margin-bottom: 15px;
-        }
-        
-        .footer-column ul li a {
-            color: #a0a7c2;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-column ul li a:hover {
-            color: white;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-icons a {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #a0a7c2;
-        }
-        
-        /* Animations */
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(10deg);
-            }
-        }
-        
-        @keyframes moveCourses {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero-title {
-                font-size: 2.8rem;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-            }
-            
-            nav ul {
-                display: none;
-            }
-            
-            .banner-title {
-                font-size: 2rem;
-            }
-            
-            .hamburger {
-                display: flex;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero {
-                padding: 130px 0 80px;
-            }
-            
-            .hero-title {
-                font-size: 2.3rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-            
-            .btn {
-                width: 100%;
-                max-width: 300px;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
-            }
-            
-            .banner-slide {
-                padding: 0 30px;
-            }
-            
-            .banner-title {
-                font-size: 1.8rem;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .feature-card, .program-card {
-                padding: 25px 20px;
-            }
-            
-            .banner-slide {
-                padding: 0 20px;
-            }
-            
-            .banner-title {
-                font-size: 1.5rem;
-            }
-            
-            .logo-text {
-                font-size: 1.4rem;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<head>
-    <meta charset="UTF-8">
-    <title>Coded Mind Technology Incubator</title>
     <link rel="stylesheet" href="style.css">
-</head>
-<>
+    <link rel="icon" href="https://codedmind.netlify.app/logo.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="codedmind-enhancements.js"></script>
+    <link rel="stylesheet" href="style2.css">
    
+</head>
+            
       <!-- Header -->
   <header class="new-header">
     <div class="header-container">
@@ -906,7 +25,7 @@
         <nav>
             <ul class="nav-menu">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="courses.html">Courses</a></li>
+                <li><a href="courses.html">Programs</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="careers.html">Careers</a></li>
@@ -924,7 +43,7 @@
     <div class="mobile-menu">
         <ul class="mobile-nav">
             <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="courses.html">Courses</a></li>
+            <li><a href="courses.html">Programs</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="careers.html">Careers</a></li>
@@ -932,7 +51,7 @@
         
     </div>
 </header>
-  
+  <body>
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-visual">
@@ -942,9 +61,12 @@
         </div>
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">Pakistan's Largest Tech Incubator</div>
-                <h1 class="hero-title">CODED MIND TECHNOLOGY INCUBATOR</h1>
-                <p class="hero-description">Transforming ideas into successful tech ventures through cutting-edge incubation programs, mentorship, and resources.</p>
+                <div <h2 class="hero-badge">Pakistan's Largest Tech Incubator</h2></div>
+                <h1 class="hero-title">CODED MIND TECHNOLOGY INCUBATOR </h1>
+                <p class="hero-description">Transforming ideas into successful tech ventures through cutting-edge incubation programs, mentorship, and resources.</link>
+                <p  class="hero-description">Join us to innovate, learn, and grow in the dynamic world of technology.</p>
+                
+
                 <div class="hero-buttons">
                     <a href="https://form.jotform.com/252090931090451" class="btn" target="_blank" rel="noopener">Enroll Now</a>
                     <a href="about.html" class="btn btn-outline">Learn More</a>
@@ -953,38 +75,56 @@
         </div>
     </section>
 
-    <!-- Banner Slider Section -->
-    <section class="banner-slider">
-        <div class="banner-slide active" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')">
-            <div class="banner-content">
-                <h2 class="banner-title">Join Our Tech Incubation Programs</h2>
-                <p class="banner-description">Get access to mentorship, resources, and funding to turn your tech ideas into reality.</p>
-                <a href="courses.html" class="btn">Explore Programs</a>
+   <!-- Banner Carousel -->
+<div class="banner-carousel">
+    <div class="carousel-slides">
+        <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80');">
+            <div class="slide-content">
+                <h2>Empowering Future Tech Leaders</h2>
+                <p>Join CMTI to gain cutting-edge skills in technology and business. Our expert-led courses prepare you for the digital future.</p>
+                <a href="courses.html" class="btn">Explore Courses</a>
             </div>
         </div>
         
-        <div class="banner-slide" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')">
-            <div class="banner-content">
-                <h2 class="banner-title">Learn from Industry Experts</h2>
-                <p class="banner-description">Our programs are designed and taught by experienced professionals from top tech companies.</p>
-                <a href="about.html" class="btn">About Us</a>
+        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80');">
+            <div class="slide-content">
+                <h2>Learn from Industry Experts</h2>
+                <p>Our instructors are professionals with years of experience in their respective fields.</p>
+                <a href="about.html" class="btn">Meet Our Team</a>
             </div>
         </div>
         
-        <div class="banner-slide" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')">
-            <div class="banner-content">
-                <h2 class="banner-title">Access Cutting-Edge Resources</h2>
-                <p class="banner-description">From co-working spaces to advanced tech tools, we provide everything you need to succeed.</p>
-                <a href="contact.html" class="btn">Get in Touch</a>
+        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80');">
+            <div class="slide-content">
+                <h2>Hands-On Learning Experience</h2>
+                <p>Gain practical skills through our project-based curriculum and real-world applications.</p>
+                <a href="courses.html" class="btn">View Programs</a>
             </div>
         </div>
         
-        <div class="banner-nav">
-            <div class="banner-dot active" data-index="0"></div>
-            <div class="banner-dot" data-index="1"></div>
-            <div class="banner-dot" data-index="2"></div>
+        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80');">
+            <div class="slide-content">
+                <h2>Launch Your Tech Career</h2>
+                <p>Our career services help you land your dream job in the tech industry.</p>
+                <a href="careers.html" class="btn">Career Support</a>
+            </div>
         </div>
-    </section>
+    </div>
+    
+    <div class="carousel-arrow prev">
+        <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="carousel-arrow next">
+        <i class="fas fa-chevron-right"></i>
+    </div>
+    
+    <div class="carousel-controls">
+        <div class="carousel-dot active" data-index="0"></div>
+        <div class="carousel-dot" data-index="1"></div>
+        <div class="carousel-dot" data-index="2"></div>
+        <div class="carousel-dot" data-index="3"></div>
+    </div>
+</div>
 
     <!-- Why Join Us Section -->
     <section class="why-cmti">
@@ -1470,44 +610,7 @@
         </div>
     </div>
 </footer>
-    <script src="codedmind-enhancements.js"></script>
-
-    <script>
-        // Banner Slider Functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const slides = document.querySelectorAll('.banner-slide');
-            const dots = document.querySelectorAll('.banner-dot');
-            let currentSlide = 0;
-            
-            function showSlide(n) {
-                slides.forEach(slide => slide.classList.remove('active'));
-                dots.forEach(dot => dot.classList.remove('active'));
-                
-                currentSlide = (n + slides.length) % slides.length;
-                
-                slides[currentSlide].classList.add('active');
-                dots[currentSlide].classList.add('active');
-            }
-            
-            // Add click events to dots
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => showSlide(index));
-            });
-            
-            // Auto slide every 5 seconds
-            setInterval(() => {
-                showSlide(currentSlide + 1);
-            }, 5000);
-            
-            // Mobile menu toggle
-            const hamburger = document.querySelector('.hamburger');
-            const nav = document.querySelector('nav ul');
-            
-            hamburger.addEventListener('click', () => {
-                nav.classList.toggle('show');
-                hamburger.classList.toggle('active');
-            });
-        });
-    </script>
 </body>
 </html>
+
+    
