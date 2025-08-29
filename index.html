@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+< lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);
+            --primary: #6e45e2;
+            --primary-gradient: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);
             --secondary: #6a7c92;
             --accent: #00c3ff;
             --dark: #1d2144;
@@ -51,9 +52,26 @@
             cursor: pointer;
             text-align: center;
             border: none;
-            color: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);;
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
         }
         
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(110, 69, 226, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
         
         .section-title {
             font-size: 2.5rem;
@@ -74,21 +92,7 @@
             margin-right: auto;
         }
         
-        .card {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-        }
-        
+        /* Crystal Card Effect */
         .crystal-card {
             background: rgba(255, 255, 255, 0.7);
             border-radius: 15px;
@@ -97,11 +101,51 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.5);
             transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .crystal-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent, 
+                rgba(255, 255, 255, 0.1), 
+                rgba(255, 255, 255, 0.2),
+                rgba(255, 255, 255, 0.1),
+                transparent
+            );
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+            z-index: 1;
         }
         
         .crystal-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(31, 38, 135, 0.25);
+        }
+        
+        .crystal-card:hover::before {
+            animation: shine 1.5s forwards;
+        }
+        
+        @keyframes shine {
+            0% {
+                left: -50%;
+            }
+            100% {
+                left: 150%;
+            }
+        }
+        
+        .card-content {
+            position: relative;
+            z-index: 2;
+            padding: 30px;
         }
         
         /* Header Styles */
@@ -127,6 +171,11 @@
             align-items: center;
         }
         
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
         .logo-text {
             font-size: 1.8rem;
             font-weight: 700;
@@ -135,7 +184,10 @@
         }
         
         .logo-text span {
-            color: var(--primary);
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         nav ul {
@@ -162,7 +214,7 @@
             height: 2px;
             bottom: -5px;
             left: 0;
-            background: var(--gradient);
+            background: var(--primary-gradient);
             transition: width 0.3s ease;
         }
         
@@ -172,6 +224,20 @@
         
         nav ul li a:hover:after {
             width: 100%;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--dark);
+            margin: 3px 0;
+            transition: all 0.3s ease;
         }
         
         /* Hero Section */
@@ -216,6 +282,11 @@
             margin-bottom: 40px;
         }
         
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
         
         .hero-visual {
             position: absolute;
@@ -329,7 +400,7 @@
             padding: 100px 0;
             background: white;
         }
-        
+
         .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -355,7 +426,10 @@
         
         .feature-icon i {
             font-size: 2rem;
-            color: var(--primary);
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         .feature-title {
@@ -366,6 +440,40 @@
         
         .feature-description {
             color: var(--secondary);
+        }
+        
+        .benefits-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .benefit-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
         }
         
         /* Programs Section */
@@ -395,7 +503,7 @@
             left: 0;
             width: 5px;
             height: 100%;
-            background: var(--gradient);
+            background: var(--primary-gradient);
         }
         
         .program-icon {
@@ -411,7 +519,10 @@
         
         .program-icon i {
             font-size: 1.8rem;
-            color: var(--primary);
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
         .program-title {
@@ -431,6 +542,11 @@
             overflow: hidden;
         }
         
+        .course-track-container {
+            overflow: hidden;
+            position: relative;
+        }
+        
         .course-track {
             display: flex;
             animation: moveCourses 30s linear infinite;
@@ -440,10 +556,8 @@
         .course-card {
             flex: 0 0 300px;
             margin: 0 15px;
-            background: white;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
         .course-image {
@@ -468,10 +582,45 @@
             margin-bottom: 15px;
         }
         
+        /* Culture Section */
+        .culture {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7ff 0%, #e6e9ff 100%);
+        }
+        
+        .culture-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .culture-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .culture-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .culture-content {
+            padding: 25px;
+            background: white;
+        }
+        
+        .culture-content h3 {
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
         /* Highlights Section */
         .highlights {
             padding: 100px 0;
-            background: linear-gradient(135deg, #f5f7ff 0%, #e6e9ff 100%);
+            background: white;
         }
         
         .quote-cards {
@@ -529,7 +678,7 @@
         .cta-section {
             padding: 100px 0;
             text-align: center;
-            background: white;
+            background: linear-gradient(135deg, #f5f7ff 0%, #e6e9ff 100%);
         }
         
         .cta-content {
@@ -548,7 +697,7 @@
         .final-cta {
             padding: 100px 0;
             text-align: center;
-            background: var(--gradient-purple);
+            background: var(--primary-gradient);
             color: white;
         }
         
@@ -668,6 +817,10 @@
             .banner-title {
                 font-size: 2rem;
             }
+            
+            .hamburger {
+                display: flex;
+            }
         }
         
         @media (max-width: 768px) {
@@ -683,23 +836,17 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 15px;
-                background-color: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);;
             }
             
             .btn {
                 width: 100%;
-                text-align: center;
-                padding: 12px 0;
-                font-size: 1rem;
-                color: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);
-                background-color: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);;
+                max-width: 300px;
             }
             
             .cta-buttons {
                 flex-direction: column;
                 align-items: center;
                 gap: 15px;
-                background-color: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);;
             }
             
             .banner-slide {
@@ -731,18 +878,25 @@
             .banner-title {
                 font-size: 1.5rem;
             }
+            
+            .logo-text {
+                font-size: 1.4rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
-<body>
-    <!-- Header -->
-   <head>
+<head>
     <meta charset="UTF-8">
-    <title>CMTI</title>
+    <title>Coded Mind Technology Incubator</title>
     <link rel="stylesheet" href="style.css">
-    </head>
-<body>
-    <!-- Header -->
+</head>
+<>
+   
+      <!-- Header -->
   <header class="new-header">
     <div class="header-container">
         <div class="logo-container">
@@ -753,12 +907,13 @@
         <nav>
             <ul class="nav-menu">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="courses.html">programs</a></li>
+                <li><a href="courses.html">Courses</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="careers.html">Careers</a></li>
             </ul>
         </nav>
+        
         
         <div class="hamburger">
             <span></span>
@@ -775,14 +930,10 @@
             <li><a href="contact.html">Contact</a></li>
             <li><a href="careers.html">Careers</a></li>
         </ul>
+        
     </div>
-    </header>
-     <div class="overlay"></div>
-    <script src="main.js"></script>
-    <script src="codedmind-enhancements.js"></script>
-
-    <!-- End of Header -->
-     <main>
+</header>
+  
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-visual">
@@ -793,19 +944,19 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">Pakistan's Largest Tech Incubator</div>
-                <h1 class="hero-title">CMTI TECHNOLOGY INCUBATOR</h1>
+                <h1 class="hero-title">CODED MIND TECHNOLOGY INCUBATOR</h1>
                 <p class="hero-description">Transforming ideas into successful tech ventures through cutting-edge incubation programs, mentorship, and resources.</p>
                 <div class="hero-buttons">
-                    <a href="<a href="https://form.jotform.com/252090931090451" class="enroll-btn" target="_blank" rel="noopener">Enroll Now</a>
-                    <a href="about.html" class="btn" target="_blank" rel="noopener">Learn More</a>
+                    <a href="https://form.jotform.com/252090931090451" class="btn" target="_blank" rel="noopener">Enroll Now</a>
+                    <a href="about.html" class="btn btn-outline">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End of Hero Section -->
+
     <!-- Banner Slider Section -->
     <section class="banner-slider">
-        <div class="banner-slide active" style="background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')">
+        <div class="banner-slide active" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')">
             <div class="banner-content">
                 <h2 class="banner-title">Join Our Tech Incubation Programs</h2>
                 <p class="banner-description">Get access to mentorship, resources, and funding to turn your tech ideas into reality.</p>
@@ -813,7 +964,7 @@
             </div>
         </div>
         
-        <div class="banner-slide" style="background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')">
+        <div class="banner-slide" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')">
             <div class="banner-content">
                 <h2 class="banner-title">Learn from Industry Experts</h2>
                 <p class="banner-description">Our programs are designed and taught by experienced professionals from top tech companies.</p>
@@ -821,14 +972,14 @@
             </div>
         </div>
         
-        <div class="banner-slide" style="background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')">
+        <div class="banner-slide" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')">
             <div class="banner-content">
                 <h2 class="banner-title">Access Cutting-Edge Resources</h2>
                 <p class="banner-description">From co-working spaces to advanced tech tools, we provide everything you need to succeed.</p>
                 <a href="contact.html" class="btn">Get in Touch</a>
             </div>
         </div>
-            /* Banner Navigation Dots */
+        
         <div class="banner-nav">
             <div class="banner-dot active" data-index="0"></div>
             <div class="banner-dot" data-index="1"></div>
@@ -836,37 +987,71 @@
         </div>
     </section>
 
-    <!-- End of Banner Slider Section -->
-    
-    <!-- Why CMTI Section -->
+    <!-- Why Join Us Section -->
     <section class="why-cmti">
         <div class="container">
-            <h2 class="section-title">Why CMTI</h2>
-            <p class="section-subtitle">Unlock your potential with Pakistan's leading technology incubator</p>
+            <h2 class="section-title">Why Join Coded Mind?</h2>
+            <p class="section-subtitle">We're building a community of innovators, educators, and technology enthusiasts who are passionate about shaping the future of tech education.</p>
             
-            <div class="features">
-                <div class="card feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-graduation-cap"></i>
+            <div class="benefits-container">
+                <div class="benefit-card crystal-card">
+                    <div class="card-content">
+                        <div class="benefit-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Continuous Learning</h3>
+                        <p>Free access to all our courses and workshops to keep your skills sharp and up-to-date.</p>
                     </div>
-                    <h3 class="feature-title">Quality Education</h3>
-                    <p class="feature-description">Learn from industry experts with years of experience in technology and business development. Our curriculum is designed to provide both theoretical knowledge and practical skills.</p>
                 </div>
                 
-                <div class="card feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-briefcase"></i>
+                <div class="benefit-card crystal-card">
+                    <div class="card-content">
+                        <div class="benefit-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Collaborative Environment</h3>
+                        <p>Work with like-minded professionals in a supportive and innovative atmosphere.</p>
                     </div>
-                    <h3 class="feature-title">Industry Exposure</h3>
-                    <p class="feature-description">Gain real-world experience through internships, projects, and collaborations with tech companies. We connect you with industry leaders for mentorship and networking opportunities.</p>
                 </div>
                 
-                <div class="card feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-chart-line"></i>
+                <div class="benefit-card crystal-card">
+                    <div class="card-content">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Growth Opportunities</h3>
+                        <p>Clear career progression paths and opportunities to take on leadership roles.</p>
                     </div>
-                    <h3 class="feature-title">Career Opportunities</h3>
-                    <p class="feature-description">Access our network of hiring partners and jumpstart your career in the technology industry. Our graduates have been placed in top tech companies with competitive packages.</p>
+                </div>
+                
+                <div class="benefit-card crystal-card">
+                    <div class="card-content">
+                        <div class="benefit-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Work-Life Balance</h3>
+                        <p>Flexible working hours and remote work options to maintain a healthy balance.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card crystal-card">
+                    <div class="card-content">
+                        <div class="benefit-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Impactful Work</h3>
+                        <p>Make a real difference in students' lives and contribute to the tech ecosystem.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-card crystal-card">
+                    <div class="card-content">
+                        <div class="benefit-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Competitive Compensation</h3>
+                        <p>Attractive salary packages, performance bonuses, and comprehensive benefits.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -879,76 +1064,92 @@
             <p class="section-subtitle">Explore our cutting-edge programs designed to launch your tech career</p>
             
             <div class="program-categories">
-                <div class="card program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-coins"></i>
+                <div class="crystal-card program-card">
+                    <div class="card-content">
+                        <div class="program-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3 class="program-title">Crypto Trading</h3>
+                        <p>Master the art of cryptocurrency trading and blockchain technology. Learn technical analysis, risk management, and trading strategies.</p>
+                        <a href="#" class="btn program-explore">Explore Programs</a>
                     </div>
-                    <h3 class="program-title">Crypto Trading</h3>
-                    <p>Master the art of cryptocurrency trading and blockchain technology. Learn technical analysis, risk management, and trading strategies.</p>
-                    <a href="#" class="btn">Explore Programs</a>
                 </div>
                 
-                <div class="card program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-laptop-code"></i>
+                <div class="crystal-card program-card">
+                    <div class="card-content">
+                        <div class="program-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="program-title">Web Design & Development</h3>
+                        <p>Learn to create responsive, modern websites and web applications using the latest technologies and frameworks.</p>
+                        <a href="course-webdev.html" class="btn program-explore">Explore Programs</a>
                     </div>
-                    <h3 class="program-title">Web Design & Development</h3>
-                    <p>Learn to create responsive, modern websites and web applications using the latest technologies and frameworks.</p>
-                    <a href="course-webdev.html" class="btn">Explore Programs</a>
                 </div>
                 
-                <div class="card program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-robot"></i>
+                <div class="crystal-card program-card">
+                    <div class="card-content">
+                        <div class="program-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="program-title">Artificial Intelligence</h3>
+                        <p>Dive into machine learning, neural networks, and AI applications. Build intelligent systems that can learn and adapt.</p>
+                        <a href="courses-ai-ml.html" class="btn program-explore">Explore Programs</a>
                     </div>
-                    <h3 class="program-title">Artificial Intelligence</h3>
-                    <p>Dive into machine learning, neural networks, and AI applications. Build intelligent systems that can learn and adapt.</p>
-                    <a href="courses-ai-ml.html" class="btn">Explore Programs</a>
                 </div>
                 
-                <div class="card program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-hashtag"></i>
+                <div class="crystal-card program-card">
+                    <div class="card-content">
+                        <div class="program-icon">
+                            <i class="fas fa-hashtag"></i>
+                        </div>
+                        <h3 class="program-title">Digital Media Marketing</h3>
+                        <p>Learn strategies to promote brands and products online effectively through social media, SEO, and content marketing.</p>
+                        <a href="course-digital-marketing.html" class="btn program-explore">Explore Programs</a>
                     </div>
-                    <h3 class="program-title">Digital Media Marketing</h3>
-                    <p>Learn strategies to promote brands and products online effectively through social media, SEO, and content marketing.</p>
-                    <a href="course-digital-marketing.html" class="btn">Explore Programs</a>
                 </div>
                 
-                <div class="card program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-gamepad"></i>
+                <div class="crystal-card program-card">
+                    <div class="card-content">
+                        <div class="program-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3 class="program-title">App & Game Development</h3>
+                        <p>Create mobile applications and interactive games from concept to deployment. Learn programming, design, and monetization.</p>
+                        <a href="course-mobile-app.html" class="btn program-explore">Explore Programs</a>
                     </div>
-                    <h3 class="program-title">App & Game Development</h3>
-                    <p>Create mobile applications and interactive games from concept to deployment. Learn programming, design, and monetization.</p>
-                    <a href="course-mobile-app.html" class="btn">Explore Programs</a>
                 </div>
                 
-                <div class="card program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-shopping-cart"></i>
+                <div class="crystal-card program-card">
+                    <div class="card-content">
+                        <div class="program-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3 class="program-title">E-commerce</h3>
+                        <p>Build and manage successful online stores and marketplaces. Learn about payment systems, logistics, and customer acquisition.</p>
+                        <a href="course-amazon-ecommerce.html" class="btn program-explore">Explore Programs</a>
                     </div>
-                    <h3 class="program-title">E-commerce</h3>
-                    <p>Build and manage successful online stores and marketplaces. Learn about payment systems, logistics, and customer acquisition.</p>
-                    <a href="course-amazon-ecommerce.html" class="btn">Explore Programs</a>
                 </div>
                 
-                <div class="card program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-shield-alt"></i>
+                <div class="crystal-card program-card">
+                    <div class="card-content">
+                        <div class="program-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="program-title">Cyber Security</h3>
+                        <p>Protect systems and networks from digital attacks and threats. Learn ethical hacking, encryption, and security protocols.</p>
+                        <a href="course-cyber-security.html" class="btn program-explore">Explore Programs</a>
                     </div>
-                    <h3 class="program-title">Cyber Security</h3>
-                    <p>Protect systems and networks from digital attacks and threats. Learn ethical hacking, encryption, and security protocols.</p>
-                    <a href="course-cyber-security.html" class="btn">Explore Programs</a>
                 </div>
                 
-                <div class="card program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-user-tie"></i>
+                <div class="crystal-card program-card">
+                    <div class="card-content">
+                        <div class="program-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 class="program-title">Professional Development</h3>
+                        <p>Enhance your soft skills and advance your career in the tech industry. Learn communication, leadership, and project management.</p>
+                        <a href="course-data-science.html" class="btn program-explore">Explore Programs</a>
                     </div>
-                    <h3 class="program-title">Professional Development</h3>
-                    <p>Enhance your soft skills and advance your career in the tech industry. Learn communication, leadership, and project management.</p>
-                    <a href="course-data-science.html" class="btn">Explore Programs</a>
                 </div>
             </div>
             
@@ -966,8 +1167,8 @@
                 <p class="section-subtitle">Join thousands of students who have transformed their careers through CMTI programs</p>
                 
                 <div class="cta-buttons">
-                    <a href="https://form.jotform.com/252090931090451" class="enroll-btn" target="_blank" rel="noopener">How to Apply</a>
-                    <a href="about.html" class="btn">More About CMTI</a>
+                    <a href="https://form.jotform.com/252090931090451" class="btn" target="_blank" rel="noopener">How to Apply</a>
+                    <a href="about.html" class="btn btn-outline">More About CMTI</a>
                 </div>
             </div>
         </div>
@@ -979,55 +1180,91 @@
             <h2 class="section-title">Explore Possibilities</h2>
             <p class="section-subtitle">Browse our most popular courses and find the perfect fit for your career goals</p>
             
-            <div class="course-track">
-                <div class="course-card crystal-card">
-                    <div class="course-image" style="background: url('https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="course-content">
-                        <h3 class="course-title">Full Stack Web Development</h3>
-                        <p class="course-desc">Master front-end and back-end technologies to become a full-stack developer.</p>
-                        <a href="course-webdev.html" class="btn">Explore</a>
+            <div class="course-track-container">
+                <div class="course-track">
+                    <div class="course-card crystal-card">
+                        <div class="course-image" style="background: url('https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
+                        <div class="card-content">
+                            <h3 class="course-title">Full Stack Web Development</h3>
+                            <p class="course-desc">Master front-end and back-end technologies to become a full-stack developer.</p>
+                            <a href="course-webdev.html" class="btn">Explore</a>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="course-card crystal-card">
-                    <div class="course-image" style="background: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="course-content">
-                        <h3 class="course-title">Data Science & Analytics</h3>
-                        <p class="course-desc">Learn to extract insights from data using statistical methods and machine learning.</p>
-                        <a href="courses.html" class="btn">Explore</a>
+                    
+                    <div class="course-card crystal-card">
+                        <div class="course-image" style="background: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
+                        <div class="card-content">
+                            <h3 class="course-title">Data Science & Analytics</h3>
+                            <p class="course-desc">Learn to extract insights from data using statistical methods and machine learning.</p>
+                            <a href="courses.html" class="btn">Explore</a>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="course-card crystal-card">
-                    <div class="course-image" style="background: url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="course-content">
-                        <h3 class="course-title">UX/UI Design Mastery</h3>
-                        <p class="course-desc">Create intuitive and beautiful user interfaces that provide exceptional experiences.</p>
-                        <a href="courses.html" class="btn">Explore</a>
+                    
+                    <div class="course-card crystal-card">
+                        <div class="course-image" style="background: url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
+                        <div class="card-content">
+                            <h3 class="course-title">UX/UI Design Mastery</h3>
+                            <p class="course-desc">Create intuitive and beautiful user interfaces that provide exceptional experiences.</p>
+                            <a href="courses.html" class="btn">Explore</a>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="course-card crystal-card">
-                    <div class="course-image" style="background: url('https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="course-content">
-                        <h3 class="course-title">Mobile App Development</h3>
-                        <p class="course-desc">Build cross-platform mobile applications using React Native and Flutter.</p>
-                        <a href="course-mobile-app.html" class="btn">Explore</a>
+                    
+                    <div class="course-card crystal-card">
+                        <div class="course-image" style="background: url('https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
+                        <div class="card-content">
+                            <h3 class="course-title">Mobile App Development</h3>
+                            <p class="course-desc">Build cross-platform mobile applications using React Native and Flutter.</p>
+                            <a href="course-mobile-app.html" class="btn">Explore</a>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="course-card crystal-card">
-                    <div class="course-image" style="background: url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
-                    <div class="course-content">
-                        <h3 class="course-title">Digital Marketing Strategy</h3>
-                        <p class="course-desc">Develop comprehensive digital marketing campaigns that drive growth and engagement.</p>
-                        <a href="course-digital-marketing.html" class="btn">Explore</a>
+                    
+                    <div class="course-card crystal-card">
+                        <div class="course-image" style="background: url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
+                        <div class="card-content">
+                            <h3 class="course-title">Digital Marketing Strategy</h3>
+                            <p class="course-desc">Develop comprehensive digital marketing campaigns that drive growth and engagement.</p>
+                            <a href="course-digital-marketing.html" class="btn">Explore</a>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: 50px;">
                 <a href="courses.html" class="btn">Explore All Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Section -->
+    <section class="culture">
+        <div class="container">
+            <h2 class="section-title">Our Culture</h2>
+            <p class="section-subtitle">At Coded Mind, we believe that a positive and inclusive culture is the foundation of innovation and excellence.</p>
+            
+            <div class="culture-container">
+                <div class="culture-card crystal-card">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Team Collaboration" class="culture-img">
+                    <div class="card-content">
+                        <h3>Collaborative Spirit</h3>
+                        <p>We believe in the power of teamwork and regularly collaborate across departments to achieve our goals.</p>
+                    </div>
+                </div>
+                
+                <div class="culture-card crystal-card">
+                    <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=600&q=80" alt="Learning Environment" class="culture-img">
+                    <div class="card-content">
+                        <h3>Learning Environment</h3>
+                        <p>We're committed to continuous learning and encourage our team to explore new technologies and methodologies.</p>
+                    </div>
+                </div>
+                
+                <div class="culture-card crystal-card">
+                    <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=600&q=80" alt="Innovation" class="culture-img">
+                    <div class="card-content">
+                        <h3>Innovation Focus</h3>
+                        <p>We encourage creative thinking and reward innovative solutions to challenges in education and technology.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1039,46 +1276,54 @@
             <p class="section-subtitle">Discover what makes CMTI the leading technology incubator in Pakistan</p>
             
             <div class="quote-cards">
-                <div class="quote-card">
-                    <p class="quote-text">CMTI provided me with the resources, mentorship, and network I needed to turn my idea into a successful startup. The incubation program was a game-changer for my career.</p>
-                    <div class="quote-author">
-                        <div class="author-image" style="background: url('https://randomuser.me/api/portraits/men/32.jpg')"></div>
-                        <div class="author-info">
-                            <h4>Ahmed Raza</h4>
-                            <p>Founder, TechSolve</p>
+                <div class="quote-card crystal-card">
+                    <div class="card-content">
+                        <p class="quote-text">CMTI provided me with the resources, mentorship, and network I needed to turn my idea into a successful startup. The incubation program was a game-changer for my career.</p>
+                        <div class="quote-author">
+                            <div class="author-image" style="background: url('https://randomuser.me/api/portraits/men/32.jpg')"></div>
+                            <div class="author-info">
+                                <h4>Ahmed Raza</h4>
+                                <p>Founder, TechSolve</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="quote-card">
-                    <p class="quote-text">The quality of education and hands-on experience I gained at CMTI surpassed all my expectations. I landed my dream job at a top tech company even before graduating.</p>
-                    <div class="quote-author">
-                        <div class="author-image" style="background: url('https://randomuser.me/api/portraits/women/44.jpg')"></div>
-                        <div class="author-info">
-                            <h4>Fatima Ali</h4>
-                            <p>Software Engineer, Systems Ltd</p>
+                <div class="quote-card crystal-card">
+                    <div class="card-content">
+                        <p class="quote-text">The quality of education and hands-on experience I gained at CMTI surpassed all my expectations. I landed my dream job at a top tech company even before graduating.</p>
+                        <div class="quote-author">
+                            <div class="author-image" style="background: url('https://randomuser.me/api/portraits/women/44.jpg')"></div>
+                            <div class="author-info">
+                                <h4>Fatima Ali</h4>
+                                <p>Software Engineer, Systems Ltd</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="quote-card">
-                    <p class="quote-text">As a mentor at CMTI, I'm constantly impressed by the talent and innovation I see. The incubator is playing a crucial role in developing Pakistan's tech ecosystem.</p>
-                    <div class="quote-author">
-                        <div class="author-image" style="background: url('https://randomuser.me/api/portraits/men/67.jpg')"></div>
-                        <div class="author-info">
-                            <h4>Omar Farooq</h4>
-                            <p>CTO, InnovateTech</p>
+                <div class="quote-card crystal-card">
+                    <div class="card-content">
+                        <p class="quote-text">As a mentor at CMTI, I'm constantly impressed by the talent and innovation I see. The incubator is playing a crucial role in developing Pakistan's tech ecosystem.</p>
+                        <div class="quote-author">
+                            <div class="author-image" style="background: url('https://randomuser.me/api/portraits/men/67.jpg')"></div>
+                            <div class="author-info">
+                                <h4>Omar Farooq</h4>
+                                <p>CTO, InnovateTech</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="quote-card">
-                    <p class="quote-text">The networking opportunities at CMTI are incredible. I've connected with investors, industry leaders, and like-minded entrepreneurs who have helped me grow my business.</p>
-                    <div class="quote-author">
-                        <div class="author-image" style="background: url('https://randomuser.me/api/portraits/women/68.jpg')"></div>
-                        <div class="author-info">
-                            <h4>Ayesha Khan</h4>
-                            <p>CEO, DevCraft</p>
+                <div class="quote-card crystal-card">
+                    <div class="card-content">
+                        <p class="quote-text">The networking opportunities at CMTI are incredible. I've connected with investors, industry leaders, and like-minded entrepreneurs who have helped me grow my business.</p>
+                        <div class="quote-author">
+                            <div class="author-image" style="background: url('https://randomuser.me/api/portraits/women/68.jpg')"></div>
+                            <div class="author-info">
+                                <h4>Ayesha Khan</h4>
+                                <p>CEO, DevCraft</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1093,15 +1338,15 @@
             <p class="section-subtitle">Join Pakistan's largest technology incubator and start your journey towards innovation and success</p>
             
             <div class="cta-buttons">
-                <a href="about.html" class="btn">LEARN ABOUT CMTI</a>
-                <a href="courses.html" class="btn">EXPLORE ALL PROGRAMS</a>
-                <a href="https://form.jotform.com/252090931090451" class="enroll-btn" target="_blank" rel="noopener">CONTACT ADMISSIONS</a>
+                <a href="about.html" class="btn btn-outline">LEARN ABOUT CMTI</a>
+                <a href="courses.html" class="btn btn-outline">EXPLORE ALL PROGRAMS</a>
+                <a href="https://form.jotform.com/252090931090451" class="btn" target="_blank" rel="noopener">CONTACT ADMISSIONS</a>
             </div>
         </div>
     </section>
-    </main>
-   
-      <!-- Footer -->
+
+    <!-- Footer -->
+    <!-- Footer -->
    <footer class="site-footer">
     <div class="footer-content">
         <div class="footer-col">
@@ -1145,7 +1390,7 @@
             </div>
         </div>
                 
-          <div class="footer-col">
+         <div class="footer-col">
             <h3>Top Programs</h3>
             <ul>
                 <li><a href="course-webdev.html">Web Development</a></li>
@@ -1216,16 +1461,54 @@
     <div class="footer-bottom">
         <div class="footer-bottom-content">
             <div class="copyright">
-                &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
+                &copy; 2024 Coded Mind Technology Incubator. All rights reserved.
             </div>
             <div class="legal-links">
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Service</a>
-                <a href="refund.html">Refund Policy</a>
+                <a href="#refund">Refund Policy</a>
             </div>
         </div>
     </div>
 </footer>
-<script src="codedmind-enhancements.js"></script>
+    <script src="codedmind-enhancements.js"></script>
+
+    <script>
+        // Banner Slider Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.banner-slide');
+            const dots = document.querySelectorAll('.banner-dot');
+            let currentSlide = 0;
+            
+            function showSlide(n) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                currentSlide = (n + slides.length) % slides.length;
+                
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+            
+            // Add click events to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => showSlide(index));
+            });
+            
+            // Auto slide every 5 seconds
+            setInterval(() => {
+                showSlide(currentSlide + 1);
+            }, 5000);
+            
+            // Mobile menu toggle
+            const hamburger = document.querySelector('.hamburger');
+            const nav = document.querySelector('nav ul');
+            
+            hamburger.addEventListener('click', () => {
+                nav.classList.toggle('show');
+                hamburger.classList.toggle('active');
+            });
+        });
+    </script>
 </body>
 </html>
