@@ -116,3 +116,53 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+        // Simple animation for elements when they come into view
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            
+            // Add initial state for animation
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Intersection Observer to animate elements when they come into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Observe all cards
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Header scroll effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                } else {
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.05)';
+                    header.style.background = 'white';
+                }
+            });
+        });
+    // Simple auto-slider for the hero banners
+document.addEventListener('DOMContentLoaded', () => {
+  const container = document.querySelector('.banner-banner-container');
+  let idx = 0;
+  setInterval(() => {
+    idx = (idx + 1) % container.children.length;
+    container.style.transform = `translateX(-${idx * 100}%)`;
+  }, 5000); // 5-second interval
+});
+
+// Optionally, enable clicking navigation, etc., for carousels

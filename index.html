@@ -1,16 +1,749 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Coded Mind Technology Incubator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);
+            --secondary: #6a7c92;
+            --accent: #00c3ff;
+            --dark: #1d2144;
+            --light: #f8f9ff;
+            --success: #34c759;
+            --purple: #8a2be2;
+            --cyan: #00ffff;
+            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+            --gradient-purple: linear-gradient(135deg, var(--purple), var(--primary));
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7ff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+            border: none;
+            color: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);;
+        }
+        
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .crystal-card {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .crystal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(31, 38, 135, 0.25);
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark);
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .logo-text span {
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--gradient);
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, #f5f7ff 0%, #e6e9ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(74, 108, 247, 0.1);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 40px;
+        }
+        
+        
+        .hero-visual {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(74, 108, 247, 0.2), rgba(0, 195, 255, 0.2));
+            animation: float 8s infinite ease-in-out;
+        }
+        
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            top: -150px;
+            right: -150px;
+            animation-delay: 0s;
+        }
+        
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            bottom: 50px;
+            left: 10%;
+            animation-delay: 1s;
+        }
+        
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            top: 40%;
+            right: 20%;
+            animation-delay: 2s;
+        }
+        
+        /* Banner Slider */
+        .banner-slider {
+            margin: 40px 0;
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .banner-slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 0 60px;
+        }
+        
+        .banner-slide.active {
+            opacity: 1;
+        }
+        
+        .banner-content {
+            max-width: 600px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .banner-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .banner-description {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+        
+        .banner-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        
+        .banner-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .banner-dot.active {
+            background: white;
+        }
+        
+        /* Why CMTI Section */
+        .why-cmti {
+            padding: 100px 0;
+            background: white;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 40px 30px;
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(74, 108, 247, 0.1);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+        
+        .feature-icon i {
+            font-size: 2rem;
+            color: var(--primary);
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .feature-description {
+            color: var(--secondary);
+        }
+        
+        /* Programs Section */
+        .programs {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7ff 0%, #e6e9ff 100%);
+        }
+        
+        .program-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+        
+        .program-card {
+            text-align: center;
+            padding: 30px 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .program-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient);
+        }
+        
+        .program-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(74, 108, 247, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .program-icon i {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        .program-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .program-explore {
+            margin-top: 20px;
+        }
+        
+        /* Moving Courses Section */
+        .moving-courses {
+            padding: 100px 0;
+            background: white;
+            overflow: hidden;
+        }
+        
+        .course-track {
+            display: flex;
+            animation: moveCourses 30s linear infinite;
+            width: max-content;
+        }
+        
+        .course-card {
+            flex: 0 0 300px;
+            margin: 0 15px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .course-image {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .course-content {
+            padding: 20px;
+        }
+        
+        .course-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .course-desc {
+            color: var(--secondary);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Highlights Section */
+        .highlights {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7ff 0%, #e6e9ff 100%);
+        }
+        
+        .quote-cards {
+            display: flex;
+            gap: 30px;
+            overflow-x: auto;
+            padding: 20px 0;
+            scrollbar-width: none;
+        }
+        
+        .quote-cards::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .quote-card {
+            flex: 0 0 350px;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .quote-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .quote-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            margin-right: 15px;
+        }
+        
+        .author-info h4 {
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .author-info p {
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* CTA Sections */
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+            background: white;
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 100px 0;
+            text-align: center;
+            background: var(--gradient-purple);
+            color: white;
+        }
+        
+        .final-cta .section-title,
+        .final-cta .section-subtitle {
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: white;
+        }
+        
+        .footer-column h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-column ul li a {
+            color: #a0a7c2;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a0a7c2;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+        
+        @keyframes moveCourses {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .banner-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 130px 0 80px;
+            }
+            
+            .hero-title {
+                font-size: 2.3rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                background-color: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+                padding: 12px 0;
+                font-size: 1rem;
+                color: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);
+                background-color: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                background-color: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);;
+            }
+            
+            .banner-slide {
+                padding: 0 30px;
+            }
+            
+            .banner-title {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .feature-card, .program-card {
+                padding: 25px 20px;
+            }
+            
+            .banner-slide {
+                padding: 0 20px;
+            }
+            
+            .banner-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+   <head>
+    <meta charset="UTF-8">
     <title>CMTI</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    </head>
+<body>
     <!-- Header -->
-   <header class="new-header">
+  <header class="new-header">
     <div class="header-container">
         <div class="logo-container">
             <img src="https://codedmind.netlify.app/logo.png" alt="CodedMind Logo" class="logo">
@@ -20,7 +753,7 @@
         <nav>
             <ul class="nav-menu">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="courses.html">Courses</a></li>
+                <li><a href="courses.html">programs</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="careers.html">Careers</a></li>
@@ -32,7 +765,6 @@
             <span></span>
             <span></span>
         </div>
-
     </div>
     
     <div class="mobile-menu">
@@ -43,226 +775,334 @@
             <li><a href="contact.html">Contact</a></li>
             <li><a href="careers.html">Careers</a></li>
         </ul>
-        
     </div>
-</header>
+    </header>
+     <div class="overlay"></div>
+    <script src="main.js"></script>
+    <script src="codedmind-enhancements.js"></script>
 
-    <!-- Banner Section -->
-   <!-- Banner Carousel -->
-<div class="banner-carousel">
-    <div class="carousel-slides">
-        <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80');">
-            <div class="slide-content">
-                <h2>Empowering Future Tech Leaders</h2>
-                <p>Join CMTI to gain cutting-edge skills in technology and business. Our expert-led courses prepare you for the digital future.</p>
-                <a href="courses.html" class="btn">Explore Courses</a>
+    <!-- End of Header -->
+     <main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-visual">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Pakistan's Largest Tech Incubator</div>
+                <h1 class="hero-title">CMTI TECHNOLOGY INCUBATOR</h1>
+                <p class="hero-description">Transforming ideas into successful tech ventures through cutting-edge incubation programs, mentorship, and resources.</p>
+                <div class="hero-buttons">
+                    <a href="<a href="https://form.jotform.com/252090931090451" class="enroll-btn" target="_blank" rel="noopener">Enroll Now</a>
+                    <a href="about.html" class="btn" target="_blank" rel="noopener">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Hero Section -->
+    <!-- Banner Slider Section -->
+    <section class="banner-slider">
+        <div class="banner-slide active" style="background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')">
+            <div class="banner-content">
+                <h2 class="banner-title">Join Our Tech Incubation Programs</h2>
+                <p class="banner-description">Get access to mentorship, resources, and funding to turn your tech ideas into reality.</p>
+                <a href="courses.html" class="btn">Explore Programs</a>
             </div>
         </div>
         
-        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80');">
-            <div class="slide-content">
-                <h2>Learn from Industry Experts</h2>
-                <p>Our instructors are professionals with years of experience in their respective fields.</p>
-                <a href="about.html" class="btn">Meet Our Team</a>
+        <div class="banner-slide" style="background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')">
+            <div class="banner-content">
+                <h2 class="banner-title">Learn from Industry Experts</h2>
+                <p class="banner-description">Our programs are designed and taught by experienced professionals from top tech companies.</p>
+                <a href="about.html" class="btn">About Us</a>
             </div>
         </div>
         
-        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80');">
-            <div class="slide-content">
-                <h2>Hands-On Learning Experience</h2>
-                <p>Gain practical skills through our project-based curriculum and real-world applications.</p>
-                <a href="courses.html" class="btn">View Programs</a>
+        <div class="banner-slide" style="background: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')">
+            <div class="banner-content">
+                <h2 class="banner-title">Access Cutting-Edge Resources</h2>
+                <p class="banner-description">From co-working spaces to advanced tech tools, we provide everything you need to succeed.</p>
+                <a href="contact.html" class="btn">Get in Touch</a>
             </div>
         </div>
-        
-        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80');">
-            <div class="slide-content">
-                <h2>Launch Your Tech Career</h2>
-                <p>Our career services help you land your dream job in the tech industry.</p>
-                <a href="careers.html" class="btn">Career Support</a>
-            </div>
+            /* Banner Navigation Dots */
+        <div class="banner-nav">
+            <div class="banner-dot active" data-index="0"></div>
+            <div class="banner-dot" data-index="1"></div>
+            <div class="banner-dot" data-index="2"></div>
         </div>
-    </div>
+    </section>
+
+    <!-- End of Banner Slider Section -->
     
-    <div class="carousel-arrow prev">
-        <i class="fas fa-chevron-left"></i>
-    </div>
-    <div class="carousel-arrow next">
-        <i class="fas fa-chevron-right"></i>
-    </div>
-    
-    <div class="carousel-controls">
-        <div class="carousel-dot active" data-index="0"></div>
-        <div class="carousel-dot" data-index="1"></div>
-        <div class="carousel-dot" data-index="2"></div>
-        <div class="carousel-dot" data-index="3"></div>
-    </div>
-</div>
-    
-    <div class="courses-container">
-        <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="DIT">
-            <div class="course-card-content">
-                <h2>DIT (Diploma in Information Technology)</h2>
-                <p>The DIT course is designed for those who want a comprehensive foundation in IT. It covers computer basics, networking, programming, and software applications to prepare you for a successful career in technology.</p>
-                <a href="course-dit.html" class="details-btn">Explore Program</a>  
+    <!-- Why CMTI Section -->
+    <section class="why-cmti">
+        <div class="container">
+            <h2 class="section-title">Why CMTI</h2>
+            <p class="section-subtitle">Unlock your potential with Pakistan's leading technology incubator</p>
+            
+            <div class="features">
+                <div class="card feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="feature-title">Quality Education</h3>
+                    <p class="feature-description">Learn from industry experts with years of experience in technology and business development. Our curriculum is designed to provide both theoretical knowledge and practical skills.</p>
+                </div>
+                
+                <div class="card feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="feature-title">Industry Exposure</h3>
+                    <p class="feature-description">Gain real-world experience through internships, projects, and collaborations with tech companies. We connect you with industry leaders for mentorship and networking opportunities.</p>
+                </div>
+                
+                <div class="card feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Career Opportunities</h3>
+                    <p class="feature-description">Access our network of hiring partners and jumpstart your career in the technology industry. Our graduates have been placed in top tech companies with competitive packages.</p>
+                </div>
             </div>
         </div>
-        <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="CIT">
-            <div class="course-card-content">
-                <h2>CIT (Certificate in Information Technology)</h2>
-                <p>Master the fundamentals of computer systems, networking, and information management with our comprehensive CIT course. Develop practical skills in hardware, software, networking, and database management for a successful IT career.</p>
-                <a href="course-cit.html" class="details-btn">Explore Program</a>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs">
+        <div class="container">
+            <h2 class="section-title">Top Program Categories</h2>
+            <p class="section-subtitle">Explore our cutting-edge programs designed to launch your tech career</p>
+            
+            <div class="program-categories">
+                <div class="card program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 class="program-title">Crypto Trading</h3>
+                    <p>Master the art of cryptocurrency trading and blockchain technology. Learn technical analysis, risk management, and trading strategies.</p>
+                    <a href="#" class="btn">Explore Programs</a>
+                </div>
+                
+                <div class="card program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="program-title">Web Design & Development</h3>
+                    <p>Learn to create responsive, modern websites and web applications using the latest technologies and frameworks.</p>
+                    <a href="course-webdev.html" class="btn">Explore Programs</a>
+                </div>
+                
+                <div class="card program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="program-title">Artificial Intelligence</h3>
+                    <p>Dive into machine learning, neural networks, and AI applications. Build intelligent systems that can learn and adapt.</p>
+                    <a href="courses-ai-ml.html" class="btn">Explore Programs</a>
+                </div>
+                
+                <div class="card program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3 class="program-title">Digital Media Marketing</h3>
+                    <p>Learn strategies to promote brands and products online effectively through social media, SEO, and content marketing.</p>
+                    <a href="course-digital-marketing.html" class="btn">Explore Programs</a>
+                </div>
+                
+                <div class="card program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3 class="program-title">App & Game Development</h3>
+                    <p>Create mobile applications and interactive games from concept to deployment. Learn programming, design, and monetization.</p>
+                    <a href="course-mobile-app.html" class="btn">Explore Programs</a>
+                </div>
+                
+                <div class="card program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="program-title">E-commerce</h3>
+                    <p>Build and manage successful online stores and marketplaces. Learn about payment systems, logistics, and customer acquisition.</p>
+                    <a href="course-amazon-ecommerce.html" class="btn">Explore Programs</a>
+                </div>
+                
+                <div class="card program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="program-title">Cyber Security</h3>
+                    <p>Protect systems and networks from digital attacks and threats. Learn ethical hacking, encryption, and security protocols.</p>
+                    <a href="course-cyber-security.html" class="btn">Explore Programs</a>
+                </div>
+                
+                <div class="card program-card">
+                    <div class="program-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="program-title">Professional Development</h3>
+                    <p>Enhance your soft skills and advance your career in the tech industry. Learn communication, leadership, and project management.</p>
+                    <a href="course-data-science.html" class="btn">Explore Programs</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="courses.html" class="btn">Explore All Categories</a>
             </div>
         </div>
-        <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1751452020438-81d67e8ef314?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="English">
-            <div class="course-card-content">
-                <h2>English Language</h2>
-                <p>Master the English language with our comprehensive course designed for all proficiency levels. Develop fluency in speaking, writing, reading, and listening while building confidence for academic, professional, and social contexts.</p>
-                <a href="course-english.html" class="details-btn">Explore Program</a>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="section-title">Super Charge Your Career Potential</h2>
+                <p class="section-subtitle">Join thousands of students who have transformed their careers through CMTI programs</p>
+                
+                <div class="cta-buttons">
+                    <a href="https://form.jotform.com/252090931090451" class="enroll-btn" target="_blank" rel="noopener">How to Apply</a>
+                    <a href="about.html" class="btn">More About CMTI</a>
+                </div>
             </div>
         </div>
-        <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1583508915901-b5f84c1dcde1?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Web Development">
-            <div class="course-card-content">
-                <h2>Web Development</h2>
-                <p>Master the art of building modern, responsive websites and web applications. This comprehensive course covers everything from HTML/CSS basics to advanced JavaScript frameworks, preparing you for a successful career in web development.</p>
-                <a href="course-webdev.html" class="details-btn">Explore Program</a>
+    </section>
+
+    <!-- Moving Courses Section -->
+    <section class="moving-courses">
+        <div class="container">
+            <h2 class="section-title">Explore Possibilities</h2>
+            <p class="section-subtitle">Browse our most popular courses and find the perfect fit for your career goals</p>
+            
+            <div class="course-track">
+                <div class="course-card crystal-card">
+                    <div class="course-image" style="background: url('https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="course-content">
+                        <h3 class="course-title">Full Stack Web Development</h3>
+                        <p class="course-desc">Master front-end and back-end technologies to become a full-stack developer.</p>
+                        <a href="course-webdev.html" class="btn">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="course-card crystal-card">
+                    <div class="course-image" style="background: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="course-content">
+                        <h3 class="course-title">Data Science & Analytics</h3>
+                        <p class="course-desc">Learn to extract insights from data using statistical methods and machine learning.</p>
+                        <a href="courses.html" class="btn">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="course-card crystal-card">
+                    <div class="course-image" style="background: url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="course-content">
+                        <h3 class="course-title">UX/UI Design Mastery</h3>
+                        <p class="course-desc">Create intuitive and beautiful user interfaces that provide exceptional experiences.</p>
+                        <a href="courses.html" class="btn">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="course-card crystal-card">
+                    <div class="course-image" style="background: url('https://images.unsplash.com/photo-1563207153-f403bf289096?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="course-content">
+                        <h3 class="course-title">Mobile App Development</h3>
+                        <p class="course-desc">Build cross-platform mobile applications using React Native and Flutter.</p>
+                        <a href="course-mobile-app.html" class="btn">Explore</a>
+                    </div>
+                </div>
+                
+                <div class="course-card crystal-card">
+                    <div class="course-image" style="background: url('https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80')"></div>
+                    <div class="course-content">
+                        <h3 class="course-title">Digital Marketing Strategy</h3>
+                        <p class="course-desc">Develop comprehensive digital marketing campaigns that drive growth and engagement.</p>
+                        <a href="course-digital-marketing.html" class="btn">Explore</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="courses.html" class="btn">Explore All Programs</a>
             </div>
         </div>
-        <div class="course-card">
-            <img src="https://plus.unsplash.com/premium_photo-1683287925874-f8b46c6437ae?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="YouTube Automation">
-            <div class="course-card-content">
-                <h2>YouTube Automation</h2>
-                <p>Master the art of building and scaling profitable YouTube channels without appearing on camera. Learn content strategy, outsourcing, SEO optimization, and monetization techniques to create passive income streams.</p>
-                <a href="course-youtube.html" class="details-btn">Explore Program</a>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="highlights">
+        <div class="container">
+            <h2 class="section-title">CMTI Highlights</h2>
+            <p class="section-subtitle">Discover what makes CMTI the leading technology incubator in Pakistan</p>
+            
+            <div class="quote-cards">
+                <div class="quote-card">
+                    <p class="quote-text">CMTI provided me with the resources, mentorship, and network I needed to turn my idea into a successful startup. The incubation program was a game-changer for my career.</p>
+                    <div class="quote-author">
+                        <div class="author-image" style="background: url('https://randomuser.me/api/portraits/men/32.jpg')"></div>
+                        <div class="author-info">
+                            <h4>Ahmed Raza</h4>
+                            <p>Founder, TechSolve</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quote-card">
+                    <p class="quote-text">The quality of education and hands-on experience I gained at CMTI surpassed all my expectations. I landed my dream job at a top tech company even before graduating.</p>
+                    <div class="quote-author">
+                        <div class="author-image" style="background: url('https://randomuser.me/api/portraits/women/44.jpg')"></div>
+                        <div class="author-info">
+                            <h4>Fatima Ali</h4>
+                            <p>Software Engineer, Systems Ltd</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quote-card">
+                    <p class="quote-text">As a mentor at CMTI, I'm constantly impressed by the talent and innovation I see. The incubator is playing a crucial role in developing Pakistan's tech ecosystem.</p>
+                    <div class="quote-author">
+                        <div class="author-image" style="background: url('https://randomuser.me/api/portraits/men/67.jpg')"></div>
+                        <div class="author-info">
+                            <h4>Omar Farooq</h4>
+                            <p>CTO, InnovateTech</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quote-card">
+                    <p class="quote-text">The networking opportunities at CMTI are incredible. I've connected with investors, industry leaders, and like-minded entrepreneurs who have helped me grow my business.</p>
+                    <div class="quote-author">
+                        <div class="author-image" style="background: url('https://randomuser.me/api/portraits/women/68.jpg')"></div>
+                        <div class="author-info">
+                            <h4>Ayesha Khan</h4>
+                            <p>CEO, DevCraft</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1662947368791-8630979e964b?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Amazon FBA">
-            <div class="course-card-content">
-                <h2>Amazon FBA</h2>
-                <p>Our Amazon FBA Mastery course provides comprehensive training in building a successful e-commerce business on Amazon. You'll learn product research strategies, sourcing techniques, listing optimization, PPC advertising, inventory management, and brand scaling strategies.</p>
-                <a href="course-amazon-fba.html" class="details-btn">Explore Program</a>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="section-title">Ready to become a change maker?</h2>
+            <p class="section-subtitle">Join Pakistan's largest technology incubator and start your journey towards innovation and success</p>
+            
+            <div class="cta-buttons">
+                <a href="about.html" class="btn">LEARN ABOUT CMTI</a>
+                <a href="courses.html" class="btn">EXPLORE ALL PROGRAMS</a>
+                <a href="https://form.jotform.com/252090931090451" class="enroll-btn" target="_blank" rel="noopener">CONTACT ADMISSIONS</a>
             </div>
         </div>
-        <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1602359337719-a8bcbd1f7b51?q=80&w=299&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Amazon E-Commerce">
-            <div class="course-card-content">
-                <h2>Amazon E-Commerce</h2>
-                <p>This practical course combines theoretical knowledge with hands-on exercises, real-world case studies, and live account management to prepare you for success in the competitive world of Amazon selling.</p>
-                <a href="course-amazon-ecommerce.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        <div class="course-card">
-            <img src="https://plus.unsplash.com/premium_photo-1661284886711-4eaee4fa7771?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8R3JhcGhpYyUyMERlc2lnbnxlbnwwfHwwfHx8MA%3D%3D" alt="Graphic Design">
-            <div class="course-card-content">
-                <h2>Graphic Design</h2>
-                <p>This course combines design theory with practical application, allowing you to build a professional portfolio that showcases your skills to potential employers or clients.</p>
-                <a href="course-graphic-design.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        <div class="course-card">
-            <img src="https://plus.unsplash.com/premium_photo-1685283298465-e52e933a3312?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="SEO">
-            <div class="course-card-content">
-                <h2>SEO</h2>
-                <p>Our SEO & Digital Marketing course provides a comprehensive journey into the world of online visibility and digital strategies. You'll learn everything from basic SEO principles to advanced digital marketing techniques.</p>
-                <a href="course-seo.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGlnaXRhbCUyMG1hcmtldGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Digital Marketing">
-            <div class="course-card-content">
-                <h2>Digital Marketing</h2>
-                <p>This hands-on course combines theoretical knowledge with practical exercises, real-world case studies, and live campaign management to prepare you for a successful career in digital marketing.</p>
-                <a href="course-digital-marketing.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Data Science">
-            <div class="course-card-content">
-                <h2>Data Science</h2>
-                <p>Analyze and visualize data. Work on real-world projects that simulate industry scenarios and build your portfolio. Learn from industry professionals with years of experience in data science and machine learning.</p>
-                <a href="course-data-science.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1653564142048-d5af2cf9b50f?q=80&w=1030&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Python Programming">
-            <div class="course-card-content">
-                <h2>Python Programming</h2>
-                <p>Master one of the world's most popular programming languages. This comprehensive Python course takes you from absolute beginner to proficient developer, covering fundamentals, web development, data analysis, and automation.</p>
-                <a href="course-python.html" class="details-btn">Explore Program</a>
-              </div>
-        </div>
-        <div class="course-card">
-            <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Networking">
-            <div class="course-card-content">
-                <h2>Networking</h2>
-                <p>Master the fundamentals of computer networks, protocols, and network security. This comprehensive course prepares you for industry certifications and a successful career in network administration and security.</p>
-                <a href="course-networking.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        <div class="course-card">
-            <img src="https://plus.unsplash.com/premium_photo-1661764393655-1dbffee8c0ce?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cyber Security">
-            <div class="course-card-content">
-                <h2>Cyber Security</h2>
-                <p>Master the art of defending digital systems against cyber threats with our comprehensive Cyber Security course. Learn ethical hacking, network security, cryptography, and risk management from industry experts.</p>
-                <a href="course-cyber-security.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        <div class="course-card">
-            <img src="https://plus.unsplash.com/premium_photo-1664474557910-8e3a0210f48d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mobile App Development">
-            <div class="course-card-content">
-                <h2>Mobile App Development</h2>
-                <p>Master the art of creating powerful mobile applications for iOS and Android platforms. Learn industry-standard tools and frameworks to build, test, and publish apps to major app stores.</p>
-                <a href="course-mobile-app.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        <div class="course-card">
-            <img src="Gallery\Wrodpress.jpg" alt="WordPress">
-            <div class="course-card-content">
-                <h2>WordPress</h2>
-                <p>Master the world's most popular content management system. Learn to build professional websites, custom themes, and plugins from scratch. Gain the skills to create powerful, scalable WordPress solutions for clients or your own business.</p>
-                <a href="course-wordpress.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        <div class="course-card">
-            <img src="https://plus.unsplash.com/premium_photo-1663040316559-8684ca45d7e9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Video Editing">
-            <div class="course-card-content">
-                <h2>Video Editing</h2>
-                <p>This hands-on course emphasizes practical projects that will build your portfolio and prepare you for a career in film editing, content creation, advertising, or social media marketing.</p>
-                <a href="course-video-editing.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        <div class="course-card">
-            <img src="https://plus.unsplash.com/premium_photo-1661412968858-94c2675c3370?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fE1TJTIwT2ZmaWNlfGVufDB8fDB8fHww" alt="MS Office">
-            <div class="course-card-content">
-                <h2>MS Office</h2>
-                <p>Master Microsoft Office applications and learn to automate routine tasks, increase productivity, and leverage advanced features of Word, Excel, PowerPoint, and Access to streamline business processes.</p>
-                <a href="course-ms-office.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        <div class="course-card">
-            <img src="Gallery\Cloudcomputing.jpg" alt="Cloud Computing">
-            <div class="course-card-content">
-                <h2>Cloud Computing</h2>
-                <p>Master the fundamentals and advanced concepts of cloud computing. Learn to design, deploy, and manage applications on leading cloud platforms like AWS, Azure, and Google Cloud.</p>
-                <a href="course-cloud-computing.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        <div class="course-card">
-            <img src="https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="AI & Machine Learning">
-            <div class="course-card-content">
-                <h2>AI & Machine Learning</h2>
-                <p>This comprehensive AI & Machine Learning course is designed to take you from beginner to job-ready in 4 months. You'll learn both the theory and practical application of machine learning algorithms, neural networks, and AI concepts.</p>
-                <a href="course-ai-ml.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Footer --><footer class="site-footer">
+    </section>
+    </main>
+   
+      <!-- Footer -->
+   <footer class="site-footer">
     <div class="footer-content">
         <div class="footer-col">
             <div class="footer-logo">
@@ -271,6 +1111,7 @@
             </div>
             <p class="footer-description">
                 Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
+                Join CMTI to gain cutting-Edge skills in technology and business. Our expert-led courses prepare you for the digital future.
             </p>
             <div class="footer-social">
                 <h4>Follow Us</h4>
@@ -303,6 +1144,7 @@
                 </div>
             </div>
         </div>
+                
           <div class="footer-col">
             <h3>Top Programs</h3>
             <ul>

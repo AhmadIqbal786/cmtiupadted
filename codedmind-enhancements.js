@@ -555,3 +555,129 @@ function debounce(func, wait) {
             overlay.addEventListener('click', toggleMenu);
         });
     
+        // Banner Slider Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const bannerSlides = document.querySelectorAll('.banner-slide');
+            const bannerDots = document.querySelectorAll('.banner-dot');
+            let currentSlide = 0;
+            
+            function showSlide(index) {
+                bannerSlides.forEach(slide => slide.classList.remove('active'));
+                bannerDots.forEach(dot => dot.classList.remove('active'));
+                
+                bannerSlides[index].classList.add('active');
+                bannerDots[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            function nextSlide() {
+                let next = currentSlide + 1;
+                if (next >= bannerSlides.length) next = 0;
+                showSlide(next);
+            }
+            
+            // Auto advance slides
+            setInterval(nextSlide, 5000);
+            
+            // Add click events to dots
+            bannerDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => showSlide(index));
+            });
+            
+            // Animate elements on scroll
+            const cards = document.querySelectorAll('.card, .crystal-card');
+            
+            // Add initial state for animation
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            
+            // Intersection Observer to animate elements when they come into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            // Observe all cards
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+            
+            // Header scroll effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                } else {
+                    header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.05)';
+                    header.style.background = 'rgba(255, 255, 255, 0.95)';
+                }
+            });
+            
+            // Moving courses animation
+            const courseTrack = document.querySelector('.course-track');
+            const courseCards = document.querySelectorAll('.course-card');
+            const courseTrackWidth = courseCards.length * 330; // width of all cards including margins
+            
+            courseTrack.style.width = courseTrackWidth + 'px';
+            
+            // Clone course cards for seamless animation
+            courseCards.forEach(card => {
+                const clone = card.cloneNode(true);
+                courseTrack.appendChild(clone);
+            });
+        });
+  
+ const slides = document.querySelectorAll('.banner-slide');
+        const prevBtn = document.querySelector('.banner-prev');
+        const nextBtn = document.querySelector('.banner-next');
+        const indicators = document.querySelectorAll('.indicator');
+        let currentSlide = 0;
+        let slideInterval = setInterval(nextSlide, 5000);
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+                indicators[i].classList.toggle('active', i === index);
+            });
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let nextIndex = (currentSlide + 1) % slides.length;
+            showSlide(nextIndex);
+        }
+
+        function prevSlide() {
+            let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prevIndex);
+        }
+
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            resetInterval();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            resetInterval();
+        });
+
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                showSlide(index);
+                resetInterval();
+            });
+        });
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
+        }
