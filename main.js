@@ -42,8 +42,6 @@ document.querySelectorAll('.flip-btn').forEach(btn => {
     });
 });
 
-
-
 // Render course cards
 function renderCourseCards() {
     const container = document.getElementById('courses-container');
@@ -126,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(20px)';
                 card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
             });
             
             // Intersection Observer to animate elements when they come into view
@@ -141,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Observe all cards
             cards.forEach(card => {
                 observer.observe(card);
+
             });
             
             // Header scroll effect
@@ -155,6 +155,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+
     // Simple auto-slider for the hero banners
 document.addEventListener('DOMContentLoaded', () => {
   const container = document.querySelector('.banner-banner-container');
@@ -164,5 +165,15 @@ document.addEventListener('DOMContentLoaded', () => {
     container.style.transform = `translateX(-${idx * 100}%)`;
   }, 5000); // 5-second interval
 });
-
-// Optionally, enable clicking navigation, etc., for carousels
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlidePosition();
+        }   
+        function updateSlidePosition() {
+            slides.forEach((slide, index) => {
+                slide.style.transform = `translateX(${100 * (index - currentIndex)}%)`;
+            });
+        }
+        
+        
+                

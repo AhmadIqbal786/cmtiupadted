@@ -578,6 +578,7 @@ function debounce(func, wait) {
             
             // Auto advance slides
             setInterval(nextSlide, 5000);
+                
             
             // Add click events to dots
             bannerDots.forEach((dot, index) => {
@@ -676,8 +677,3 @@ function debounce(func, wait) {
                 resetInterval();
             });
         });
-
-        function resetInterval() {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(nextSlide, 5000);
-        }
