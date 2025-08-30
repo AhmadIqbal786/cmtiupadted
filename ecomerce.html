@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Mastery Course</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ff6b6b;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .section h2 {
+            color: #6a11cb;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: #6a11cb;
+            margin-bottom: 15px;
+        }
+        
+        .pricing {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .pricing-plan {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .pricing-plan:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pricing-plan h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #6a11cb;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #333;
+        }
+        
+        .pricing-plan ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .pricing-plan li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .testimonial {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial .author {
+            font-weight: bold;
+            color: #6a11cb;
+        }
+        
+        .payment-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .payment-options {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .payment-option {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-option:hover,
+        .payment-option.selected {
+            border-color: #6a11cb;
+            background-color: #f0f0ff;
+        }
+        
+        .payment-option i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #6a11cb;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .payment-options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coded Mind Technology Incubator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://codedmind.netlify.app/logo.png" type="image/png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="codedmind-enhancements.js"></script>
+    <link rel="stylesheet" href="style2.css">
+   
+</head>
+            
+      <!-- Header -->
+  <header class="new-header">
+    <div class="header-container">
+        <div class="logo-container">
+            <img src="https://codedmind.netlify.app/logo.png" alt="CodedMind Logo" class="logo">
+            <div class="logo-text">Coded Mind <br> Technology Incubator</div>
+        </div>
+        
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="courses.html">Programs</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="careers.html">Careers</a></li>
+            </ul>
+        </nav>
+        
+        
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    
+    <div class="mobile-menu">
+        <ul class="mobile-nav">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="courses.html">Programs</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+        </ul>
+        
+    </div>
+</header>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>E-commerce Mastery Course</h1>
+            <p>Learn how to build, grow, and scale a profitable e-commerce business from scratch. Everything you need to know from product selection to marketing and optimization.</p>
+            <a href="#pricing" class="btn">Enroll Now</a>
+        </section>
+        
+        <!-- Course Overview -->
+        <section class="section">
+            <h2>What You'll Learn</h2>
+            <p>Our comprehensive e-commerce course covers everything from the fundamentals to advanced strategies used by successful online stores.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>Store Setup</h3>
+                    <p>Learn how to set up your e-commerce store from scratch with the right platforms and tools.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-search-dollar"></i>
+                    <h3>Product Research</h3>
+                    <p>Discover proven methods for finding winning products that sell well and have good profit margins.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Marketing Strategies</h3>
+                    <p>Master digital marketing techniques including SEO, social media, email marketing, and PPC advertising.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Analytics & Optimization</h3>
+                    <p>Learn how to analyze data and optimize your store for maximum conversions and profitability.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Curriculum -->
+        <section class="section">
+            <h2>Course Curriculum</h2>
+            <p>Our structured curriculum takes you from beginner to expert through 8 comprehensive modules.</p>
+            
+            <div class="features">
+                <div class="feature">
+                    <h3>Module 1: E-commerce Fundamentals</h3>
+                    <p>Understanding the e-commerce landscape, business models, and legal requirements.</p>
+                </div>
+                <div class="feature">
+                    <h3>Module 2: Platform Selection</h3>
+                    <p>Comparing Shopify, WooCommerce, BigCommerce and others to find the right fit.</p>
+                </div>
+                <div class="feature">
+                    <h3>Module 3: Product Sourcing</h3>
+                    <p>Working with suppliers, dropshipping, inventory management, and fulfillment.</p>
+                </div>
+                <div class="feature">
+                    <h3>Module 4: Store Design & UX</h3>
+                    <p>Creating high-converting store layouts, product pages, and checkout flows.</p>
+                </div>
+                <div class="feature">
+                    <h3>Module 5: Digital Marketing</h3>
+                    <p>Facebook/Instagram ads, Google Ads, influencer marketing, and content strategy.</p>
+                </div>
+                <div class="feature">
+                    <h3>Module 6: Email & Retention Marketing</h3>
+                    <p>Building email lists, segmentation, automation, and customer retention strategies.</p>
+                </div>
+                <div class="feature">
+                    <h3>Module 7: Analytics & Optimization</h3>
+                    <p>Tracking key metrics, A/B testing, and conversion rate optimization techniques.</p>
+                </div>
+                <div class="feature">
+                    <h3>Module 8: Scaling Your Business</h3>
+                    <p>Advanced strategies for scaling your store, outsourcing, and building a brand.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Pricing -->
+        <section id="pricing" class="section">
+            <h2>Course Pricing</h2>
+            <p>Choose the plan that works best for you. All plans include lifetime access to course materials.</p>
+            
+            <div class="pricing">
+                <div class="pricing-plan">
+                    <h3>Basic Plan</h3>
+                    <div class="price">$197</div>
+                    <ul>
+                        <li>Full Course Access</li>
+                        <li>Downloadable Resources</li>
+                        <li>Community Access</li>
+                        <li>-</li>
+                        <li>-</li>
+                    </ul>
+                    <a href="#payment" class="btn">Select Plan</a>
+                </div>
+                
+                <div class="pricing-plan" style="background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%); border: 2px solid #6a11cb;">
+                    <h3>Pro Plan</h3>
+                    <div class="price">$397</div>
+                    <ul>
+                        <li>Full Course Access</li>
+                        <li>Downloadable Resources</li>
+                        <li>Community Access</li>
+                        <li>1-on-1 Coaching Session</li>
+                        <li>-</li>
+                    </ul>
+                    <a href="#payment" class="btn">Select Plan</a>
+                </div>
+                
+                <div class="pricing-plan">
+                    <h3>Elite Plan</h3>
+                    <div class="price">$697</div>
+                    <ul>
+                        <li>Full Course Access</li>
+                        <li>Downloadable Resources</li>
+                        <li>Community Access</li>
+                        <li>4x 1-on-1 Coaching Sessions</li>
+                        <li>Custom Store Review</li>
+                    </ul>
+                    <a href="#payment" class="btn">Select Plan</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials -->
+        <section class="section">
+            <h2>Student Success Stories</h2>
+            <p>Hear from our students who have transformed their e-commerce businesses after taking this course.</p>
+            
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"This course completely changed my approach to e-commerce. I went from $0 to $15k/month in revenue within 4 months!"</p>
+                    <div class="author">- Sarah Johnson</div>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"The modules on Facebook ads alone were worth the investment. My ROAS increased from 2x to 5x after implementing the strategies."</p>
+                    <div class="author">- Michael Chen</div>
+                </div>
+                
+                <div class="testimonial">
+                    <p>"As a complete beginner, I found the course incredibly comprehensive and easy to follow. Now I run a profitable store alongside my day job."</p>
+                    <div class="author">- Jessica Williams</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Payment Section -->
+        <section id="payment" class="section">
+            <h2>Enroll in the Course</h2>
+            <p>Select your payment method and complete your enrollment today.</p>
+            
+            <div class="payment-options">
+                <div class="payment-option selected" onclick="selectPayment('credit-card')">
+                    <i class="fas fa-credit-card"></i>
+                    <div>Credit Card</div>
+                </div>
+                
+                <div class="payment-option" onclick="selectPayment('paypal')">
+                    <i class="fab fa-paypal"></i>
+                    <div>PayPal</div>
+                </div>
+                
+                <div class="payment-option" onclick="selectPayment('crypto')">
+                    <i class="fab fa-bitcoin"></i>
+                    <div>Crypto</div>
+                </div>
+            </div>
+            
+            <div class="payment-form">
+                <form id="payment-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    
+                    <div id="credit-card-fields">
+                        <div class="form-group">
+                            <label for="card-number">Credit Card Number</label>
+                            <input type="text" id="card-number" placeholder="Enter your card number" required>
+                        </div>
+                        
+                        <div style="display: flex; gap: 15px;">
+                            <div class="form-group" style="flex: 1;">
+                                <label for="expiry">Expiry Date</label>
+                                <input type="text" id="expiry" placeholder="MM/YY" required>
+                            </div>
+                            
+                            <div class="form-group" style="flex: 1;">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" placeholder="CVV" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="plan">Select Plan</label>
+                        <select id="plan" required>
+                            <option value="">Select a plan</option>
+                            <option value="basic">Basic Plan - $197</option>
+                            <option value="pro">Pro Plan - $397</option>
+                            <option value="elite">Elite Plan - $697</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="btn" style="width: 100%;">Complete Enrollment</button>
+                </form>
+            </div>
+        </section>
+        
+        <!-- FAQ -->
+        <section class="section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">How long will I have access to the course? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>You'll have lifetime access to all course materials, including any future updates we make to the content.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">Do I need any prior experience? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>No prior experience is needed. The course is designed for complete beginners but also includes advanced strategies for those with some e-commerce experience.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">How much time do I need to dedicate? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>The course includes about 30 hours of content. We recommend dedicating 5-7 hours per week if you want to complete it in a month.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaq(this)">What if I'm not satisfied with the course? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>We offer a 30-day money-back guarantee. If you're not satisfied with the course, just contact us for a full refund.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2023 E-commerce Mastery Course. All rights reserved.</p>
+        </div>
+    </footer>
+       <!-- Footer -->
+   <footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-col">
+            <div class="footer-logo">
+                <img src="logo.png" alt="CMTI Logo">
+                <h3> Coded Mind <n>Technology Incubator</n> </h3>
+            </div>
+            <p class="footer-description">
+                Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
+                Join CMTI to gain cutting-Edge skills in technology and business. Our expert-led courses prepare you for the digital future.
+            </p>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#" title="Facebook" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
+                        </svg>
+                    </a>
+                    <a href="#" title="Twitter" aria-label="Twitter">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10C2.38 10 2.38 10 2.38 10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.46 14.34 5.08 14.39 4.69 14.39C4.42 14.39 4.15 14.36 3.89 14.31C4.43 16 6 17.26 7.89 17.29C6.43 18.45 4.58 19.13 2.56 19.13C2.22 19.13 1.88 19.11 1.54 19.07C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z"/>
+                        </svg>
+                    </a>
+                    <a href="#" title="Instagram" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2C22 19.4 19.4 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2ZM7.6 4C5.6 4 4 5.6 4 7.6V16.4C4 18.4 5.6 20 7.6 20H16.4C18.4 20 20 18.4 20 16.4V7.6C20 5.6 18.4 4 16.4 4H7.6ZM12 7C14.8 7 17 9.2 17 12C17 14.8 14.8 17 12 17C9.2 17 7 14.8 7 12C7 9.2 9.2 7 12 7ZM12 9C10.3 9 9 10.3 9 12C9 13.7 10.3 15 12 15C13.7 15 15 13.7 15 12C15 10.3 13.7 9 12 9ZM17.5 6C18.1 6 18.5 5.6 18.5 5C18.5 4.4 18.1 4 17.5 4C16.9 4 16.5 4.4 16.5 5C16.5 5.6 16.9 6 17.5 6Z"/>
+                        </svg>
+                    </a>
+                    <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+                        </svg>
+                    </a>
+                    <a href="#" title="YouTube" aria-label="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+                
+         <div class="footer-col">
+            <h3>Top Programs</h3>
+            <ul>
+                <li><a href="course-webdev.html">Web Development</a></li>
+                <li><a href="course-data-science.html">Data Science</a></li>
+                <li><a href="course-cyber-security.html">Cyber Security</a></li>
+                <li><a href="course-digital-marketing.html">Digital Marketing</a></li>
+                <li><a href="course-python.html">Python Programming</a></li>
+                <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">All programs</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="careers.html">Career Opportunities</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-col">
+            <h3>Get In Touch!</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
+                    </svg>
+                    <span> Katlang District Mardan Pakistan</span>
+                </div>
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                    </svg>
+                    <span><a href="tel:+923488850059">+92 348 8850059</a></span>
+                   </div>
+                  <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                    </svg>
+                    <span><a href="tel:+923161098765">+92 316 1098765</a></span>
+                </div>
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6M20 6L12 11L4 6H20M20 18H4V8L12 13L20 8V18Z"/>
+                    </svg>
+                    <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
+                </div>
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
+                    </svg>
+                    <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
+                </div>
+            </div>
+            
+            <div class="newsletter">
+                <h4>Subscribe to Our Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="footer-bottom-content">
+            <div class="copyright">
+                &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
+            </div>
+            <div class="legal-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="refund.html">Refund Policy</a>
+                <a href="https://aitoolsfreelance.blogspot.com"> Blogs</a>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+    <script>
+        // Function to toggle FAQ answers
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const icon = element.querySelector('i');
+            
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            } else {
+                answer.style.display = 'block';
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            }
+        }
+        
+        // Function to select payment method
+        function selectPayment(method) {
+            const options = document.querySelectorAll('.payment-option');
+            options.forEach(option => option.classList.remove('selected'));
+            
+            event.currentTarget.classList.add('selected');
+            
+            // Show/hide relevant payment fields based on selection
+            const ccFields = document.getElementById('credit-card-fields');
+            
+            if (method === 'credit-card') {
+                ccFields.style.display = 'block';
+            } else {
+                ccFields.style.display = 'none';
+            }
+        }
+        
+        // Handle form submission
+        document.getElementById('payment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your enrollment! This is a demo - in a real application, your payment would be processed now.');
+        });
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hide all FAQ answers initially
+            document.querySelectorAll('.faq-answer').forEach(answer => {
+                answer.style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>

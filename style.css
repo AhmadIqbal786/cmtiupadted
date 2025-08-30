@@ -29,7 +29,7 @@
     --primary-gradient: linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%);
     --secondary-gradient: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
     --header-gradient: linear-gradient(90deg, #f9f9fa, #e5f6f5);
-    --footer-gradient: linear-gradient(to right, #2c3e50, #4a6580);
+    --footer-gradient: linear-gradient(to right, #4d6883, #4a6580);
 }
 
 html {
@@ -37,8 +37,8 @@ html {
 }
 
 body {
-    background: linear-gradient(135deg, #f4f6f8 0%, #e1dfe8 50%, #e7eef0 100%);
-    color: #333;
+    background: linear-gradient(135deg, #7571b2 0%, #bbd2e9 50%, #a0e3f5 100%);
+    color: white;
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
@@ -927,7 +927,7 @@ p {
 
 /* ===== FOOTER ===== */
 .site-footer {
-    background: linear-gradient(135deg, #1b538a 0%, #6a24ec 50%, #5a8d80 100%);
+    background: linear-gradient(to right, #4d6883, #4a6580);
     color: #fff;
     padding: 50px 0 0;
     margin-top: 80px;
@@ -945,7 +945,7 @@ p {
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(135deg, #1b538a 0%, #6a24ec 50%, #5a8d80 100%);
+    background: linear-gradient(to right, #4d6883, #4a6580);
     z-index: 2;
 }
 
@@ -962,7 +962,7 @@ p {
 
 .footer-col {
     margin-bottom: 30px;
-    background: linear-gradient(135deg, #1b538a 0%, #6a24ec 50%, #5a8d80 100%);
+    background: linear-gradient(to right, #4d6883, #4a6580);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 20px;
@@ -1043,7 +1043,7 @@ p {
     bottom: 0;
     width: 50px;
     height: 2px;
-    background: linear-gradient(135deg, #1b538a 0%, #6a24ec 50%, #5a8d80 100%);
+    background: linear-gradient(to right, #4d6883, #4a6580);
 }
 
 .footer-col ul {
@@ -1137,7 +1137,7 @@ p {
     padding: 12px 15px;
     border: none;
     border-radius: 5px;
-    background:linear-gradient(135deg, #1b538a 0%, #6a24ec 50%, #5a8d80 100%);
+    background:linear-gradient(to right, #4d6883, #4a6580);
     color: #fff;
     font-weight: 600;
     cursor: pointer;
