@@ -26,7 +26,7 @@
     --crystal-shadow: 0 0 20px rgba(110, 69, 226, 0.3);
     
     /* Gradient Variables */
-    --primary-gradient: linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%);
+    --primary-gradient: linear-gradient(135deg, #26194b 0%, #4b7875 100%);
     --secondary-gradient: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
     --header-gradient: linear-gradient(90deg, #f9f9fa, #e5f6f5);
     --footer-gradient: linear-gradient(to right, #4d6883, #4a6580);
@@ -37,7 +37,7 @@ html {
 }
 
 body {
-    background: linear-gradient(135deg, #7571b2 0%, #bbd2e9 50%, #a0e3f5 100%);
+    background: linear-gradient(135deg, #9c4041 0%, #4c8a96 50%, #6034c7 100%);
     color: rgb(0, 0, 0);
     line-height: 1.6;
     overflow-x: hidden;
@@ -664,7 +664,7 @@ p {
 .course-title {
     font-size: 22px;
     font-weight: bold;
-    background: var(--primary-gradient);
+    background: linear-gradient(135deg, #ffffff 0%, #cceee1 50%, #448677 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -695,7 +695,7 @@ p {
 .course-card h2 {
     margin: 0 0 10px 0;
     font-size: 1.25em;
-    background: var(--primary-gradient);
+    background: linear-gradient(135deg, #e4ebf3 0%, #d7f9ec 50%, #f9fbfb 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -704,7 +704,7 @@ p {
 
 .course-card p {
     margin: 0 0 14px 0;
-    color: var(--gray);
+    color: black;
     font-size: 1em;
     flex: 1;
     line-height: 1.5;
@@ -927,7 +927,7 @@ p {
 
 /* ===== FOOTER ===== */
 .site-footer {
-    background: linear-gradient(to right, #4d6883, #4a6580);
+    background: linear-gradient(to right, #2c3e50, #4a6580);
     color: #fff;
     padding: 50px 0 0;
     margin-top: 80px;

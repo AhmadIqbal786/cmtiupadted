@@ -730,7 +730,7 @@ body {
 
 /* Footer */
 .site-footer {
-    background: var(--dark);
+    background:  linear-gradient(to right, #2c3e50, #4a6580);
     color: white;
     padding: 70px 0 0;
 }
