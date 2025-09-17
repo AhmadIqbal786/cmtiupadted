@@ -887,46 +887,6 @@
         </div>
     </div>
 </footer>
-    <script>
-        // Toggle module content
-        document.querySelectorAll('.module-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const content = header.nextElementSibling;
-                content.classList.toggle('active');
-                
-                // Close other open modules
-                document.querySelectorAll('.module-content').forEach(item => {
-                    if (item !== content && item.classList.contains('active')) {
-                        item.classList.remove('active');
-                    }
-                });
-            });
-        });
-        
-        // Toggle FAQ items
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                answer.classList.toggle('active');
-                
-                // Close other open FAQs
-                document.querySelectorAll('.faq-answer').forEach(item => {
-                    if (item !== answer && item.classList.contains('active')) {
-                        item.classList.remove('active');
-                    }
-                });
-            });
-        });
-        
-        // Payment method selection
-        document.querySelectorAll('.payment-method').forEach(method => {
-            method.addEventListener('click', () => {
-                document.querySelectorAll('.payment-method').forEach(m => {
-                    m.classList.remove('active');
-                });
-                method.classList.add('active');
-            });
-        });
-    </script>
+<script src="codedmind-enhancements.js"></script>
 </body>
 </html>

@@ -718,6 +718,7 @@
         </section>
     </div>
        <!-- Footer -->
+  <!-- Footer -->
    <footer class="site-footer">
     <div class="footer-content">
         <div class="footer-col">
@@ -843,52 +844,6 @@
         </div>
     </div>
 </footer>
-    
-    <script>
-        // Function to toggle FAQ answers
-        function toggleFaq(element) {
-            const answer = element.nextElementSibling;
-            const icon = element.querySelector('i');
-            
-            if (answer.style.display === 'block') {
-                answer.style.display = 'none';
-                element.classList.remove('active');
-            } else {
-                answer.style.display = 'block';
-                element.classList.add('active');
-            }
-        }
-        
-        // Function to select payment method
-        function selectPayment(method) {
-            const options = document.querySelectorAll('.payment-option');
-            options.forEach(option => option.classList.remove('selected'));
-            
-            event.currentTarget.classList.add('selected');
-            
-            // Show/hide relevant payment fields based on selection
-            const ccFields = document.getElementById('credit-card-fields');
-            
-            if (method === 'credit-card') {
-                ccFields.style.display = 'block';
-            } else {
-                ccFields.style.display = 'none';
-            }
-        }
-        
-        // Handle form submission
-        document.getElementById('payment-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your enrollment! This is a demo - in a real application, your payment would be processed now.');
-        });
-        
-        // Initialize page
-        document.addEventListener('DOMContentLoaded', function() {
-            // Hide all FAQ answers initially
-            document.querySelectorAll('.faq-answer').forEach(answer => {
-                answer.style.display = 'none';
-            });
-        });
-    </script>
+<script src="codedmind-enhancements.js"></script>
 </body>
 </html>
