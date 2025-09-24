@@ -1352,44 +1352,229 @@
     <meta charset="UTF-8">
     <title>CMTI</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://codedmind.netlify.app/logo.png">
+    <link rel="stylesheet" href="style2.css">
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1b538a 0%, #6a24ec 50%, #5a8d80 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Header Styles */
+        :root {
+            --primary: #4fc3f7;
+            --primary-gradient: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);
+            --dark: #1f2937;
+            --light: #f4f6f8;
+            --crystal-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+        }
+        .new-header {
+            background: linear-gradient(90deg, #f4f6f8 0%, #e1dfe8 50%, #e7eef0 100%);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo {
+            height: 50px;
+        }
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #318dd8;
+            line-height: 1.2;
+        }
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        .nav-menu li a {
+            color: #318dd8;
+            font-weight: 500;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .nav-menu li a:hover,
+        .nav-menu li a.active {
+            background: rgba(110, 69, 226, 0.1);
+            color: #6e45e2;
+            box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+            color: #2563eb;
+
+        }
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #318dd8;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            
+        }
+        .mobile-menu {
+            display: none;
+            background: linear-gradient(90deg, #f4f6f8 0%, #e1dfe8 50%, #e7eef0 100%);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            animation: slideDown 0.3s ease forwards;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 0 0 15px 15px;
+            margin-bottom: 10px;
+            z-index: 999;
+            position: relative;
+            margin-top: -10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
+            
+        }
+        .mobile-nav {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .mobile-nav li {
+            border-bottom: 1px solid #eee;
+        }
+        .mobile-nav li a {
+            color: #318dd8;
+            font-weight: 500;
+        }
+        .mobile-nav li a:hover,
+        .mobile-nav li a.active {
+            color: #6e45e2;
+            background: rgba(110, 69, 226, 0.1);
+            backdrop-filter: blur(5px);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
+            padding: 8px 12px;
+        }
+        .mobile-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .mobile-actions a {
+            background: #6e45e2;
+            color: white;
+            font-weight: 600;
+            padding: 12px 0;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 18px;
+            box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
+            transition: all 0.3s ease;
+        }
+        .mobile-actions a:hover {
+            background: #88d3ce;
+            color: #1f2937;
+            box-shadow: 0 6px 20px rgba(136, 211, 206, 0.4);
+        }
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .mobile-menu.show {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="new-header">
-        <div class="header-container">
-            <div class="logo-container">
-                <img src="https://codedmind.netlify.app/logo.png" alt="CodedMind Logo" class="logo">
-                <div class="logo-text">Coded Mind <br>Technology Incubator</div>
-            </div>
-            
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="courses.html">Programs</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                   <li> <a href="https://aitoolsfreelance.blogspot.com">Blogs</a></li>
-                </ul>
-            </nav>
-            
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+         <!-- Header -->
+  <header class="new-header">
+    <div class="header-container">
+        <div class="logo-container">
+            <img src="https://codedmind.netlify.app/logo.png" alt="CodedMind Logo" class="logo">
+            <div class="logo-text">Coded Mind <br> Technology Incubator</div>
         </div>
         
-        <div class="mobile-menu">
-            <ul class="mobile-nav">
+        <nav>
+            <ul class="nav-menu">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="courses.html">Program</a></li>
+                <li><a href="courses.html">Programs</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="careers.html">Careers</a></li>
             </ul>
+        </nav>
+        
+        
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-    </header>
+    </div>
+    
+    <div class="mobile-menu">
+        <ul class="mobile-nav">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="courses.html">Programs</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+        </ul>
+        
+    </div>
+</header>
 
     <!-- Banner Carousel -->
     <div class="banner-carousel">
