@@ -135,14 +135,14 @@ body {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: var(--dark);
+    background: rgb(127, 114, 242);
     margin: 3px 0;
     transition: all 0.3s ease;
 }
 
 .mobile-menu {
     display: none;
-    background: white;
+    background: rgb(125, 234, 166);
     position: absolute;
     top: 100%;
     left: 0;
@@ -284,7 +284,7 @@ body {
     display: inline-block;
     padding: 12px 30px;
     background: linear-gradient(to right, var(--primary), var(--secondary));
-    color: white;
+    color: rgb(237, 157, 157);
     text-decoration: none;
     border-radius: 50px;
     font-weight: 600;
