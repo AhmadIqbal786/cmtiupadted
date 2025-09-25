@@ -23,7 +23,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--dark);
-    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    background: linear-gradient(135deg, #4fa5df 100%, #b1c4d1 100%, rgb(109, 60, 241) 100%);
     overflow-x: hidden;
 }
 
@@ -124,6 +124,7 @@ body {
 .nav-menu a:hover:after,
 .nav-menu a.active:after {
     width: 100%;
+
 }
 
 .hamburger {
@@ -132,6 +133,7 @@ body {
     cursor: pointer;
     padding: 10px;
     z-index: 1100;
+    color: #1d4ed8;
 
 }
 
@@ -141,6 +143,7 @@ body {
     background: linear-gradient(to right, var(--primary), var(--secondary));
     margin: 3px 0;
     transition: all 0.3s ease;
+    color: #06b6d4;
 }
 
 .mobile-menu {
@@ -164,8 +167,9 @@ body {
 
 .mobile-nav li {
     margin-bottom: 15px;
-    Swidth: 100%;
+    width: 100%;
     text-align: center;
+    
 
 }
 
