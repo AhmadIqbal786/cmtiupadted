@@ -977,28 +977,7 @@ input:focus-visible {
         box-shadow: none;
         border: 1px solid #ccc;
     }
-}/* ===== GLOBAL STYLES ===== */
-:root {
-    --primary: #6e45e2;
-    --primary-dark: #5741a0;
-    --secondary: #88d3ce;
-    --dark: #333;
-    --light: #f9f9f9;
-    --gray: #666;
-    --gray-light: #ccc;
-    --success: #28a745;
-    --error: #dc3545;
-    --font-family: 'Poppins', sans-serif;
-    --border-radius: 10px;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
-    --transition: all 0.3s ease;
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.2);
-    --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-    --primary-gradient: linear-gradient(135deg, #88d3ce 0%, #6e45e2 100%);
-}   
-
+}
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 992px) {
