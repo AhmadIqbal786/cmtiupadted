@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Tech Courses & Programs | CMTI - Coded Mind Technology Incubator</title>
-    <link rel="stylesheet" href="courses.css">
     
     <!-- SEO Meta -->
     <meta name="description" content="Join CMTI for professional courses in AI, Web Development, Medical Billing, Freelancing, E-commerce, and more. Pakistan's leading tech incubator offering hands-on training.">
@@ -62,637 +61,732 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Styles -->
     <style>
-        /* Reset and Base Styles */
+        /* ===== CSS RESET & VARIABLES ===== */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7e22ce;
+            --accent: #06b6d4;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        :root {
-            --primary-color: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary-color: #10b981;
-            --accent-color: #f59e0b;
-            --text-dark: #1f2937;
-            --text-light: #6b7280;
-            --bg-light: #f9fafb;
-            --bg-white: #ffffff;
-            --border-color: #e5e7eb;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
         }
-        
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
         a {
             text-decoration: none;
             color: inherit;
+            transition: var(--transition);
         }
-        
+
         ul {
             list-style: none;
         }
-        
+
         img {
             max-width: 100%;
             height: auto;
         }
-        
+
         .container {
-            width: 100%;
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
         }
-        
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
         .btn {
             display: inline-block;
-            padding: 12px 24px;
-            background-color: var(--primary-color);
+            padding: 12px 28px;
+            background: var(--gradient);
             color: white;
-            border-radius: 6px;
+            border-radius: var(--border-radius);
             font-weight: 600;
-            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            text-align: center;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
         }
-        
+
         .btn:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
             box-shadow: var(--shadow-lg);
         }
-        
-        .btn-secondary {
-            background-color: var(--secondary-color);
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
         }
-        
-        .btn-secondary:hover {
-            background-color: #0d9668;
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
         }
-        
-        /* Header Styles */
-        .new-header {
-            background-color: var(--bg-white);
+
+        .crystal-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
             box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            overflow: hidden;
         }
-        
+
+        .crystal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ===== HEADER ===== */
+        .new-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 15px 0;
         }
-        
+
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
-        
-        .logo {
+
+        .logo-container img {
             height: 50px;
             width: auto;
         }
-        
+
         .logo-text {
-            font-size: 18px;
+            font-size: 1.2rem;
             font-weight: 700;
-            color: var(--primary-color);
-            line-height: 1.2;
+            color: var(--primary);
         }
-        
+
         .nav-menu {
             display: flex;
-            gap: 25px;
+            gap: 30px;
         }
-        
+
         .nav-menu a {
             font-weight: 600;
-            transition: color 0.3s;
             position: relative;
         }
-        
-        .nav-menu a:hover, .nav-menu a.active {
-            color: var(--primary-color);
-        }
-        
-        .nav-menu a.active::after {
+
+        .nav-menu a::after {
             content: '';
             position: absolute;
             bottom: -5px;
             left: 0;
-            width: 100%;
+            width: 0;
             height: 2px;
-            background-color: var(--primary-color);
+            background: var(--gradient);
+            transition: var(--transition);
         }
-        
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
         .hamburger {
             display: none;
             flex-direction: column;
             cursor: pointer;
         }
-        
+
         .hamburger span {
             width: 25px;
             height: 3px;
-            background-color: var(--text-dark);
+            background: var(--dark);
             margin: 3px 0;
-            transition: 0.3s;
+            transition: var(--transition);
         }
-        
+
         .mobile-menu {
             display: none;
-            background-color: var(--bg-white);
+            background: white;
             padding: 20px;
-            box-shadow: var(--shadow);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .mobile-nav {
             display: flex;
             flex-direction: column;
             gap: 15px;
         }
-        
+
         .mobile-nav a {
-            font-weight: 600;
             padding: 10px 0;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid #eee;
+            font-weight: 600;
         }
-        
-        /* Banner Carousel */
-        .banner-carousel {
+
+        /* ===== COURSES HERO ===== */
+        .courses-hero {
+            background: var(--gradient);
+            color: white;
+            padding: 150px 0 80px;
             position: relative;
-            height: 500px;
             overflow: hidden;
         }
-        
-        .carousel-slides {
-            height: 100%;
-            position: relative;
-        }
-        
-        .carousel-slide {
+
+        .hero-visual {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 1s ease;
+            z-index: 0;
         }
-        
-        .carousel-slide.active {
-            opacity: 1;
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
         }
-        
-        .slide-content {
-            max-width: 1200px;
+
+        .shape-1 {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .shape-3 {
+            width: 100px;
+            height: 100px;
+            bottom: 10%;
+            left: 15%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .courses-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 20px;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            text-align: center;
         }
-        
-        .slide-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
         }
-        
-        .slide-content p {
-            font-size: 1.2rem;
-            margin-bottom: 25px;
-            max-width: 600px;
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
         }
-        
-        .carousel-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0,0,0,0.5);
-            color: white;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 10;
-            transition: background-color 0.3s;
+
+        .hero-description {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
         }
-        
-        .carousel-arrow:hover {
-            background-color: rgba(0,0,0,0.7);
-        }
-        
-        .carousel-arrow.prev {
-            left: 20px;
-        }
-        
-        .carousel-arrow.next {
-            right: 20px;
-        }
-        
-        .carousel-controls {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 10px;
-        }
-        
-        .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: rgba(255,255,255,0.5);
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .carousel-dot.active {
-            background-color: white;
-        }
-        
-        /* Courses Filter */
+
+        /* ===== COURSES FILTER ===== */
         .courses-filter {
-            background-color: var(--bg-white);
-            padding: 30px 20px;
-            box-shadow: var(--shadow);
-            margin-bottom: 30px;
+            background-color: white;
+            padding: 40px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         .search-box {
             max-width: 500px;
-            margin: 0 auto 20px;
+            margin: 0 auto 30px;
             position: relative;
         }
-        
+
         .search-box i {
             position: absolute;
-            left: 15px;
+            left: 20px;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--text-light);
+            color: var(--gray);
+            z-index: 2;
         }
-        
+
         .search-box input {
             width: 100%;
-            padding: 12px 15px 12px 45px;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
+            padding: 15px 20px 15px 50px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: var(--border-radius);
             font-size: 16px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
         }
-        
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
         .category-filter-container {
             overflow-x: auto;
             padding-bottom: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
-        
+
         .category-filter-scroll {
             display: flex;
             gap: 10px;
             justify-content: center;
             min-width: max-content;
         }
-        
+
         .category-btn {
-            padding: 8px 16px;
-            background-color: var(--bg-light);
-            border: 1px solid var(--border-color);
-            border-radius: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 30px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: var(--transition);
             white-space: nowrap;
         }
-        
+
         .category-btn.active, .category-btn:hover {
-            background-color: var(--primary-color);
+            background: var(--gradient);
             color: white;
-            border-color: var(--primary-color);
+            border-color: transparent;
         }
-        
+
         .filter-results {
             text-align: center;
-            color: var(--text-light);
-            font-size: 14px;
+            color: var(--gray);
+            font-size: 16px;
         }
-        
-        /* Courses Container */
+
+        /* ===== COURSES CONTAINER ===== */
         .courses-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px 50px;
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .courses-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
         }
-        
+
         .course-card {
-            background-color: var(--bg-white);
-            border-radius: 10px;
+            background: white;
+            border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
-        
+
         .course-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             box-shadow: var(--shadow-lg);
         }
-        
+
         .course-image {
             position: relative;
-            height: 180px;
+            height: 200px;
             overflow: hidden;
         }
-        
+
         .course-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s;
         }
-        
+
         .course-card:hover .course-image img {
             transform: scale(1.05);
         }
-        
+
         .course-category {
             position: absolute;
             top: 15px;
             right: 15px;
-            background-color: var(--primary-color);
+            background: var(--gradient);
             color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
+            padding: 5px 15px;
+            border-radius: 20px;
             font-size: 12px;
             font-weight: 600;
         }
-        
+
         .course-card-content {
-            padding: 20px;
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
-        
+
         .course-card-content h2 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 10px;
-            color: var(--text-dark);
+            color: var(--dark);
             line-height: 1.3;
         }
-        
+
         .course-card-content p {
-            color: var(--text-light);
-            margin-bottom: 15px;
-            font-size: 0.95rem;
+            color: var(--gray);
+            margin-bottom: 20px;
+            flex-grow: 1;
         }
-        
+
         .course-meta {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 15px;
-            font-size: 0.85rem;
-            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: var(--gray);
         }
-        
+
         .course-meta span {
             display: flex;
             align-items: center;
             gap: 5px;
         }
-        
+
         .details-btn {
             display: block;
             width: 100%;
             text-align: center;
-            background-color: var(--primary-color);
+            background: var(--gradient);
             color: white;
-            padding: 10px;
-            border-radius: 6px;
+            padding: 12px;
+            border-radius: var(--border-radius);
             font-weight: 600;
-            transition: background-color 0.3s;
+            transition: var(--transition);
         }
-        
+
         .details-btn:hover {
-            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .no-results {
             grid-column: 1 / -1;
             text-align: center;
-            padding: 50px 20px;
+            padding: 60px 20px;
             display: none;
         }
-        
+
         .no-results h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: var(--text-dark);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--dark);
         }
-        
+
         .no-results p {
-            color: var(--text-light);
-            margin-bottom: 20px;
+            color: var(--gray);
+            margin-bottom: 25px;
         }
-        
-        /* Footer */
+
+        /* ===== COURSES CTA ===== */
+        .courses-cta {
+            padding: 100px 0;
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+        }
+
+        .courses-cta .section-title,
+        .courses-cta .section-subtitle {
+            color: white;
+        }
+
+        .courses-cta .btn-outline {
+            border-color: white;
+            color: white;
+        }
+
+        .courses-cta .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* ===== FOOTER ===== */
         .site-footer {
-            background-color: #1f2937;
-            color: #f9fafb;
-            padding-top: 50px;
+            background: var(--dark);
+            color: white;
+            padding-top: 80px;
         }
-        
+
         .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
+            padding-bottom: 60px;
         }
-        
+
         .footer-logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
             margin-bottom: 20px;
         }
-        
+
         .footer-logo img {
-            height: 40px;
+            height: 50px;
         }
-        
+
         .footer-logo h3 {
-            font-size: 1.2rem;
-            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 0;
         }
-        
+
         .footer-description {
-            margin-bottom: 20px;
-            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #94a3b8;
         }
-        
+
         .footer-social h4 {
             margin-bottom: 15px;
-            font-size: 1.1rem;
         }
-        
+
         .social-icons {
             display: flex;
             gap: 15px;
         }
-        
+
         .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: #374151;
-            border-radius: 50%;
-            transition: background-color 0.3s;
+            transition: var(--transition);
         }
-        
+
         .social-icons a:hover {
-            background-color: var(--primary-color);
+            background: var(--primary);
+            transform: translateY(-3px);
         }
-        
+
         .footer-col h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
             position: relative;
             padding-bottom: 10px;
         }
-        
+
         .footer-col h3::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 40px;
+            width: 50px;
             height: 2px;
-            background-color: var(--primary-color);
+            background: var(--primary);
         }
-        
-        .footer-col ul {
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #94a3b8;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #94a3b8;
+        }
+
+        .contact-item svg {
+            flex-shrink: 0;
+        }
+
+        .contact-item a {
+            color: #94a3b8;
+        }
+
+        .contact-item a:hover {
+            color: white;
+        }
+
+        .newsletter h4 {
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
-        
-        .footer-col ul a {
-            transition: color 0.3s;
-        }
-        
-        .footer-col ul a:hover {
-            color: var(--primary-color);
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-        
-        .contact-item svg {
-            flex-shrink: 0;
-            margin-top: 3px;
-        }
-        
-        .contact-item a:hover {
-            color: var(--primary-color);
-        }
-        
-        .newsletter h4 {
-            margin-bottom: 15px;
-        }
-        
-        .newsletter-form {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
+
         .newsletter-form input {
-            flex: 1;
-            min-width: 200px;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
+            padding: 12px 15px;
+            border-radius: var(--border-radius);
+            border: 1px solid #334155;
+            background: #1e293b;
+            color: white;
         }
-        
+
         .newsletter-form button {
-            background-color: var(--primary-color);
+            padding: 12px 15px;
+            background: var(--primary);
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
+            border-radius: var(--border-radius);
             cursor: pointer;
-            transition: background-color 0.3s;
+            font-weight: 600;
+            transition: var(--transition);
         }
-        
+
         .newsletter-form button:hover {
-            background-color: var(--primary-dark);
+            background: var(--primary-dark);
         }
-        
+
         .footer-bottom {
-            border-top: 1px solid #374151;
-            margin-top: 50px;
-            padding: 20px 0;
+            border-top: 1px solid #334155;
+            padding: 25px 0;
         }
-        
+
         .footer-bottom-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 20px;
         }
-        
+
+        .copyright {
+            color: #94a3b8;
+        }
+
         .legal-links {
             display: flex;
             gap: 20px;
         }
-        
+
         .legal-links a {
-            transition: color 0.3s;
+            color: #94a3b8;
+            transition: var(--transition);
         }
-        
+
         .legal-links a:hover {
-            color: var(--primary-color);
+            color: white;
         }
-        
-        /* Loader */
+
+        /* ===== UTILITY CLASSES ===== */
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-50 {
+            margin-top: 50px;
+        }
+
+        /* ===== LOADER ===== */
         .loader {
             display: none;
             position: fixed;
@@ -705,51 +799,51 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         .loader::after {
             content: '';
             width: 50px;
             height: 50px;
             border: 5px solid #f3f3f3;
-            border-top: 5px solid var(--primary-color);
+            border-top: 5px solid var(--primary);
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
-        
+
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        
-        /* Toast Notification */
+
+        /* ===== TOAST NOTIFICATION ===== */
         .toast {
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: var(--text-dark);
+            background-color: var(--dark);
             color: white;
             padding: 15px 20px;
-            border-radius: 6px;
+            border-radius: var(--border-radius);
             box-shadow: var(--shadow-lg);
             z-index: 1000;
             transform: translateY(100px);
             opacity: 0;
             transition: transform 0.3s, opacity 0.3s;
         }
-        
+
         .toast.show {
             transform: translateY(0);
             opacity: 1;
         }
-        
-        /* Back to Top Button */
+
+        /* ===== BACK TO TOP BUTTON ===== */
         .back-to-top {
             position: fixed;
             bottom: 30px;
             right: 30px;
             width: 50px;
             height: 50px;
-            background-color: var(--primary-color);
+            background: var(--gradient);
             color: white;
             border-radius: 50%;
             display: flex;
@@ -760,27 +854,27 @@
             visibility: hidden;
             transition: all 0.3s;
             z-index: 99;
+            box-shadow: var(--shadow);
         }
-        
+
         .back-to-top.show {
             opacity: 1;
             visibility: visible;
         }
-        
+
         .back-to-top:hover {
-            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
         }
-        
-        /* Responsive Styles */
-        @media (max-width: 1024px) {
-            .courses-container {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.2rem;
             }
-        }
-        
-        @media (max-width: 768px) {
-            .header-container {
-                padding: 10px 15px;
+            
+            .hero-title {
+                font-size: 3rem;
             }
             
             .nav-menu {
@@ -795,21 +889,22 @@
                 display: block;
             }
             
-            .banner-carousel {
-                height: 400px;
+            .courses-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
-            
-            .slide-content h2 {
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
                 font-size: 2rem;
             }
             
-            .slide-content p {
-                font-size: 1rem;
+            .hero-title {
+                font-size: 2.5rem;
             }
             
-            .carousel-arrow {
-                width: 40px;
-                height: 40px;
+            .hero-description {
+                font-size: 1.1rem;
             }
             
             .footer-bottom-content {
@@ -820,32 +915,27 @@
             .legal-links {
                 justify-content: center;
             }
-        }
-        
-        @media (max-width: 576px) {
-            .banner-carousel {
-                height: 350px;
-            }
-            
-            .slide-content h2 {
-                font-size: 1.7rem;
-            }
-            
-            .courses-container {
-                grid-template-columns: 1fr;
-                padding: 0 15px 30px;
-            }
             
             .category-filter-scroll {
                 justify-content: flex-start;
             }
-            
-            .newsletter-form {
-                flex-direction: column;
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                width: 95%;
             }
             
-            .newsletter-form input {
-                min-width: 100%;
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .courses-grid {
+                grid-template-columns: 1fr;
             }
             
             .back-to-top {
@@ -860,600 +950,592 @@
 <body>
     <!-- Header -->
     <header class="new-header">
-        <div class="header-container">
-            <div class="logo-container">
-                <img src="https://codedmind.netlify.app/logo.png" alt="CMTI Logo">
-                <div class="logo-text">Coded Mind <br>Technology Incubator</div>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo-container">
+                    <img src="logo.png" alt="CMTI Logo">
+                    <div class="logo-text">Coded Mind <br>Technology Incubator</div>
+                </div>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html" class="active">Programs</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
             
-            <nav>
-                <ul class="nav-menu">
+            <div class="mobile-menu">
+                <ul class="mobile-nav">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="courses.html" class="active">Programs</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="careers.html">Careers</a></li>
                 </ul>
-            </nav>
-            
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
             </div>
-        </div>
-        
-        <div class="mobile-menu">
-            <ul class="mobile-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="courses.html" class="active">Programs</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="careers.html">Careers</a></li>
-            </ul>
         </div>
     </header>
 
-    <!-- Banner Carousel -->
-    <div class="banner-carousel">
-        <div class="carousel-slides">
-            <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80');">
-                <div class="slide-content">
-                    <h2>Empowering Future Tech Leaders</h2>
-                    <p>Join CMTI to gain cutting-edge skills in technology and business. Our expert-led courses prepare you for the digital future.</p>
-                    <a href="courses.html" class="btn">Explore Courses</a>
-                </div>
-            </div>
-            
-            <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80');">
-                <div class="slide-content">
-                    <h2>Learn from Industry Experts</h2>
-                    <p>Our instructors are professionals with years of experience in their respective fields.</p>
-                    <a href="about.html" class="btn">Meet Our Team</a>
-                </div>
-            </div>
-            
-            <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80');">
-                <div class="slide-content">
-                    <h2>Hands-On Learning Experience</h2>
-                    <p>Gain practical skills through our project-based curriculum and real-world applications.</p>
-                    <a href="courses.html" class="btn">View Programs</a>
-                </div>
-            </div>
-            
-            <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80');">
-                <div class="slide-content">
-                    <h2>Launch Your Tech Career</h2>
-                    <p>Our career services help you land your dream job in the tech industry.</p>
-                    <a href="careers.html" class="btn">Career Support</a>
-                </div>
+    <!-- Courses Hero Section -->
+    <section class="courses-hero">
+        <div class="hero-visual">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="courses-hero-content">
+                <div class="hero-badge">Pakistan's Largest Tech Incubator</div>
+                <h1 class="hero-title">Explore Our Programs</h1>
+                <p class="hero-description">Discover cutting-edge courses designed to launch your tech career. From AI to E-commerce, we have the perfect program for your ambitions.</p>
+                <a href="#courses" class="btn">Browse All Courses</a>
             </div>
         </div>
-        
-        <div class="carousel-arrow prev">
-            <i class="fas fa-chevron-left"></i>
-        </div>
-        <div class="carousel-arrow next">
-            <i class="fas fa-chevron-right"></i>
-        </div>
-        
-        <div class="carousel-controls">
-            <div class="carousel-dot active" data-index="0"></div>
-            <div class="carousel-dot" data-index="1"></div>
-            <div class="carousel-dot" data-index="2"></div>
-            <div class="carousel-dot" data-index="3"></div>
-        </div>
-    </div>
-    
+    </section>
+
     <!-- Search and Filter Section -->
-    <div class="courses-filter">
-        <div class="search-box">
-            <i class="fas fa-search"></i>
-            <input type="text" id="course-search" placeholder="Search courses...">
-        </div>
-        
-        <div class="category-filter-container">
-            <div class="category-filter-scroll">
-                <button class="category-btn active" data-category="all">All Programs</button>
-                <button class="category-btn" data-category="technology">Technology</button>
-                <button class="category-btn" data-category="business">Business</button>
-                <button class="category-btn" data-category="ecommerce">E-Commerce</button>
-                <button class="category-btn" data-category="trading">Trading</button>
-                <button class="category-btn" data-category="language">Language</button>
+    <section class="courses-filter">
+        <div class="container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="course-search" placeholder="Search courses...">
+            </div>
+            
+            <div class="category-filter-container">
+                <div class="category-filter-scroll">
+                    <button class="category-btn active" data-category="all">All Programs</button>
+                    <button class="category-btn" data-category="technology">Technology</button>
+                    <button class="category-btn" data-category="business">Business</button>
+                    <button class="category-btn" data-category="ecommerce">E-Commerce</button>
+                    <button class="category-btn" data-category="trading">Trading</button>
+                    <button class="category-btn" data-category="language">Language</button>
+                </div>
+            </div>
+            
+            <div class="filter-results" id="filter-results">
+                Showing <span id="results-count">28</span> courses
             </div>
         </div>
-        
-        <div class="filter-results" id="filter-results">
-            Showing <span id="results-count">28</span> courses
-        </div>
-    </div>
+    </section>
 
     <!-- Courses Container -->
-    <div class="courses-container">
-        <!-- No results message -->
-        <div class="no-results" id="no-results">
-            <h3>No courses found</h3>
-            <p>Try adjusting your search or filter criteria</p>
-            <button class="btn" id="reset-filters">Reset Filters</button>
-        </div>
-        
-        <!-- Course cards will be here -->
-        <!-- Artificial Intelligence -->
-        <div class="course-card" data-categories="technology">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Artificial Intelligence Course">
-                <div class="course-category">Technology</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Artificial Intelligence</h2>
-                <p>Master the fundamentals of AI, machine learning, and deep learning. Build intelligent systems and applications that can learn and adapt.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 12 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Advanced</span>
+    <section class="courses-container" id="courses">
+        <div class="container">
+            <h2 class="section-title">Our Programs</h2>
+            <p class="section-subtitle">Choose from our comprehensive range of courses designed to equip you with in-demand skills</p>
+            
+            <div class="courses-grid">
+                <!-- No results message -->
+                <div class="no-results crystal-card" id="no-results">
+                    <div class="card-content">
+                        <h3>No courses found</h3>
+                        <p>Try adjusting your search or filter criteria</p>
+                        <button class="btn" id="reset-filters">Reset Filters</button>
+                    </div>
                 </div>
-                <a href="course-ai-ml.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- Amazon FBA -->
-        <div class="course-card" data-categories="business ecommerce">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1662947368791-8630979e964b?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Amazon FBA Course">
-                <div class="course-category">E-Commerce</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Amazon FBA</h2>
-                <p>Learn to build a successful e-commerce business on Amazon. Master product research, sourcing, listing optimization, and scaling strategies.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 10 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                
+                <!-- Course cards will be here -->
+                <!-- Artificial Intelligence -->
+                <div class="course-card crystal-card" data-categories="technology">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Artificial Intelligence Course">
+                        <div class="course-category">Technology</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Artificial Intelligence</h2>
+                        <p>Master the fundamentals of AI, machine learning, and deep learning. Build intelligent systems and applications that can learn and adapt.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 12 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Advanced</span>
+                        </div>
+                        <a href="course-ai-ml.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-amazon-fba.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- E-commerce -->
-        <div class="course-card" data-categories="business ecommerce">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="E-commerce Course">
-                <div class="course-category">E-Commerce</div>
-            </div>
-            <div class="course-card-content">
-                <h2>E-commerce</h2>
-                <p>Master the art of building and scaling online stores. Learn about platforms, payment gateways, marketing, and customer acquisition.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 8 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                
+                <!-- Amazon FBA -->
+                <div class="course-card crystal-card" data-categories="business ecommerce">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1662947368791-8630979e964b?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Amazon FBA Course">
+                        <div class="course-category">E-Commerce</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Amazon FBA</h2>
+                        <p>Learn to build a successful e-commerce business on Amazon. Master product research, sourcing, listing optimization, and scaling strategies.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 10 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                        </div>
+                        <a href="course-amazon-fba.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="E-commerce.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- CIT -->
-        <div class="course-card" data-categories="technology">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="CIT Course">
-                <div class="course-category">Technology</div>
-            </div>
-            <div class="course-card-content">
-                <h2>CIT (Certificate in Information Technology)</h2>
-                <p>Master the fundamentals of computer systems, networking, and information management. Develop practical skills for a successful IT career.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 16 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                
+                <!-- E-commerce -->
+                <div class="course-card crystal-card" data-categories="business ecommerce">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="E-commerce Course">
+                        <div class="course-category">E-Commerce</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>E-commerce</h2>
+                        <p>Master the art of building and scaling online stores. Learn about platforms, payment gateways, marketing, and customer acquisition.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 8 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <a href="E-commerce.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-cit.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- DIT -->
-        <div class="course-card" data-categories="technology">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="DIT Course">
-                <div class="course-category">Technology</div>
-            </div>
-            <div class="course-card-content">
-                <h2>DIT (Diploma in Information Technology)</h2>
-                <p>Comprehensive foundation in IT covering computer basics, networking, programming, and software applications for a successful tech career.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 24 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                
+                <!-- CIT -->
+                <div class="course-card crystal-card" data-categories="technology">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="CIT Course">
+                        <div class="course-category">Technology</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>CIT (Certificate in Information Technology)</h2>
+                        <p>Master the fundamentals of computer systems, networking, and information management. Develop practical skills for a successful IT career.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 16 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <a href="course-cit.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-dit.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- English Language -->
-        <div class="course-card" data-categories="language">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1751452020438-81d67e8ef314?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="English Language Course">
-                <div class="course-category">Language</div>
-            </div>
-            <div class="course-card-content">
-                <h2>English Language</h2>
-                <p>Master English for academic, professional, and social contexts. Develop fluency in speaking, writing, reading, and listening.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 12 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> All Levels</span>
+                
+                <!-- DIT -->
+                <div class="course-card crystal-card" data-categories="technology">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="DIT Course">
+                        <div class="course-category">Technology</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>DIT (Diploma in Information Technology)</h2>
+                        <p>Comprehensive foundation in IT covering computer basics, networking, programming, and software applications for a successful tech career.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 24 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                        </div>
+                        <a href="course-dit.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-english.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- Cloud Computing -->
-        <div class="course-card" data-categories="technology">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cloud Computing Course">
-                <div class="course-category">Technology</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Cloud Computing</h2>
-                <p>Learn to design, deploy, and manage cloud infrastructure. Master AWS, Azure, and Google Cloud platforms for scalable solutions.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 14 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                
+                <!-- English Language -->
+                <div class="course-card crystal-card" data-categories="language">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1751452020438-81d67e8ef314?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="English Language Course">
+                        <div class="course-category">Language</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>English Language</h2>
+                        <p>Master English for academic, professional, and social contexts. Develop fluency in speaking, writing, reading, and listening.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 12 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> All Levels</span>
+                        </div>
+                        <a href="course-english.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-cloud-computing.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- Cyber Security -->
-        <div class="course-card" data-categories="technology">
-            <div class="course-image">
-                <img src="https://plus.unsplash.com/premium_photo-1661764393655-1dbffee8c0ce?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cyber Security Course">
-                <div class="course-category">Technology</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Cyber Security</h2>
-                <p>Master ethical hacking, network security, cryptography, and risk management. Learn to defend digital systems against cyber threats.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 16 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Advanced</span>
+                
+                <!-- Cloud Computing -->
+                <div class="course-card crystal-card" data-categories="technology">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cloud Computing Course">
+                        <div class="course-category">Technology</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Cloud Computing</h2>
+                        <p>Learn to design, deploy, and manage cloud infrastructure. Master AWS, Azure, and Google Cloud platforms for scalable solutions.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 14 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                        </div>
+                        <a href="course-cloud-computing.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-cyber-security.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- Data Science -->
-        <div class="course-card" data-categories="technology">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwa90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Data Science Course">
-                <div class="course-category">Technology</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Data Science</h2>
-                <p>Learn to analyze and visualize data using Python, R, and advanced tools. Work on real-world projects and build your portfolio.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 18 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Advanced</span>
+                
+                <!-- Cyber Security -->
+                <div class="course-card crystal-card" data-categories="technology">
+                    <div class="course-image">
+                        <img src="https://plus.unsplash.com/premium_photo-1661764393655-1dbffee8c0ce?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cyber Security Course">
+                        <div class="course-category">Technology</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Cyber Security</h2>
+                        <p>Master ethical hacking, network security, cryptography, and risk management. Learn to defend digital systems against cyber threats.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 16 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Advanced</span>
+                        </div>
+                        <a href="course-cyber-security.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-data-science.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- Digital Marketing -->
-        <div class="course-card" data-categories="business">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGlnaXRhbCUyMG1hcmtldGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Digital Marketing Course">
-                <div class="course-category">Business</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Digital Marketing</h2>
-                <p>Master SEO, social media marketing, PPC, email marketing, and analytics. Learn to create effective digital marketing campaigns.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 10 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                
+                <!-- Data Science -->
+                <div class="course-card crystal-card" data-categories="technology">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwa90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Data Science Course">
+                        <div class="course-category">Technology</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Data Science</h2>
+                        <p>Learn to analyze and visualize data using Python, R, and advanced tools. Work on real-world projects and build your portfolio.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 18 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Advanced</span>
+                        </div>
+                        <a href="course-data-science.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-digital-marketing.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- Graphic Design -->
-        <div class="course-card" data-categories="technology">
-            <div class="course-image">
-                <img src="https://plus.unsplash.com/premium_photo-1661284886711-4eaee4fa7771?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8R3JhcGhpYyUyMERlc2lnbnxlbnwwfHwwfHx8MA%3D%3D" alt="Graphic Design Course">
-                <div class="course-category">Technology</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Graphic Design</h2>
-                <p>Learn design principles, typography, color theory, and software skills. Build a professional portfolio to showcase your work.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 12 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                
+                <!-- Digital Marketing -->
+                <div class="course-card crystal-card" data-categories="business">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZGlnaXRhbCUyMG1hcmtldGluZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Digital Marketing Course">
+                        <div class="course-category">Business</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Digital Marketing</h2>
+                        <p>Master SEO, social media marketing, PPC, email marketing, and analytics. Learn to create effective digital marketing campaigns.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 10 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                        </div>
+                        <a href="course-digital-marketing.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-graphic-design.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- Mobile App Development -->
-        <div class="course-card" data-categories="technology">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mobile App Development Course">
-                <div class="course-category">Technology</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Mobile App Development</h2>
-                <p>Learn to build native and cross-platform mobile applications for iOS and Android using modern frameworks and tools.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 14 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                
+                <!-- Graphic Design -->
+                <div class="course-card crystal-card" data-categories="technology">
+                    <div class="course-image">
+                        <img src="https://plus.unsplash.com/premium_photo-1661284886711-4eaee4fa7771?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8R3JhcGhpYyUyMERlc2lnbnxlbnwwfHwwfHx8MA%3D%3D" alt="Graphic Design Course">
+                        <div class="course-category">Technology</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Graphic Design</h2>
+                        <p>Learn design principles, typography, color theory, and software skills. Build a professional portfolio to showcase your work.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 12 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <a href="course-graphic-design.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-mobile-app.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- MS Office -->
-        <div class="course-card" data-categories="technology business">
-            <div class="course-image">
-                <img src="https://plus.unsplash.com/premium_photo-1661412968858-94c2675c3370?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fE1TJTIwT2ZmaWNlfGVufDB8fDB8fHww" alt="MS Office Course">
-                <div class="course-category">Business</div>
-            </div>
-            <div class="course-card-content">
-                <h2>MS Office</h2>
-                <p>Master Microsoft Office applications including Word, Excel, PowerPoint, and Access. Learn to automate tasks and increase productivity.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 8 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                
+                <!-- Mobile App Development -->
+                <div class="course-card crystal-card" data-categories="technology">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mobile App Development Course">
+                        <div class="course-category">Technology</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Mobile App Development</h2>
+                        <p>Learn to build native and cross-platform mobile applications for iOS and Android using modern frameworks and tools.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 14 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                        </div>
+                        <a href="course-mobile-app.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-ms-office.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- Networking -->
-        <div class="course-card" data-categories="technology">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Networking Course">
-                <div class="course-category">Technology</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Networking</h2>
-                <p>Master computer networks, protocols, and network security. Prepare for industry certifications in network administration.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 16 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                
+                <!-- MS Office -->
+                <div class="course-card crystal-card" data-categories="technology business">
+                    <div class="course-image">
+                        <img src="https://plus.unsplash.com/premium_photo-1661412968858-94c2675c3370?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fE1TJTIwT2ZmaWNlfGVufDB8fDB8fHww" alt="MS Office Course">
+                        <div class="course-category">Business</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>MS Office</h2>
+                        <p>Master Microsoft Office applications including Word, Excel, PowerPoint, and Access. Learn to automate tasks and increase productivity.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 8 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <a href="course-ms-office.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-networking.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- Python -->
-        <div class="course-card" data-categories="technology">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1653564142048-d5af2cf9b50f?q=80&w=1030&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Python Programming Course">
-                <div class="course-category">Technology</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Python Programming</h2>
-                <p>Master Python from fundamentals to advanced concepts. Learn web development, data analysis, automation, and more.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 12 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                
+                <!-- Networking -->
+                <div class="course-card crystal-card" data-categories="technology">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Networking Course">
+                        <div class="course-category">Technology</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Networking</h2>
+                        <p>Master computer networks, protocols, and network security. Prepare for industry certifications in network administration.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 16 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                        </div>
+                        <a href="course-networking.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-python.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- SEO -->
-        <div class="course-card" data-categories="business">
-            <div class="course-image">
-                <img src="https://plus.unsplash.com/premium_photo-1685283298465-e52e933a3312?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="SEO Course">
-                <div class="course-category">Business</div>
-            </div>
-            <div class="course-card-content">
-                <h2>SEO</h2>
-                <p>Master search engine optimization techniques to improve website visibility. Learn keyword research, on-page and off-page SEO strategies.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 8 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                
+                <!-- Python -->
+                <div class="course-card crystal-card" data-categories="technology">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1653564142048-d5af2cf9b50f?q=80&w=1030&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Python Programming Course">
+                        <div class="course-category">Technology</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Python Programming</h2>
+                        <p>Master Python from fundamentals to advanced concepts. Learn web development, data analysis, automation, and more.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 12 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <a href="course-python.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-seo.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- Video Editing -->
-        <div class="course-card" data-categories="technology">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1619983081563-430f63602796?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Video Editing Course">
-                <div class="course-category">Technology</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Video Editing</h2>
-                <p>Learn professional video editing techniques, color grading, motion graphics, and visual effects using industry-standard software.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 10 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                
+                <!-- SEO -->
+                <div class="course-card crystal-card" data-categories="business">
+                    <div class="course-image">
+                        <img src="https://plus.unsplash.com/premium_photo-1685283298465-e52e933a3312?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="SEO Course">
+                        <div class="course-category">Business</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>SEO</h2>
+                        <p>Master search engine optimization techniques to improve website visibility. Learn keyword research, on-page and off-page SEO strategies.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 8 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                        </div>
+                        <a href="course-seo.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-video-editing.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- Web Development -->
-        <div class="course-card" data-categories="technology">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1583508915901-b5f84c1dcde1?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Web Development Course">
-                <div class="course-category">Technology</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Web Development</h2>
-                <p>Master HTML, CSS, JavaScript, and modern frameworks to build responsive websites and web applications.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 16 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                
+                <!-- Video Editing -->
+                <div class="course-card crystal-card" data-categories="technology">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1619983081563-430f63602796?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Video Editing Course">
+                        <div class="course-category">Technology</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Video Editing</h2>
+                        <p>Learn professional video editing techniques, color grading, motion graphics, and visual effects using industry-standard software.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 10 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <a href="course-video-editing.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-webdev.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- WordPress -->
-        <div class="course-card" data-categories="technology">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="WordPress Course">
-                <div class="course-category">Technology</div>
-            </div>
-            <div class="course-card-content">
-                <h2>WordPress</h2>
-                <p>Learn to build professional websites using WordPress. Master themes, plugins, customization, and e-commerce integration.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 8 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                
+                <!-- Web Development -->
+                <div class="course-card crystal-card" data-categories="technology">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1583508915901-b5f84c1dcde1?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Web Development Course">
+                        <div class="course-category">Technology</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Web Development</h2>
+                        <p>Master HTML, CSS, JavaScript, and modern frameworks to build responsive websites and web applications.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 16 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <a href="course-webdev.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-wordpress.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- YouTube Automation -->
-        <div class="course-card" data-categories="business">
-            <div class="course-image">
-                <img src="https://plus.unsplash.com/premium_photo-1683287925874-f8b46c6437ae?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="YouTube Automation Course">
-                <div class="course-category">Business</div>
-            </div>
-            <div class="course-card-content">
-                <h2>YouTube Automation</h2>
-                <p>Learn to build and scale profitable YouTube channels without appearing on camera. Master content strategy and monetization techniques.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 10 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                
+                <!-- WordPress -->
+                <div class="course-card crystal-card" data-categories="technology">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="WordPress Course">
+                        <div class="course-category">Technology</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>WordPress</h2>
+                        <p>Learn to build professional websites using WordPress. Master themes, plugins, customization, and e-commerce integration.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 8 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <a href="course-wordpress.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="course-youtube.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
+                
+                <!-- YouTube Automation -->
+                <div class="course-card crystal-card" data-categories="business">
+                    <div class="course-image">
+                        <img src="https://plus.unsplash.com/premium_photo-1683287925874-f8b46c6437ae?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="YouTube Automation Course">
+                        <div class="course-category">Business</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>YouTube Automation</h2>
+                        <p>Learn to build and scale profitable YouTube channels without appearing on camera. Master content strategy and monetization techniques.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 10 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Intermediate</span>
+                        </div>
+                        <a href="course-youtube.html" class="details-btn">Explore Program</a>
+                    </div>
+                </div>
 
-        <!-- Medical Billing -->
-        <div class="course-card" data-categories="technology">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1619983081563-430f63602796?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Medical Billing Course">
-                <div class="course-category">Technology</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Medical Billing</h2>
-                <p>Learn professional medical billing techniques, Departments, Sale products, and Online Clients using industry-standard software.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 4 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                <!-- Medical Billing -->
+                <div class="course-card crystal-card" data-categories="technology">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1619983081563-430f63602796?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Medical Billing Course">
+                        <div class="course-category">Technology</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Medical Billing</h2>
+                        <p>Learn professional medical billing techniques, Departments, Sale products, and Online Clients using industry-standard software.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 4 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <a href="medicalbilling-course.html" class="details-btn">Explore Program</a>
+                    </div>
                 </div>
-                <a href="medicalbilling-course.html" class="details-btn">Explore Program</a>
+                
+                <!-- Crypto Trading -->
+                <div class="course-card crystal-card" data-categories="trading">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1620336655055-bd87ca8f1370?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Crypto Trading Course">
+                        <div class="course-category">Trading</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Crypto Trading</h2>
+                        <p>Master cryptocurrency trading with technical analysis, risk management, and strategies for navigating volatile crypto markets.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 8 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Advanced</span>
+                        </div>
+                        <a href="Cryptotrading.html" class="details-btn">Explore Program</a>
+                    </div>
+                </div>
+                
+                <!-- Forex Trading -->
+                <div class="course-card crystal-card" data-categories="trading">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Forex Trading Course">
+                        <div class="course-category">Trading</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Forex Trading</h2>
+                        <p>Learn to trade the world's largest financial market with confidence. Master currency pairs, technical analysis, and risk management.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 10 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Advanced</span>
+                        </div>
+                        <a href="forextrading.html" class="details-btn">Explore Program</a>
+                    </div>
+                </div>
+                
+                <!-- Blockchain Technology -->
+                <div class="course-card crystal-card" data-categories="technology">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blockchain Technology Course">
+                        <div class="course-category">Technology</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Blockchain Technology</h2>
+                        <p>Learn the fundamentals of blockchain, smart contracts, and decentralized applications. Build your own blockchain projects.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 14 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Advanced</span>
+                        </div>
+                        <a href="blockchain.html" class="details-btn">Explore Program</a>
+                    </div>
+                </div>
+                
+                <!-- Blogging -->
+                <div class="course-card crystal-card" data-categories="business">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blogging Course">
+                        <div class="course-category">Business</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Blogging</h2>
+                        <p>Learn to create successful blogs that attract readers and generate income. Master content creation, SEO, and monetization strategies.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 8 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <a href="blogging.html" class="details-btn">Explore Program</a>
+                    </div>
+                </div>
+                
+                <!-- eBay -->
+                <div class="course-card crystal-card" data-categories="ecommerce">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="eBay Dropshipping Course">
+                        <div class="course-category">E-Commerce</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>eBay Dropshipping</h2>
+                        <p>Master the art of eBay dropshipping. Learn product research, listing optimization, and scaling strategies for a successful business.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 8 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <a href="ebay.html" class="details-btn">Explore Program</a>
+                    </div>
+                </div>
+                
+                <!-- Etsy -->
+                <div class="course-card crystal-card" data-categories="ecommerce">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Etsy Selling Course">
+                        <div class="course-category">E-Commerce</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Etsy Selling</h2>
+                        <p>Learn to build a successful Etsy shop selling handmade, vintage, or craft supplies. Master product photography, SEO, and marketing.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 6 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <a href="etsy.html" class="details-btn">Explore Program</a>
+                    </div>
+                </div>
+                
+                <!-- Daraz -->
+                <div class="course-card crystal-card" data-categories="ecommerce">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Daraz Selling Course">
+                        <div class="course-category">E-Commerce</div>
+                    </div>
+                    <div class="course-card-content">
+                        <h2>Daraz Selling</h2>
+                        <p>Master selling on Daraz, one of the largest e-commerce platforms in South Asia. Learn product listing, order management, and marketing.</p>
+                        <div class="course-meta">
+                            <span><i class="far fa-clock"></i> 6 Weeks</span>
+                            <span><i class="fas fa-user-graduate"></i> Beginner</span>
+                        </div>
+                        <a href="daraz.html" class="details-btn">Explore Program</a>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <!-- Crypto Trading -->
-        <div class="course-card" data-categories="trading">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1620336655055-bd87ca8f1370?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Crypto Trading Course">
-                <div class="course-category">Trading</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Crypto Trading</h2>
-                <p>Master cryptocurrency trading with technical analysis, risk management, and strategies for navigating volatile crypto markets.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 8 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Advanced</span>
-                </div>
-                <a href="Cryptotrading.html" class="details-btn">Explore Program</a>
+    </section>
+
+    <!-- Courses CTA Section -->
+    <section class="courses-cta">
+        <div class="container">
+            <h2 class="section-title">Ready to Transform Your Career?</h2>
+            <p class="section-subtitle">Join thousands of students who have launched successful careers through CMTI programs</p>
+            
+            <div class="cta-buttons" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+                <a href="https://form.jotform.com/252090931090451" class="btn" target="_blank" rel="noopener">Enroll Now</a>
+                <a href="contact.html" class="btn btn-outline">Contact Admissions</a>
             </div>
         </div>
-        
-        <!-- Forex Trading -->
-        <div class="course-card" data-categories="trading">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Forex Trading Course">
-                <div class="course-category">Trading</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Forex Trading</h2>
-                <p>Learn to trade the world's largest financial market with confidence. Master currency pairs, technical analysis, and risk management.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 10 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Advanced</span>
-                </div>
-                <a href="forextrading.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- Blockchain Technology -->
-        <div class="course-card" data-categories="technology">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blockchain Technology Course">
-                <div class="course-category">Technology</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Blockchain Technology</h2>
-                <p>Learn the fundamentals of blockchain, smart contracts, and decentralized applications. Build your own blockchain projects.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 14 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Advanced</span>
-                </div>
-                <a href="blockchain.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- Blogging -->
-        <div class="course-card" data-categories="business">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blogging Course">
-                <div class="course-category">Business</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Blogging</h2>
-                <p>Learn to create successful blogs that attract readers and generate income. Master content creation, SEO, and monetization strategies.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 8 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Beginner</span>
-                </div>
-                <a href="blogging.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- eBay -->
-        <div class="course-card" data-categories="ecommerce">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="eBay Dropshipping Course">
-                <div class="course-category">E-Commerce</div>
-            </div>
-            <div class="course-card-content">
-                <h2>eBay Dropshipping</h2>
-                <p>Master the art of eBay dropshipping. Learn product research, listing optimization, and scaling strategies for a successful business.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 8 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Beginner</span>
-                </div>
-                <a href="ebay.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- Etsy -->
-        <div class="course-card" data-categories="ecommerce">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Etsy Selling Course">
-                <div class="course-category">E-Commerce</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Etsy Selling</h2>
-                <p>Learn to build a successful Etsy shop selling handmade, vintage, or craft supplies. Master product photography, SEO, and marketing.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 6 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Beginner</span>
-                </div>
-                <a href="etsy.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-        
-        <!-- Daraz -->
-        <div class="course-card" data-categories="ecommerce">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Daraz Selling Course">
-                <div class="course-category">E-Commerce</div>
-            </div>
-            <div class="course-card-content">
-                <h2>Daraz Selling</h2>
-                <p>Master selling on Daraz, one of the largest e-commerce platforms in South Asia. Learn product listing, order management, and marketing.</p>
-                <div class="course-meta">
-                    <span><i class="far fa-clock"></i> 6 Weeks</span>
-                    <span><i class="fas fa-user-graduate"></i> Beginner</span>
-                </div>
-                <a href="daraz.html" class="details-btn">Explore Program</a>
-            </div>
-        </div>
-    </div>
+    </section>
 
     <!-- Loader -->
     <div class="loader" id="loader"></div>
@@ -1468,126 +1550,108 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-col">
-                <div class="footer-logo">
-                    <img src="https://codedmind.netlify.app/logo.png" alt="CMTI Logo">
-                    <h3>Coded Mind <n>Technology Incubator</n></h3>
-                </div>
-                <p class="footer-description">
-                    Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
-                    Join CMTI to gain cutting-Edge skills in technology and business. Our expert-led courses prepare you for the digital future.
-                </p>
-                <div class="footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="#" title="Facebook" aria-label="Facebook">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
-                            </svg>
-                        </a>
-                        <a href="#" title="Twitter" aria-label="Twitter">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10C2.38 10 2.38 10 2.38 10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.46 14.34 5.08 14.39 4.69 14.39C4.42 14.39 4.15 14.36 3.89 14.31C4.43 16 6 17.26 7.89 17.29C6.43 18.45 4.58 19.13 2.56 19.13C2.22 19.13 1.88 19.11 1.54 19.07C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z"/>
-                            </svg>
-                        </a>
-                        <a href="#" title="Instagram" aria-label="Instagram">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2C22 19.4 19.4 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2ZM7.6 4C5.6 4 4 5.6 4 7.6V16.4C4 18.4 5.6 20 7.6 20H16.4C18.4 20 20 18.4 20 16.4V7.6C20 5.6 18.4 4 16.4 4H7.6ZM12 7C14.8 7 17 9.2 17 12C17 14.8 14.8 17 12 17C9.2 17 7 14.8 7 12C7 9.2 9.2 7 12 7ZM12 9C10.3 9 9 10.3 9 12C9 13.7 10.3 15 12 15C13.7 15 15 13.7 15 12C15 10.3 13.7 9 12 9ZM17.5 6C18.1 6 18.5 5.6 18.5 5C18.5 4.4 18.1 4 17.5 4C16.9 4 16.5 4.4 16.5 5C16.5 5.6 16.9 6 17.5 6Z"/>
-                            </svg>
-                        </a>
-                        <a href="#" title="LinkedIn" aria-label="LinkedIn">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
-                            </svg>
-                        </a>
-                        <a href="#" title="YouTube" aria-label="YouTube">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"/>
-                            </svg>
-                        </a>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="CMTI Logo">
+                        <h3>Coded Mind <n>Technology Incubator</n></h3>
+                    </div>
+                    <p class="footer-description">
+                        Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
+                        Join CMTI to gain cutting-Edge skills in technology and business. Our expert-led courses prepare you for the digital future.
+                    </p>
+                    <div class="footer-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#" title="Facebook" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" title="Twitter" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" title="Instagram" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" title="YouTube" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
-                    
-            <div class="footer-col">
-                <h3>Top Programs</h3>
-                <ul>
-                    <li><a href="course-webdev.html">Web Development</a></li>
-                    <li><a href="course-data-science.html">Data Science</a></li>
-                    <li><a href="course-cyber-security.html">Cyber Security</a></li>
-                    <li><a href="course-digital-marketing.html">Digital Marketing</a></li>
-                    <li><a href="course-python.html">Python Programming</a></li>
-                    <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="courses.html">All programs</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="careers.html">Career Opportunities</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Get In Touch!</h3>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
-                        </svg>
-                        <span>Katlang District Mardan Pakistan</span>
-                    </div>
-                    <div class="contact-item">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
-                        </svg>
-                        <span><a href="tel:+923488850059">+92 348 8850059</a></span>
-                    </div>
-                    <div class="contact-item">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
-                        </svg>
-                        <span><a href="tel:+923161098765">+92 316 1098765</a></span>
-                    </div>
-                    <div class="contact-item">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6M20 6L12 11L4 6H20M20 18H4V8L12 13L20 8V18Z"/>
-                        </svg>
-                        <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
-                    </div>
-                    <div class="contact-item">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
-                        </svg>
-                        <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
-                    </div>
+                        
+                <div class="footer-col">
+                    <h3>Top Programs</h3>
+                    <ul>
+                        <li><a href="course-webdev.html">Web Development</a></li>
+                        <li><a href="course-data-science.html">Data Science</a></li>
+                        <li><a href="course-cyber-security.html">Cyber Security</a></li>
+                        <li><a href="course-digital-marketing.html">Digital Marketing</a></li>
+                        <li><a href="course-python.html">Python Programming</a></li>
+                        <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
+                    </ul>
                 </div>
                 
-                <div class="newsletter">
-                    <h4>Subscribe to Our Newsletter</h4>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Your email address" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">All programs</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="careers.html">Career Opportunities</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Get In Touch!</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Katlang District Mardan Pakistan</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span><a href="tel:+923488850059">+92 348 8850059</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span><a href="tel:+923161098765">+92 316 1098765</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter">
+                        <h4>Subscribe to Our Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="footer-bottom-content">
-                <div class="copyright">
-                    &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
-                </div>
-                <div class="legal-links">
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
-                    <a href="refund.html">Refund Policy</a>
-                    <a href="https://aitoolsfreelance.blogspot.com">Blogs</a>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
+                    </div>
+                    <div class="legal-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="refund.html">Refund Policy</a>
+                        <a href="https://aitoolsfreelance.blogspot.com">Blogs</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1602,48 +1666,6 @@
             hamburger.classList.toggle('active');
             mobileMenu.classList.toggle('active');
         });
-        
-        // Carousel Functionality
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel-slide');
-        const dots = document.querySelectorAll('.carousel-dot');
-        const totalSlides = slides.length;
-        
-        function showSlide(index) {
-            // Hide all slides
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-            
-            // Show the selected slide
-            slides[index].classList.add('active');
-            dots[index].classList.add('active');
-            currentSlide = index;
-        }
-        
-        // Next slide
-        document.querySelector('.carousel-arrow.next').addEventListener('click', () => {
-            let nextSlide = (currentSlide + 1) % totalSlides;
-            showSlide(nextSlide);
-        });
-        
-        // Previous slide
-        document.querySelector('.carousel-arrow.prev').addEventListener('click', () => {
-            let prevSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            showSlide(prevSlide);
-        });
-        
-        // Dot navigation
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                showSlide(index);
-            });
-        });
-        
-        // Auto slide change every 5 seconds
-        setInterval(() => {
-            let nextSlide = (currentSlide + 1) % totalSlides;
-            showSlide(nextSlide);
-        }, 5000);
         
         // Course Filtering and Search
         const searchInput = document.getElementById('course-search');
@@ -1748,23 +1770,44 @@
             });
         }
         
-        // Lazy Loading for Images (performance optimization)
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.new-header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
+        }, observerOptions);
+
+        // Observe elements to animate
+        document.addEventListener('DOMContentLoaded', function() {
+            const elementsToAnimate = document.querySelectorAll('.course-card, .section-title, .section-subtitle');
             
-            document.querySelectorAll('img[data-src]').forEach(img => {
-                imageObserver.observe(img);
+            elementsToAnimate.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
             });
-        }
+        });
     </script>
 </body>
 </html>
