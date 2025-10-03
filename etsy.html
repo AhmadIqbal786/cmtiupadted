@@ -3,7 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Etsy Selling Mastery Course</title>
+    <title>Etsy Selling Mastery Course | Build Profitable Etsy Shop | Coded Mind</title>
+    <meta name="description" content="Learn to build, grow, and scale a profitable Etsy business. Master Etsy SEO, product photography, pricing strategies, and marketing techniques.">
+    <meta name="keywords" content="etsy course, etsy selling, etsy seo, handmade business, ecommerce, creative business, online selling">
+    <meta name="author" content="Coded Mind Technology Incubator">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Etsy Selling Mastery Course | Coded Mind">
+    <meta property="og:description" content="Turn your creative passion into a profitable Etsy business with our comprehensive course.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codedmind.com/courses/etsy-mastery">
+    <meta property="og:image" content="https://codedmind.netlify.app/logo.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://codedmind.com/courses/etsy-mastery">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Etsy Selling Mastery Course",
+      "description": "Turn your creative passion into a profitable Etsy business",
+      "provider": {
+        "@type": "Organization",
+        "name": "Coded Mind Technology Incubator",
+        "sameAs": "https://codedmind.com"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "self-paced",
+        "courseWorkload": "PT20H"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "149",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -23,13 +62,160 @@
             background-color: #f8f9fa;
         }
         
+        /* Header Styles */
+        .new-header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--primary);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        .mobile-menu {
+            display: none;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-nav {
+            list-style: none;
+        }
+        
+        .mobile-nav li {
+            margin-bottom: 15px;
+        }
+        
+        .mobile-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        
+        .mobile-nav a:hover {
+            background: #f0f0f0;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            z-index: 1001;
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            width: 0%;
+            transition: width 0.3s;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 10px 0;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             color: white;
-            padding: 3rem 1rem;
+            padding: 4rem 1rem;
             text-align: center;
             margin-bottom: 2rem;
             border-radius: 0 0 20px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M500,50 L1000,0 L1000,100 L0,100 L0,0 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
         
         .module {
@@ -38,16 +224,27 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             margin-bottom: 2rem;
             overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .module:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
         }
         
         .module-header {
             background: var(--primary);
             color: white;
-            padding: 1rem;
+            padding: 1.2rem;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: background 0.3s;
+        }
+        
+        .module-header:hover {
+            background: #e05a1a;
         }
         
         .module-content {
@@ -57,6 +254,12 @@
         
         .module-content.active {
             display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
         
         .lesson {
@@ -64,6 +267,12 @@
             border-left: 3px solid var(--secondary);
             margin-bottom: 0.5rem;
             background-color: var(--light);
+            border-radius: 0 5px 5px 0;
+            transition: background 0.3s;
+        }
+        
+        .lesson:hover {
+            background-color: #f0ebe6;
         }
         
         .pricing-box {
@@ -73,6 +282,25 @@
             padding: 2rem;
             text-align: center;
             margin-bottom: 2rem;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .pricing-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .popular-tag {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
         }
         
         .price {
@@ -90,6 +318,8 @@
         .features-list li {
             padding: 0.5rem 0;
             border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
         }
         
         .features-list li:before {
@@ -121,11 +351,30 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             padding: 1.5rem;
             margin-bottom: 1.5rem;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-5px);
+        }
+        
+        .testimonial::before {
+            content: """;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            line-height: 1;
         }
         
         .testimonial-text {
             font-style: italic;
             color: #555;
+            position: relative;
+            z-index: 1;
         }
         
         .testimonial-author {
@@ -136,14 +385,45 @@
         
         .faq-item {
             margin-bottom: 1rem;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
         }
         
         .faq-question {
             font-weight: bold;
             color: var(--primary);
             cursor: pointer;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #eee;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        
+        .faq-question:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .faq-answer {
+            padding: 0 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 1rem;
+            max-height: 500px;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s;
         }
         
         .instructor {
@@ -182,6 +462,8 @@
             border-radius: 10px;
             width: 90%;
             max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
         }
         
         .payment-option {
@@ -212,77 +494,357 @@
             border-radius: 5px;
             border-left: 4px solid var(--primary);
         }
+        
+        /* Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .floating-cta a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-text {
+            color: #666;
+        }
+        
+        /* Footer Styles */
+        .site-footer {
+            background: #2c3e50;
+            color: white;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .footer-col h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo img {
+            height: 40px;
+        }
+        
+        .footer-logo h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+        }
+        
+        .footer-description {
+            margin-bottom: 20px;
+            line-height: 1.6;
+            opacity: 0.8;
+        }
+        
+        .footer-social h4 {
+            margin-bottom: 15px;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background: var(--primary);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .contact-item a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            color: var(--primary);
+        }
+        
+        .newsletter h4 {
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+        }
+        
+        .newsletter-form button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .newsletter-form button:hover {
+            background: var(--accent);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 20px;
+        }
+        
+        .footer-bottom-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .legal-links {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .legal-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .legal-links a:hover {
+            color: white;
+        }
+        
+        .section-title {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .mobile-menu.active {
+                display: block;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .floating-cta {
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+                text-align: center;
+                justify-content: center;
+            }
+            
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
     </style>
 </head>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coded Mind Technology Incubator</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="https://codedmind.netlify.app/logo.png" type="image/png">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
-    <script src="script.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-    <script src="codedmind-enhancements.js"></script>
-    <link rel="stylesheet" href="style2.css">
-   
-</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <!-- Header -->
+    <header class="new-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="logo.png" alt="CodedMind Logo" class="logo">
+                <div class="logo-text">Coded Mind <br> Technology Incubator</div>
+            </div>
             
-      <!-- Header -->
-  <header class="new-header">
-    <div class="header-container">
-        <div class="logo-container">
-            <img src="https://codedmind.netlify.app/logo.png" alt="CodedMind Logo" class="logo">
-            <div class="logo-text">Coded Mind <br> Technology Incubator</div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html" class="active">Programs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </nav>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
         
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="courses.html">Programs</a></li>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html" class="active">Programs</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="careers.html">Careers</a></li>
             </ul>
-        </nav>
-        
-        
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
         </div>
-    </div>
-    
-    <div class="mobile-menu">
-        <ul class="mobile-nav">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="courses.html">Programs</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="careers.html">Careers</a></li>
-        </ul>
-        
-    </div>
-</header>
-<body>
+    </header>
+
     <div class="container my-4">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &gt; <a href="courses.html">Programs</a> &gt; Etsy Selling Mastery Course
+        </div>
+        
         <!-- Hero Section -->
         <div class="hero">
-            <h1>Etsy Selling Success Course</h1>
-            <p class="lead">Turn your creative passion into a profitable Etsy business</p>
-            <div class="mt-4">
-                <span class="badge bg-light text-dark me-2"><i class="fas fa-user-graduate me-1"></i> Beginner to Advanced</span>
-                <span class="badge bg-light text-dark me-2"><i class="fas fa-clock me-1"></i> Self-Paced</span>
-                <span class="badge bg-light text-dark"><i class="fas fa-certificate me-1"></i> Certificate</span>
+            <div class="hero-content">
+                <h1>Etsy Selling Success Course</h1>
+                <p class="lead">Turn your creative passion into a profitable Etsy business</p>
+                <div class="mt-4">
+                    <span class="badge bg-light text-dark me-2"><i class="fas fa-user-graduate me-1"></i> Beginner to Advanced</span>
+                    <span class="badge bg-light text-dark me-2"><i class="fas fa-clock me-1"></i> Self-Paced</span>
+                    <span class="badge bg-light text-dark"><i class="fas fa-certificate me-1"></i> Certificate</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Stats Section -->
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">2,500+</div>
+                <div class="stat-text">Students Enrolled</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">97%</div>
+                <div class="stat-text">Success Rate</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">20+</div>
+                <div class="stat-text">Hours of Content</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">30-Day</div>
+                <div class="stat-text">Money-Back Guarantee</div>
             </div>
         </div>
         
         <!-- Course Overview -->
         <div class="row mb-4">
             <div class="col-md-8">
-                <h2>Course Overview</h2>
-                <p>This comprehensive Etsy selling course will guide you through every step of creating, launching, and growing a successful Etsy shop. Learn how to optimize your listings, master Etsy SEO, price your products, and build a brand that stands out.</p>
+                <h2 class="section-title">Course Overview</h2>
+                <p class="text-center mb-4">This comprehensive Etsy selling course will guide you through every step of creating, launching, and growing a successful Etsy shop. Learn how to optimize your listings, master Etsy SEO, price your products, and build a brand that stands out.</p>
                 
                 <div class="row mt-4">
                     <div class="col-md-6">
@@ -326,6 +888,7 @@
             
             <div class="col-md-4">
                 <div class="pricing-box">
+                    <div class="popular-tag">Most Popular</div>
                     <h3>Enroll in the Course</h3>
                     <div class="price">$149</div>
                     <p>One-time payment. Lifetime access.</p>
@@ -347,7 +910,7 @@
         </div>
         
         <!-- Course Modules -->
-        <h2 class="mb-3">Course Modules</h2>
+        <h2 class="section-title mb-3">Course Modules</h2>
         
         <div class="module">
             <div class="module-header" onclick="toggleModule(1)">
@@ -424,10 +987,8 @@
             </div>
         </div>
         
-        <!-- Additional modules would follow the same pattern -->
-        
         <!-- Testimonials -->
-        <h2 class="my-4">Success Stories</h2>
+        <h2 class="section-title my-4">Success Stories</h2>
         
         <div class="row">
             <div class="col-md-6">
@@ -454,37 +1015,40 @@
         </div>
         
         <!-- FAQ Section -->
-        <h2 class="my-4">Frequently Asked Questions</h2>
+        <h2 class="section-title my-4">Frequently Asked Questions</h2>
         
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFaq(1)">
-                <i class="fas fa-chevron-down me-2"></i> How soon can I expect results?
+                <span>How soon can I expect results?</span>
+                <i class="fas fa-chevron-down"></i>
             </div>
-            <div class="faq-answer mt-2" id="faq1">
+            <div class="faq-answer" id="faq1">
                 Most students see significant improvements within 2-4 weeks of implementing the strategies. However, results vary based on your niche, competition, and how quickly you implement the techniques.
             </div>
         </div>
         
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFaq(2)">
-                <i class="fas fa-chevron-down me-2"></i> Do I need expensive equipment?
+                <span>Do I need expensive equipment?</span>
+                <i class="fas fa-chevron-down"></i>
             </div>
-            <div class="faq-answer mt-2" id="faq2">
+            <div class="faq-answer" id="faq2">
                 Not at all! The course focuses on techniques that work with basic equipment. We'll show you how to create professional-looking product photos with just a smartphone and natural light.
             </div>
         </div>
         
         <div class="faq-item">
             <div class="faq-question" onclick="toggleFaq(3)">
-                <i class="fas fa-chevron-down me-2"></i> What is your refund policy?
+                <span>What is your refund policy?</span>
+                <i class="fas fa-chevron-down"></i>
             </div>
-            <div class="faq-answer mt-2" id="faq3">
+            <div class="faq-answer" id="faq3">
                 We offer a 30-day money-back guarantee. If you're not satisfied with the course, just contact us for a full refund.
             </div>
         </div>
         
         <!-- Instructor Section -->
-        <h2 class="my-4">About the Instructor</h2>
+        <h2 class="section-title my-4">About the Instructor</h2>
         
         <div class="instructor">
             <img src="https://placehold.co/150x150" alt="Instructor" class="instructor-img">
@@ -492,6 +1056,33 @@
             <p class="text-muted">Etsy Power Seller & Educator</p>
             <p>With over 8 years of experience on Etsy and $500,000+ in sales, Sarah has helped thousands of students build successful Etsy businesses. She specializes in helping creative entrepreneurs turn their passion into profit.</p>
         </div>
+        
+        <!-- Jotform Registration -->
+        <h2 class="section-title">Register for This Course</h2>
+        <div class="form-container">
+            <iframe id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c" title="Sana: Registration Assistant"
+                onload="window.parent.scrollTo(0,0)" allowtransparency="true"
+                allow="geolocation; microphone; camera; fullscreen"
+                src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
+                frameborder="0" style="
+                max-width:100%;
+                height:688px;
+                border:none;
+                width:100%;
+                " scrolling="no">
+            </iframe>
+            <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+            <script>
+                window.jotformEmbedHandler("iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
+                "https://www.jotform.com")
+            </script>
+        </div>
+    </div>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta">
+        <i class="fas fa-shopping-cart"></i>
+        <a href="#" onclick="showPaymentModal(); return false;">Enroll Now - Limited Time Offer</a>
     </div>
 
     <!-- Payment Modal -->
@@ -531,154 +1122,208 @@
         </div>
     </div>
     
-        <!-- Jotform Registration -->
-        <h2 class="section-title">Register for This Course</h2>
-        <div class="form-container">
-            <iframe id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c" title="Sana: Registration Assistant"
-                onload="window.parent.scrollTo(0,0)" allowtransparency="true"
-                allow="geolocation; microphone; camera; fullscreen"
-                src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
-                frameborder="0" style="
-                max-width:100%;
-                height:688px;
-                border:none;
-                width:100%;
-                " scrolling="no">
-            </iframe>
-            <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-            <script>
-                window.jotformEmbedHandler("iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
-                "https://www.jotform.com")
-            </script>
-        </div>
-    </div>
-    
-   <!-- Footer -->
-   <footer class="site-footer">
-    <div class="footer-content">
-        <div class="footer-col">
-            <div class="footer-logo">
-                <img src="logo.png" alt="CMTI Logo">
-                <h3> Coded Mind <n>Technology Incubator</n> </h3>
-            </div>
-            <p class="footer-description">
-                Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
-                Join CMTI to gain cutting-Edge skills in technology and business. Our expert-led courses prepare you for the digital future.
-            </p>
-            <div class="footer-social">
-                <h4>Follow Us</h4>
-                <div class="social-icons">
-                    <a href="#" title="Facebook" aria-label="Facebook">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
-                        </svg>
-                    </a>
-                    <a href="#" title="Twitter" aria-label="Twitter">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10C2.38 10 2.38 10 2.38 10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.46 14.34 5.08 14.39 4.69 14.39C4.42 14.39 4.15 14.36 3.89 14.31C4.43 16 6 17.26 7.89 17.29C6.43 18.45 4.58 19.13 2.56 19.13C2.22 19.13 1.88 19.11 1.54 19.07C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z"/>
-                        </svg>
-                    </a>
-                    <a href="#" title="Instagram" aria-label="Instagram">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2C22 19.4 19.4 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2ZM7.6 4C5.6 4 4 5.6 4 7.6V16.4C4 18.4 5.6 20 7.6 20H16.4C18.4 20 20 18.4 20 16.4V7.6C20 5.6 18.4 4 16.4 4H7.6ZM12 7C14.8 7 17 9.2 17 12C17 14.8 14.8 17 12 17C9.2 17 7 14.8 7 12C7 9.2 9.2 7 12 7ZM12 9C10.3 9 9 10.3 9 12C9 13.7 10.3 15 12 15C13.7 15 15 13.7 15 12C15 10.3 13.7 9 12 9ZM17.5 6C18.1 6 18.5 5.6 18.5 5C18.5 4.4 18.1 4 17.5 4C16.9 4 16.5 4.4 16.5 5C16.5 5.6 16.9 6 17.5 6Z"/>
-                        </svg>
-                    </a>
-                    <a href="#" title="LinkedIn" aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
-                        </svg>
-                    </a>
-                    <a href="#" title="YouTube" aria-label="YouTube">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"/>
-                        </svg>
-                    </a>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="CMTI Logo">
+                    <h3> Coded Mind <n>Technology Incubator</n> </h3>
+                </div>
+                <p class="footer-description">
+                    Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
+                    Join CMTI to gain cutting-Edge skills in technology and business. Our expert-led courses prepare you for the digital future.
+                </p>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" title="Facebook" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" title="Twitter" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10C2.38 10 2.38 10 2.38 10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.46 14.34 5.08 14.39 4.69 14.39C4.42 14.39 4.15 14.36 3.89 14.31C4.43 16 6 17.26 7.89 17.29C6.43 18.45 4.58 19.13 2.56 19.13C2.22 19.13 1.88 19.11 1.54 19.07C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" title="Instagram" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2C22 19.4 19.4 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2ZM7.6 4C5.6 4 4 5.6 4 7.6V16.4C4 18.4 5.6 20 7.6 20H16.4C18.4 20 20 18.4 20 16.4V7.6C20 5.6 18.4 4 16.4 4H7.6ZM12 7C14.8 7 17 9.2 17 12C17 14.8 14.8 17 12 17C9.2 17 7 14.8 7 12C7 9.2 9.2 7 12 7ZM12 9C10.3 9 9 10.3 9 12C9 13.7 10.3 15 12 15C13.7 15 15 13.7 15 12C15 10.3 13.7 9 12 9ZM17.5 6C18.1 6 18.5 5.6 18.5 5C18.5 4.4 18.1 4 17.5 4C16.9 4 16.5 4.4 16.5 5C16.5 5.6 16.9 6 17.5 6Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+                            </svg>
+                        </a>
+                        <a href="#" title="YouTube" aria-label="YouTube">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-                
-         <div class="footer-col">
-            <h3>Top Programs</h3>
-            <ul>
-                <li><a href="course-webdev.html">Web Development</a></li>
-                <li><a href="course-data-science.html">Data Science</a></li>
-                <li><a href="course-cyber-security.html">Cyber Security</a></li>
-                <li><a href="course-digital-marketing.html">Digital Marketing</a></li>
-                <li><a href="course-python.html">Python Programming</a></li>
-                <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
-            </ul>
-        </div>
-        
-        <div class="footer-col">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="courses.html">All programs</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="careers.html">Career Opportunities</a></li>
-            </ul>
-        </div>
-        
-        <div class="footer-col">
-            <h3>Get In Touch!</h3>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
-                    </svg>
-                    <span> Katlang District Mardan Pakistan</span>
-                </div>
-                <div class="contact-item">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
-                    </svg>
-                    <span><a href="tel:+923488850059">+92 348 8850059</a></span>
-                   </div>
-                  <div class="contact-item">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
-                    </svg>
-                    <span><a href="tel:+923161098765">+92 316 1098765</a></span>
-                </div>
-                <div class="contact-item">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6M20 6L12 11L4 6H20M20 18H4V8L12 13L20 8V18Z"/>
-                    </svg>
-                    <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
-                </div>
-                <div class="contact-item">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
-                    </svg>
-                    <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
-                </div>
+                    
+            <div class="footer-col">
+                <h3>Top Programs</h3>
+                <ul>
+                    <li><a href="course-webdev.html">Web Development</a></li>
+                    <li><a href="course-data-science.html">Data Science</a></li>
+                    <li><a href="course-cyber-security.html">Cyber Security</a></li>
+                    <li><a href="course-digital-marketing.html">Digital Marketing</a></li>
+                    <li><a href="course-python.html">Python Programming</a></li>
+                    <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
+                </ul>
             </div>
             
-            <div class="newsletter">
-                <h4>Subscribe to Our Newsletter</h4>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your email address" required>
-                    <button type="submit">Subscribe</button>
-                </form>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">All programs</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="careers.html">Career Opportunities</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Get In Touch!</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
+                        </svg>
+                        <span> Katlang District Mardan Pakistan</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                        </svg>
+                        <span><a href="tel:+923488850059">+92 348 8850059</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                        </svg>
+                        <span><a href="tel:+923161098765">+92 316 1098765</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6M20 6L12 11L4 6H20M20 18H4V8L12 13L20 8V18Z"/>
+                        </svg>
+                        <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
+                        </svg>
+                        <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
+                    </div>
+                </div>
+                
+                <div class="newsletter">
+                    <h4>Subscribe to Our Newsletter</h4>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <div class="footer-bottom">
-        <div class="footer-bottom-content">
-            <div class="copyright">
-                &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
-            </div>
-            <div class="legal-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="refund.html">Refund Policy</a>
-                <a href="https://aitoolsfreelance.blogspot.com"> Blogs</a>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
+                </div>
+                <div class="legal-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="refund.html">Refund Policy</a>
+                    <a href="https://aitoolsfreelance.blogspot.com"> Blogs</a>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
-<script src="codedmind-enhancements.js"></script>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        });
+        
+        // Module toggle
+        function toggleModule(moduleNum) {
+            const moduleContent = document.getElementById(`module${moduleNum}`);
+            const toggleIcon = document.querySelector(`#module${moduleNum}`).previousElementSibling.querySelector('.toggle-icon');
+            
+            if (moduleContent.classList.contains('active')) {
+                moduleContent.classList.remove('active');
+                toggleIcon.textContent = '+';
+            } else {
+                // Close all other modules
+                document.querySelectorAll('.module-content').forEach(module => {
+                    module.classList.remove('active');
+                });
+                document.querySelectorAll('.toggle-icon').forEach(icon => {
+                    icon.textContent = '+';
+                });
+                
+                moduleContent.classList.add('active');
+                toggleIcon.textContent = '-';
+            }
+        }
+        
+        // FAQ toggle
+        function toggleFaq(faqNum) {
+            const faqItem = document.getElementById(`faq${faqNum}`).parentElement;
+            faqItem.classList.toggle('active');
+        }
+        
+        // Payment modal functions
+        function showPaymentModal() {
+            document.getElementById('paymentModal').style.display = 'flex';
+        }
+        
+        function hidePaymentModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+            document.querySelectorAll('.payment-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            document.getElementById('localPaymentDetails').style.display = 'none';
+            document.getElementById('proceedButton').disabled = true;
+        }
+        
+        function selectPayment(method) {
+            document.querySelectorAll('.payment-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+            
+            if (method === 'local') {
+                document.getElementById('localPaymentDetails').style.display = 'block';
+            } else {
+                document.getElementById('localPaymentDetails').style.display = 'none';
+            }
+            
+            document.getElementById('proceedButton').disabled = false;
+        }
+        
+        function processPayment() {
+            alert('Thank you for your enrollment! You will be redirected to the payment gateway.');
+            // In a real implementation, you would process the payment here
+        }
+        
+        // Progress bar
+        window.onscroll = function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+        };
+    </script>
 </body>
 </html>
