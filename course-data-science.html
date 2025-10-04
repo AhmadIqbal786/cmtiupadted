@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Science Course | Python, Machine Learning & AI | Coded Mind Technology Incubator</title>
-    <meta name="description" content="Master Data Science with Python, Machine Learning, and AI. Learn essential skills for data analysis, visualization, and predictive modeling from industry experts.">
-    <meta name="keywords" content="data science course, python, machine learning, artificial intelligence, data analysis, data visualization">
-    <meta name="author" content="Coded Mind Technology Incubator">
+    <title>Data Engineering & Analytics Course Pack | Coded Mind Technology Incubator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ===== CSS RESET & VARIABLES ===== */
@@ -320,6 +317,17 @@
             opacity: 0.9;
         }
 
+        .price-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
         /* ===== COURSE OVERVIEW SECTION ===== */
         .course-overview {
             padding: 80px 0;
@@ -355,10 +363,104 @@
             margin-bottom: 15px;
         }
 
+        /* ===== COURSE BUNDLE SECTION ===== */
+        .course-bundle {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .bundle-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .bundle-card {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bundle-card.featured {
+            border: 3px solid var(--primary);
+            transform: scale(1.05);
+        }
+
+        .bundle-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 40px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .bundle-header {
+            background: var(--gradient);
+            color: white;
+            padding: 20px;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .bundle-content {
+            padding: 25px;
+        }
+
+        .bundle-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .bundle-content li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .bundle-content li:last-child {
+            border-bottom: none;
+        }
+
+        .bundle-content li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        .bundle-price {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 1.2rem;
+        }
+
+        .current-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .savings {
+            color: var(--success);
+            font-weight: 600;
+        }
+
         /* ===== COURSE MODULES SECTION ===== */
         .course-modules {
             padding: 80px 0;
-            background: #f8fafc;
+            background: white;
         }
 
         .modules-container {
@@ -409,7 +511,7 @@
         /* ===== INSTRUCTOR SECTION ===== */
         .instructor-section {
             padding: 80px 0;
-            background: white;
+            background: #f8fafc;
         }
 
         .instructor-container {
@@ -448,7 +550,7 @@
         /* ===== TESTIMONIALS SECTION ===== */
         .testimonials-section {
             padding: 80px 0;
-            background: #f8fafc;
+            background: white;
         }
 
         .testimonials-container {
@@ -482,23 +584,6 @@
         .testimonial-author {
             font-weight: 600;
             color: var(--gray);
-        }
-
-        /* ===== CAREER OPPORTUNITIES SECTION ===== */
-        .career-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .career-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .career-card {
-            padding: 30px;
-            border-left: 4px solid var(--primary);
         }
 
         /* ===== FAQ SECTION ===== */
@@ -543,35 +628,6 @@
         .faq-active .faq-answer {
             max-height: 200px;
             padding: 20px;
-        }
-
-        /* ===== PAYMENT SECTION ===== */
-        .payment-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .payment-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .payment-card {
-            padding: 30px;
-        }
-
-        .payment-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 20px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.8rem;
         }
 
         /* ===== REGISTRATION SECTION ===== */
@@ -892,10 +948,61 @@
         </div>
         <div class="container">
             <div class="course-hero-content">
-                <div class="hero-badge">Beginner to Advanced Program</div>
-                <h1 class="hero-title">Data Science Course</h1>
-                <p class="hero-description">Master the essential skills to become a Data Scientist. From Python programming to Machine Learning and AI, we cover everything you need to succeed in the data-driven world.</p>
+                <div class="hero-badge">Premium Course Pack</div>
+                <h1 class="hero-title">Data Engineering & Analytics Mastery</h1>
+                <p class="hero-description">Master the complete data pipeline from collection to insights. This comprehensive 5-course bundle covers Data Fundamentals, Databases, Data Engineering, Business Intelligence, and ETL processes to make you a complete data professional.</p>
+                <div class="price-tag">PKR 30,000</div>
                 <a href="#registration" class="btn">Enroll Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Bundle Section -->
+    <section class="course-bundle">
+        <div class="container">
+            <h2 class="section-title">Complete Course Bundle</h2>
+            <p class="section-subtitle">Get all 5 essential data courses at a special bundle price</p>
+            
+            <div class="bundle-container">
+                <div class="bundle-card crystal-card featured">
+                    <div class="bundle-badge">Best Value</div>
+                    <div class="bundle-header">Complete Data Analytics Bundle</div>
+                    <div class="bundle-content">
+                        <ul>
+                            <li>Data Fundamentals & Analysis</li>
+                            <li>Database Design & Management</li>
+                            <li>Data Engineering Principles</li>
+                            <li>Business Intelligence & Visualization</li>
+                            <li>ETL Processes & Data Pipelines</li>
+                            <li>Real-world Capstone Project</li>
+                            <li>Career Support & Job Placement Assistance</li>
+                            <li>Lifetime Access to Course Materials</li>
+                        </ul>
+                        <div class="bundle-price">
+                            <div class="original-price">PKR 50,000</div>
+                            <div class="current-price">PKR 30,000</div>
+                            <div class="savings">Save 40%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bundle-card crystal-card">
+                    <div class="bundle-header">Individual Courses</div>
+                    <div class="bundle-content">
+                        <ul>
+                            <li>Data Fundamentals (PKR 8,000)</li>
+                            <li>Database Management (PKR 10,000)</li>
+                            <li>Data Engineering (PKR 12,000)</li>
+                            <li>Business Intelligence (PKR 10,000)</li>
+                            <li>ETL Processes (PKR 10,000)</li>
+                            <li>Total: PKR 50,000</li>
+                        </ul>
+                        <div class="bundle-price">
+                            <div class="current-price">PKR 50,000</div>
+                            <div class="savings">Buy individually</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -903,31 +1010,47 @@
     <!-- Course Overview Section -->
     <section class="course-overview">
         <div class="container">
-            <h2 class="section-title">Course Overview</h2>
+            <h2 class="section-title">What You'll Master</h2>
             
             <div class="overview-container">
                 <div class="overview-card crystal-card">
                     <div class="overview-icon">
-                        <i class="fas fa-laptop-code"></i>
+                        <i class="fas fa-database"></i>
                     </div>
-                    <h3>What You'll Learn</h3>
-                    <p>From Python fundamentals to advanced Machine Learning algorithms, this course covers everything you need to become proficient in Data Science. Learn data analysis, visualization, statistical modeling, and AI implementation.</p>
+                    <h3>Data Fundamentals</h3>
+                    <p>Learn data types, structures, and analysis techniques. Master statistical analysis, data cleaning, and exploratory data analysis using Python and Pandas.</p>
                 </div>
                 
                 <div class="overview-card crystal-card">
                     <div class="overview-icon">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-server"></i>
                     </div>
-                    <h3>Who This Course Is For</h3>
-                    <p>Aspiring data scientists, analysts, researchers, software developers, and anyone interested in extracting insights from data. No prior experience required - we start from the basics and build up to advanced concepts.</p>
+                    <h3>Database Management</h3>
+                    <p>Master SQL, database design, normalization, and administration. Work with both relational (MySQL, PostgreSQL) and NoSQL (MongoDB) databases.</p>
                 </div>
                 
                 <div class="overview-card crystal-card">
                     <div class="overview-icon">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fas fa-cogs"></i>
                     </div>
-                    <h3>Course Format</h3>
-                    <p>6-month comprehensive program with hands-on projects, real-world datasets, and expert instruction. Accessible on all devices with dedicated support from data science professionals and career guidance.</p>
+                    <h3>Data Engineering</h3>
+                    <p>Build scalable data infrastructure, data lakes, and pipelines. Learn distributed computing with Spark, Hadoop, and cloud platforms (AWS, Azure).</p>
+                </div>
+                
+                <div class="overview-card crystal-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Business Intelligence</h3>
+                    <p>Create interactive dashboards and reports. Master tools like Tableau, Power BI, and advanced visualization techniques to drive business decisions.</p>
+                </div>
+                
+                <div class="overview-card crystal-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>ETL Processes</h3>
+                    <p>Design and implement Extract, Transform, Load workflows. Master data integration, transformation logic, and pipeline orchestration with tools like Airflow.</p>
                 </div>
             </div>
         </div>
@@ -936,83 +1059,80 @@
     <!-- Course Modules Section -->
     <section class="course-modules">
         <div class="container">
-            <h2 class="section-title">Course Modules</h2>
+            <h2 class="section-title">Detailed Curriculum</h2>
             
             <div class="modules-container">
                 <div class="module-card crystal-card">
-                    <div class="module-header">Module 1: Python for Data Science</div>
+                    <div class="module-header">Course 1: Data Fundamentals</div>
                     <div class="module-content">
                         <ul>
-                            <li>Python Fundamentals</li>
-                            <li>NumPy for Numerical Computing</li>
-                            <li>Pandas for Data Manipulation</li>
+                            <li>Introduction to Data Analytics</li>
+                            <li>Data Types and Structures</li>
+                            <li>Statistical Analysis Fundamentals</li>
+                            <li>Data Cleaning and Preprocessing</li>
+                            <li>Exploratory Data Analysis (EDA)</li>
+                            <li>Python for Data Analysis (Pandas, NumPy)</li>
                             <li>Data Visualization with Matplotlib & Seaborn</li>
-                            <li>Working with APIs and Web Scraping</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="module-card crystal-card">
-                    <div class="module-header">Module 2: Statistics & Mathematics</div>
+                    <div class="module-header">Course 2: Database Management</div>
                     <div class="module-content">
                         <ul>
-                            <li>Descriptive & Inferential Statistics</li>
-                            <li>Probability Theory</li>
-                            <li>Linear Algebra</li>
-                            <li>Calculus for Machine Learning</li>
-                            <li>Statistical Hypothesis Testing</li>
+                            <li>Relational Database Concepts</li>
+                            <li>SQL Fundamentals and Advanced Queries</li>
+                            <li>Database Design and Normalization</li>
+                            <li>MySQL and PostgreSQL</li>
+                            <li>NoSQL Databases (MongoDB)</li>
+                            <li>Database Administration Basics</li>
+                            <li>Performance Tuning and Optimization</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="module-card crystal-card">
-                    <div class="module-header">Module 3: Machine Learning</div>
+                    <div class="module-header">Course 3: Data Engineering</div>
                     <div class="module-content">
                         <ul>
-                            <li>Supervised Learning Algorithms</li>
-                            <li>Unsupervised Learning Techniques</li>
-                            <li>Model Evaluation & Validation</li>
-                            <li>Ensemble Methods</li>
-                            <li>Feature Engineering</li>
+                            <li>Data Engineering Principles</li>
+                            <li>Data Warehousing Concepts</li>
+                            <li>Big Data Technologies (Hadoop, Spark)</li>
+                            <li>Data Lakes and Data Architecture</li>
+                            <li>Streaming Data Processing</li>
+                            <li>Cloud Data Platforms (AWS, Azure)</li>
+                            <li>Data Quality and Governance</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="module-card crystal-card">
-                    <div class="module-header">Module 4: Advanced Topics</div>
+                    <div class="module-header">Course 4: Business Intelligence</div>
                     <div class="module-content">
                         <ul>
-                            <li>Deep Learning with TensorFlow</li>
-                            <li>Natural Language Processing</li>
-                            <li>Big Data with Spark</li>
-                            <li>Deployment of ML Models</li>
-                            <li>Time Series Analysis</li>
+                            <li>BI Concepts and Strategy</li>
+                            <li>Data Visualization Principles</li>
+                            <li>Tableau for Interactive Dashboards</li>
+                            <li>Power BI for Business Analytics</li>
+                            <li>KPI Development and Tracking</li>
+                            <li>Advanced Charting Techniques</li>
+                            <li>Storytelling with Data</li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="module-card crystal-card">
-                    <div class="module-header">Module 5: Data Engineering</div>
+                    <div class="module-header">Course 5: ETL Processes</div>
                     <div class="module-content">
                         <ul>
-                            <li>SQL for Data Analysis</li>
-                            <li>Database Design & Management</li>
-                            <li>ETL Processes</li>
-                            <li>Data Warehousing</li>
-                            <li>Cloud Platforms (AWS, GCP)</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="module-card crystal-card">
-                    <div class="module-header">Module 6: Capstone Project</div>
-                    <div class="module-content">
-                        <ul>
-                            <li>End-to-End Data Science Project</li>
-                            <li>Real-World Business Problem Solving</li>
-                            <li>Model Deployment & Presentation</li>
-                            <li>Portfolio Development</li>
-                            <li>Career Preparation</li>
+                            <li>ETL Fundamentals and Best Practices</li>
+                            <li>Data Extraction Techniques</li>
+                            <li>Data Transformation Logic</li>
+                            <li>Data Loading Strategies</li>
+                            <li>Workflow Orchestration (Airflow)</li>
+                            <li>Data Pipeline Monitoring</li>
+                            <li>Real-world ETL Project</li>
                         </ul>
                     </div>
                 </div>
@@ -1027,13 +1147,13 @@
             
             <div class="instructor-container">
                 <div class="instructor-image">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Instructor Photo">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" alt="Instructor Photo">
                 </div>
                 <div class="instructor-info">
-                    <h3>Dr. Sarah Johnson</h3>
-                    <p>With over 10 years of experience in data science and machine learning, Dr. Johnson has worked with Fortune 500 companies, research institutions, and startups to solve complex data challenges. She holds a PhD in Computer Science with a focus on Machine Learning.</p>
-                    <p>Dr. Johnson has published numerous research papers on predictive modeling and AI applications. Her practical approach to teaching combines theoretical foundations with real-world applications, ensuring students gain both knowledge and practical skills.</p>
-                    <p>Her teaching methodology focuses on hands-on learning through real datasets and projects, ensuring students develop the practical skills needed to succeed in data science roles.</p>
+                    <h3>Dr. Ahmed Raza</h3>
+                    <p>With over 12 years of experience in data science and engineering, Dr. Raza is a leading expert in data analytics and infrastructure. He holds a PhD in Data Science from MIT and has served as Chief Data Officer for multiple Fortune 500 companies.</p>
+                    <p>Dr. Raza has designed and implemented data solutions for organizations across finance, healthcare, and e-commerce sectors. He has published extensively in peer-reviewed journals on topics ranging from machine learning to distributed data systems.</p>
+                    <p>His teaching methodology combines theoretical rigor with practical implementation, ensuring students gain both conceptual understanding and hands-on skills applicable to real-world data challenges.</p>
                 </div>
             </div>
         </div>
@@ -1047,106 +1167,23 @@
             <div class="testimonials-container">
                 <div class="testimonial-card crystal-card">
                     <div class="testimonial-text">
-                        This course completely changed my career trajectory. I went from marketing to a data scientist role in just 6 months! The projects were challenging but extremely rewarding, and I built a portfolio that helped me get multiple job offers.
+                        This course bundle transformed my career. I went from a junior analyst to a data engineer in just 6 months. The comprehensive curriculum covers everything you need to succeed in the data field.
                     </div>
-                    <div class="testimonial-author">- Sarah Johnson, Data Scientist at TechCorp</div>
+                    <div class="testimonial-author">- Fatima Khan, Data Engineer</div>
                 </div>
                 
                 <div class="testimonial-card crystal-card">
                     <div class="testimonial-text">
-                        The instructors were amazing! They didn't just teach theory but shared their real-world experience. The capstone project gave me the confidence to tackle complex data problems in my current role as a data analyst.
+                        As a business analyst, I needed to understand the complete data pipeline. This bundle gave me the technical depth I was missing while keeping the business context front and center. Highly recommended!
                     </div>
-                    <div class="testimonial-author">- Michael Chen, ML Engineer at DataWorks</div>
+                    <div class="testimonial-author">- Bilal Ahmed, Senior Business Analyst</div>
                 </div>
                 
                 <div class="testimonial-card crystal-card">
                     <div class="testimonial-text">
-                        As a software developer, I wanted to transition into data science. This course provided the perfect bridge with its comprehensive curriculum and hands-on approach. I now lead the data team at my company.
+                        The capstone project was the highlight for me. Working on a real-world data problem from end to end gave me the confidence to tackle complex data challenges in my job. The instructors' support was exceptional.
                     </div>
-                    <div class="testimonial-author">- Priya Sharma, Data Analyst at InsightFi</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Career Opportunities Section -->
-    <section class="career-section">
-        <div class="container">
-            <h2 class="section-title">Career Opportunities</h2>
-            
-            <div class="career-container">
-                <div class="career-card crystal-card">
-                    <h3>Data Scientist</h3>
-                    <p>Build predictive models and extract insights from complex datasets to drive business decisions.</p>
-                </div>
-                
-                <div class="career-card crystal-card">
-                    <h3>Machine Learning Engineer</h3>
-                    <p>Design, build, and deploy machine learning systems at scale.</p>
-                </div>
-                
-                <div class="career-card crystal-card">
-                    <h3>Data Analyst</h3>
-                    <p>Analyze data to identify trends, create visualizations, and provide actionable insights.</p>
-                </div>
-                
-                <div class="career-card crystal-card">
-                    <h3>Business Intelligence Analyst</h3>
-                    <p>Transform data into insights that help organizations make better business decisions.</p>
-                </div>
-                
-                <div class="career-card crystal-card">
-                    <h3>Data Engineer</h3>
-                    <p>Build and maintain the infrastructure required for data generation, collection, and analysis.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Payment Section -->
-    <section class="payment-section">
-        <div class="container">
-            <h2 class="section-title">Payment Methods</h2>
-            
-            <div class="payment-container">
-                <div class="payment-card crystal-card">
-                    <div class="payment-icon">
-                        <i class="fas fa-university"></i>
-                    </div>
-                    <h3>Bank Transfer</h3>
-                    <p>Meezan Bank, Acc# 123456789, Title: Coded Mind Technology Incubator</p>
-                </div>
-                
-                <div class="payment-card crystal-card">
-                    <div class="payment-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>EasyPaisa/JazzCash</h3>
-                    <p>0300-1234567</p>
-                </div>
-                
-                <div class="payment-card crystal-card">
-                    <div class="payment-icon">
-                        <i class="fas fa-money-bill-wave"></i>
-                    </div>
-                    <h3>Cash Payment</h3>
-                    <p>Visit our office for cash payment</p>
-                    <p><strong>Office Hours:</strong> Monday to Saturday, 9:00 AM to 6:00 PM</p>
-                    <p><strong>Address:</strong> 123 Tech Street, Lahore, Pakistan</p>
-                </div>
-                
-                <div class="payment-card crystal-card">
-                    <div class="payment-icon">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
-                    <h3>Installment Plan</h3>
-                    <p>We offer flexible installment options:</p>
-                    <ul>
-                        <li>Option 1: Full payment of PKR 25,000 (5% discount available)</li>
-                        <li>Option 2: Two installments of PKR 13,000</li>
-                        <li>Option 3: Three installments of PKR 9,000</li>
-                    </ul>
-                    <p>After payment, send your receipt to <b>info@codedmind.com</b> or WhatsApp 0300-1234567 for registration confirmation.</p>
+                    <div class="testimonial-author">- Sara Javed, Data Scientist</div>
                 </div>
             </div>
         </div>
@@ -1160,21 +1197,31 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        Do I need prior programming experience for this course?
+                        What background do I need for this course bundle?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        No prior programming experience is required. This course is designed for beginners and covers all the fundamental concepts from the ground up. We start with basic Python programming and gradually progress to more advanced data science topics.
+                        Basic computer literacy is required. Some programming experience (especially Python) is helpful but not mandatory as we cover the fundamentals. The courses are designed to take you from beginner to professional level.
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        What career opportunities are available after completing this course?
+                        What tools and software will I need?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Graduates of our Data Science course are prepared for various roles including Data Scientist, Machine Learning Engineer, Data Analyst, Business Intelligence Analyst, and Data Engineer. We also provide career guidance and job placement assistance.
+                        You'll need a computer with internet access. We'll guide you through installing Python, Jupyter Notebook, database systems, and other tools. Most software used in the course is open-source and free. For cloud platforms, we provide free trial credits.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long will it take to complete all 5 courses?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        The complete bundle includes approximately 200 hours of content including video lessons, exercises, and projects. Most students complete it in 4-6 months studying part-time (10-12 hours per week), but you can learn at your own pace.
                     </div>
                 </div>
                 
@@ -1184,17 +1231,7 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Yes, you will receive a verified certificate of completion that you can share on LinkedIn and include in your resume. The certificate demonstrates your proficiency in data science fundamentals and practical skills.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How long will it take to complete the course?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        The course is designed as a 6-month program with a comprehensive learning approach. It includes approximately 50 hours of instructional content and another 30-40 hours of hands-on labs and projects. Most students complete it within the 6-month timeframe.
+                        Yes, you'll receive a verified certificate of completion for each individual course plus a comprehensive Data Analytics Mastery certificate for completing the full bundle. These can be shared on LinkedIn and included in your resume.
                     </div>
                 </div>
                 
@@ -1204,7 +1241,17 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Yes! The course includes several practical projects including data analysis with real datasets, building machine learning models, creating data visualizations, and a comprehensive capstone project that simulates real-world data science challenges.
+                        Absolutely! Each course includes practical projects, and the bundle culminates in a comprehensive capstone project where you'll build a complete data pipeline from raw data to business insights dashboard, simulating a real-world business scenario.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What career support do you provide?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        We offer resume reviews, portfolio building guidance, mock interviews, and job placement assistance. Our career services team connects qualified graduates with hiring partners in our network. We also host regular career workshops and networking events.
                     </div>
                 </div>
             </div>
@@ -1214,26 +1261,64 @@
     <!-- Registration Section -->
     <section id="registration" class="registration-section">
         <div class="container">
-            <h2 class="section-title">Register for Data Science Course</h2>
-            <p class="section-subtitle">Start your journey to a successful data science career today</p>
+            <h2 class="section-title">Enroll in Data Engineering & Analytics Mastery</h2>
+            <p class="section-subtitle">Limited seats available at the special bundle price of PKR 30,000</p>
             
             <div class="form-container">
-                <iframe id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c" title="Sana: Registration Assistant"
-                    onload="window.parent.scrollTo(0,0)" allowtransparency="true"
-                    allow="geolocation; microphone; camera; fullscreen"
-                    src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
-                    frameborder="0" style="
-                    max-width:100%;
-                    height:688px;
-                    border:none;
-                    width:100%;
-                    " scrolling="no">
-                </iframe>
-                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-                <script>
-                    window.jotformEmbedHandler("iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
-                    "https://www.jotform.com")
-                </script>
+                <!-- JotForm would be replaced with the actual form for this course -->
+                <div style="padding: 40px; text-align: center;">
+                    <h3 style="margin-bottom: 20px; color: var(--dark);">Course Registration</h3>
+                    <p style="margin-bottom: 30px; color: var(--gray);">Fill out the form below to enroll in the Data Engineering & Analytics Mastery course pack</p>
+                    
+                    <form style="max-width: 500px; margin: 0 auto; text-align: left;">
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Full Name</label>
+                            <input type="text" style="width: 100%; padding: 12px; border-radius: var(--border-radius); border: 1px solid #ddd;">
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Email Address</label>
+                            <input type="email" style="width: 100%; padding: 12px; border-radius: var(--border-radius); border: 1px solid #ddd;">
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Phone Number</label>
+                            <input type="tel" style="width: 100%; padding: 12px; border-radius: var(--border-radius); border: 1px solid #ddd;">
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Course Selection</label>
+                            <select style="width: 100%; padding: 12px; border-radius: var(--border-radius); border: 1px solid #ddd; background: white;">
+                                <option>Data Engineering & Analytics Mastery (PKR 30,000)</option>
+                                <option>Data Fundamentals Only (PKR 8,000)</option>
+                                <option>Database Management Only (PKR 10,000)</option>
+                                <option>Data Engineering Only (PKR 12,000)</option>
+                                <option>Business Intelligence Only (PKR 10,000)</option>
+                                <option>ETL Processes Only (PKR 10,000)</option>
+                            </select>
+                        </div>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <label style="display: block; margin-bottom: 8px; font-weight: 600;">Payment Method</label>
+                            <div style="display: flex; gap: 15px;">
+                                <label style="display: flex; align-items: center; gap: 5px;">
+                                    <input type="radio" name="payment" checked>
+                                    Bank Transfer
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 5px;">
+                                    <input type="radio" name="payment">
+                                    JazzCash
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 5px;">
+                                    <input type="radio" name="payment">
+                                    EasyPaisa
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn" style="width: 100%;">Complete Enrollment</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
