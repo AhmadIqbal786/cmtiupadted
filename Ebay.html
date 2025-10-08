@@ -3,858 +3,1536 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eBay E-commerce Mastery Course</title>
+    <title>eBay E-commerce Mastery Course | Coded Mind Technology Incubator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* ===== CSS RESET & VARIABLES ===== */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #7e22ce;
+            --accent: #06b6d4;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background-color: #f8f9fa;
-            color: #333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
         }
-        
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 15px;
         }
-        
-        .hero {
-            background: linear-gradient(135deg, #0064D2 0%, #2FB5FF 100%);
-            color: white;
-            padding: 60px 20px;
+
+        .section-title {
+            font-size: 2.5rem;
             text-align: center;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            position: relative;
-            overflow: hidden;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
-        
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            transform: rotate(30deg);
-        }
-        
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        .hero h1 i {
-            margin-right: 15px;
-        }
-        
-        .hero p {
+
+        .section-subtitle {
             font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            position: relative;
+            text-align: center;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 3rem;
         }
-        
+
         .btn {
             display: inline-block;
-            background: #86B817;
+            padding: 12px 28px;
+            background: var(--gradient);
             color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
         }
-        
+
         .btn:hover {
-            background: #7aa714;
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-lg);
         }
-        
-        .section {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 30px;
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
         }
-        
-        .section h2 {
-            color: #0064D2;
-            margin-bottom: 20px;
-            font-size: 2rem;
-            display: flex;
-            align-items: center;
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
         }
-        
-        .section h2 i {
-            margin-right: 15px;
-            color: #86B817;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .feature {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        
-        .feature:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature i {
-            font-size: 2.5rem;
-            color: #0064D2;
-            margin-bottom: 15px;
-        }
-        
-        .pricing {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .pricing-plan {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            transition: transform 0.3s ease;
-            position: relative;
+
+        .crystal-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
             overflow: hidden;
         }
-        
-        .pricing-plan.popular::before {
-            content: "MOST POPULAR";
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: #86B817;
-            color: white;
-            padding: 5px 15px;
-            font-size: 0.8rem;
-            font-weight: bold;
-        }
-        
-        .pricing-plan:hover {
+
+        .crystal-card:hover {
             transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
-        
-        .pricing-plan h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #0064D2;
+
+        /* ===== HEADER ===== */
+        .new-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
         }
-        
-        .price {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin: 20px 0;
-            color: #333;
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
         }
-        
-        .price span {
-            font-size: 1rem;
-            color: #777;
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
-        
-        .pricing-plan ul {
-            list-style: none;
-            margin-bottom: 20px;
+
+        .logo-container img {
+            height: 50px;
+            width: auto;
         }
-        
-        .pricing-plan li {
-            padding: 8px 0;
-            border-bottom: 1px solid #ddd;
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
         }
-        
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
         }
-        
-        .testimonial {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
+
+        .nav-menu a {
+            font-weight: 600;
             position: relative;
         }
 
-        .testimonial p {
-            font-style: italic;
-            margin-bottom: 15px;
-            position: relative;
-            z-index: 1;
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: var(--transition);
         }
-        
-        .testimonial .author {
-            font-weight: bold;
-            color: #0064D2;
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--dark);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        .mobile-menu {
+            display: none;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-nav {
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            gap: 15px;
         }
-        
-        .testimonial .author img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-            object-fit: cover;
-        }
-        
-        .payment-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
+
+        .mobile-nav a {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
             font-weight: 600;
         }
-        
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-        
-        .payment-options {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-        
-        .payment-option {
-            flex: 1;
-            text-align: center;
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .payment-option:hover,
-        .payment-option.selected {
-            border-color: #0064D2;
-            background-color: #f0f7ff;
-        }
-        
-        .payment-option i {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: #0064D2;
-        }
-        
-        .faq-item {
-            margin-bottom: 20px;
-            border: 1px solid #eee;
-            border-radius: 8px;
+
+        /* ===== COURSE HERO SECTION ===== */
+        .course-hero {
+            background: var(--gradient);
+            color: white;
+            padding: 150px 0 80px;
+            position: relative;
             overflow: hidden;
         }
-        
-        .faq-question {
+
+        .hero-visual {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .shape-3 {
+            width: 100px;
+            height: 100px;
+            bottom: 10%;
+            left: 15%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .course-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 25px;
+            border-radius: var(--border-radius);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* ===== COURSE OVERVIEW SECTION ===== */
+        .course-overview {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .overview-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .overview-card {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .overview-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .overview-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        /* ===== COURSE BUNDLE SECTION ===== */
+        .course-bundle {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .bundle-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .bundle-card {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bundle-card.featured {
+            border: 3px solid var(--primary);
+            transform: scale(1.05);
+        }
+
+        .bundle-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--primary);
+            color: white;
+            padding: 8px 40px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .bundle-header {
+            background: var(--gradient);
+            color: white;
+            padding: 20px;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .bundle-content {
+            padding: 25px;
+        }
+
+        .bundle-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .bundle-content li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .bundle-content li:last-child {
+            border-bottom: none;
+        }
+
+        .bundle-content li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            color: var(--success);
             font-weight: bold;
-            margin-bottom: 0;
+        }
+
+        .bundle-price {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: var(--gray);
+            font-size: 1.2rem;
+        }
+
+        .current-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .savings {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        /* ===== COURSE MODULES SECTION ===== */
+        .course-modules {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .modules-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .module-card {
+            overflow: hidden;
+        }
+
+        .module-header {
+            background: var(--gradient);
+            color: white;
+            padding: 20px;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .module-content {
+            padding: 25px;
+        }
+
+        .module-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .module-content li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .module-content li:last-child {
+            border-bottom: none;
+        }
+
+        .module-content li:before {
+            content: '📦';
+            position: absolute;
+            left: 0;
+            top: 10px;
+        }
+
+        /* ===== INSTRUCTOR SECTION ===== */
+        .instructor-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .instructor-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .instructor-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .instructor-image img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        .instructor-info {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .instructor-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            padding: 30px;
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .testimonial-text:before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary);
+            position: absolute;
+            left: -10px;
+            top: -20px;
+            opacity: 0.3;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--gray);
+        }
+
+        /* ===== STATS SECTION ===== */
+        .stats-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: rgba(37, 99, 235, 0.05);
+            font-weight: 600;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px;
-            background: #f8f9fa;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
         }
-        
+
+        .faq-question:hover {
+            background: rgba(37, 99, 235, 0.1);
+        }
+
         .faq-answer {
-            padding: 15px;
-            background: white;
-            display: none;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
         }
-        
-        .faq-question i {
-            transition: transform 0.3s ease;
+
+        .faq-active .faq-answer {
+            max-height: 200px;
+            padding: 20px;
         }
-        
-        .faq-question.active i {
-            transform: rotate(180deg);
-        }
-        
-        .instructor {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-            margin-top: 30px;
-        }
-        
-        .instructor-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #0064D2;
-        }
-        
-        .instructor-info {
-            flex: 1;
-        }
-        
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+
+        /* ===== REGISTRATION SECTION ===== */
+        .registration-section {
+            padding: 80px 0;
+            background: var(--gradient);
+            color: white;
             text-align: center;
         }
-        
-        .stat {
-            padding: 20px;
-            background: #f0f7ff;
-            border-radius: 8px;
+
+        .registration-section .section-title,
+        .registration-section .section-subtitle {
+            color: white;
         }
-        
-        .stat .number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #0064D2;
-            margin-bottom: 10px;
+
+        .form-container {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-top: 30px;
         }
-        
-        @media (max-width: 768px) {
-            .hero h1 {
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: var(--dark);
+            color: white;
+            padding-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding-bottom: 60px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 50px;
+        }
+
+        .footer-logo h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0;
+        }
+
+        .footer-description {
+            margin-bottom: 30px;
+            color: #94a3b8;
+        }
+
+        .footer-social h4 {
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #94a3b8;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #94a3b8;
+        }
+
+        .contact-item svg {
+            flex-shrink: 0;
+        }
+
+        .contact-item a {
+            color: #94a3b8;
+        }
+
+        .contact-item a:hover {
+            color: white;
+        }
+
+        .newsletter h4 {
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .newsletter-form input {
+            padding: 12px 15px;
+            border-radius: var(--border-radius);
+            border: 1px solid #334155;
+            background: #1e293b;
+            color: white;
+        }
+
+        .newsletter-form button {
+            padding: 12px 15px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background: var(--primary-dark);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #334155;
+            padding: 25px 0;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: #94a3b8;
+        }
+
+        .legal-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .legal-links a {
+            color: #94a3b8;
+            transition: var(--transition);
+        }
+
+        .legal-links a:hover {
+            color: white;
+        }
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            .section-title {
                 font-size: 2.2rem;
             }
             
-            .payment-options {
-                flex-direction: column;
+            .hero-title {
+                font-size: 3rem;
             }
             
-            .instructor {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .mobile-menu.active {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .instructor-container {
                 flex-direction: column;
                 text-align: center;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .legal-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                width: 95%;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .modules-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coded Mind Technology Incubator</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="https://codedmind.netlify.app/logo.png" type="image/png">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" defer></script>
-    <script src="script.js" defer></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
-    <script src="codedmind-enhancements.js"></script>
-    <link rel="stylesheet" href="style2.css">
-   
-</head>
-            
-      <!-- Header -->
-  <header class="new-header">
-    <div class="header-container">
-        <div class="logo-container">
-            <img src="https://codedmind.netlify.app/logo.png" alt="CodedMind Logo" class="logo">
-            <div class="logo-text">Coded Mind <br> Technology Incubator</div>
-        </div>
-        
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="courses.html">Programs</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="careers.html">Careers</a></li>
-            </ul>
-        </nav>
-        
-        
-        <div class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-    
-    <div class="mobile-menu">
-        <ul class="mobile-nav">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="courses.html">Programs</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="careers.html">Careers</a></li>
-        </ul>
-        
-    </div>
-</header>
 <body>
-    <div class="container">
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1><i class="fab fa-ebay"></i> eBay E-commerce Mastery</h1>
-            <p>Learn how to build a profitable eBay business from scratch. Master product sourcing, listing optimization, and marketing strategies tailored for eBay.</p>
-            <a href="#pricing" class="btn">Enroll Now</a>
-        </section>
-        
-        <!-- Course Overview -->
-        <section class="section">
-            <h2><i class="fas fa-graduation-cap"></i> What You'll Learn</h2>
-            <p>Our comprehensive eBay course covers everything from account setup to advanced selling strategies used by top eBay sellers.</p>
+    <!-- Header -->
+    <header class="new-header">
+        <div class="container">
+            <div class="header-container">
+                <div class="logo-container">
+                    <img src="logo.png" alt="CodedMind Logo">
+                    <div class="logo-text">Coded Mind <br>Technology Incubator</div>
+                </div>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Programs</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
             
-            <div class="features">
-                <div class="feature">
-                    <i class="fas fa-store"></i>
+            <div class="mobile-menu">
+                <ul class="mobile-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Programs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Course Hero Section -->
+    <section class="course-hero">
+        <div class="hero-visual">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="course-hero-content">
+                <div class="hero-badge">Premium Course</div>
+                <h1 class="hero-title">eBay E-commerce Mastery</h1>
+                <p class="hero-description">Learn how to build a profitable eBay business from scratch. Master product sourcing, listing optimization, and marketing strategies tailored for eBay.</p>
+                <div class="price-tag">PKR 25,000</div>
+                <a href="#registration" class="btn">Enroll Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Bundle Section -->
+    <section class="course-bundle">
+        <div class="container">
+            <h2 class="section-title">Course Options</h2>
+            <p class="section-subtitle">Choose the learning path that works best for you</p>
+            
+            <div class="bundle-container">
+                <div class="bundle-card crystal-card featured">
+                    <div class="bundle-badge">Best Value</div>
+                    <div class="bundle-header">Complete eBay E-commerce Mastery</div>
+                    <div class="bundle-content">
+                        <ul>
+                            <li>6 Comprehensive Modules</li>
+                            <li>40+ Video Lessons</li>
+                            <li>eBay Store Setup & Optimization</li>
+                            <li>Product Research & Sourcing</li>
+                            <li>Listing Creation & Optimization</li>
+                            <li>Marketing & Promotion Strategies</li>
+                            <li>Scaling Your eBay Business</li>
+                            <li>Certificate of Completion</li>
+                            <li>Lifetime Access to Course Materials</li>
+                            <li>30-Day Money-Back Guarantee</li>
+                        </ul>
+                        <div class="bundle-price">
+                            <div class="original-price">PKR 35,000</div>
+                            <div class="current-price">PKR 25,000</div>
+                            <div class="savings">Save 29%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bundle-card crystal-card">
+                    <div class="bundle-header">Basic eBay Course</div>
+                    <div class="bundle-content">
+                        <ul>
+                            <li>3 Core Modules</li>
+                            <li>20+ Video Lessons</li>
+                            <li>eBay Fundamentals</li>
+                            <li>Account Setup & Optimization</li>
+                            <li>Basic Listing Creation</li>
+                            <li>Certificate of Completion</li>
+                            <li>6 Months Access</li>
+                        </ul>
+                        <div class="bundle-price">
+                            <div class="current-price">PKR 15,000</div>
+                            <div class="savings">Basic package</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Overview Section -->
+    <section class="course-overview">
+        <div class="container">
+            <h2 class="section-title">What You'll Master</h2>
+            
+            <div class="overview-container">
+                <div class="overview-card crystal-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
                     <h3>eBay Store Setup</h3>
                     <p>Learn how to set up and optimize your eBay store for maximum visibility and sales.</p>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-search-dollar"></i>
+                
+                <div class="overview-card crystal-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
                     <h3>Product Research</h3>
                     <p>Discover proven methods for finding profitable products with high demand on eBay.</p>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-camera"></i>
+                
+                <div class="overview-card crystal-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
                     <h3>Listing Optimization</h3>
                     <p>Master the art of creating compelling listings with professional photos and descriptions.</p>
                 </div>
-                <div class="feature">
-                    <i class="fas fa-chart-line"></i>
+                <div class="overview-card crystal-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
                     <h3>Pricing Strategies</h3>
                     <p>Learn how to price your products competitively while maximizing your profit margins.</p>
                 </div>
+                <div class="overview-card crystal-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Marketing & Promotion</h3>
+                    <p>Master eBay's promoted listings and external traffic strategies to boost your sales.</p>
+                </div>
+                <div class="overview-card crystal-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </div>
+                    <h3>Business Scaling</h3>
+                    <p>Learn advanced strategies for scaling your eBay business and managing growth effectively.</p>
+                </div>
             </div>
-        </section>
-        
-        <!-- Stats Section -->
-        <section class="section">
-            <h2><i class="fas fa-chart-bar"></i> Why Choose eBay?</h2>
-            <p>eBay offers unique opportunities for e-commerce entrepreneurs. Here's what makes it special:</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose eBay?</h2>
+            <p class="section-subtitle">eBay offers unique opportunities for e-commerce entrepreneurs. Here's what makes it special:</p>
             
-            <div class="stats">
-                <div class="stat">
-                    <div class="number">183M</div>
-                    <div class="label">Active Buyers</div>
+            <div class="stats-container">
+                <div class="stat-card crystal-card">
+                    <div class="stat-number">183M</div>
+                    <div class="stat-label">Active Buyers</div>
                 </div>
-                <div class="stat">
-                    <div class="number">$87B</div>
-                    <div class="label">Annual GMV</div>
+                
+                <div class="stat-card crystal-card">
+                    <div class="stat-number">$87B</div>
+                    <div class="stat-label">Annual GMV</div>
                 </div>
-                <div class="stat">
-                    <div class="number">60%</div>
-                    <div class="label">Mobile Traffic</div>
+                
+                <div class="stat-card crystal-card">
+                    <div class="stat-number">60%</div>
+                    <div class="stat-label">Mobile Traffic</div>
                 </div>
-                <div class="stat">
-                    <div class="number">1.5B</div>
-                    <div class="label">Listings Live</div>
+                
+                <div class="stat-card crystal-card">
+                    <div class="stat-number">1.5B</div>
+                    <div class="stat-label">Listings Live</div>
                 </div>
             </div>
-        </section>
-        
-        <!-- Curriculum -->
-        <section class="section">
-            <h2><i class="fas fa-book-open"></i> Course Curriculum</h2>
-            <p>Our structured curriculum takes you from beginner to expert through 6 comprehensive modules.</p>
+        </div>
+    </section>
+
+    <!-- Course Modules Section -->
+    <section class="course-modules">
+        <div class="container">
+            <h2 class="section-title">Detailed Curriculum</h2>
             
-            <div class="features">
-                <div class="feature">
-                    <h3>Module 1: eBay Fundamentals</h3>
-                    <p>Understanding the eBay ecosystem, seller levels, fees, and policies.</p>
+            <div class="modules-container">
+                <div class="module-card crystal-card">
+                    <div class="module-header">Module 1: eBay Fundamentals</div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Understanding the eBay ecosystem</li>
+                            <li>Seller levels, fees, and policies</li>
+                            <li>Setting up your seller account</li>
+                            <li>Payment methods and preferences</li>
+                            <li>Understanding eBay's algorithm</li>
+                            <li>Creating your seller profile</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="feature">
-                    <h3>Module 2: Account Setup & Optimization</h3>
-                    <p>Creating your seller account, setting up payment methods, and optimizing your store.</p>
+                
+                <div class="module-card crystal-card">
+                    <div class="module-header">Module 2: Account Setup & Optimization</div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Choosing the right eBay store subscription</li>
+                            <li>Customizing your store design</li>
+                            <li>Setting up payment and shipping options</li>
+                            <li>Optimizing your seller profile</li>
+                            <li>Understanding seller performance metrics</li>
+                            <li>Building your seller reputation</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="feature">
-                    <h3>Module 3: Product Sourcing</h3>
-                    <p>Finding profitable products, working with suppliers, and inventory management.</p>
+                
+                <div class="module-card crystal-card">
+                    <div class="module-header">Module 3: Product Sourcing</div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Finding profitable products with high demand</li>
+                            <li>Working with suppliers and wholesalers</li>
+                            <li>Inventory management strategies</li>
+                            <li>Private label and brand creation</li>
+                            <li>Dropshipping on eBay</li>
+                            <li>Seasonal and trending product research</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="feature">
-                    <h3>Module 4: Listing Creation</h3>
-                    <p>Writing compelling titles and descriptions, photography tips, and pricing strategies.</p>
+                
+                <div class="module-card crystal-card">
+                    <div class="module-header">Module 4: Listing Creation</div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Writing compelling titles and descriptions</li>
+                            <li>Professional product photography techniques</li>
+                            <li>Pricing strategies for maximum profit</li>
+                            <li>Using eBay's listing tools effectively</li>
+                            <li>Creating variation listings</li>
+                            <li>Optimizing for search visibility</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="feature">
-                    <h3>Module 5: Marketing & Promotion</h3>
-                    <p>Using promoted listings, cross-promotion, and external traffic strategies.</p>
+                <div class="module-card crystal-card">
+                    <div class="module-header">Module 5: Marketing & Promotion</div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Using promoted listings effectively</li>
+                            <li>Cross-promotion strategies</li>
+                            <li>Driving external traffic to your listings</li>
+                            <li>eBay's marketing tools and features</li>
+                            <li>Building an email list from eBay sales</li>
+                            <li>Social media integration</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="feature">
-                    <h3>Module 6: Scaling Your Business</h3>
-                    <p>Advanced strategies for scaling your eBay business and managing growth.</p>
+                <div class="module-card crystal-card">
+                    <div class="module-header">Module 6: Scaling Your Business</div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Advanced strategies for business growth</li>
+                            <li>Hiring and managing virtual assistants</li>
+                            <li>Automation tools for eBay sellers</li>
+                            <li>Expanding to international markets</li>
+                            <li>Diversifying your product lines</li>
+                            <li>Managing cash flow and profitability</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </section>
-        
-        <!-- Instructor -->
-        <section class="section">
-            <h2><i class="fas fa-user"></i> About Your Instructor</h2>
-            <div class="instructor">
-                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" alt="Instructor" class="instructor-img">
+        </div>
+    </section>
+
+    <!-- Instructor Section -->
+    <section class="instructor-section">
+        <div class="container">
+            <h2 class="section-title">About The Instructor</h2>
+            
+            <div class="instructor-container">
+                <div class="instructor-image">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" alt="Instructor Photo">
+                </div>
                 <div class="instructor-info">
                     <h3>Michael Roberts</h3>
-                    <p>With over 10 years of experience selling on eBay, Michael has generated over $2.3M in sales on the platform. He's a Top Rated Seller with 100% positive feedback and specializes in helping beginners launch successful eBay businesses.</p>
-                    <p>Michael has taught over 5,000 students through his courses and workshops, with an average student rating of 4.9/5 stars.</p>
+                    <p>With over 10 years of experience selling on eBay, Michael Roberts has generated over $2.3M in sales on the platform. He's a Top Rated Seller with 100% positive feedback and specializes in helping beginners launch successful eBay businesses.</p>
+                    <p>Michael began his eBay journey as a side hustle while working a corporate job. Within two years, he transitioned to full-time eBay selling and has since helped thousands of students achieve similar success through his courses and workshops.</p>
+                    <p>His teaching methodology focuses on practical, actionable strategies that students can implement immediately to start generating sales on eBay.</p>
                 </div>
             </div>
-        </section>
-        
-        <!-- Pricing -->
-        <section id="pricing" class="section">
-            <h2><i class="fas fa-tags"></i> Course Pricing</h2>
-            <p>Choose the plan that works best for you. All plans include lifetime access to course materials.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Student Success Stories</h2>
             
-            <div class="pricing">
-                <div class="pricing-plan">
-                    <h3>Starter Plan</h3>
-                    <div class="price">$97<span>/one-time</span></div>
-                    <ul>
-                        <li>Full Course Access</li>
-                        <li>Downloadable Resources</li>
-                        <li>Community Access</li>
-                        <li>-</li>
-                        <li>-</li>
-                    </ul>
-                    <a href="#payment" class="btn">Select Plan</a>
+            <div class="testimonials-container">
+                <div class="testimonial-card crystal-card">
+                    <div class="testimonial-text">
+                        This course completely changed my approach to eBay. I went from occasional sales to consistent $3k/month in revenue within 3 months!
+                    </div>
+                    <div class="testimonial-author">- Sarah Johnson, eBay Seller</div>
                 </div>
                 
-                <div class="pricing-plan popular">
-                    <h3>Professional Plan</h3>
-                    <div class="price">$197<span>/one-time</span></div>
-                    <ul>
-                        <li>Full Course Access</li>
-                        <li>Downloadable Resources</li>
-                        <li>Community Access</li>
-                        <li>eBay Listing Templates</li>
-                        <li>-</li>
-                    </ul>
-                    <a href="#payment" class="btn">Select Plan</a>
+                <div class="testimonial-card crystal-card">
+                    <div class="testimonial-text">
+                        The product research module alone was worth the investment. I found a niche that's now generating $1,500/month in passive income.
+                    </div>
+                    <div class="testimonial-author">- James Wilson, Course Graduate</div>
                 </div>
                 
-                <div class="pricing-plan">
-                    <h3>Elite Plan</h3>
-                    <div class="price">$297<span>/one-time</span></div>
-                    <ul>
-                        <li>Full Course Access</li>
-                        <li>Downloadable Resources</li>
-                        <li>Community Access</li>
-                        <li>eBay Listing Templates</li>
-                        <li>1-on-1 Coaching Session</li>
-                    </ul>
-                    <a href="#payment" class="btn">Select Plan</a>
+                <div class="testimonial-card crystal-card">
+                    <div class="testimonial-text">
+                        As a complete beginner, I found the course incredibly comprehensive and easy to follow. Now I run a profitable eBay store alongside my day job.
+                    </div>
+                    <div class="testimonial-author">- Lisa Thompson, eBay Entrepreneur</div>
                 </div>
             </div>
-        </section>
-        
-        <!-- Testimonials -->
-        <section class="section">
-            <h2><i class="fas fa-comments"></i> Student Success Stories</h2>
-            <p>Hear from our students who have transformed their eBay businesses after taking this course.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
             
-            <div class="testimonials">
-                <div class="testimonial">
-                    <p>"This course completely changed my approach to eBay. I went from occasional sales to consistent $3k/month in revenue within 3 months!"</p>
-                    <div class="author">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" alt="Student">
-                        <span>Sarah Johnson</span>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long will I have access to the course?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        You'll have lifetime access to all course materials, including any future updates we make to the content.
                     </div>
                 </div>
                 
-                <div class="testimonial">
-                    <p>"The product research module alone was worth the investment. I found a niche that's now generating $1,500/month in passive income."</p>
-                    <div class="author">
-                        <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" alt="Student">
-                        <span>James Wilson</span>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do I need any prior eBay experience?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        No prior experience is needed. The course is designed for complete beginners but also includes advanced strategies for those with some eBay experience.
                     </div>
                 </div>
                 
-                <div class="testimonial">
-                    <p>"As a complete beginner, I found the course incredibly comprehensive and easy to follow. Now I run a profitable eBay store alongside my day job."</p>
-                    <div class="author">
-                        <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" alt="Student">
-                        <span>Lisa Thompson</span>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How much time do I need to dedicate?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        The course includes about 20 hours of content. We recommend dedicating 4-5 hours per week if you want to complete it in a month.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Will I receive a certificate upon completion?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, you'll receive a verified certificate of completion that you can share on LinkedIn and include in your resume or business profile.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there any hands-on practice included?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutely! The course includes practical exercises, listing creation workshops, and real-world case studies that allow you to apply what you've learned.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What if I'm not satisfied with the course?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        We offer a 30-day money-back guarantee. If you're not satisfied with the course for any reason, just contact us within 30 days of purchase for a full refund.
                     </div>
                 </div>
             </div>
-        </section>
-        
-        <!-- Payment Section -->
-        <section id="payment" class="section">
-            <h2><i class="fas fa-credit-card"></i> Enroll in the Course</h2>
-            <p>Select your payment method and complete your enrollment today.</p>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="registration-section">
+        <div class="container">
+            <h2 class="section-title">Register for eBay E-commerce Course</h2>
+            <p class="section-subtitle">Join the next generation of successful eBay entrepreneurs</p>
             
-            <div class="payment-options">
-                <div class="payment-option selected" onclick="selectPayment('credit-card')">
-                    <i class="fas fa-credit-card"></i>
-                    <div>Credit Card</div>
-                </div>
-                
-                <div class="payment-option" onclick="selectPayment('paypal')">
-                    <i class="fab fa-paypal"></i>
-                    <div>PayPal</div>
-                </div>
-                
-                <div class="payment-option" onclick="selectPayment('crypto')">
-                    <i class="fab fa-bitcoin"></i>
-                    <div>Crypto</div>
-                </div>
+            <div class="form-container">
+                <iframe id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c" title="Sana: Registration Assistant"
+                    onload="window.parent.scrollTo(0,0)" allowtransparency="true"
+                    allow="geolocation; microphone; camera; fullscreen"
+                    src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
+                    frameborder="0" style="
+                    max-width:100%;
+                    height:688px;
+                    border:none;
+                    width:100%;
+                    " scrolling="no">
+                </iframe>
+                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+                <script>
+                    window.jotformEmbedHandler("iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
+                    "https://www.jotform.com")
+                </script>
             </div>
-            
-            <div class="payment-form">
-                <form id="payment-form">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" placeholder="Enter your full name" required>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="CMTI Logo">
+                        <h3>Coded Mind <n>Technology Incubator</n></h3>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" placeholder="Enter your email" required>
-                    </div>
-                    
-                    <div id="credit-card-fields">
-                        <div class="form-group">
-                            <label for="card-number">Credit Card Number</label>
-                            <input type="text" id="card-number" placeholder="Enter your card number" required>
+                    <p class="footer-description">
+                        Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
+                        Join CMTI to gain cutting-Edge skills in technology and business. Our expert-led courses prepare you for the digital future.
+                    </p>
+                    <div class="footer-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#" title="Facebook" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" title="Twitter" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" title="Instagram" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" title="YouTube" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
                         </div>
+                    </div>
+                </div>
                         
-                        <div style="display: flex; gap: 15px;">
-                            <div class="form-group" style="flex: 1;">
-                                <label for="expiry">Expiry Date</label>
-                                <input type="text" id="expiry" placeholder="MM/YY" required>
-                            </div>
-                            
-                            <div class="form-group" style="flex: 1;">
-                                <label for="cvv">CVV</label>
-                                <input type="text" id="cvv" placeholder="CVV" required>
-                            </div>
+                <div class="footer-col">
+                    <h3>Top Programs</h3>
+                    <ul>
+                        <li><a href="course-webdev.html">Web Development</a></li>
+                        <li><a href="course-data-science.html">Data Science</a></li>
+                        <li><a href="course-cyber-security.html">Cyber Security</a></li>
+                        <li><a href="course-digital-marketing.html">Digital Marketing</a></li>
+                        <li><a href="course-python.html">Python Programming</a></li>
+                        <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">All programs</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="careers.html">Career Opportunities</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Get In Touch!</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Katlang District Mardan Pakistan</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span><a href="tel:+923488850059">+92 348 8850059</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span><a href="tel:+923161098765">+92 316 1098765</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
                         </div>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="plan">Select Plan</label>
-                        <select id="plan" required>
-                            <option value="">Select a plan</option>
-                            <option value="starter">Starter Plan - $97</option>
-                            <option value="professional">Professional Plan - $197</option>
-                            <option value="elite">Elite Plan - $297</option>
-                        </select>
+                    <div class="newsletter">
+                        <h4>Subscribe to Our Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
                     </div>
-                    
-                    <button type="submit" class="btn" style="width: 100%;">Complete Enrollment</button>
-                </form>
+                </div>
             </div>
-        </section>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
+                    </div>
+                    <div class="legal-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="refund.html">Refund Policy</a>
+                        <a href="https://aitoolsfreelance.blogspot.com">Blogs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
         
-        <!-- FAQ -->
-        <section class="section">
-            <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">How long will I have access to the course? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">
-                    <p>You'll have lifetime access to all course materials, including any future updates we make to the content.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">Do I need any prior eBay experience? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">
-                    <p>No prior experience is needed. The course is designed for complete beginners but also includes advanced strategies for those with some eBay experience.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">How much time do I need to dedicate? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">
-                    <p>The course includes about 20 hours of content. We recommend dedicating 4-5 hours per week if you want to complete it in a month.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">What if I'm not satisfied with the course? <i class="fas fa-chevron-down"></i></div>
-                <div class="faq-answer">
-                    <p>We offer a 30-day money-back guarantee. If you're not satisfied with the course, just contact us for a full refund.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-       
-        <!-- Jotform Registration -->
-        <h2 class="section-title">Register for This Course</h2>
-        <div class="form-container">
-            <iframe id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c" title="Sana: Registration Assistant"
-                onload="window.parent.scrollTo(0,0)" allowtransparency="true"
-                allow="geolocation; microphone; camera; fullscreen"
-                src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
-                frameborder="0" style="
-                max-width:100%;
-                height:688px;
-                border:none;
-                width:100%;
-                " scrolling="no">
-            </iframe>
-            <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-            <script>
-                window.jotformEmbedHandler("iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
-                "https://www.jotform.com")
-            </script>
-        </div>
-    </div>
-    
-  <!-- Footer -->
-   <footer class="site-footer">
-    <div class="footer-content">
-        <div class="footer-col">
-            <div class="footer-logo">
-                <img src="logo.png" alt="CMTI Logo">
-                <h3> Coded Mind <n>Technology Incubator</n> </h3>
-            </div>
-            <p class="footer-description">
-                Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
-                Join CMTI to gain cutting-Edge skills in technology and business. Our expert-led courses prepare you for the digital future.
-            </p>
-            <div class="footer-social">
-                <h4>Follow Us</h4>
-                <div class="social-icons">
-                    <a href="#" title="Facebook" aria-label="Facebook">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
-                        </svg>
-                    </a>
-                    <a href="#" title="Twitter" aria-label="Twitter">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10C2.38 10 2.38 10 2.38 10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.46 14.34 5.08 14.39 4.69 14.39C4.42 14.39 4.15 14.36 3.89 14.31C4.43 16 6 17.26 7.89 17.29C6.43 18.45 4.58 19.13 2.56 19.13C2.22 19.13 1.88 19.11 1.54 19.07C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z"/>
-                        </svg>
-                    </a>
-                    <a href="#" title="Instagram" aria-label="Instagram">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2C22 19.4 19.4 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2ZM7.6 4C5.6 4 4 5.6 4 7.6V16.4C4 18.4 5.6 20 7.6 20H16.4C18.4 20 20 18.4 20 16.4V7.6C20 5.6 18.4 4 16.4 4H7.6ZM12 7C14.8 7 17 9.2 17 12C17 14.8 14.8 17 12 17C9.2 17 7 14.8 7 12C7 9.2 9.2 7 12 7ZM12 9C10.3 9 9 10.3 9 12C9 13.7 10.3 15 12 15C13.7 15 15 13.7 15 12C15 10.3 13.7 9 12 9ZM17.5 6C18.1 6 18.5 5.6 18.5 5C18.5 4.4 18.1 4 17.5 4C16.9 4 16.5 4.4 16.5 5C16.5 5.6 16.9 6 17.5 6Z"/>
-                        </svg>
-                    </a>
-                    <a href="#" title="LinkedIn" aria-label="LinkedIn">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
-                        </svg>
-                    </a>
-                    <a href="#" title="YouTube" aria-label="YouTube">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('faq-active');
                 
-         <div class="footer-col">
-            <h3>Top Programs</h3>
-            <ul>
-                <li><a href="course-webdev.html">Web Development</a></li>
-                <li><a href="course-data-science.html">Data Science</a></li>
-                <li><a href="course-cyber-security.html">Cyber Security</a></li>
-                <li><a href="course-digital-marketing.html">Digital Marketing</a></li>
-                <li><a href="course-python.html">Python Programming</a></li>
-                <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
-            </ul>
-        </div>
+                // Close other FAQ items
+                faqQuestions.forEach(otherQuestion => {
+                    if (otherQuestion !== question) {
+                        otherQuestion.parentElement.classList.remove('faq-active');
+                    }
+                });
+            });
+        });
         
-        <div class="footer-col">
-            <h3>Quick Links</h3>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="courses.html">All programs</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="careers.html">Career Opportunities</a></li>
-            </ul>
-        </div>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.new-header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
         
-        <div class="footer-col">
-            <h3>Get In Touch!</h3>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
-                    </svg>
-                    <span> Katlang District Mardan Pakistan</span>
-                </div>
-                <div class="contact-item">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
-                    </svg>
-                    <span><a href="tel:+923488850059">+92 348 8850059</a></span>
-                   </div>
-                  <div class="contact-item">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
-                    </svg>
-                    <span><a href="tel:+923161098765">+92 316 1098765</a></span>
-                </div>
-                <div class="contact-item">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6M20 6L12 11L4 6H20M20 18H4V8L12 13L20 8V18Z"/>
-                    </svg>
-                    <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
-                </div>
-                <div class="contact-item">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
-                    </svg>
-                    <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
-                </div>
-            </div>
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements to animate
+        document.addEventListener('DOMContentLoaded', function() {
+            const elementsToAnimate = document.querySelectorAll('.crystal-card, .section-title, .section-subtitle');
             
-            <div class="newsletter">
-                <h4>Subscribe to Our Newsletter</h4>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your email address" required>
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    
-    <div class="footer-bottom">
-        <div class="footer-bottom-content">
-            <div class="copyright">
-                &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
-            </div>
-            <div class="legal-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="refund.html">Refund Policy</a>
-                <a href="https://aitoolsfreelance.blogspot.com"> Blogs</a>
-            </div>
-        </div>
-    </div>
-</footer>
-<script src="codedmind-enhancements.js"></script>
+            elementsToAnimate.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 </html>
