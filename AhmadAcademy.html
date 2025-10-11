@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Ahmad Quran Academy - Learn Quran Online</title>
+    <title>Quran Reading Course | Online Ahmad Quran Academy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ===== CSS RESET & VARIABLES ===== */
@@ -244,7 +244,7 @@
             font-weight: 600;
         }
 
-        /* ===== HERO SECTION ===== */
+        /* ===== COURSE HERO SECTION ===== */
         .course-hero {
             background: var(--gradient);
             color: white;
@@ -328,24 +328,24 @@
             opacity: 0.9;
         }
 
-        /* ===== FEATURES SECTION ===== */
-        .features-section {
+        /* ===== COURSE OVERVIEW SECTION ===== */
+        .course-overview {
             padding: 80px 0;
             background: white;
         }
 
-        .features-container {
+        .overview-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .feature-card {
+        .overview-card {
             padding: 30px;
             text-align: center;
         }
 
-        .feature-icon {
+        .overview-icon {
             width: 70px;
             height: 70px;
             margin: 0 auto 20px;
@@ -358,82 +358,99 @@
             font-size: 1.8rem;
         }
 
-        .feature-card h3 {
+        .overview-card h3 {
             font-size: 1.4rem;
             margin-bottom: 15px;
         }
 
-        /* ===== COURSES SECTION ===== */
-        .courses-section {
+        /* ===== COURSE MODULES SECTION ===== */
+        .course-modules {
             padding: 80px 0;
             background: #f8fafc;
         }
 
-        .courses-container {
+        .modules-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
         }
 
-        .course-card {
+        .module-card {
             overflow: hidden;
         }
 
-        .course-header {
+        .module-header {
             background: var(--gradient);
             color: white;
             padding: 20px;
             font-weight: 600;
             font-size: 1.2rem;
-            text-align: center;
         }
 
-        .course-content {
+        .module-content {
             padding: 25px;
         }
 
-        .course-content p {
-            margin-bottom: 20px;
+        .module-content ul {
+            list-style-type: none;
+            padding: 0;
         }
 
-        /* ===== TEACHERS SECTION ===== */
-        .teachers-section {
+        .module-content li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .module-content li:last-child {
+            border-bottom: none;
+        }
+
+        .module-content li:before {
+            content: '📖';
+            position: absolute;
+            left: 0;
+            top: 10px;
+        }
+
+        /* ===== INSTRUCTOR SECTION ===== */
+        .instructor-section {
             padding: 80px 0;
             background: white;
         }
 
-        .teachers-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .teacher-card {
-            text-align: center;
-            overflow: hidden;
-        }
-
-        .teacher-image {
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            background: var(--light);
+        .instructor-container {
             display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
             align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 3rem;
+        }
+
+        .instructor-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .instructor-image img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
             border: 5px solid var(--primary);
+            box-shadow: var(--shadow);
         }
 
-        .teacher-info {
-            padding: 20px;
+        .instructor-info {
+            flex: 2;
+            min-width: 300px;
         }
 
-        .teacher-info h3 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
+        .instructor-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
         }
 
         /* ===== TESTIMONIALS SECTION ===== */
@@ -471,31 +488,8 @@
         }
 
         .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-
-        .author-img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--light);
-            margin-right: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-weight: bold;
-        }
-
-        .author-info h4 {
-            margin-bottom: 5px;
-        }
-
-        .author-info p {
-            margin-bottom: 0;
+            font-weight: 600;
             color: var(--gray);
-            font-size: 0.9rem;
         }
 
         /* ===== FAQ SECTION ===== */
@@ -542,63 +536,25 @@
             padding: 20px;
         }
 
-        /* ===== CONTACT SECTION ===== */
-        .contact-section {
+        /* ===== REGISTRATION SECTION ===== */
+        .registration-section {
             padding: 80px 0;
             background: var(--gradient);
             color: white;
+            text-align: center;
         }
 
-        .contact-section .section-title,
-        .contact-section .section-subtitle {
+        .registration-section .section-title,
+        .registration-section .section-subtitle {
             color: white;
         }
 
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-        }
-
-        .contact-info h3 {
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        .contact-details {
-            margin-bottom: 30px;
-        }
-
-        .contact-detail {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .contact-icon {
-            margin-right: 15px;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-        }
-
-        .contact-form input::placeholder,
-        .contact-form textarea::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .contact-form textarea {
-            height: 150px;
+        .form-container {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-top: 30px;
         }
 
         /* ===== FOOTER ===== */
@@ -812,6 +768,11 @@
                 font-size: 1.1rem;
             }
             
+            .instructor-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
             .footer-bottom-content {
                 flex-direction: column;
                 text-align: center;
@@ -835,7 +796,7 @@
                 font-size: 2rem;
             }
             
-            .courses-container {
+            .modules-container {
                 grid-template-columns: 1fr;
             }
         }
@@ -850,17 +811,16 @@
                     <div class="logo-icon">
                         <i class="fas fa-book-quran"></i>
                     </div>
-                    <div class="logo-text"> <span>Ahmad Online </span>Quran Academy</div>
+                    <div class="logo-text">Online <span>Ahmad</span> Quran Academy</div>
                 </div>
                 
                 <nav>
                     <ul class="nav-menu">
-                        <li><a href="#home" class="active">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#courses">Courses</a></li>
-                        <li><a href="#teachers">Teachers</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Programs</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
                     </ul>
                 </nav>
                 
@@ -873,19 +833,18 @@
             
             <div class="mobile-menu">
                 <ul class="mobile-nav">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#teachers">Teachers</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Programs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="careers.html">Careers</a></li>
                 </ul>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="course-hero" id="home">
+    <!-- Course Hero Section -->
+    <section class="course-hero">
         <div class="hero-visual">
             <div class="floating-shape shape-1"></div>
             <div class="floating-shape shape-2"></div>
@@ -893,188 +852,165 @@
         </div>
         <div class="container">
             <div class="course-hero-content">
-                <div class="hero-badge">Premium Quran Education</div>
-                <h1 class="hero-title">Learn Quran Online With Expert Teachers</h1>
-                <p class="hero-description">Join our online Quran academy to learn Quran recitation, Tajweed, and Islamic studies from qualified teachers from the comfort of your home.</p>
-                <a href="#contact" class="btn">Start Learning Today</a>
+                <div class="hero-badge">Beginner to Advanced Program</div>
+                <h1 class="hero-title">Quran Reading Course</h1>
+                <p class="hero-description">Master the art of Quranic recitation with proper pronunciation and Tajweed rules. Learn to read the Holy Quran fluently from Arabic alphabets to complete verses with expert guidance.</p>
+                <a href="#registration" class="btn">Enroll Now</a>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features-section" id="about">
+    <!-- Course Overview Section -->
+    <section class="course-overview">
         <div class="container">
-            <h2 class="section-title">About Our Academy</h2>
-            <p class="section-subtitle">We provide comprehensive Quran education with a focus on Tajweed, memorization, and understanding</p>
+            <h2 class="section-title">Course Overview</h2>
             
-            <div class="features-container">
-                <div class="feature-card crystal-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-book-open"></i>
+            <div class="overview-container">
+                <div class="overview-card crystal-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3>Comprehensive Curriculum</h3>
-                    <p>We offer a structured curriculum covering Quran recitation, Tajweed rules, memorization, and Islamic studies for all levels.</p>
+                    <h3>What You'll Learn</h3>
+                    <p>From Arabic alphabet recognition to fluent Quran reading with proper Tajweed. Master pronunciation, articulation points, and the rules of recitation to read Quran as it was revealed.</p>
                 </div>
                 
-                <div class="feature-card crystal-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-user-graduate"></i>
+                <div class="overview-card crystal-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-users"></i>
                     </div>
-                    <h3>Qualified Teachers</h3>
-                    <p>Our teachers are highly qualified with Ijazah and years of experience in teaching Quran to students worldwide.</p>
+                    <h3>Who This Course Is For</h3>
+                    <p>Absolute beginners with no prior Arabic knowledge, children and adults wanting to learn Quran reading, and those looking to improve their existing recitation skills with proper Tajweed.</p>
                 </div>
                 
-                <div class="feature-card crystal-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-laptop"></i>
+                <div class="overview-card crystal-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-laptop-code"></i>
                     </div>
-                    <h3>Flexible Schedule</h3>
-                    <p>Learn at your own pace with flexible class timings that fit your busy schedule, available 24/7.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Courses Section -->
-    <section class="courses-section" id="courses">
-        <div class="container">
-            <h2 class="section-title">Our Courses</h2>
-            <p class="section-subtitle">Choose from our comprehensive Quran learning programs designed for all ages and levels</p>
-            
-            <div class="courses-container">
-                <div class="course-card crystal-card">
-                    <div class="course-header">Quran Reading</div>
-                    <div class="course-content">
-                        <h3>Quran Reading Basics</h3>
-                        <p>Learn to read Quran with proper pronunciation from the Arabic alphabet to fluent reading.</p>
-                        <a href="#contact" class="btn">Enroll Now</a>
-                    </div>
-                </div>
-                
-                <div class="course-card crystal-card">
-                    <div class="course-header">Tajweed</div>
-                    <div class="course-content">
-                        <h3>Tajweed Rules</h3>
-                        <p>Master the rules of Tajweed to recite Quran beautifully and correctly as it was revealed.</p>
-                        <a href="#contact" class="btn">Enroll Now</a>
-                    </div>
-                </div>
-                
-                <div class="course-card crystal-card">
-                    <div class="course-header">Memorization</div>
-                    <div class="course-content">
-                        <h3>Quran Memorization</h3>
-                        <p>Memorize the Holy Quran with our structured Hifz program and experienced teachers.</p>
-                        <a href="#contact" class="btn">Enroll Now</a>
-                    </div>
-                </div>
-                
-                <div class="course-card crystal-card">
-                    <div class="course-header">Islamic Studies</div>
-                    <div class="course-content">
-                        <h3>Islamic Studies</h3>
-                        <p>Learn about Islamic beliefs, history, fiqh, and the life of Prophet Muhammad (PBUH).</p>
-                        <a href="#contact" class="btn">Enroll Now</a>
-                    </div>
+                    <h3>Course Format</h3>
+                    <p>One-on-one online sessions with qualified teachers, flexible scheduling, personalized learning plans, and continuous assessment. Accessible on all devices with interactive learning materials.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Teachers Section -->
-    <section class="teachers-section" id="teachers">
+    <!-- Course Modules Section -->
+    <section class="course-modules">
         <div class="container">
-            <h2 class="section-title">Our Qualified Teachers</h2>
-            <p class="section-subtitle">Learn from certified Quran teachers with years of experience and Ijazah certification</p>
+            <h2 class="section-title">Course Modules</h2>
             
-            <div class="teachers-container">
-                <div class="teacher-card crystal-card">
-                    <div class="teacher-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="teacher-info">
-                        <h3>Sheikh Ahmad</h3>
-                        <p>Expert in Tajweed and Quran Memorization with 15+ years of teaching experience.</p>
-                    </div>
-                </div>
-                
-                <div class="teacher-card crystal-card">
-                    <div class="teacher-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="teacher-info">
-                        <h3>Teacher Fatima</h3>
-                        <p>Specialized in Quran reading for beginners and kids with a gentle teaching approach.</p>
+            <div class="modules-container">
+                <div class="module-card crystal-card">
+                    <div class="module-header">Module 1: Arabic Alphabet & Basics</div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Introduction to Arabic letters and their forms</li>
+                            <li>Proper pronunciation of each letter</li>
+                            <li>Short vowels (Harakat) - Fatha, Kasra, Damma</li>
+                            <li>Letter connection and word formation</li>
+                            <li>Reading practice with simple words</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="teacher-card crystal-card">
-                    <div class="teacher-image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="teacher-info">
-                        <h3>Sheikh Omar</h3>
-                        <p>Expert in Islamic studies and Tafseer with degrees from Al-Azhar University.</p>
+                <div class="module-card crystal-card">
+                    <div class="module-header">Module 2: Quranic Reading Foundation</div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Long vowels (Madd letters)</li>
+                            <li>Tanween (Nunation)</li>
+                            <li>Shaddah and Sukoon</li>
+                            <li>Reading complete verses</li>
+                            <li>Common Quranic words and phrases</li>
+                        </ul>
                     </div>
                 </div>
                 
-                <div class="teacher-card crystal-card">
-                    <div class="teacher-image">
-                        <i class="fas fa-user"></i>
+                <div class="module-card crystal-card">
+                    <div class="module-header">Module 3: Tajweed Rules Introduction</div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Rules of Noon Sakinah and Tanween</li>
+                            <li>Rules of Meem Sakinah</li>
+                            <li>Qalqalah letters and their application</li>
+                            <li>Madd (elongation) rules</li>
+                            <li>Practical application in Quranic verses</li>
+                        </ul>
                     </div>
-                    <div class="teacher-info">
-                        <h3>Teacher Aisha</h3>
-                        <p>Specialized in teaching children and women with customized learning plans.</p>
+                </div>
+                
+                <div class="module-card crystal-card">
+                    <div class="module-header">Module 4: Advanced Tajweed</div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Rules of Raa (ر)</li>
+                            <li>Rules of Laam (ل)</li>
+                            <li>Heavy and light letters</li>
+                            <li>Stopping rules (Waqf)</li>
+                            <li>Advanced madd rules</li>
+                        </ul>
                     </div>
+                </div>
+                
+                <div class="module-card crystal-card">
+                    <div class="module-header">Module 5: Fluency & Practice</div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Reading longer verses fluently</li>
+                            <li>Recitation of complete Surahs</li>
+                            <li>Speed and accuracy development</li>
+                            <li>Common mistakes and corrections</li>
+                            <li>Final assessment and certification</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor Section -->
+    <section class="instructor-section">
+        <div class="container">
+            <h2 class="section-title">About The Instructor</h2>
+            
+            <div class="instructor-container">
+                <div class="instructor-image">
+                    <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80" alt="Instructor Photo">
+                </div>
+                <div class="instructor-info">
+                    <h3>Sheikh Ahmad Al-Misri</h3>
+                    <p>With over 15 years of experience in teaching Quran and Tajweed, Sheikh Ahmad holds Ijazah (certification) in Quran recitation from Al-Azhar University, Egypt. He has taught hundreds of students worldwide and specializes in making Quran learning accessible to non-Arabic speakers.</p>
+                    <p>Sheikh Ahmad's teaching methodology focuses on building strong foundations while making the learning process enjoyable and spiritually rewarding. His patience and dedication have helped countless students achieve their goal of reading Quran fluently.</p>
+                    <p>He believes that every Muslim should have the opportunity to connect with the Quran through proper recitation, and his teaching approach combines traditional methods with modern educational techniques.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials-section" id="testimonials">
+    <section class="testimonials-section">
         <div class="container">
-            <h2 class="section-title">What Our Students Say</h2>
-            <p class="section-subtitle">Hear from our students about their learning experience at Ahmad Quran Academy</p>
+            <h2 class="section-title">Student Testimonials</h2>
             
             <div class="testimonials-container">
                 <div class="testimonial-card crystal-card">
                     <div class="testimonial-text">
-                        "My children have improved their Quran reading significantly since joining Ahmad Quran Academy. The teachers are patient and knowledgeable."
+                        I started with zero knowledge of Arabic, and within 6 months, I was reading Quran fluently. Sheikh Ahmad's patience and teaching method made all the difference. This course transformed my relationship with the Quran.
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">S</div>
-                        <div class="author-info">
-                            <h4>Sarah Johnson</h4>
-                            <p>Parent, USA</p>
-                        </div>
-                    </div>
+                    <div class="testimonial-author">- Sarah Johnson, USA</div>
                 </div>
                 
                 <div class="testimonial-card crystal-card">
                     <div class="testimonial-text">
-                        "As a working professional, the flexible schedule allowed me to continue my Hifz journey. Highly recommended for busy adults."
+                        As a working professional, I needed flexible timings. The academy accommodated my schedule perfectly. The one-on-one attention helped me correct my pronunciation mistakes that I had for years.
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">M</div>
-                        <div class="author-info">
-                            <h4>Mohammed Ali</h4>
-                            <p>Student, UK</p>
-                        </div>
-                    </div>
+                    <div class="testimonial-author">- Mohammed Ali, UK</div>
                 </div>
                 
                 <div class="testimonial-card crystal-card">
                     <div class="testimonial-text">
-                        "The Tajweed course transformed my recitation. Teacher Ahmad's attention to detail is remarkable. May Allah reward them."
+                        My children have been taking classes for a year now, and their progress is remarkable. The teachers are not just qualified but also know how to engage children. Highly recommended for families!
                     </div>
-                    <div class="testimonial-author">
-                        <div class="author-img">A</div>
-                        <div class="author-info">
-                            <h4>Amina Khan</h4>
-                            <p>Student, Canada</p>
-                        </div>
-                    </div>
+                    <div class="testimonial-author">- Fatima Khan, Canada</div>
                 </div>
             </div>
         </div>
@@ -1088,41 +1024,41 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        Do I need any prior knowledge to start?
+                        Do I need any prior Arabic knowledge?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        No prior knowledge is required. We have courses designed for complete beginners as well as advanced learners. Our teachers will assess your level and place you in the appropriate class.
+                        No prior knowledge is required. This course is designed for absolute beginners. We start from the Arabic alphabet and build up gradually to fluent Quran reading.
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        What equipment do I need for online classes?
+                        What equipment do I need for the classes?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        You'll need a computer, tablet, or smartphone with internet connection. We'll guide you through installing any necessary software for the classes. Most classes are conducted via Zoom or similar platforms.
+                        You'll need a computer, tablet, or smartphone with internet connection. We use Zoom or similar platforms for classes. All learning materials will be provided digitally.
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        How are the classes scheduled?
+                        Will I receive a certificate upon completion?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        We offer flexible scheduling to accommodate students from different time zones. You can choose class timings that work best for you, and we'll match you with a teacher available during those times.
+                        Yes, you will receive a verified certificate of completion that acknowledges your achievement in Quran reading. The certificate can be shared and included in your records.
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        What age groups do you teach?
+                        How long will it take to complete the course?
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        We teach students of all ages, from young children (starting at age 5) to adults. Our teaching methods are tailored to each age group to ensure effective learning.
+                        The course duration depends on your learning pace and schedule. On average, students complete it in 6-9 months with 2-3 classes per week. We offer flexible pacing to suit your needs.
                     </div>
                 </div>
                 
@@ -1132,48 +1068,36 @@
                         <i class="fas fa-chevron-down"></i>
                     </div>
                     <div class="faq-answer">
-                        Yes, we offer a free trial class so you can experience our teaching methodology and meet your potential teacher before committing to the course.
+                        Yes, we offer a free trial class so you can experience our teaching methodology, meet your potential teacher, and assess if our program is the right fit for you before committing.
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+     <!-- Registration Section -->
+    <section id="registration" class="registration-section">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Contact us to start your Quran learning journey today</p>
+            <h2 class="section-title">Register for Blockchain Fundamentals</h2>
+            <p class="section-subtitle">Join the next generation of blockchain developers and innovators</p>
             
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-details">
-                        <div class="contact-detail">
-                            <div class="contact-icon">📧</div>
-                            <p>info@ahmadquranacademy.com</p>
-                        </div>
-                        <div class="contact-detail">
-                            <div class="contact-icon">📞</div>
-                            <p>+1 (555) 123-4567</p>
-                        </div>
-                        <div class="contact-detail">
-                            <div class="contact-icon">📍</div>
-                            <p>Online Worldwide</p>
-                        </div>
-                    </div>
-                    <h3>Class Timings</h3>
-                    <p>24/7 Available - Flexible scheduling according to your timezone</p>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <input type="text" placeholder="Subject" required>
-                        <textarea placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
+            <div class="form-container">
+                <iframe id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c" title="Sana: Registration Assistant"
+                    onload="window.parent.scrollTo(0,0)" allowtransparency="true"
+                    allow="geolocation; microphone; camera; fullscreen"
+                    src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
+                    frameborder="0" style="
+                    max-width:100%;
+                    height:688px;
+                    border:none;
+                    width:100%;
+                    " scrolling="no">
+                </iframe>
+                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+                <script>
+                    window.jotformEmbedHandler("iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
+                    "https://www.jotform.com")
+                </script>
             </div>
         </div>
     </section>
@@ -1184,14 +1108,12 @@
             <div class="footer-content">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <div class="logo-icon">
-                            <i class="fas fa-book-quran"></i>
-                        </div>
-                        <h3>Online <span>Ahmad</span> Quran Academy</h3>
+                        <img src="logo.png" alt="CMTI Logo">
+                        <h3>Coded Mind <n>Technology Incubator</n></h3>
                     </div>
                     <p class="footer-description">
-                        Dedicated to providing quality Quran education to students worldwide through online platforms. 
-                        Our mission is to make Quran learning accessible to everyone, everywhere.
+                        Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
+                        Join CMTI to gain cutting-Edge skills in technology and business. Our expert-led courses prepare you for the digital future.
                     </p>
                     <div class="footer-social">
                         <h4>Follow Us</h4>
@@ -1205,37 +1127,36 @@
                             <a href="#" title="Instagram" aria-label="Instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
+                            <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
                             <a href="#" title="YouTube" aria-label="YouTube">
                                 <i class="fab fa-youtube"></i>
-                            </a>
-                            <a href="#" title="WhatsApp" aria-label="WhatsApp">
-                                <i class="fab fa-whatsapp"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                         
                 <div class="footer-col">
-                    <h3>Our Courses</h3>
+                    <h3>Top Programs</h3>
                     <ul>
-                        <li><a href="#">Quran Reading</a></li>
-                        <li><a href="#">Tajweed Rules</a></li>
-                        <li><a href="#">Quran Memorization</a></li>
-                        <li><a href="#">Islamic Studies</a></li>
-                        <li><a href="#">Arabic Language</a></li>
-                        <li><a href="#">Tafseer</a></li>
+                        <li><a href="course-webdev.html">Web Development</a></li>
+                        <li><a href="course-data-science.html">Data Science</a></li>
+                        <li><a href="course-cyber-security.html">Cyber Security</a></li>
+                        <li><a href="course-digital-marketing.html">Digital Marketing</a></li>
+                        <li><a href="course-python.html">Python Programming</a></li>
+                        <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#courses">Courses</a></li>
-                        <li><a href="#teachers">Teachers</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">All programs</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="careers.html">Career Opportunities</a></li>
                     </ul>
                 </div>
                 
@@ -1243,20 +1164,24 @@
                     <h3>Get In Touch!</h3>
                     <div class="contact-info">
                         <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span><a href="mailto:info@ahmadquranacademy.com">info@ahmadquranacademy.com</a></span>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Katlang District Mardan Pakistan</span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <span><a href="tel:+15551234567">+1 (555) 123-4567</a></span>
+                            <span><a href="tel:+923488850059">+92 348 8850059</a></span>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-globe"></i>
-                            <span>Online Worldwide</span>
+                            <i class="fas fa-phone"></i>
+                            <span><a href="tel:+923161098765">+92 316 1098765</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-clock"></i>
-                            <span>24/7 Available</span>
+                            <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
                         </div>
                     </div>
                     
@@ -1273,12 +1198,13 @@
             <div class="footer-bottom">
                 <div class="footer-bottom-content">
                     <div class="copyright">
-                        &copy; 2023 Online Ahmad Quran Academy. All rights reserved.
+                        &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
                     </div>
                     <div class="legal-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Refund Policy</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="refund.html">Refund Policy</a>
+                        <a href="https://aitoolsfreelance.blogspot.com">Blogs</a>
                     </div>
                 </div>
             </div>
