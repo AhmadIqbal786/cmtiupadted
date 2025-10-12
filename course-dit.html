@@ -353,10 +353,82 @@
             margin-bottom: 15px;
         }
 
+        /* ===== PROGRAM STRUCTURE SECTION ===== */
+        .program-structure {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .program-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .program-tab {
+            padding: 15px 30px;
+            background: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .program-tab.active {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .term-content {
+            display: none;
+        }
+
+        .term-content.active {
+            display: block;
+        }
+
+        .term-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .term-table th {
+            background: var(--gradient);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .term-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .term-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .term-table tr:nth-child(even) {
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        .term-highlight {
+            background: rgba(253, 187, 45, 0.1) !important;
+            font-weight: 600;
+        }
+
         /* ===== COURSE MODULES SECTION ===== */
         .course-modules {
             padding: 80px 0;
-            background: #f8fafc;
+            background: white;
         }
 
         .modules-container {
@@ -407,7 +479,7 @@
         /* ===== INSTRUCTOR SECTION ===== */
         .instructor-section {
             padding: 80px 0;
-            background: white;
+            background: #f8fafc;
         }
 
         .instructor-container {
@@ -446,7 +518,7 @@
         /* ===== TESTIMONIALS SECTION ===== */
         .testimonials-section {
             padding: 80px 0;
-            background: #f8fafc;
+            background: white;
         }
 
         .testimonials-container {
@@ -485,7 +557,7 @@
         /* ===== CAREER OPPORTUNITIES SECTION ===== */
         .career-section {
             padding: 80px 0;
-            background: white;
+            background: #f8fafc;
         }
 
         .career-container {
@@ -507,7 +579,7 @@
         /* ===== FAQ SECTION ===== */
         .faq-section {
             padding: 80px 0;
-            background: #f8fafc;
+            background: white;
         }
 
         .faq-container {
@@ -551,7 +623,7 @@
         /* ===== PAYMENT SECTION ===== */
         .payment-section {
             padding: 80px 0;
-            background: white;
+            background: #f8fafc;
         }
 
         .payment-container {
@@ -591,270 +663,270 @@
         }
 
         /* ===== FOOTER ===== */
-.site-footer {
-    background: linear-gradient(to right, #2c3e50, #4a6580);
-    color: #fff;
-    padding: 50px 0 0;
-    margin-top: 80px;
-    font-size: 14px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
-    border-top: 1px solid var(--glass-border);
-}
+        .site-footer {
+            background: linear-gradient(to right, #2c3e50, #4a6580);
+            color: #fff;
+            padding: 50px 0 0;
+            margin-top: 80px;
+            font-size: 14px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-.site-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(to right, #4d6883, #4a6580);
-    z-index: 2;
-}
+        .site-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #4d6883, #4a6580);
+            z-index: 2;
+        }
 
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 1;
-}
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
 
-.footer-col {
-    margin-bottom: 30px;
-    background: linear-gradient(to right, #4d6883, #4a6580);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
+        .footer-col {
+            margin-bottom: 30px;
+            background: linear-gradient(to right, #4d6883, #4a6580);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-.footer-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-}
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
 
-.footer-logo img {
-    height: 80px;
-    margin-right: 5px;
-}
+        .footer-logo img {
+            height: 80px;
+            margin-right: 5px;
+        }
 
-.footer-logo h3 {
-    font-size: 18px;
-    margin: 0;
-    background: var(--primary-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
+        .footer-logo h3 {
+            font-size: 18px;
+            margin: 0;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
 
-.footer-description {
-    line-height: 1.6;
-    margin-bottom: 20px;
-    opacity: 0.9;
-    text-align: center;
-}
+        .footer-description {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0.9;
+            text-align: center;
+        }
 
-.footer-social h4 {
-    margin-bottom: 15px;
-    font-size: 16px;
-}
+        .footer-social h4 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
 
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
 
-.social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    color: #fff;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #fff;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-.social-icons a:hover {
-    background: var(--primary-gradient);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(110, 69, 226, 0.4);
-}
+        .social-icons a:hover {
+            background: var(--gradient);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(110, 69, 226, 0.4);
+        }
 
-.footer-col h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #ff7e5f;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
+        .footer-col h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #ff7e5f;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
 
-.footer-col h3::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50px;
-    height: 2px;
-    background: linear-gradient(to right, #4d6883, #4a6580);
-}
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(to right, #4d6883, #4a6580);
+        }
 
-.footer-col ul {
-    list-style: none;
-    padding: 0;
-}
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
 
-.footer-col ul li {
-    margin-bottom: 12px;
-    transition: all 0.3s ease;
-}
+        .footer-col ul li {
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
 
-.footer-col ul li:hover {
-    transform: translateX(5px);
-}
+        .footer-col ul li:hover {
+            transform: translateX(5px);
+        }
 
-.footer-col ul li a {
-    color: #fff;
-    opacity: 0.9;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: block;
-    padding: 5px 0;
-}
+        .footer-col ul li a {
+            color: #fff;
+            opacity: 0.9;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 5px 0;
+        }
 
-.footer-col ul li a:hover {
-    opacity: 1;
-    color: #88d3ce;
-    padding-left: 10px;
-}
+        .footer-col ul li a:hover {
+            opacity: 1;
+            color: #88d3ce;
+            padding-left: 10px;
+        }
 
-.contact-info {
-    margin-bottom: 25px;
-}
+        .contact-info {
+            margin-bottom: 25px;
+        }
 
-.contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
 
-.contact-item svg {
-    margin-right: 10px;
-    opacity: 0.9;
-}
+        .contact-item svg {
+            margin-right: 10px;
+            opacity: 0.9;
+        }
 
-.contact-item span a {
-    color: #fff;
-    text-decoration: none;
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
-}
+        .contact-item span a {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
 
-.contact-item span a:hover {
-    opacity: 1;
-    color: #88d3ce;
-}
+        .contact-item span a:hover {
+            opacity: 1;
+            color: #88d3ce;
+        }
 
-.newsletter h4 {
-    margin-bottom: 15px;
-    font-size: 16px;
-}
+        .newsletter h4 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
 
-.newsletter-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+        .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
 
-.newsletter-form input {
-    padding: 12px 15px;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
+        .newsletter-form input {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-.newsletter-form input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
+        .newsletter-form input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
 
-.newsletter-form input:focus {
-    outline: none;
-    border-color: #6e45e2;
-    box-shadow: 0 0 0 2px rgba(110, 69, 226, 0.2);
-}
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: #6e45e2;
+            box-shadow: 0 0 0 2px rgba(110, 69, 226, 0.2);
+        }
 
-.newsletter-form button {
-    padding: 12px 15px;
-    border: none;
-    border-radius: 5px;
-    background:linear-gradient(to right, #4d6883, #4a6580);
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
-}
+        .newsletter-form button {
+            padding: 12px 15px;
+            border: none;
+            border-radius: 5px;
+            background: linear-gradient(to right, #4d6883, #4a6580);
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
+        }
 
-.newsletter-form button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(110, 69, 226, 0.4);
-}
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(110, 69, 226, 0.4);
+        }
 
-.footer-bottom {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 20px 0;
-    margin-top: 30px;
-    backdrop-filter: blur(5px);
-}
+        .footer-bottom {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+            margin-top: 30px;
+            backdrop-filter: blur(5px);
+        }
 
-.footer-bottom-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    flex-wrap: wrap;
-    gap: 15px;
-}
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
 
-.legal-links {
-    display: flex;
-    gap: 20px;
-}
+        .legal-links {
+            display: flex;
+            gap: 20px;
+        }
 
-.legal-links a {
-    color: #fff;
-    opacity: 0.8;
-    text-decoration: none;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
+        .legal-links a {
+            color: #fff;
+            opacity: 0.8;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
 
-.legal-links a:hover {
-    opacity: 1;
-    color: #88d3ce;
-}
+        .legal-links a:hover {
+            opacity: 1;
+            color: #88d3ce;
+        }
 
-.copyright {
-    opacity: 0.8;
-    font-size: 14px;
-}
+        .copyright {
+            opacity: 0.8;
+            font-size: 14px;
+        }
 
         /* ===== RESPONSIVE STYLES ===== */
         @media (max-width: 992px) {
@@ -904,6 +976,11 @@
             
             .legal-links {
                 justify-content: center;
+            }
+
+            .term-table {
+                display: block;
+                overflow-x: auto;
             }
         }
 
@@ -1011,6 +1088,141 @@
                     <h3>Course Format</h3>
                     <p>Hybrid learning with video lessons, practical exercises, real-world projects, and live Q&A sessions. Accessible on all devices with dedicated support from IT experts.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Structure Section -->
+    <section class="program-structure">
+        <div class="container">
+            <h2 class="section-title">Program Structure</h2>
+            <p class="section-subtitle">Diploma in Information Technology (DIT) is a one year course comprised of two terms duration of six months each. It is totally based on computer skills and knowledge. Major part of this course is practical based.</p>
+            
+            <div class="program-tabs">
+                <div class="program-tab active" data-tab="term1">Term I (6 Months)</div>
+                <div class="program-tab" data-tab="term2">Term II (6 Months)</div>
+            </div>
+            
+            <div class="term-content active" id="term1">
+                <table class="term-table">
+                    <thead>
+                        <tr>
+                            <th>S. No</th>
+                            <th>Subject</th>
+                            <th>Theory Marks</th>
+                            <th>Practical Marks</th>
+                            <th>Total Marks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Introduction to Information and Communication Technology</td>
+                            <td>75</td>
+                            <td>25</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Introduction to Programming Using Python</td>
+                            <td>75</td>
+                            <td>25</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Operating Systems</td>
+                            <td>75</td>
+                            <td>25</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Introduction to MS Office</td>
+                            <td>75</td>
+                            <td>25</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Computer Networks</td>
+                            <td>75</td>
+                            <td>25</td>
+                            <td>100</td>
+                        </tr>
+                        <tr class="term-highlight">
+                            <td colspan="2">Total Marks</td>
+                            <td>375</td>
+                            <td>125</td>
+                            <td>500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="term-content" id="term2">
+                <table class="term-table">
+                    <thead>
+                        <tr>
+                            <th>S. No</th>
+                            <th>Subject</th>
+                            <th>Theory Marks</th>
+                            <th>Practical Marks</th>
+                            <th>Total Marks</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Database Systems</td>
+                            <td>75</td>
+                            <td>25</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Graphics Design</td>
+                            <td>75</td>
+                            <td>25</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Video Editing</td>
+                            <td>75</td>
+                            <td>25</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Web Development Essentials</td>
+                            <td>75</td>
+                            <td>25</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Capstone Project</td>
+                            <td>-</td>
+                            <td>100</td>
+                            <td>100</td>
+                        </tr>
+                        <tr class="term-highlight">
+                            <td colspan="2">Total Marks</td>
+                            <td>300</td>
+                            <td>200</td>
+                            <td>500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="program-info crystal-card" style="padding: 30px; margin-top: 40px;">
+                <h3 style="color: var(--primary); margin-bottom: 20px;">DIT Examinations</h3>
+                <p>The DIT examinations are conducted by the Khyber Pakhtunkhwa Board of Technical Education, Peshawar twice in a year called First-Term exam and Second-Term Exam in the months of February and August respectively.</p>
+                
+                <h3 style="color: var(--primary); margin: 25px 0 15px;">Admissions</h3>
+                <p>Admissions in DIT program are offered twice in a year in the months of January and August. Admission forms can be received from and submitted to the office in duty hours.</p>
             </div>
         </div>
     </section>
@@ -1256,10 +1468,11 @@
             
             <div class="payment-container">
                 <div class="payment-card crystal-card">
-                    <h3>Course Fee</h3>
-                    <p><strong>PKR 25,000</strong></p>
-                    <p>Duration: 6 Months</p>
-                    <p>Format: Hybrid (Online + In-person)</p>
+                    <h3>Course Fee Structure</h3>
+                    <p><strong>Term I Fee: PKR 7,000</strong></p>
+                    <p><strong>Term II Fee: PKR 5,000</strong></p>
+                    <p><strong>Examination Fee: PKR 2,400 per term</strong></p>
+                    <p>Duration: 1 Year (Two Terms of 6 Months Each)</p>
                 </div>
                 
                 <div class="payment-card crystal-card">
@@ -1270,11 +1483,11 @@
                 </div>
                 
                 <div class="payment-card crystal-card">
-                    <h3>Installment Plans</h3>
+                    <h3>Admission Schedule</h3>
+                    <p>Admissions are offered twice a year:</p>
                     <ul>
-                        <li>Option 1: Full payment of PKR 25,000 (5% discount available)</li>
-                        <li>Option 2: Two installments of PKR 13,000</li>
-                        <li>Option 3: Three installments of PKR 9,000</li>
+                        <li>January Intake (For February Term Exam)</li>
+                        <li>August Intake (For August Term Exam)</li>
                     </ul>
                     <p>After payment, send your receipt to <strong>info@codedmind.com</strong> or WhatsApp 0300-1234567 for registration confirmation.</p>
                 </div>
@@ -1442,6 +1655,28 @@
                         otherQuestion.parentElement.classList.remove('faq-active');
                     }
                 });
+            });
+        });
+        
+        // Program Tabs
+        const programTabs = document.querySelectorAll('.program-tab');
+        
+        programTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                programTabs.forEach(t => t.classList.remove('active'));
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Hide all term content
+                document.querySelectorAll('.term-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show selected term content
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
             });
         });
         
