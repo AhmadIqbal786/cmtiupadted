@@ -1045,16 +1045,16 @@
                 <img src="logo.png" alt="CMTI Logo">
                 <div class="logo-text">Coded Mind <br> Technology Incubator</div>
             </div>
-            
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="courses.html">Programs</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                </ul>
-            </nav>
+<nav>
+    <ul class="nav-menu">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="courses.html">Programs</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li> <!-- Added Blog Button -->
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="careers.html">Careers</a></li>
+    </ul>
+</nav>
             
             <div class="hamburger">
                 <span></span>
@@ -1063,16 +1063,18 @@
             </div>
         </div>
         
-        <div class="mobile-menu">
-            <ul class="mobile-nav">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="courses.html">Programs</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="careers.html">Careers</a></li>
-            </ul>
-        </div>
-    </header>
+
+<!-- Also update the mobile menu -->
+<div class="mobile-menu">
+    <ul class="mobile-nav">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="courses.html">Programs</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li> <!-- Added Blog Button -->
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="careers.html">Careers</a></li>
+    </ul>
+</div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -1660,6 +1662,34 @@
                 el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
                 observer.observe(el);
             });
+        });
+
+        // Add error handling for forms
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                if (!validateForm(e.target)) {
+                    e.preventDefault();
+                }
+            });
+        });
+
+        // Fix navigation links
+        document.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
+                if (href === '#' || !href) {
+                    e.preventDefault();
+                    showErrorNotification('This page is under construction');
+                }
+            });
+        });
+
+        // Fix image errors
+        document.querySelectorAll('img').forEach(img => {
+            img.onerror = function() {
+                this.src = 'images/placeholder.jpg';
+                this.alt = 'Image not found';
+            };
         });
     </script>
 </body>
