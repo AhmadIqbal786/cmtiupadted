@@ -4,8 +4,7 @@
 <meta charset="UTF-8">
 <title>CMTI LMS – Learning Management System</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description"
-      content="CMTI Learning Management System – upload subjects, materials, and give students secure access.">
+<meta name="description" content="CMTI Learning Management System – upload subjects, materials, and give students secure access.">
 
 <!-- Font Awesome Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -41,7 +40,6 @@
   
   @keyframes spinner { to { transform: rotate(360deg); } }
 
-  /* Welcome Section */
   .welcome-section {
     text-align: center;
     padding: 60px 20px;
@@ -132,7 +130,6 @@
     background: #cbd5e1;
   }
 
-  /* Dashboard Styles */
   .dashboard {
     display: none;
   }
@@ -181,7 +178,6 @@
     transform: translateY(-2px);
   }
 
-  /* Teacher Panel */
   .teacher-panel {
     display: none;
     background: white;
@@ -265,7 +261,6 @@
     box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
   }
 
-  /* Subjects List */
   .subjects-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -334,7 +329,6 @@
     background: #6b21a8;
   }
 
-  /* Materials List */
   .materials-section {
     margin-top: 20px;
     padding-top: 20px;
@@ -358,23 +352,20 @@
     border-radius: 8px;
     border-left: 4px solid var(--accent);
     transition: all 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .material-item:hover {
     background: #f1f5f9;
   }
 
-  .material-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    margin-bottom: 10px;
-  }
-
   .material-title {
     font-weight: 600;
     color: var(--dark);
     font-size: 1rem;
+    margin-bottom: 5px;
   }
 
   .material-meta {
@@ -391,6 +382,7 @@
   .material-actions {
     display: flex;
     gap: 8px;
+    flex-wrap: wrap;
   }
 
   .btn-material {
@@ -401,6 +393,7 @@
     font-weight: 600;
     font-size: 0.85rem;
     transition: all 0.3s;
+    white-space: nowrap;
   }
 
   .btn-material.download {
@@ -490,21 +483,19 @@
 
 <main class="lms-container">
 
-  <!-- ---------- LOADER ---------- -->
+  <!-- LOADER -->
   <div id="loader" class="fixed inset-0 flex items-center justify-center bg-white/80 hidden z-50">
     <div class="loader w-12 h-12 border-4 rounded-full"></div>
   </div>
 
-  <!-- ---------- WELCOME / LOGIN ---------- -->
+  <!-- WELCOME / LOGIN -->
   <section id="welcome-section" class="welcome-section">
     <h2>Welcome to CMTI Learning Management System</h2>
     <p>Log in with email & password or request a magic‑link to access your courses</p>
 
     <div class="auth-form">
-      <input id="email-input" type="email" placeholder="Enter your email"
-             autocomplete="email">
-      <input id="password-input" type="password" placeholder="Enter your password"
-             autocomplete="current-password">
+      <input id="email-input" type="email" placeholder="Enter your email" autocomplete="email">
+      <input id="password-input" type="password" placeholder="Enter your password" autocomplete="current-password">
       <div class="auth-buttons">
         <button id="login-btn" class="btn-auth primary">
           <i class="fas fa-sign-in-alt"></i> Log In
@@ -519,7 +510,7 @@
     </div>
   </section>
 
-  <!-- ---------- DASHBOARD (hidden until logged in) ---------- -->
+  <!-- DASHBOARD -->
   <section id="dashboard" class="dashboard">
     <div class="dashboard-header">
       <h2><i class="fas fa-tachometer-alt"></i> My Dashboard</h2>
@@ -531,19 +522,17 @@
       </div>
     </div>
 
-    <!-- Teacher UI: create subjects & upload -->
+    <!-- Teacher Panel -->
     <div id="teacher-panel" class="teacher-panel">
       <h3><i class="fas fa-plus-circle"></i> Create New Course</h3>
       <div class="form-grid">
         <div class="form-group">
           <label for="subject-title">Course Title</label>
-          <input id="subject-title" type="text" placeholder="e.g., Web Development Basics"
-                 class="w-full">
+          <input id="subject-title" type="text" placeholder="e.g., Web Development Basics">
         </div>
         <div class="form-group">
           <label for="subject-desc">Description</label>
-          <textarea id="subject-desc" placeholder="Brief description of the course"
-                   class="w-full"></textarea>
+          <textarea id="subject-desc" placeholder="Brief description of the course"></textarea>
         </div>
         <button id="create-subject" class="btn-create">
           <i class="fas fa-check-circle"></i> Create Course
@@ -551,7 +540,7 @@
       </div>
     </div>
 
-    <!-- List of subjects the user is enrolled in (or can see) -->
+    <!-- Courses List -->
     <div>
       <h2 class="courses-title">
         <i class="fas fa-book-open"></i> Your Courses
@@ -564,7 +553,7 @@
 
 </main>
 
-<!-- Footer (matching your website) -->
+<!-- Footer -->
 <footer class="site-footer">
   <div class="container">
     <div class="footer-content">
@@ -648,33 +637,26 @@
 </footer>
 
 <script>
-/* ==============================================================
-   CONFIG – replace with your own Supabase project details
-   ============================================================== */
+/* Set current year in footer */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* CONFIG */
 const SUPABASE_URL = 'https://joragjefzytvqmjvniml.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpvcmFnamVmenl0dnFtanZuaW1sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQzNTIxMTIsImV4cCI6MjA3OTkyODExMn0.QhoHDcTjkDNW_dsQge4xakw7WvMnju_K68mXs-ndeJg';
 
-/* Init Supabase client (public anon key) */
 const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-/* ==============================================================
-   STATE / UI HELPERS
-   ============================================================== */
+/* UI Helpers */
 const loader = document.getElementById('loader');
 function showLoader(flag = true) { loader.classList.toggle('hidden', !flag); }
+function hideLoader() { loader.classList.add('hidden'); }
 
-function show(el) { el.classList.remove('hidden'); }
-function hide(el) { el.classList.add('hidden'); }
-
-const authControls = document.getElementById('auth-controls');
 const welcomeSection = document.getElementById('welcome-section');
 const dashboard = document.getElementById('dashboard');
 const teacherPanel = document.getElementById('teacher-panel');
 const subjectList = document.getElementById('subject-list');
 
-/* ==============================================================
-   AUTH – login / signup / magic‑link
-   ============================================================== */
+/* AUTH */
 document.getElementById('login-btn').addEventListener('click', async () => {
   const email = document.getElementById('email-input').value.trim();
   const password = document.getElementById('password-input').value;
@@ -707,14 +689,11 @@ document.getElementById('signup-btn').addEventListener('click', async () => {
   alert('Signup successful! A confirmation email was sent.');
 });
 
-/* --------------------------------------------------------------
-   After a successful login – set UI & load data
-   -------------------------------------------------------------- */
+/* After login */
 async function afterLogin() {
   const { data: { user } } = await supabase.auth.getUser();
   if (!user) return;
 
-  // Fetch role claim – we stored it in the JWT's `role` claim
   const { data: { role } } = await supabase
     .from('user_roles')
     .select('roles(name)')
@@ -723,9 +702,8 @@ async function afterLogin() {
 
   const userRole = role?.roles?.name || 'student';
 
-  // ---- UI adjustments ----
-  hide(welcomeSection);
-  show(dashboard);
+  welcomeSection.style.display = 'none';
+  dashboard.style.display = 'block';
   
   document.getElementById('user-email').textContent = user.email;
   document.getElementById('user-role').textContent = userRole;
@@ -735,15 +713,8 @@ async function afterLogin() {
     location.reload();
   });
 
-  // ---- Teacher panel visibility ----
-  if (userRole === 'admin' || userRole === 'teacher') teacherPanel.classList.add('active');
-  else teacherPanel.classList.remove('active');
-
-  // ---- Load subjects & materials ----
-  await loadSubjects(user.id, userRole);
-
-  // ---- Create subject (teacher only) ----
   if (userRole === 'admin' || userRole === 'teacher') {
+    teacherPanel.classList.add('active');
     document.getElementById('create-subject').addEventListener('click', async () => {
       const title = document.getElementById('subject-title').value.trim();
       const description = document.getElementById('subject-desc').value.trim();
@@ -764,14 +735,13 @@ async function afterLogin() {
       await loadSubjects(user.id, userRole);
     });
   }
+
+  await loadSubjects(user.id, userRole);
 }
 
-/* --------------------------------------------------------------
-   Load subjects visible to the logged‑in user
-   -------------------------------------------------------------- */
+/* Load subjects */
 async function loadSubjects(userId, role) {
   showLoader();
-  // 1️⃣ Get subjects (students see only enrolled ones, teachers see all they created)
   let subjectsQuery;
   if (role === 'admin' || role === 'teacher') {
     subjectsQuery = supabase.from('subjects')
@@ -816,7 +786,6 @@ async function loadSubjects(userId, role) {
     subjectList.appendChild(card);
   }
 
-  // Attach handlers for upload / enrol buttons
   document.querySelectorAll('.upload-btn').forEach(btn => {
     btn.addEventListener('click', () => openUploadModal(btn.dataset.sub));
   });
@@ -824,15 +793,12 @@ async function loadSubjects(userId, role) {
     btn.addEventListener('click', () => openEnrolModal(btn.dataset.sub));
   });
 
-  // Load materials for each subject
   for (const sub of subjects) {
     loadMaterialsForSubject(sub.id, userId, role);
   }
 }
 
-/* --------------------------------------------------------------
-   Load materials belonging to a subject (show only if user can see)
-   -------------------------------------------------------------- */
+/* Load materials */
 async function loadMaterialsForSubject(subjectId, userId, role) {
   const { data: mats, error } = await supabase.from('materials')
     .select('id,title,description,mime_type,size_bytes,uploaded_at')
@@ -844,23 +810,30 @@ async function loadMaterialsForSubject(subjectId, userId, role) {
   if (!listEl) return;
   listEl.innerHTML = '';
 
+  if (!mats || mats.length === 0) {
+    listEl.innerHTML = '<li><em>No materials uploaded yet</em></li>';
+    return;
+  }
+
   for (const m of mats) {
     const li = document.createElement('li');
     li.className = 'material-item';
+    const dateStr = new Date(m.uploaded_at).toLocaleDateString();
+    const sizeKB = Math.round(m.size_bytes/1024);
+    const markDoneBtn = role === 'student' ? '<i class="fas fa-check"></i> Mark Done' : '<i class="fas fa-check-double"></i> Done';
+    
     li.innerHTML = `
-      <div class="material-header">
-        <div>
-          <div class="material-title"><i class="fas fa-file"></i> ${m.title}</div>
-        <p class="text-xs text-gray-500">${m.description || ''}</p>
-        <p class="text-xs text-gray-400">
-          ${new Date(m.uploaded_at).toLocaleDateString()} • ${Math.round(m.size_bytes/1024)} KB
-        </p>
+      <div>
+        <div class="material-title"><i class="fas fa-file"></i> ${m.title}</div>
+        <p style="color: var(--gray); font-size: 0.9rem; margin-top: 5px;">${m.description || ''}</p>
+        <div class="material-meta">
+          <span><i class="fas fa-calendar"></i> ${dateStr}</span>
+          <span><i class="fas fa-database"></i> ${sizeKB} KB</span>
+        </div>
       </div>
-      <div class="flex items-center gap-2">
+      <div class="material-actions">
         <button data-material="${m.id}" class="btn-material download"><i class="fas fa-download"></i> Download</button>
-        <button data-material="${m.id}" class="btn-material complete">
-          ${role === 'student' ? '<i class="fas fa-check"></i> Mark Done' : '<i class="fas fa-check-double"></i> Done'}
-        </button>
+        <button data-material="${m.id}" class="btn-material complete">${markDoneBtn}</button>
       </div>
     `;
     listEl.appendChild(li);
@@ -877,7 +850,6 @@ async function loadMaterialsForSubject(subjectId, userId, role) {
     });
   });
 
-  // Mark‑as‑complete (students only)
   if (role === 'student') {
     listEl.querySelectorAll('.complete').forEach(btn => {
       btn.addEventListener('click', async () => {
@@ -893,9 +865,7 @@ async function loadMaterialsForSubject(subjectId, userId, role) {
   }
 }
 
-/* --------------------------------------------------------------
-   Upload material modal (teacher only)
-   -------------------------------------------------------------- */
+/* Upload modal */
 function openUploadModal(subjectId) {
   const title = prompt('Material title:');
   if (!title) return;
@@ -908,11 +878,9 @@ function openUploadModal(subjectId) {
     if (!file) return;
     showLoader();
 
-    // 1️⃣ Create a path inside the bucket: userId/subjectId/fileName
     const { data: { user } } = await supabase.auth.getUser();
     const path = `${user?.id}/${subjectId}/${Date.now()}_${file.name}`;
 
-    // 2️⃣ Upload directly to Supabase storage
     const { error: upErr } = await supabase.storage
       .from('lms-materials')
       .upload(path, file, { upsert: false, contentType: file.type });
@@ -921,7 +889,6 @@ function openUploadModal(subjectId) {
       hideLoader(); return alert(upErr.message);
     }
 
-    // 3️⃣ Insert metadata row in `materials`
     const { error: insErr } = await supabase.from('materials').insert({
       subject_id: subjectId,
       title,
@@ -935,23 +902,19 @@ function openUploadModal(subjectId) {
     hideLoader();
     if (insErr) return alert(insErr.message);
     alert('Material uploaded!');
-    // reload subject list to show the new file
     const { data: { user: curUser } } = await supabase.auth.getUser();
     await loadSubjects(curUser?.id, curUser?.app_metadata?.role ?? 'student');
   };
   fileInput.click();
 }
 
-/* --------------------------------------------------------------
-   Enrol student modal (admin / teacher)
-   -------------------------------------------------------------- */
+/* Enrol modal */
 async function openEnrolModal(subjectId) {
   const email = prompt('Enter student e‑mail to enrol:');
   if (!email) return;
 
   showLoader();
 
-  // 1️⃣ Find (or create) the user
   const { data: existing, error: findErr } = await supabase
     .from('auth.users')
     .select('id')
@@ -962,7 +925,6 @@ async function openEnrolModal(subjectId) {
   if (existing) {
     userId = existing.id;
   } else {
-    // If the user does not exist, create a password‑less account
     const { data: created, error: createErr } = await supabase.auth.admin.createUser({
       email,
       email_confirm: true,
@@ -971,12 +933,10 @@ async function openEnrolModal(subjectId) {
       hideLoader(); return alert(createErr.message);
     }
     userId = created.id;
-    // Give them the "student" role automatically
     const { data: role } = await supabase.from('roles').select('id').eq('name', 'student').single();
     await supabase.from('user_roles').insert({ user_id: userId, role_id: role.id });
   }
 
-  // 2️⃣ Insert enrolment row
   const { error: enrolErr } = await supabase.from('enrolments')
     .upsert({ user_id: userId, subject_id: subjectId })
     .eq('user_id', userId)
@@ -987,15 +947,12 @@ async function openEnrolModal(subjectId) {
   alert(`Student ${email} enrolled successfully.`);
 }
 
-/* --------------------------------------------------------------
-   Auto‑login on page load (if session persisted)
-   -------------------------------------------------------------- */
+/* Auto-login */
 async function init() {
   const { data: { session } } = await supabase.auth.getSession();
   if (session) await afterLogin();
 }
 init();
-
 </script>
 </body>
 </html>
