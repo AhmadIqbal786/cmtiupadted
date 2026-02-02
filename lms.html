@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>CMTI – Learning Management System</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* --------------------------------------------------------------
+   CMTI colour palette
+   -------------------------------------------------------------- */
+:root{
+  --primary:#0a4f9c;      /* dark blue – header, buttons */
+  --accent:#ff7a00;       /* orange – highlights */
+  --bg:#f5f8fb;          /* light gray background */
+  --text:#212529;
+  --card-bg:#ffffff;
+}
+body{
+  margin:0; font-family:Helvetica,Arial,sans-serif;
+  background:var(--bg); color:var(--text);
+}
+a{color:var(--primary); text-decoration:none;}
+a:hover{opacity:.8;}
+h1,h2,h3{margin:0; line-height:1.2;}
+.container{max-width:1200px;margin:auto;padding:1rem;}
+/* --------------------------------------------------------------
+   Layout
+   -------------------------------------------------------------- */
+header{
+  background:var(--primary); color:#fff; padding:1rem 0;
+  text-align:center; font-size:1.5rem; font-weight:600;
+}
+nav{display:flex; justify-content:center; gap:1rem; margin-top:.5rem;}
+nav button{
+  background:transparent;border:none;color:#fff;padding:.5rem 1rem;
+  cursor:pointer; font-size:1rem;
+}
+nav button.active{border-bottom:2px solid var(--accent);}
+main{padding:2rem 0;}
+section{display:none;}
+section.active{display:block;}
+/* --------------------------------------------------------------
+   Cards – catalogue & lessons
+   -------------------------------------------------------------- */
+.card{
+  background:var(--card-bg); border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,.1);
+  overflow:hidden; margin:1rem; flex:1 1 calc(33% - 2rem);
+  display:flex; flex-direction:column;
+}
+.card img{width:100%;height:150px;object-fit:cover;}
+.card .content{padding:1rem; flex:1;}
+.card .title{font-size:1.2rem;margin-bottom:.5rem;}
+.card .btn{
+  background:var(--primary); color:#fff; border:none;
+  padding:.5rem 1rem; border-radius:4px; cursor:pointer;
+  margin-top:auto;
+}
+.card .btn:hover{background:var(--accent);}
+/* --------------------------------------------------------------
+   Responsive grid
+   -------------------------------------------------------------- */
+.grid{
+  display:flex; flex-wrap:wrap; justify-content:center;
+}
+/* --------------------------------------------------------------
+   Course view
+   -------------------------------------------------------------- */
+.course-header{
+  display:flex; flex-direction:column; gap:.5rem;
+}
+.course-header h2{font-size:2rem; color:var(--primary);}
+.course-header .meta{font-size:.9rem;color:#666;}
+.video-wrapper{
+  position:relative;padding-top:56.25%;margin:1rem 0;
+}
+.video-wrapper iframe{
+  position:absolute; top:0; left:0; width:100%; height:100%;
+  border:none;
+}
+.quiz{
+  background:var(--card-bg); padding:1rem; border-radius:8px;
+  box-shadow:0 1px 4px rgba(0,0,0,.1); margin-top:1rem;
+}
+.quiz h3{margin-bottom:.5rem;}
+.quiz label{display:block;margin:0.5rem 0;}
+.quiz button{
+  background:var(--accent); color:#fff; border:none;
+  padding:.5rem 1rem; border-radius:4px; cursor:pointer;
+}
+.progress{
+  background:#e9ecef; border-radius:4px; overflow:hidden;
+  margin-top:.5rem;height:12px;
+}
+.progress div{
+  background:var(--primary); height:100%; width:0;
+}
+footer{
+  background:#212529; color:#fff; text-align:center;
+  padding:1rem 0; margin-top:2rem;font-size:.9rem;
+}
+
+/* --------------------------------------------------------------
+   Mobile tweaks
+   -------------------------------------------------------------- */
+@media(max-width:768px){
+  .card{flex:1 1 calc(48% - 2rem);}
+}
+@media(max-width:480px){
+  .card{flex:1 1 100%;}
+  nav{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  CMTI Learning Management System
+  <nav>
+    <button id="nav-login" class="active">Login</button>
+    <button id="nav-catalog">Courses</button>
+    <button id="nav-profile">Profile</button>
+  </nav>
+</header>
+
+<main class="container">
+
+  <!-- ====================== LOGIN / REGISTER ====================== -->
+  <section id="section-login" class="active">
+    <h2>Welcome! Please sign in or create an account.</h2>
+
+    <div style="max-width:400px;margin:auto;">
+      <label>Email</label>
+      <input type="email" id="login-email" style="width:100%;padding:.5rem;margin-bottom:.5rem;">
+      <label>Password</label>
+      <input type="password" id="login-pass" style="width:100%;padding:.5rem;margin-bottom:1rem;">
+
+      <button id="btn-login" style="background:var(--primary);color:#fff;padding:.5rem 1rem;border:none;border-radius:4px;cursor:pointer;width:100%;">Login</button>
+      <p style="text-align:center;margin:1rem 0;">or</p>
+      <button id="btn-register" style="background:var(--accent);color:#fff;padding:.5rem 1rem;border:none;border-radius:4px;cursor:pointer;width:100%;">Create Account</button>
+      <p id="login-msg" style="color:red;margin-top:.5rem;"></p>
+    </div>
+  </section>
+
+  <!-- ====================== COURSE CATALOG ====================== -->
+  <section id="section-catalog">
+    <h2>All Courses</h2>
+    <div class="grid" id="catalog-grid">
+      <!-- cards will be injected by JS -->
+    </div>
+  </section>
+
+  <!-- ====================== COURSE VIEW ====================== -->
+  <section id="section-course">
+    <button id="btn-back" style="margin-bottom:1rem;background:var(--primary);color:#fff;padding:.3rem .8rem;border:none;border-radius:4px;">← Back to catalogue</button>
+    <div id="course-content"></div>
+  </section>
+
+  <!-- ====================== PROFILE ====================== -->
+  <section id="section-profile">
+    <h2>Your Profile</h2>
+    <p><strong>Email:</strong> <span id="profile-email"></span></p>
+    <p><strong>Enrolled courses:</strong> <ul id="profile-courses"></ul></p>
+    <button id="btn-logout" style="background:#dc3545;color:#fff;padding:.5rem 1rem;border:none;border-radius:4px;cursor:pointer;">Logout</button>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 CMTI – All Rights Reserved
+</footer>
+
+<script>
+/* --------------------------------------------------------------
+   SIMPLE IN‑MEMORY / LOCALSTORAGE DATA LAYER
+   -------------------------------------------------------------- */
+const STORAGE_KEY = 'cmti_lms_users';
+const CURRENT_USER_KEY = 'cmti_lms_current_user';
+
+// Load users from localStorage or init empty array
+function loadUsers(){ return JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]'); }
+function saveUsers(users){ localStorage.setItem(STORAGE_KEY, JSON.stringify(users)); }
+
+// Get / set the logged‑in user
+function getCurrentUser(){ return JSON.parse(sessionStorage.getItem(CURRENT_USER_KEY)||null); }
+function setCurrentUser(user){ sessionStorage.setItem(CURRENT_USER_KEY, JSON.stringify(user)); }
+function clearCurrentUser(){ sessionStorage.removeItem(CURRENT_USER_KEY); }
+
+/* --------------------------------------------------------------
+   DEMO COURSE DATA (replace with a fetch from a real API later)
+   -------------------------------------------------------------- */
+const demoCourses = [
+  {
+    id: 1,
+    slug:'startup-fundamentals',
+    title:'Startup Fundamentals',
+    thumbnail:'https://images.unsplash.com/photo-1494173853739-c21f58b16055?auto=format&fit=crop&w=800&q=60',
+    video:'https://www.youtube.com/embed/pzQvBpGngbU',   // YouTube embed (any public video)
+    pdf:'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf',
+    quiz:[
+      {q:'What is the first step in validating an idea?', a:'Talk to potential customers', o:['Write a business plan','Launch a product','Talk to potential customers']},
+      {q:'Which canvas component describes revenue streams?', a:'Revenue', o:['Value Proposition','Channels','Revenue']},
+    ]
+  },
+  {
+    id: 2,
+    slug:'cloud-native-basics',
+    title:'Cloud‑Native Basics',
+    thumbnail:'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=60',
+    video:'https://www.youtube.com/embed/0qKp9CJv6sY',
+    pdf:'https://www.africau.edu/images/default/sample.pdf',
+    quiz:[
+      {q:'What does “IaaS” stand for?', a:'Infrastructure as a Service', o:['Internet as a Service','Infrastructure as a Service','Integration as a Service']},
+      {q:'Which service is a container orchestration platform?', a:'Kubernetes', o:['Docker','Kubernetes','VMware']},
+    ]
+  }
+];
+
+/* --------------------------------------------------------------
+   UI HELPERS
+   -------------------------------------------------------------- */
+function $(id){ return document.getElementById(id); }
+function show(section){ 
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  $(section).classList.add('active');
+}
+function activateNav(btnId){
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  $(btnId).classList.add('active');
+}
+
+/* --------------------------------------------------------------
+   AUTH LOGIC
+   -------------------------------------------------------------- */
+function register(email,password){
+  const users = loadUsers();
+  if(users.find(u=>u.email===email)){
+    return 'User already exists';
+  }
+  users.push({email,password,enrolled:[]});
+  saveUsers(users);
+  return null;
+}
+function login(email,password){
+  const users = loadUsers();
+  const u = users.find(u=>u.email===email && u.password===password);
+  if(!u) return 'Invalid credentials';
+  setCurrentUser({email:u.email});
+  return null;
+}
+
+/* --------------------------------------------------------------
+   RENDER CATALOG
+   -------------------------------------------------------------- */
+function renderCatalog(){
+  const grid = $('catalog-grid');
+  grid.innerHTML=''; // clear
+  demoCourses.forEach(c=>{
+    const card = document.createElement('div');
+    card.className='card';
+    card.innerHTML=`
+      <img src="${c.thumbnail}" alt="${c.title}">
+      <div class="content">
+        <div class="title">${c.title}</div>
+        <button class="btn" data-id="${c.id}">Open</button>
+      </div>`;
+    grid.appendChild(card);
+  });
+  // attach click handler
+  grid.querySelectorAll('button[data-id]').forEach(btn=>{
+    btn.addEventListener('click',()=>openCourse(btn.dataset.id));
+  });
+}
+
+/* --------------------------------------------------------------
+   COURSE VIEW + ENROLL + PROGRESS
+   -------------------------------------------------------------- */
+function openCourse(courseId){
+  const course = demoCourses.find(c=>c.id==courseId);
+  if(!course) return;
+  // remember that user has “opened” this course
+  const user = getCurrentUser();
+  if(user){
+    const users = loadUsers();
+    const u = users.find(x=>x.email===user.email);
+    if(u && !u.enrolled.includes(course.id)){
+      u.enrolled.push(course.id);
+      saveUsers(users);
+    }
+  }
+
+  const container = $('course-content');
+  container.innerHTML=''; // clear
+  // header
+  const header = document.createElement('div');
+  header.className='course-header';
+  header.innerHTML = `
+    <h2>${course.title}</h2>
+    <div class="meta">Course ID: ${course.id}</div>
+    <div class="progress"><div id="prog-bar"></div></div>
+    <div id="prog-text" style="font-size:.9rem;margin-top:.3rem;">Progress: 0%</div>
+  `;
+  container.appendChild(header);
+
+  // video
+  const vidWrapper = document.createElement('div');
+  vidWrapper.className='video-wrapper';
+  vidWrapper.innerHTML = `<iframe src="${course.video}" allowfullscreen></iframe>`;
+  container.appendChild(vidWrapper);
+
+  // PDF download link
+  const pdfLink = document.createElement('a');
+  pdfLink.href = course.pdf;
+  pdfLink.target = '_blank';
+  pdfLink.style = 'display:inline-block;margin:1rem 0;color:var(--primary);';
+  pdfLink.textContent = '📄 Download PDF guide';
+  container.appendChild(pdfLink);
+
+  // Quiz
+  if(course.quiz && course.quiz.length){
+    const quizDiv = document.createElement('div');
+    quizDiv.className='quiz';
+    quizDiv.innerHTML = `<h3>Quiz – test your knowledge</h3>`;
+    course.quiz.forEach((q,i)=>{
+      const qDiv = document.createElement('div');
+      qDiv.innerHTML = `
+        <p><strong>${i+1}. ${q.q}</strong></p>
+        ${q.o.map((opt,j)=>`<label><input type="radio" name="q${i}" value="${opt}"> ${opt}</label>`).join('')}
+      `;
+      quizDiv.appendChild(qDiv);
+    });
+    const btn = document.createElement('button');
+    btn.textContent='Submit Quiz';
+    btn.addEventListener('click',()=>gradeQuiz(course));
+    quizDiv.appendChild(btn);
+    container.appendChild(quizDiv);
+  }
+
+  // Restore saved progress (percentage of video watch is not tracked – we just store quiz score)
+  const saved = localStorage.getItem(`cmti_progress_${course.id}`);
+  if(saved){
+    const data = JSON.parse(saved);
+    updateProgressBar(data.score);
+  }
+
+  show('section-course');
+  activateNav('nav-catalog');
+}
+
+/* --------------------------------------------------------------
+   QUIZ GRADE + SAVE PROGRESS
+   -------------------------------------------------------------- */
+function gradeQuiz(course){
+  const answers = [];
+  const total = course.quiz.length;
+  let correct = 0;
+  course.quiz.forEach((q,i)=>{
+    const radios = document.getElementsByName(`q${i}`);
+    let selected = '';
+    radios.forEach(r=>{
+      if(r.checked) selected=r.value;
+    });
+    answers.push(selected);
+    if(selected===q.a) correct++;
+  });
+  const score = Math.round((correct/total)*100);
+  alert(`You scored ${score}% (${correct}/${total} correct)`);
+  // Save to localStorage
+  localStorage.setItem(`cmti_progress_${course.id}`, JSON.stringify({score}));
+  updateProgressBar(score);
+}
+
+/* --------------------------------------------------------------
+   PROGRESS BAR UI
+   -------------------------------------------------------------- */
+function updateProgressBar(percent){
+  const bar = $('#prog-bar');
+  const txt = $('#prog-text');
+  if(bar){
+    bar.style.width = percent+'%';
+    txt.textContent = `Progress: ${percent}%`;
+  }
+}
+
+/* --------------------------------------------------------------
+   PROFILE PAGE
+   -------------------------------------------------------------- */
+function renderProfile(){
+  const user = getCurrentUser();
+  if(!user){ show('section-login'); activateNav('nav-login'); return; }
+  $('profile-email').textContent = user.email;
+  const list = $('profile-courses');
+  list.innerHTML='';
+  const users = loadUsers();
+  const dbUser = users.find(u=>u.email===user.email);
+  if(dbUser && dbUser.enrolled.length){
+    dbUser.enrolled.forEach(id=>{
+      const c = demoCourses.find(x=>x.id===id);
+      if(c){
+        const li=document.createElement('li');
+        li.innerHTML=`<a href="#" data-id="${c.id}" style="color:var(--primary);">${c.title}</a>`;
+        list.appendChild(li);
+      }
+    });
+    // click to reopen a course from profile
+    list.querySelectorAll('a[data-id]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        e.preventDefault();
+        openCourse(a.dataset.id);
+      });
+    });
+  }else{
+    list.innerHTML='<li>No enrolments yet.</li>';
+  }
+  show('section-profile');
+  activateNav('nav-profile');
+}
+
+/* --------------------------------------------------------------
+   EVENT LISTENERS – NAVIGATION & AUTH
+   -------------------------------------------------------------- */
+document.addEventListener('DOMContentLoaded',()=>{
+  // navigation buttons
+  $('nav-login').addEventListener('click',()=>{show('section-login');activateNav('nav-login');});
+  $('nav-catalog').addEventListener('click',()=>{renderCatalog();show('section-catalog');activateNav('nav-catalog');});
+  $('nav-profile').addEventListener('click',renderProfile);
+
+  // login / register actions
+  $('btn-login').addEventListener('click',()=>{
+    const email=$('login-email').value.trim();
+    const pass=$('login-pass').value;
+    const err=login(email,pass);
+    if(err){$('login-msg').textContent=err;return;}
+    afterAuth();
+  });
+  $('btn-register').addEventListener('click',()=>{
+    const email=$('login-email').value.trim();
+    const pass=$('login-pass').value;
+    const err=register(email,pass);
+    if(err){$('login-msg').textContent=err;return;}
+    alert('Account created – you can now log in.');
+  });
+
+  // back button from course view
+  $('btn-back').addEventListener('click',()=>{renderCatalog();show('section-catalog');activateNav('nav-catalog');});
+
+  // logout
+  $('btn-logout').addEventListener('click',()=>{
+    clearCurrentUser();
+    alert('Logged out');
+    show('section-login');
+    activateNav('nav-login');
+  });
+
+  // auto‑login if a session already exists
+  if(getCurrentUser()){
+    renderCatalog();
+    show('section-catalog');
+    activateNav('nav-catalog');
+  }else{
+    show('section-login');
+    activateNav('nav-login');
+  }
+});
+
+/* --------------------------------------------------------------
+   AFTER SUCCESSFUL AUTH – init home page
+   -------------------------------------------------------------- */
+function afterAuth(){
+  renderCatalog();
+  show('section-catalog');
+  activateNav('nav-catalog');
+}
+</script>
+</body>
+</html>
