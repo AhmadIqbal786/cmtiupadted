@@ -1,5 +1,3 @@
-This is a complete, ready-to-deploy HTML document that serves as a central hub for all the free tools on **cmti.pk**. It showcases 20+ tools with detailed cards, includes two fully functional interactive tools, and is optimized for SEO, conversions, and mobile devices.
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -358,7 +356,6 @@ This is a complete, ready-to-deploy HTML document that serves as a central hub f
     </div>
     <button class="dark-toggle" id="darkModeToggle"><i class="fas fa-moon"></i> Dark mode</button>
   </div>
-
   <!-- search + filter -->
   <div class="filter-bar">
     <div class="search-box">
@@ -376,7 +373,6 @@ This is a complete, ready-to-deploy HTML document that serves as a central hub f
       <button data-cat="utility" class="cat-btn">⚙️ Utility</button>
     </div>
   </div>
-
   <!-- Featured Interactive Tools (2 quick examples) -->
   <div class="featured-grid">
     <div class="interactive-card">
@@ -405,12 +401,10 @@ This is a complete, ready-to-deploy HTML document that serves as a central hub f
       </div>
     </div>
   </div>
-
   <!-- tools grid will be injected via JS from dataset (for filtering & easy management) but we keep static fallback? 
   We'll build using JS array for maintainability & SEO is fine because content is rendered. Also ensure no content loss -->
   <h2 class="section-title"><i class="fas fa-tools"></i> All Free Tools</h2>
   <div id="toolsGridContainer" class="tools-grid"></div>
-
   <!-- CTA Banner for Conversion -->
   <div class="cta-banner" style="text-align: center;">
     <h3>🚀 Ready to master coding & freelancing?</h3>
@@ -418,7 +412,6 @@ This is a complete, ready-to-deploy HTML document that serves as a central hub f
     <a href="/courses/it-diploma" class="btn-primary" style="display: inline-block; margin-top: 0.8rem;">📘 Explore Courses →</a>
     <a href="https://wa.me/923000000000?text=I%20want%20to%20learn%20IT%20skills" class="btn-outline" style="margin-left: 1rem;"><i class="fab fa-whatsapp"></i> WhatsApp Consultation</a>
   </div>
-
   <!-- FAQ Schema section -->
   <div class="faq-section">
     <h2>Frequently Asked Questions</h2>
@@ -443,13 +436,11 @@ This is a complete, ready-to-deploy HTML document that serves as a central hub f
       <div>Enroll in CMTI's Web Development & Python courses to build real-world projects. Check our programs!</div>
     </div>
   </div>
-
   <footer>
     <p>© 2026 Coded Mind Technology Incubator (CMTI) — Empowering Pakistan's digital future.</p>
     <p><a href="/privacy" style="color:#2563eb;">Privacy Policy</a> | <a href="/contact" style="color:#2563eb;">Contact</a></p>
   </footer>
 </div>
-
 <script>
   // Tool database (20+ tools exactly matching SEO strategy)
   const toolsData = [
@@ -474,7 +465,6 @@ This is a complete, ready-to-deploy HTML document that serves as a central hub f
     { name: "WhatsApp Link Generator", keyword: "whatsapp link generator", category: "social", desc: "Generate wa.me links without saving contact.", features: ["Prefilled text","Copy link"], url: "/free-tools/whatsapp-link", icon: "fab fa-whatsapp" },
     { name: "Binary to Text Translator", keyword: "binary translator", category: "education", desc: "Binary ⇄ Text converter for CS students.", features: ["ASCII","Copy output"], url: "/free-tools/binary-translator", icon: "fas fa-microchip" }
   ];
-
   function renderTools(filterCategory = "all", searchTerm = "") {
     const container = document.getElementById("toolsGridContainer");
     if(!container) return;
@@ -507,7 +497,6 @@ This is a complete, ready-to-deploy HTML document that serves as a central hub f
     });
     container.innerHTML = html;
   }
-
   // Percentage calculator interactive
   const calcBtn = document.getElementById("calcPercentBtn");
   const percentResultDiv = document.getElementById("percentResult");
@@ -556,7 +545,6 @@ This is a complete, ready-to-deploy HTML document that serves as a central hub f
       alert("HEX copied: " + hexResult.innerText);
     });
   }
-
   // filtering logic
   let currentCategory = "all";
   let currentSearch = "";
@@ -580,7 +568,6 @@ This is a complete, ready-to-deploy HTML document that serves as a central hub f
   }
   searchBtn?.addEventListener("click", performSearch);
   searchInput?.addEventListener("keyup", (e) => { if(e.key === "Enter") performSearch(); });
-  
   // Dark mode
   const darkToggle = document.getElementById("darkModeToggle");
   if(localStorage.getItem("darkMode") === "enabled") {
@@ -591,10 +578,8 @@ This is a complete, ready-to-deploy HTML document that serves as a central hub f
     if(document.body.classList.contains("dark")) localStorage.setItem("darkMode", "enabled");
     else localStorage.setItem("darkMode", "disabled");
   });
-  
   // initial render
   renderTools("all", "");
-  
   // Schema FAQ markup (add dynamic script)
   const faqSchema = {
     "@context": "https://schema.org",
@@ -611,7 +596,6 @@ This is a complete, ready-to-deploy HTML document that serves as a central hub f
   scriptFaq.type = 'application/ld+json';
   scriptFaq.textContent = JSON.stringify(faqSchema);
   document.head.appendChild(scriptFaq);
-  
   // SoftwareApplication schema for main hub? Optional but global
   const appSchema = {
     "@context": "https://schema.org",
