@@ -415,6 +415,151 @@
             color: var(--primary);
         }
 
+        /* ===== CEO MESSAGE SECTION ===== */
+        .ceo-message {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .ceo-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+        }
+
+        .ceo-image-wrapper {
+            position: relative;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .ceo-image-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop') center/cover;
+            opacity: 0.9;
+        }
+
+        .ceo-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(26, 54, 93, 0.9), rgba(44, 82, 130, 0.7));
+        }
+
+        .ceo-image-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .ceo-profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .ceo-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: white;
+        }
+
+        .ceo-title {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0;
+        }
+
+        .ceo-content {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .ceo-greeting {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .ceo-heading {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            line-height: 1.3;
+        }
+
+        .ceo-text {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        .ceo-signature {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .ceo-signature h4 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .ceo-signature p {
+            color: var(--gray);
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .ceo-container {
+                grid-template-columns: 1fr;
+            }
+
+            .ceo-image-wrapper {
+                padding: 60px 30px;
+                min-height: 300px;
+            }
+
+            .ceo-content {
+                padding: 40px 30px;
+            }
+
+            .ceo-heading {
+                font-size: 1.5rem;
+            }
+        }
+
         /* ===== PROGRAMS SECTION ===== */
         .programs {
             padding: 100px 0;
@@ -1077,6 +1222,41 @@
             </div>
         </div>
     </section>
+    <!-- CEO Message Section -->
+    <section class="ceo-message">
+        <div class="container">
+            <div class="ceo-container">
+                <div class="ceo-image-wrapper">
+                    <div class="ceo-image-content">
+                        <img src="asdf.jpg" alt="Ahmad Iqbal - CEO" class="ceo-profile-img">
+                        <h3 class="ceo-name">Ahmad Iqbal</h3>
+                        <p class="ceo-title">Founder & CEO</p>
+                    </div>
+                </div>
+                <div class="ceo-content">
+                    <span class="ceo-greeting">Message from the CEO</span>
+                    <h2 class="ceo-heading">Welcome to Coded Mind Technology Incubator (CMTI)</h2>
+                    
+                    <p class="ceo-text">
+                        Our mission is to provide practical, career-focused education that empowers students with real-world skills in IT, freelancing, and digital technologies.
+                    </p>
+                    
+                    <p class="ceo-text">
+                        We believe education should lead to opportunity. At CMTI, we focus on skill development that helps students build careers, start freelancing, and achieve financial independence.
+                    </p>
+                    
+                    <p class="ceo-text">
+                        I invite you to join CMTI and become part of a future where learning leads to earning.
+                    </p>
+                    
+                    <div class="ceo-signature">
+                        <h4>Ahmad Iqbal</h4>
+                        <p>Founder & CEO<br>Coded Mind Technology Incubator (CMTI)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Stats Section -->
     <section class="stats">
@@ -1159,6 +1339,8 @@
             </div>
         </div>
     </section>
+
+    
 
     <!-- Programs Section -->
     <section class="programs">
