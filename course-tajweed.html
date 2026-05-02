@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tajweed Programming Course | Coded Mind Technology Incubator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== CSS RESET & VARIABLES ===== */
+        :root {
+            --primary: #306998;
+            --primary-dark: #25567c;
+            --secondary: #FFD43B;
+            --accent: #4B8BBE;
+            --light: #f8fafc;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            text-align: center;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--gradient);
+            color: white;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .crystal-card {
+            background: rgba(255, 255, 255, 0.8);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: var(--transition);
+            overflow: hidden;
+        }
+
+        .crystal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ===== HEADER ===== */
+        .new-header {
+            background: rgba(255, 255, 255, 0.95);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 600;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu a.active::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--dark);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+
+        .mobile-menu {
+            display: none;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .mobile-nav a {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            font-weight: 600;
+        }
+
+        /* ===== COURSE HERO SECTION ===== */
+        .course-hero {
+            background: var(--gradient);
+            color: white;
+            padding: 150px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-visual {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-1 {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 5%;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+
+        .shape-3 {
+            width: 100px;
+            height: 100px;
+            bottom: 10%;
+            left: 15%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .course-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        /* ===== COURSE OVERVIEW SECTION ===== */
+        .course-overview {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .overview-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .overview-card {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .overview-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .overview-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        /* ===== COURSE MODULES SECTION ===== */
+        .course-modules {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .modules-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .module-card {
+            overflow: hidden;
+        }
+
+        .module-header {
+            background: var(--gradient);
+            color: white;
+            padding: 20px;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .module-content {
+            padding: 25px;
+        }
+
+        .module-content ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .module-content li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .module-content li:last-child {
+            border-bottom: none;
+        }
+
+        .module-content li:before {
+            content: '🐍';
+            position: absolute;
+            left: 0;
+            top: 10px;
+        }
+
+        /* ===== PROJECTS SECTION ===== */
+        .projects-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            overflow: hidden;
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        /* ===== CAREER SECTION ===== */
+        .career-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .career-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .career-card {
+            padding: 30px;
+        }
+
+        .career-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .salary {
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        /* ===== INSTRUCTOR SECTION ===== */
+        .instructor-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .instructor-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .instructor-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .instructor-image img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        .instructor-info {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .instructor-info h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* ===== TESTIMONIALS SECTION ===== */
+        .testimonials-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            padding: 30px;
+            position: relative;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .testimonial-text:before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--primary);
+            position: absolute;
+            left: -10px;
+            top: -20px;
+            opacity: 0.3;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* ===== FAQ SECTION ===== */
+        .faq-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: rgba(48, 105, 152, 0.05);
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background: rgba(48, 105, 152, 0.1);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-active .faq-answer {
+            max-height: 200px;
+            padding: 20px;
+        }
+
+        /* ===== PAYMENT SECTION ===== */
+        .payment-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .payment-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .payment-card {
+            padding: 30px;
+        }
+
+        .payment-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* ===== REGISTRATION SECTION ===== */
+        .registration-section {
+            padding: 80px 0;
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+        }
+
+        .registration-section .section-title,
+        .registration-section .section-subtitle {
+            color: white;
+        }
+
+        .form-container {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-top: 30px;
+        }
+
+       /* ===== FOOTER ===== */
+.site-footer {
+    background: linear-gradient(to right, #2c3e50, #4a6580);
+    color: #fff;
+    padding: 50px 0 0;
+    margin-top: 80px;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--glass-border);
+}
+
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #4d6883, #4a6580);
+    z-index: 2;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-col {
+    margin-bottom: 30px;
+    background: linear-gradient(to right, #4d6883, #4a6580);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.footer-logo img {
+    height: 80px;
+    margin-right: 5px;
+}
+
+.footer-logo h3 {
+    font-size: 18px;
+    margin: 0;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.footer-description {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.footer-social h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.3s ease;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icons a:hover {
+    background: var(--primary-gradient);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(110, 69, 226, 0.4);
+}
+
+.footer-col h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ff7e5f;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(to right, #4d6883, #4a6580);
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li:hover {
+    transform: translateX(5px);
+}
+
+.footer-col ul li a {
+    color: #fff;
+    opacity: 0.9;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 5px 0;
+}
+
+.footer-col ul li a:hover {
+    opacity: 1;
+    color: #88d3ce;
+    padding-left: 10px;
+}
+
+.contact-info {
+    margin-bottom: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-item svg {
+    margin-right: 10px;
+    opacity: 0.9;
+}
+
+.contact-item span a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.contact-item span a:hover {
+    opacity: 1;
+    color: #88d3ce;
+}
+
+.newsletter h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: #6e45e2;
+    box-shadow: 0 0 0 2px rgba(110, 69, 226, 0.2);
+}
+
+.newsletter-form button {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    background:linear-gradient(to right, #4d6883, #4a6580);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
+}
+
+.newsletter-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(110, 69, 226, 0.4);
+}
+
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    margin-top: 30px;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.legal-links {
+    display: flex;
+    gap: 20px;
+}
+
+.legal-links a {
+    color: #fff;
+    opacity: 0.8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.legal-links a:hover {
+    opacity: 1;
+    color: #88d3ce;
+}
+
+.copyright {
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .mobile-menu.active {
+                display: block;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .instructor-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .legal-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                width: 95%;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .modules-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="new-header">
+        <div class="container">
+            <div class="header-container">
+                <div class="logo-container">
+                    <img src="logo.png" alt="CodedMind Logo">
+                    <div class="logo-text">Coded Mind <br>Technology Incubator</div>
+                </div>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">Programs</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
+            <div class="mobile-menu">
+                <ul class="mobile-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Programs</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="careers.html">Careers</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Course Hero Section -->
+    <section class="course-hero">
+        <div class="hero-visual">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="course-hero-content">
+                <div class="hero-badge">Beginner to Advanced Program</div>
+                <h1 class="hero-title">Tajweed Programming Course</h1>
+                <p class="hero-description">Master one of the world's most versatile programming languages. From fundamentals to advanced applications, learn Tajweed for web development, data science, automation, and more.</p>
+                <a href="#registration" class="btn">Enroll Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Overview Section -->
+    <section class="course-overview">
+        <div class="container">
+            <h2 class="section-title">Course Overview</h2>
+            
+            <div class="overview-container">
+                <div class="overview-card crystal-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>What You'll Learn</h3>
+                    <p>From Tajweed basics to advanced concepts like web frameworks, data analysis, and automation. Learn object-oriented programming, work with databases, build web applications, and perform data analysis with Pandas and NumPy.</p>
+                </div>
+                
+                <div class="overview-card crystal-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Who This Course Is For</h3>
+                    <p>Beginners with no programming experience, developers from other languages, data analysts, IT professionals, and students preparing for a career in software development or data science.</p>
+                </div>
+                
+                <div class="overview-card crystal-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Course Format</h3>
+                    <p>Self-paced online learning with video lessons, coding exercises, real-world projects, and live Q&A sessions. Accessible on all devices with dedicated support from Tajweed experts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Modules Section -->
+    <section class="course-modules">
+        <div class="container">
+            <h2 class="section-title">Course Modules</h2>
+            
+            <div class="modules-container">
+                <div class="module-card crystal-card">
+                    <div class="module-header">Module 1: Tajweed Fundamentals</div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Introduction to Tajweed and Setup</li>
+                            <li>Variables, Data Types, and Operators</li>
+                            <li>Control Structures (Conditionals, Loops)</li>
+                            <li>Functions and Modules</li>
+                            <li>Basic Input/Output Operations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="module-card crystal-card">
+                    <div class="module-header">Module 2: Data Structures</div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Lists, Tuples, and Dictionaries</li>
+                            <li>Sets and Advanced Data Structures</li>
+                            <li>Comprehensions and Generators</li>
+                            <li>Working with Files (JSON, CSV)</li>
+                            <li>Exception Handling</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="module-card crystal-card">
+                    <div class="module-header">Module 3: Object-Oriented Programming</div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Classes and Objects</li>
+                            <li>Inheritance and Polymorphism</li>
+                            <li>Encapsulation and Abstraction</li>
+                            <li>Special Methods and Operator Overloading</li>
+                            <li>Design Patterns in Tajweed</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="module-card crystal-card">
+                    <div class="module-header">Module 4: Web Development</div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Introduction to Web Frameworks</li>
+                            <li>Flask Fundamentals</li>
+                            <li>Django Basics and MTV Architecture</li>
+                            <li>Working with Databases (SQLite, PostgreSQL)</li>
+                            <li>REST API Development</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="module-card crystal-card">
+                    <div class="module-header">Module 5: Data Science & Analysis</div>
+                    <div class="module-content">
+                        <ul>
+                            <li>NumPy for Numerical Computing</li>
+                            <li>Pandas for Data Manipulation</li>
+                            <li>Data Visualization with Matplotlib & Seaborn</li>
+                            <li>Introduction to Machine Learning with Scikit-learn</li>
+                            <li>Web Scraping with BeautifulSoup</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="module-card crystal-card">
+                    <div class="module-header">Module 6: Advanced Topics & Deployment</div>
+                    <div class="module-content">
+                        <ul>
+                            <li>Testing with PyTest</li>
+                            <li>Virtual Environments and Dependency Management</li>
+                            <li>Concurrency and Parallelism</li>
+                            <li>Deployment to Cloud Platforms</li>
+                            <li>Final Capstone Project</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Projects You'll Build</h2>
+            
+            <div class="projects-container">
+                <div class="project-card crystal-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" alt="Web Application">
+                    </div>
+                    <div class="project-content">
+                        <h3>E-commerce Website</h3>
+                        <p>Build a full-featured online store with Django, including user authentication, product catalog, and payment processing.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card crystal-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Data Analysis">
+                    </div>
+                    <div class="project-content">
+                        <h3>Data Analysis Dashboard</h3>
+                        <p>Create an interactive dashboard for data visualization and analysis using Pandas and Plotly.</p>
+                    </div>
+                </div>
+                
+                <div class="project-card crystal-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?auto=format&fit=crop&w=600&q=80" alt="Automation">
+                    </div>
+                    <div class="project-content">
+                        <h3>Automation Scripts</h3>
+                        <p>Develop practical automation scripts for file management, web scraping, and task scheduling.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Opportunities Section -->
+    <section class="career-section">
+        <div class="container">
+            <h2 class="section-title">Career Opportunities</h2>
+            
+            <div class="career-container">
+                <div class="career-card crystal-card">
+                    <h3>Tajweed Developer</h3>
+                    <div class="salary">Average salary: PKR 80,000 - 150,000 per month</div>
+                    <p>Develop applications, websites, and software solutions using Tajweed.</p>
+                </div>
+                
+                <div class="career-card crystal-card">
+                    <h3>Data Analyst</h3>
+                    <div class="salary">Average salary: PKR 70,000 - 120,000 per month</div>
+                    <p>Analyze and interpret complex data sets to help organizations make informed decisions.</p>
+                </div>
+                
+                <div class="career-card crystal-card">
+                    <h3>Backend Developer</h3>
+                    <div class="salary">Average salary: PKR 90,000 - 160,000 per month</div>
+                    <p>Build server-side logic and databases for web applications.</p>
+                </div>
+                
+                <div class="career-card crystal-card">
+                    <h3>Automation Engineer</h3>
+                    <div class="salary">Average salary: PKR 85,000 - 140,000 per month</div>
+                    <p>Create scripts and tools to automate repetitive tasks and processes.</p>
+                </div>
+                
+                <div class="career-card crystal-card">
+                    <h3>Machine Learning Engineer</h3>
+                    <div class="salary">Average salary: PKR 100,000 - 200,000+ per month</div>
+                    <p>Develop algorithms and models that enable machines to learn and make predictions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructor Section -->
+    <section class="instructor-section">
+        <div class="container">
+            <h2 class="section-title">About The Instructor</h2>
+            
+            <div class="instructor-container">
+                <div class="instructor-image">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Instructor Photo">
+                </div>
+                <div class="instructor-info">
+                    <h3>Dr. Sarah Amjad</h3>
+                    <p>With over 10 years of experience in Tajweed development and data science, Dr. Amjad brings a wealth of knowledge to the classroom. She holds a PhD in Computer Science and has worked with major tech companies on machine learning projects.</p>
+                    <p>Dr. Amjad has published numerous research papers on Tajweed applications in data science and has served as a consultant for Fortune 500 companies implementing Tajweed solutions. She is a regular speaker at international tech conferences.</p>
+                    <p>Her practical approach to teaching combines theoretical foundations with real-world applications, ensuring students gain both knowledge and practical skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Student Testimonials</h2>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card crystal-card">
+                    <div class="testimonial-text">
+                        This Tajweed course completely changed my career trajectory. I started with zero coding experience and within 3 months, I was building web applications. The project-based approach made learning engaging and practical.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
+                        <div>
+                            <strong>Usman Ali</strong>
+                            <p>Junior Tajweed Developer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card crystal-card">
+                    <div class="testimonial-text">
+                        As a business analyst, I needed to automate reports and analyze data more efficiently. This course gave me exactly the skills I needed. The instructors were incredibly supportive and the curriculum was perfectly paced.
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
+                        <div>
+                            <strong>Ayesha Khan</strong>
+                            <p>Data Analyst</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card crystal-card">
+                    <div class="testimonial-text">
+                        The capstone project was the highlight for me. Building a complete web application from scratch gave me the confidence to start freelancing. I've already completed two projects for clients!
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
+                        <div>
+                            <strong>Bilal Ahmed</strong>
+                            <p>Freelance Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do I need programming experience for this course?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        No prior programming experience is required! This course is designed for complete beginners. We start with the absolute basics and gradually progress to more advanced topics. However, having some logical thinking skills will be helpful.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What tools will I need?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        You'll need a computer with internet access. We'll guide you through installing necessary development tools like Tajweed, a code editor (VS Code recommended), and various libraries. All software used in the course is open-source and free.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Will I receive a certificate upon completion?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, you will receive a verified certificate of completion that you can share on LinkedIn and include in your resume. The certificate demonstrates your proficiency in Tajweed programming and completion of the comprehensive course curriculum.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long will it take to complete the course?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        The course includes approximately 50 hours of video content and another 30-40 hours of exercises and projects. Most students complete it in 8-10 weeks studying part-time, but you can learn at your own pace with lifetime access to course materials.
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there any hands-on project work?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Yes! The course includes several practical projects including building a web application with Django, creating a data analysis dashboard, developing automation scripts, and a comprehensive capstone project that combines all the skills you've learned.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="payment-section">
+        <div class="container">
+            <h2 class="section-title">Payment Information</h2>
+            
+            <div class="payment-container">
+                <div class="payment-card crystal-card">
+                    <h3>Course Fee</h3>
+                    <p><strong>PKR 20,000</strong></p>
+                    <p>Includes all course materials, projects, and certificate of completion.</p>
+                </div>
+                
+                <div class="payment-card crystal-card">
+                    <h3>Payment Methods</h3>
+                    <p><strong>Bank Transfer:</strong> Meezan Bank, Acc# 123456789</p>
+                    <p><strong>EasyPaisa/JazzCash:</strong> 0300-1234567</p>
+                    <p><strong>Cash Payment:</strong> Visit our office</p>
+                </div>
+                
+                <div class="payment-card crystal-card">
+                    <h3>Installment Plan</h3>
+                    <p>We offer flexible installment options:</p>
+                    <ul>
+                        <li>Option 1: Full payment of PKR 20,000 (5% discount)</li>
+                        <li>Option 2: Two installments of PKR 10,500</li>
+                        <li>Option 3: Three installments of PKR 7,500</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="registration-section">
+        <div class="container">
+            <h2 class="section-title">Register for Tajweed Programming</h2>
+            <p class="section-subtitle">Start your journey to becoming a Tajweed developer today</p>
+            
+            <div class="form-container">
+                <iframe id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c" title="Sana: Registration Assistant"
+                    onload="window.parent.scrollTo(0,0)" allowtransparency="true"
+                    allow="geolocation; microphone; camera; fullscreen"
+                    src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
+                    frameborder="0" class="inline-style-3" scrolling="no">
+                </iframe>
+                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+                <script>
+                    window.jotformEmbedHandler("iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
+                    "https://www.jotform.com")
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="logo.png" alt="CMTI Logo">
+                        <h3>Coded Mind <n>Technology Incubator</n></h3>
+                    </div>
+                    <p class="footer-description">
+                        Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
+                        Join CMTI to gain cutting-Edge skills in technology and business. Our expert-led courses prepare you for the digital future.
+                    </p>
+                    <div class="footer-social">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/profile.php?id=61578686665814" title="Facebook" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" title="Twitter" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" title="Instagram" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" title="YouTube" aria-label="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                        
+                <div class="footer-col">
+                    <h3>Top Programs</h3>
+                    <ul>
+                        <li><a href="course-webdev.html">Web Development</a></li>
+                        <li><a href="course-data-science.html">Data Science</a></li>
+                        <li><a href="course-cyber-security.html">Cyber Security</a></li>
+                        <li><a href="course-digital-marketing.html">Digital Marketing</a></li>
+                        <li><a href="course-tajweed.html">Tajweed Programming</a></li>
+                        <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="courses.html">All programs</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="careers.html">Career Opportunities</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Get In Touch!</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Katlang District Mardan Pakistan</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span><a href="tel:+923488850059">+92 348 8850059</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span><a href="tel:+923161098765">+92 316 1098765</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter">
+                        <h4>Subscribe to Our Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Your email address" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
+                    </div>
+                    <div class="legal-links">
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="refund.html">Refund Policy</a>
+                        <a href="https://aitoolsfreelance.blogspot.com">Blogs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+        
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('faq-active');
+                
+                // Close other FAQ items
+                faqQuestions.forEach(otherQuestion => {
+                    if (otherQuestion !== question) {
+                        otherQuestion.parentElement.classList.remove('faq-active');
+                    }
+                });
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.new-header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements to animate
+        document.addEventListener('DOMContentLoaded', function() {
+            const elementsToAnimate = document.querySelectorAll('.crystal-card, .section-title, .section-subtitle');
+            
+            elementsToAnimate.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
