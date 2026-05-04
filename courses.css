@@ -229,7 +229,6 @@ a:hover {
 /* ===== HEADER & NAVIGATION ===== */
 .new-header {
     background: rgba(255, 255, 255, 0.8);
-    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -351,7 +350,6 @@ a:hover {
     background: var(--glass-bg);
     border-radius: 8px;
     padding: 8px 16px;
-    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border: 1px solid var(--glass-border);
     box-shadow: var(--glass-shadow);
@@ -384,7 +382,6 @@ a:hover {
     top: 100%;
     left: 0;
     background: rgba(255, 255, 255, 0.9);
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: var(--glass-shadow);
@@ -536,7 +533,6 @@ a:hover {
     display: block;
     padding: 20px;
     border-radius: 8px;
-    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     animation: slideDown 0.3s ease forwards;
     color: var(--primary-gradient);
@@ -549,7 +545,6 @@ a:hover {
     margin: 0;
     border-radius: 8px;
     background: rgba(110, 69, 226, 0.1);
-    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     box-shadow: 0 4px 16px rgba(0,0,0,0.10);
     margin-bottom: 30px;
@@ -577,7 +572,6 @@ a:hover {
 .mobile-nav a:hover {
     color: #6e45e2;
     background: rgba(110, 69, 226, 0.1);
-    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border-radius: 8px;
 }
@@ -735,7 +729,6 @@ a:hover {
 /* ===== SEARCH AND FILTER SECTION ===== */
 .courses-filter {
     background: rgba(255, 255, 255, 0.1);
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     padding: 30px 20px;
     margin: 0 auto 40px;
@@ -767,7 +760,6 @@ a:hover {
     font-size: 1rem;
     transition: var(--transition);
     background: rgba(255, 255, 255, 0.15);
-    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     color: var(--dark);
 }
@@ -799,7 +791,6 @@ a:hover {
     font-weight: 600;
     white-space: nowrap;
     transition: var(--transition);
-    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     color: var(--dark);
 }
@@ -832,7 +823,6 @@ a:hover {
     background: linear-gradient(135deg, 
         rgba(255, 255, 255, 0.15) 0%, 
         rgba(255, 255, 255, 0.05) 100%);
-    -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-radius: 20px;
@@ -993,7 +983,6 @@ a:hover {
     padding: 60px 20px;
     display: none;
     background: rgba(255, 255, 255, 0.1);
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1041,7 +1030,6 @@ a:hover {
 .footer-col {
     margin-bottom: 30px;
     background: linear-gradient(to right, #4d6883, #4a6580);
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 20px;
@@ -1096,7 +1084,6 @@ a:hover {
     border-radius: 50%;
     color: #fff;
     transition: all 0.3s ease;
-    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -1199,7 +1186,6 @@ a:hover {
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
-    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -1235,7 +1221,6 @@ a:hover {
     background: rgba(0, 0, 0, 0.2);
     padding: 20px 0;
     margin-top: 30px;
-    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
 }
 

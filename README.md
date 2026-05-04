@@ -2,153 +2,19 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Coded Mind Institute – IT & Quran Academy
+# Run and deploy your AI Studio app
 
-Professional website for Coded Mind Institute - offering IT courses, Quranic studies, and freelancing training.
+This contains everything you need to run your app locally.
 
-## ✨ Features
+View your app in AI Studio: https://ai.studio/apps/drive/17Bypx26rQBePQSe7FN5hkr6ii2TZJUlp
 
-- 🎓 Multiple course programs (30+ courses)
-- 🕌 Islamic studies programs
-- 💻 Technical training (Web Dev, AI/ML, Cloud Computing, etc.)
-- 📱 Responsive design
-- ⚡ Fast performance (built with Vite)
-- 🔐 Security headers configured
-- 📊 SEO optimized
-- 🌍 Multi-page support
+## Run Locally
 
-## 🚀 Quick Start
+**Prerequisites:**  Node.js
 
-### Prerequisites
-- Node.js v18+
-- npm v8+
 
-### Installation
-
-1. Clone and install dependencies:
-```bash
-npm install
-```
-
-2. Configure environment variables:
-```bash
-cp .env.example .env.local
-# Edit .env.local and add your Gemini API key
-```
-
-3. Run development server:
-```bash
-npm run dev
-```
-
-The app will open at `http://localhost:5173`
-
-## 📦 Build for Production
-
-```bash
-npm run build
-```
-
-Output is generated in the `dist/` folder.
-
-## 🚢 Deployment
-
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for complete deployment guide with options for:
-- Vercel (recommended)
-- Netlify
-- Traditional hosting
-- Docker
-
-### Quick Deploy to Vercel
-```bash
-npm install -g vercel
-vercel
-```
-
-## 📂 Project Structure
-
-```
-.
-├── index.html              # Main page
-├── 404.html                # Error page
-├── course-*.html           # Course pages
-├── about.html              # About page
-├── contact.html            # Contact page
-├── main.js                 # JavaScript utilities
-├── codedmind-enhancements.js # UI enhancements
-├── style.css               # Main stylesheet
-├── .htaccess               # Server configuration
-├── vite.config.ts          # Vite configuration
-├── package.json            # Dependencies
-└── dist/                   # Production build
-
-```
-
-## 🛠 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-
-## 📋 Environment Variables
-
-Create `.env.local`:
-
-```env
-VITE_GEMINI_API_KEY=your_gemini_api_key_here
-VITE_APP_NAME=Coded Mind Institute
-VITE_APP_VERSION=1.0.0
-```
-
-## 🔐 Security Features
-
-- ✅ HTTPS enforcement
-- ✅ Security headers (X-Frame-Options, X-Content-Type-Options, etc.)
-- ✅ CORS protection
-- ✅ CSP headers
-- ✅ XSS protection
-- ✅ Secure 404 page
-
-## 📈 Performance
-
-- Gzip compression enabled
-- CSS/JS minification
-- Image optimization
-- Efficient caching strategy
-- Build time: < 1s
-- Total bundle size: < 400KB
-
-## 🧪 Testing
-
-Verify deployment:
-- [ ] All pages load
-- [ ] Links work correctly
-- [ ] Images display properly
-- [ ] Forms are functional
-- [ ] Mobile responsive
-- [ ] HTTPS working
-- [ ] 404 page displays correctly
-
-## 📞 Support
-
-For issues or questions:
-- Email: info@codedmind.com
-- Phone: +92 331 671 7195
-- Website: https://cmti.pk
-
-## 📄 License
-
-All rights reserved © 2026 Coded Mind Institute of Science and Technology
-
-## 🔄 Recent Updates
-
-- ✅ Added TypeScript configuration
-- ✅ Enhanced security headers
-- ✅ Improved 404 error page
-- ✅ Added deployment guides
-- ✅ Environment variable support
-- ✅ Production build optimization
-
----
-
-**Last Updated:** 2026-05-04 | **Version:** 1.0.0
+1. Install dependencies:
+   `npm install`
+2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
+3. Run the app:
+   `npm run dev`

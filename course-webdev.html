@@ -1,1376 +1,1176 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <base href="https://cmti.pk/" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Development Course - Coded Mind Technology Incubator</title>
     <style>
-      /* Global Styles */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      body {
-        background-color: #f5f7fa;
-        color: #333;
-        line-height: 1.6;
-      }
-
-      /* Header Styles */
-      .site-header {
-        background: linear-gradient(135deg, #264de4, #2965f1);
-        color: white;
-        padding: 15px 0;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .header-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 20px;
-      }
-
-      .logo {
-        height: 50px;
-        width: auto;
-      }
-
-      nav a {
-        color: white;
-        text-decoration: none;
-        margin-left: 20px;
-        font-weight: 500;
-        transition: all 0.3s ease;
-      }
-
-      nav a:hover,
-      nav a.active {
-        color: #264de4;
-        background: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-      }
-
-      /* Main Content */
-      .container {
-        max-width: 1200px;
-        margin: 30px auto;
-        padding: 0 20px;
-      }
-
-      .back-link {
-        display: inline-block;
-        margin: 20px;
-        color: #264de4;
-        text-decoration: none;
-        font-weight: 500;
-      }
-
-      .back-link:hover {
-        text-decoration: underline;
-      }
-
-      /* Hero Section */
-      .course-hero {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 30px;
-        margin-bottom: 40px;
-        background: white;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      .course-image {
-        flex: 1;
-        min-width: 300px;
-      }
-
-      .course-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .course-intro {
-        flex: 1;
-        padding: 30px;
-        min-width: 300px;
-      }
-
-      .course-intro h1 {
-        color: #264de4;
-        margin-bottom: 15px;
-        font-size: 2.2rem;
-      }
-
-      .course-intro p {
-        margin-bottom: 20px;
-        font-size: 1.1rem;
-      }
-
-      .course-highlights {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin: 20px 0;
-      }
-
-      .highlight-card {
-        background: #e9f0ff;
-        padding: 15px;
-        border-radius: 8px;
-        flex: 1;
-        min-width: 150px;
-        text-align: center;
-        border-left: 4px solid #264de4;
-      }
-
-      .highlight-card h3 {
-        color: #264de4;
-        margin-bottom: 5px;
-      }
-
-      .enroll-btn {
-        display: inline-block;
-        background: linear-gradient(135deg, #264de4, #2965f1);
-        color: white;
-        padding: 12px 25px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: bold;
-        margin-top: 15px;
-        transition: all 0.3s ease;
-      }
-
-      .enroll-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        background: linear-gradient(135deg, #2965f1, #264de4);
-      }
-
-      /* Cards Section */
-      /* Cards Section */
-      .section-title {
-        color: #2575fc;
-        margin: 40px 0 20px;
-        position: relative;
-        padding-bottom: 10px;
-      }
-
-      .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 60px;
-        height: 3px;
-        background: linear-gradient(to right, #6a11cb, #2575fc);
-      }
-
-      .cards-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 25px;
-        margin-bottom: 40px;
-      }
-
-      .card {
-        background: white;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        transition: transform 0.3s ease;
-      }
-
-      .card:hover {
-        transform: translateY(-5px);
-      }
-
-      .card-header {
-        background: linear-gradient(135deg, #6a11cb, #2575fc);
-        color: white;
-        padding: 15px 20px;
-      }
-
-      .card-body {
-        padding: 20px;
-      }
-
-      /* Course Outline */
-      .module-item {
-        margin-bottom: 15px;
-        padding-left: 20px;
-        position: relative;
-      }
-
-      .module-item::before {
-        content: "•";
-        color: #2575fc;
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-      }
-
-      /* Testimonials */
-      .testimonial-card {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-      }
-
-      .testimonial-text {
-        flex-grow: 1;
-        font-style: italic;
-        margin-bottom: 15px;
-      }
-
-      .testimonial-author {
-        display: flex;
-        align-items: center;
-      }
-      /* Instructor */
-      .instructor-card {
-        text-align: center;
-      }
-
-      .instructor-image {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin: 0 auto 15px;
-        border: 3px solid #264de4;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      /* Payment Section */
-      .payment-methods {
-        background: white;
-        border-radius: 10px;
-        padding: 30px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        margin-bottom: 40px;
-      }
-
-      .payment-option {
-        margin-bottom: 20px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #eee;
-      }
-
-      .payment-option:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-      }
-
-      /* Jotform */
-      .form-container {
-        margin: 40px 0;
-        background: white;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      }
-
-      /* Career Opportunities */
-      .career-opportunities {
-        background: white;
-        border-radius: 10px;
-        padding: 30px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-        margin-bottom: 40px;
-      }
-
-      .career-item {
-        margin-bottom: 15px;
-        padding: 15px;
-        background: #e9f0ff;
-        border-radius: 8px;
-        border-left: 4px solid #264de4;
-        transition: transform 0.3s ease;
-      }
-
-      .career-item:hover {
-        transform: translateX(5px);
-      }
-
-      /* Projects Section */
-      .projects-showcase {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 25px;
-        margin-bottom: 40px;
-      }
-
-      .project-item {
-        background: white;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-      }
-
-      .project-item img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-      }
-
-      .project-content {
-        padding: 20px;
-      }
-
-      /* ===== FOOTER ===== */
-      .site-footer {
-        background: linear-gradient(to right, #2c3e50, #4a6580);
-        color: #fff;
-        padding: 50px 0 0;
-        margin-top: 80px;
-        font-size: 14px;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
-        border-top: 1px solid var(--glass-border);
-      }
-
-      .site-footer::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 5px;
-        background: linear-gradient(to right, #4d6883, #4a6580);
-        z-index: 2;
-      }
-
-      .footer-content {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .footer-col {
-        margin-bottom: 30px;
-        background: linear-gradient(to right, #4d6883, #4a6580);
-        -webkit-backdrop-filter: blur(10px);
-        backdrop-filter: blur(10px);
-        border-radius: 15px;
-        padding: 20px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .footer-logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 15px;
-      }
-
-      .footer-logo img {
-        height: 80px;
-        margin-right: 5px;
-      }
-
-      .footer-logo h3 {
-        font-size: 18px;
-        margin: 0;
-        background: var(--primary-gradient);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-
-      .footer-description {
-        line-height: 1.6;
-        margin-bottom: 20px;
-        opacity: 0.9;
-        text-align: center;
-      }
-
-      .footer-social h4 {
-        margin-bottom: 15px;
-        font-size: 16px;
-      }
-
-      .social-icons {
-        display: flex;
-        gap: 15px;
-      }
-
-      .social-icons a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        color: #fff;
-        transition: all 0.3s ease;
-        -webkit-backdrop-filter: blur(5px);
-        backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .social-icons a:hover {
-        background: var(--primary-gradient);
-        transform: translateY(-3px);
-        box-shadow: 0 5px 15px rgba(110, 69, 226, 0.4);
-      }
-
-      .footer-col h3 {
-        font-size: 18px;
-        font-weight: 600;
-        color: #ff7e5f;
-        margin-bottom: 20px;
-        position: relative;
-        padding-bottom: 10px;
-      }
-
-      .footer-col h3::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 50px;
-        height: 2px;
-        background: linear-gradient(to right, #4d6883, #4a6580);
-      }
-
-      .footer-col ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .footer-col ul li {
-        margin-bottom: 12px;
-        transition: all 0.3s ease;
-      }
-
-      .footer-col ul li:hover {
-        transform: translateX(5px);
-      }
-
-      .footer-col ul li a {
-        color: #fff;
-        opacity: 0.9;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        display: block;
-        padding: 5px 0;
-      }
-
-      .footer-col ul li a:hover {
-        opacity: 1;
-        color: #88d3ce;
-        padding-left: 10px;
-      }
-
-      .contact-info {
-        margin-bottom: 25px;
-      }
-
-      .contact-item {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-      }
-
-      .contact-item svg {
-        margin-right: 10px;
-        opacity: 0.9;
-      }
-
-      .contact-item span a {
-        color: #fff;
-        text-decoration: none;
-        opacity: 0.9;
-        transition: opacity 0.3s ease;
-      }
-
-      .contact-item span a:hover {
-        opacity: 1;
-        color: #88d3ce;
-      }
-
-      .newsletter h4 {
-        margin-bottom: 15px;
-        font-size: 16px;
-      }
-
-      .newsletter-form {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .newsletter-form input {
-        padding: 12px 15px;
-        border: none;
-        border-radius: 5px;
-        background: rgba(255, 255, 255, 0.1);
-        color: #fff;
-        -webkit-backdrop-filter: blur(5px);
-        backdrop-filter: blur(5px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .newsletter-form input::placeholder {
-        color: rgba(255, 255, 255, 0.7);
-      }
-
-      .newsletter-form input:focus {
-        outline: none;
-        border-color: #6e45e2;
-        box-shadow: 0 0 0 2px rgba(110, 69, 226, 0.2);
-      }
-
-      .newsletter-form button {
-        padding: 12px 15px;
-        border: none;
-        border-radius: 5px;
-        background: linear-gradient(to right, #4d6883, #4a6580);
-        color: #fff;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
-      }
-
-      .newsletter-form button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(110, 69, 226, 0.4);
-      }
-
-      .footer-bottom {
-        background: rgba(0, 0, 0, 0.2);
-        padding: 20px 0;
-        margin-top: 30px;
-        -webkit-backdrop-filter: blur(5px);
-        backdrop-filter: blur(5px);
-      }
-
-      .footer-bottom-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-        flex-wrap: wrap;
-        gap: 15px;
-      }
-
-      .legal-links {
-        display: flex;
-        gap: 20px;
-      }
-
-      .legal-links a {
-        color: #fff;
-        opacity: 0.8;
-        text-decoration: none;
-        font-size: 14px;
-        transition: all 0.3s ease;
-      }
-
-      .legal-links a:hover {
-        opacity: 1;
-        color: #88d3ce;
-      }
-
-      .copyright {
-        opacity: 0.8;
-        font-size: 14px;
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        .site-header {
+            background: linear-gradient(135deg, #264de4, #2965f1);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
         .header-content {
-          flex-direction: column;
-          text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
         }
-
-        nav {
-          margin-top: 15px;
+        
+        .logo {
+            height: 50px;
+            width: auto;
         }
-
+        
         nav a {
-          margin: 0 10px;
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
-
+        
+        nav a:hover, nav a.active {
+            color: #264de4;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 20px;
+            color: #264de4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* Hero Section */
         .course-hero {
-          flex-direction: column;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+        
+        .course-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .course-intro {
+            flex: 1;
+            padding: 30px;
+            min-width: 300px;
+        }
+        
+        .course-intro h1 {
+            color: #264de4;
+            margin-bottom: 15px;
+            font-size: 2.2rem;
+        }
+        
+        .course-intro p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .course-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .highlight-card {
+            background: #e9f0ff;
+            padding: 15px;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 150px;
+            text-align: center;
+            border-left: 4px solid #264de4;
+        }
+        
+        .highlight-card h3 {
+            color: #264de4;
+            margin-bottom: 5px;
+        }
+        
+        .enroll-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #264de4, #2965f1);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .enroll-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #2965f1, #264de4);
+        }
+        
+        /* Cards Section */
+       /* Cards Section */
+        .section-title {
+            color: #2575fc;
+            margin: 40px 0 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+        }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 15px 20px;
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        /* Course Outline */
+        .module-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .module-item::before {
+            content: "•";
+            color: #2575fc;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+      /* Testimonials */
+        .testimonial-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .testimonial-text {
+            flex-grow: 1;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        /* Instructor */
+        .instructor-card {
+            text-align: center;
+        }
+        
+        .instructor-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            border: 3px solid #264de4;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Payment Section */
+        .payment-methods {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+        
+        .payment-option {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .payment-option:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        /* Jotform */
+        .form-container {
+            margin: 40px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        /* Career Opportunities */
+        .career-opportunities {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+        
+        .career-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #e9f0ff;
+            border-radius: 8px;
+            border-left: 4px solid #264de4;
+            transition: transform 0.3s ease;
+        }
+        
+        .career-item:hover {
+            transform: translateX(5px);
+        }
+        
+        /* Projects Section */
+        .projects-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .project-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .project-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+    /* ===== FOOTER ===== */
+.site-footer {
+    background: linear-gradient(to right, #2c3e50, #4a6580);
+    color: #fff;
+    padding: 50px 0 0;
+    margin-top: 80px;
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--glass-border);
+}
 
-        .footer-content {
-          flex-direction: column;
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #4d6883, #4a6580);
+    z-index: 2;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-col {
+    margin-bottom: 30px;
+    background: linear-gradient(to right, #4d6883, #4a6580);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.footer-logo img {
+    height: 80px;
+    margin-right: 5px;
+}
+
+.footer-logo h3 {
+    font-size: 18px;
+    margin: 0;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.footer-description {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.footer-social h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icons a:hover {
+    background: var(--primary-gradient);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(110, 69, 226, 0.4);
+}
+
+.footer-col h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ff7e5f;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: linear-gradient(to right, #4d6883, #4a6580);
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li:hover {
+    transform: translateX(5px);
+}
+
+.footer-col ul li a {
+    color: #fff;
+    opacity: 0.9;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 5px 0;
+}
+
+.footer-col ul li a:hover {
+    opacity: 1;
+    color: #88d3ce;
+    padding-left: 10px;
+}
+
+.contact-info {
+    margin-bottom: 25px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-item svg {
+    margin-right: 10px;
+    opacity: 0.9;
+}
+
+.contact-item span a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+.contact-item span a:hover {
+    opacity: 1;
+    color: #88d3ce;
+}
+
+.newsletter h4 {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.newsletter-form input {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: #6e45e2;
+    box-shadow: 0 0 0 2px rgba(110, 69, 226, 0.2);
+}
+
+.newsletter-form button {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    background:linear-gradient(to right, #4d6883, #4a6580);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
+}
+
+.newsletter-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(110, 69, 226, 0.4);
+}
+
+.footer-bottom {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    margin-top: 30px;
+    backdrop-filter: blur(5px);
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.legal-links {
+    display: flex;
+    gap: 20px;
+}
+
+.legal-links a {
+    color: #fff;
+    opacity: 0.8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.legal-links a:hover {
+    opacity: 1;
+    color: #88d3ce;
+}
+
+.copyright {
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav {
+                margin-top: 15px;
+            }
+            
+            nav a {
+                margin: 0 10px;
+            }
+            
+            .course-hero {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
         }
-      }
     </style>
-  </head>
-  <head>
-    <meta charset="UTF-8" />
+</head>
+<head>
+    <meta charset="UTF-8">
     <title>CMTI</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
     <!-- Header -->
-    <header class="new-header">
-      <div class="header-container">
+   <header class="new-header">
+    <div class="header-container">
         <div class="logo-container">
-          <img
-            src="https://codedmind.netlify.app/logo.png"
-            alt="CodedMind Logo"
-            class="logo"
-          />
-          <div class="logo-text">Coded Mind <br />Technology Incubator</div>
+            <img src="https://codedmind.netlify.app/logo.png" alt="CodedMind Logo" class="logo">
+            <div class="logo-text">Coded Mind <br>Technology Incubator</div>
         </div>
-
+        
         <nav>
-          <ul class="nav-menu">
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="courses.html">Program</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="careers.html">Careers</a></li>
+            </ul>
+        </nav>
+        
+        
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    
+    <div class="mobile-menu">
+        <ul class="mobile-nav">
             <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="courses.html">Program</a></li>
+              <li><a href="courses.html">Program</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
             <li><a href="careers.html">Careers</a></li>
-          </ul>
-        </nav>
-
-        <div class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-
-      <div class="mobile-menu">
-        <ul class="mobile-nav">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="courses.html">Program</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="careers.html">Careers</a></li>
         </ul>
-      </div>
-    </header>
-    <!-- Banner Carousel -->
-    <div class="banner-carousel">
-      <div class="carousel-slides">
-        <div class="carousel-slide active inline-style-9">
-          <div class="slide-content">
-            <h2>Empowering Future Tech Leaders</h2>
-            <p>
-              Join CMTI to gain cutting-edge skills in technology and business.
-              Our expert-led courses prepare you for the digital future.
-            </p>
-            <a href="courses.html" class="btn">Explore Courses</a>
-          </div>
+        
+    </div>
+</header>
+<!-- Banner Carousel -->
+<div class="banner-carousel">
+    <div class="carousel-slides">
+        <div class="carousel-slide active" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=80');">
+            <div class="slide-content">
+                <h2>Empowering Future Tech Leaders</h2>
+                <p>Join CMTI to gain cutting-edge skills in technology and business. Our expert-led courses prepare you for the digital future.</p>
+                <a href="courses.html" class="btn">Explore Courses</a>
+            </div>
         </div>
-
-        <div class="carousel-slide inline-style-10">
-          <div class="slide-content">
-            <h2>Learn from Industry Experts</h2>
-            <p>
-              Our instructors are professionals with years of experience in
-              their respective fields.
-            </p>
-            <a href="about.html" class="btn">Meet Our Team</a>
-          </div>
+        
+        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80');">
+            <div class="slide-content">
+                <h2>Learn from Industry Experts</h2>
+                <p>Our instructors are professionals with years of experience in their respective fields.</p>
+                <a href="about.html" class="btn">Meet Our Team</a>
+            </div>
         </div>
-
-        <div class="carousel-slide inline-style-11">
-          <div class="slide-content">
-            <h2>Hands-On Learning Experience</h2>
-            <p>
-              Gain practical skills through our project-based curriculum and
-              real-world applications.
-            </p>
-            <a href="courses.html" class="btn">View Programs</a>
-          </div>
+        
+        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80');">
+            <div class="slide-content">
+                <h2>Hands-On Learning Experience</h2>
+                <p>Gain practical skills through our project-based curriculum and real-world applications.</p>
+                <a href="courses.html" class="btn">View Programs</a>
+            </div>
         </div>
-
-        <div class="carousel-slide inline-style-12">
-          <div class="slide-content">
-            <h2>Launch Your Tech Career</h2>
-            <p>
-              Our career services help you land your dream job in the tech
-              industry.
-            </p>
-            <a href="careers.html" class="btn">Career Support</a>
-          </div>
+        
+        <div class="carousel-slide" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80');">
+            <div class="slide-content">
+                <h2>Launch Your Tech Career</h2>
+                <p>Our career services help you land your dream job in the tech industry.</p>
+                <a href="careers.html" class="btn">Career Support</a>
+            </div>
         </div>
-      </div>
-
-      <div class="carousel-arrow prev">
+    </div>
+    
+    <div class="carousel-arrow prev">
         <i class="fas fa-chevron-left"></i>
-      </div>
-      <div class="carousel-arrow next">
+    </div>
+    <div class="carousel-arrow next">
         <i class="fas fa-chevron-right"></i>
-      </div>
-
-      <div class="carousel-controls">
+    </div>
+    
+    <div class="carousel-controls">
         <div class="carousel-dot active" data-index="0"></div>
         <div class="carousel-dot" data-index="1"></div>
         <div class="carousel-dot" data-index="2"></div>
         <div class="carousel-dot" data-index="3"></div>
-      </div>
     </div>
-
+</div>
+    
     <a href="index.html" class="back-link">← Back to Courses</a>
 
     <div class="container">
-      <!-- Course Hero Section -->
-      <section class="course-hero">
-        <div class="course-image">
-          <img
-            src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?auto=format&fit=crop&w=600&q=80"
-            alt="Web Development Course"
-          />
-        </div>
-        <div class="course-intro">
-          <h1>Web Development Course</h1>
-          <p>
-            Master the art of building modern, responsive websites and web
-            applications. This comprehensive course covers everything from
-            HTML/CSS basics to advanced JavaScript frameworks, preparing you for
-            a successful career in web development.
-          </p>
-
-          <div class="course-highlights">
-            <div class="highlight-card">
-              <h3>Duration</h3>
-              <p>4 Months</p>
+        <!-- Course Hero Section -->
+        <section class="course-hero">
+            <div class="course-image">
+                <img src="https://images.unsplash.com/photo-1581276879432-15e50529f34b?auto=format&fit=crop&w=600&q=80" alt="Web Development Course">
             </div>
-            <div class="highlight-card">
-              <h3>Fee</h3>
-              <p>PKR 25,000</p>
+            <div class="course-intro">
+                <h1>Web Development Course</h1>
+                <p>Master the art of building modern, responsive websites and web applications. This comprehensive course covers everything from HTML/CSS basics to advanced JavaScript frameworks, preparing you for a successful career in web development.</p>
+                
+                <div class="course-highlights">
+                    <div class="highlight-card">
+                        <h3>Duration</h3>
+                        <p>4 Months</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Fee</h3>
+                        <p>PKR 25,000</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Format</h3>
+                        <p>Hybrid</p>
+                    </div>
+                    <div class="highlight-card">
+                        <h3>Level</h3>
+                        <p>Beginner to Advanced</p>
+                    </div>
+                </div>
+                
+               <a href="https://form.jotform.com/252090931090451" class="enroll-btn" target="_blank" rel="noopener">Enroll Now</a>
             </div>
-            <div class="highlight-card">
-              <h3>Format</h3>
-              <p>Hybrid</p>
+        </section>
+
+        <!-- Course Details Cards -->
+        <h2 class="section-title">Course Details</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Course Overview</h3>
+                </div>
+                <div class="card-body">
+                    <p>Our Web Development course provides a comprehensive journey into modern web technologies. You'll learn everything from basic HTML/CSS to advanced JavaScript frameworks, responsive design, and backend integration.</p>
+                    <p>This course emphasizes hands-on learning with real-world projects that will build your portfolio and prepare you for a career as a front-end developer, full-stack developer, or UI/UX specialist.</p>
+                </div>
             </div>
-            <div class="highlight-card">
-              <h3>Level</h3>
-              <p>Beginner to Advanced</p>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Learning Outcomes</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Build responsive websites with HTML5 and CSS3</li>
+                        <li>Create interactive web applications with JavaScript</li>
+                        <li>Work with modern frameworks like React</li>
+                        <li>Implement responsive design principles</li>
+                        <li>Understand backend integration and APIs</li>
+                        <li>Deploy websites to live servers</li>
+                        <li>Use version control with Git</li>
+                    </ul>
+                </div>
             </div>
-          </div>
-
-          <a
-            href="https://form.jotform.com/252090931090451"
-            class="enroll-btn"
-            target="_blank"
-            rel="noopener"
-            >Enroll Now</a
-          >
-        </div>
-      </section>
-
-      <!-- Course Details Cards -->
-      <h2 class="section-title">Course Details</h2>
-      <div class="cards-container">
-        <div class="card">
-          <div class="card-header">
-            <h3>Course Overview</h3>
-          </div>
-          <div class="card-body">
-            <p>
-              Our Web Development course provides a comprehensive journey into
-              modern web technologies. You'll learn everything from basic
-              HTML/CSS to advanced JavaScript frameworks, responsive design, and
-              backend integration.
-            </p>
-            <p>
-              This course emphasizes hands-on learning with real-world projects
-              that will build your portfolio and prepare you for a career as a
-              front-end developer, full-stack developer, or UI/UX specialist.
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3>Learning Outcomes</h3>
-          </div>
-          <div class="card-body">
-            <ul>
-              <li>Build responsive websites with HTML5 and CSS3</li>
-              <li>Create interactive web applications with JavaScript</li>
-              <li>Work with modern frameworks like React</li>
-              <li>Implement responsive design principles</li>
-              <li>Understand backend integration and APIs</li>
-              <li>Deploy websites to live servers</li>
-              <li>Use version control with Git</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3>Who Should Enroll?</h3>
-          </div>
-          <div class="card-body">
-            <ul>
-              <li>Beginners with no coding experience</li>
-              <li>Designers looking to expand into development</li>
-              <li>Professionals seeking career change into tech</li>
-              <li>Entrepreneurs wanting to build their own websites</li>
-              <li>Students preparing for a career in web development</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Course Outline -->
-      <h2 class="section-title">Course Outline</h2>
-      <div class="cards-container">
-        <div class="card">
-          <div class="card-header">
-            <h3>Module 1: Web Fundamentals</h3>
-          </div>
-          <div class="card-body">
-            <div class="module-item">Introduction to Web Development</div>
-            <div class="module-item">HTML5 Structure and Semantics</div>
-            <div class="module-item">CSS3 Styling and Layouts</div>
-            <div class="module-item">Responsive Design Principles</div>
-            <div class="module-item">Introduction to Git and GitHub</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3>Module 2: JavaScript Fundamentals</h3>
-          </div>
-          <div class="card-body">
-            <div class="module-item">JavaScript Syntax and Basics</div>
-            <div class="module-item">DOM Manipulation</div>
-            <div class="module-item">Events and Async Programming</div>
-            <div class="module-item">ES6+ Features</div>
-            <div class="module-item">API Consumption with Fetch</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3>Module 3: Frontend Frameworks</h3>
-          </div>
-          <div class="card-body">
-            <div class="module-item">Introduction to React</div>
-            <div class="module-item">Components and Props</div>
-            <div class="module-item">State and Lifecycle</div>
-            <div class="module-item">React Hooks</div>
-            <div class="module-item">Routing with React Router</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3>Module 4: Backend Integration</h3>
-          </div>
-          <div class="card-body">
-            <div class="module-item">Introduction to Node.js</div>
-            <div class="module-item">RESTful API Concepts</div>
-            <div class="module-item">Working with Databases</div>
-            <div class="module-item">Authentication and Authorization</div>
-            <div class="module-item">Deployment Strategies</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3>Module 5: Advanced Topics</h3>
-          </div>
-          <div class="card-body">
-            <div class="module-item">Progressive Web Apps</div>
-            <div class="module-item">Web Performance Optimization</div>
-            <div class="module-item">Testing and Debugging</div>
-            <div class="module-item">Web Security Best Practices</div>
-            <div class="module-item">Introduction to TypeScript</div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-header">
-            <h3>Module 6: Portfolio Development</h3>
-          </div>
-          <div class="card-body">
-            <div class="module-item">Building a Personal Portfolio</div>
-            <div class="module-item">Collaborative Project Development</div>
-            <div class="module-item">Code Review Best Practices</div>
-            <div class="module-item">Interview Preparation</div>
-            <div class="module-item">Final Capstone Project</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Projects Showcase -->
-      <h2 class="section-title">Projects You'll Build</h2>
-      <div class="projects-showcase">
-        <div class="project-item">
-          <img
-            src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=600&q=80"
-            alt="E-commerce Website"
-          />
-          <div class="project-content">
-            <h3>E-commerce Website</h3>
-            <p>
-              Build a fully functional online store with product listings,
-              shopping cart, and checkout functionality.
-            </p>
-          </div>
-        </div>
-
-        <div class="project-item">
-          <img
-            src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
-            alt="Dashboard"
-          />
-          <div class="project-content">
-            <h3>Interactive Dashboard</h3>
-            <p>
-              Create a dynamic dashboard with data visualization, user
-              authentication, and responsive design.
-            </p>
-          </div>
-        </div>
-
-        <div class="project-item">
-          <img
-            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80"
-            alt="Social Media App"
-          />
-          <div class="project-content">
-            <h3>Social Media Application</h3>
-            <p>
-              Develop a social media platform with real-time updates, user
-              profiles, and content sharing.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Career Opportunities -->
-      <h2 class="section-title">Career Opportunities</h2>
-      <div class="career-opportunities">
-        <div class="career-item">
-          <h3>Frontend Developer</h3>
-          <p>
-            Average salary: PKR 80,000 - 150,000 per month. Create user
-            interfaces and implement designs using HTML, CSS, and JavaScript.
-          </p>
-        </div>
-        <div class="career-item">
-          <h3>Full Stack Developer</h3>
-          <p>
-            Average salary: PKR 100,000 - 200,000 per month. Work on both
-            frontend and backend components of web applications.
-          </p>
-        </div>
-        <div class="career-item">
-          <h3>UI/UX Developer</h3>
-          <p>
-            Average salary: PKR 70,000 - 130,000 per month. Bridge the gap
-            between design and implementation, focusing on user experience.
-          </p>
-        </div>
-        <div class="career-item">
-          <h3>Web Application Developer</h3>
-          <p>
-            Average salary: PKR 90,000 - 160,000 per month. Build complex web
-            applications using modern frameworks and tools.
-          </p>
-        </div>
-        <div class="career-item">
-          <h3>Freelance Web Developer</h3>
-          <p>
-            Earnings vary based on projects. Work independently with clients to
-            build websites and web applications.
-          </p>
-        </div>
-      </div>
-
-      <!-- Testimonials -->
-      <h2 class="section-title">Student Testimonials</h2>
-      <div class="cards-container">
-        <div class="card">
-          <div class="card-body testimonial-card">
-            <div class="testimonial-text">
-              "This web development course transformed my career. I started with
-              zero knowledge and within months I was building professional
-              websites. The hands-on projects were incredibly valuable for my
-              portfolio."
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Who Should Enroll?</h3>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Beginners with no coding experience</li>
+                        <li>Designers looking to expand into development</li>
+                        <li>Professionals seeking career change into tech</li>
+                        <li>Entrepreneurs wanting to build their own websites</li>
+                        <li>Students preparing for a career in web development</li>
+                    </ul>
+                </div>
             </div>
-            <div class="testimonial-author">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
-                alt="Student"
-                class="author-avatar"
-              />
-              <div>
-                <strong>Ahmed Raza</strong>
-                <p>Frontend Developer</p>
-              </div>
+        </div>
+
+        <!-- Course Outline -->
+        <h2 class="section-title">Course Outline</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 1: Web Fundamentals</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">Introduction to Web Development</div>
+                    <div class="module-item">HTML5 Structure and Semantics</div>
+                    <div class="module-item">CSS3 Styling and Layouts</div>
+                    <div class="module-item">Responsive Design Principles</div>
+                    <div class="module-item">Introduction to Git and GitHub</div>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-body testimonial-card">
-            <div class="testimonial-text">
-              "The instructors were knowledgeable and supportive. I appreciated
-              how they balanced theory with practical application. The React
-              module was particularly well-structured and comprehensive."
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 2: JavaScript Fundamentals</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">JavaScript Syntax and Basics</div>
+                    <div class="module-item">DOM Manipulation</div>
+                    <div class="module-item">Events and Async Programming</div>
+                    <div class="module-item">ES6+ Features</div>
+                    <div class="module-item">API Consumption with Fetch</div>
+                </div>
             </div>
-            <div class="testimonial-author">
-              <img
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
-                alt="Student"
-                class="author-avatar"
-              />
-              <div>
-                <strong>Fatima Khan</strong>
-                <p>UI Developer</p>
-              </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 3: Frontend Frameworks</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">Introduction to React</div>
+                    <div class="module-item">Components and Props</div>
+                    <div class="module-item">State and Lifecycle</div>
+                    <div class="module-item">React Hooks</div>
+                    <div class="module-item">Routing with React Router</div>
+                </div>
             </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-body testimonial-card">
-            <div class="testimonial-text">
-              "The capstone project was the highlight for me. Building a
-              complete application from scratch gave me the confidence to start
-              freelancing. I've already completed several projects for clients!"
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 4: Backend Integration</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">Introduction to Node.js</div>
+                    <div class="module-item">RESTful API Concepts</div>
+                    <div class="module-item">Working with Databases</div>
+                    <div class="module-item">Authentication and Authorization</div>
+                    <div class="module-item">Deployment Strategies</div>
+                </div>
             </div>
-            <div class="testimonial-author">
-              <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
-                alt="Student"
-                class="author-avatar"
-              />
-              <div>
-                <strong>Bilal Ahmed</strong>
-                <p>Freelance Developer</p>
-              </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 5: Advanced Topics</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">Progressive Web Apps</div>
+                    <div class="module-item">Web Performance Optimization</div>
+                    <div class="module-item">Testing and Debugging</div>
+                    <div class="module-item">Web Security Best Practices</div>
+                    <div class="module-item">Introduction to TypeScript</div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Instructor Section -->
-      <h2 class="section-title">Meet Your Instructor</h2>
-      <div class="cards-container">
-        <div class="card instructor-card">
-          <img
-            src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
-            alt="Instructor"
-            class="instructor-image"
-          />
-          <div class="card-body">
-            <h3>Ali Hassan</h3>
-            <p>Senior Full Stack Developer</p>
-            <p>
-              With over 8 years of experience in web development, Ali has worked
-              with major tech companies and startups. He specializes in React,
-              Node.js, and cloud infrastructure. His teaching approach focuses
-              on practical, real-world applications of web technologies and best
-              practices in the industry.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Payment Information -->
-      <h2 class="section-title" id="enroll">Payment Methods</h2>
-      <div class="payment-methods">
-        <div class="payment-option">
-          <h3>Bank Transfer</h3>
-          <p>
-            Meezan Bank, Acc# 123456789, Title: Coded Mind Technology Incubator
-          </p>
+            
+            <div class="card">
+                <div class="card-header">
+                    <h3>Module 6: Portfolio Development</h3>
+                </div>
+                <div class="card-body">
+                    <div class="module-item">Building a Personal Portfolio</div>
+                    <div class="module-item">Collaborative Project Development</div>
+                    <div class="module-item">Code Review Best Practices</div>
+                    <div class="module-item">Interview Preparation</div>
+                    <div class="module-item">Final Capstone Project</div>
+                </div>
+            </div>
         </div>
 
-        <div class="payment-option">
-          <h3>EasyPaisa/JazzCash</h3>
-          <p>0300-1234567</p>
+        <!-- Projects Showcase -->
+        <h2 class="section-title">Projects You'll Build</h2>
+        <div class="projects-showcase">
+            <div class="project-item">
+                <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=600&q=80" alt="E-commerce Website">
+                <div class="project-content">
+                    <h3>E-commerce Website</h3>
+                    <p>Build a fully functional online store with product listings, shopping cart, and checkout functionality.</p>
+                </div>
+            </div>
+            
+            <div class="project-item">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Dashboard">
+                <div class="project-content">
+                    <h3>Interactive Dashboard</h3>
+                    <p>Create a dynamic dashboard with data visualization, user authentication, and responsive design.</p>
+                </div>
+            </div>
+            
+            <div class="project-item">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=600&q=80" alt="Social Media App">
+                <div class="project-content">
+                    <h3>Social Media Application</h3>
+                    <p>Develop a social media platform with real-time updates, user profiles, and content sharing.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="payment-option">
-          <h3>Cash Payment</h3>
-          <p>Visit our office for cash payment</p>
-          <p>
-            <strong>Office Hours:</strong> Monday to Saturday, 9:00 AM to 6:00
-            PM
-          </p>
-          <p><strong>Address:</strong> Katlang District Mardan kpk Pakistan</p>
+        <!-- Career Opportunities -->
+        <h2 class="section-title">Career Opportunities</h2>
+        <div class="career-opportunities">
+            <div class="career-item">
+                <h3>Frontend Developer</h3>
+                <p>Average salary: PKR 80,000 - 150,000 per month. Create user interfaces and implement designs using HTML, CSS, and JavaScript.</p>
+            </div>
+            <div class="career-item">
+                <h3>Full Stack Developer</h3>
+                <p>Average salary: PKR 100,000 - 200,000 per month. Work on both frontend and backend components of web applications.</p>
+            </div>
+            <div class="career-item">
+                <h3>UI/UX Developer</h3>
+                <p>Average salary: PKR 70,000 - 130,000 per month. Bridge the gap between design and implementation, focusing on user experience.</p>
+            </div>
+            <div class="career-item">
+                <h3>Web Application Developer</h3>
+                <p>Average salary: PKR 90,000 - 160,000 per month. Build complex web applications using modern frameworks and tools.</p>
+            </div>
+            <div class="career-item">
+                <h3>Freelance Web Developer</h3>
+                <p>Earnings vary based on projects. Work independently with clients to build websites and web applications.</p>
+            </div>
         </div>
 
-        <div class="payment-option">
-          <h3>Installment Plan</h3>
-          <p>We offer flexible installment options:</p>
-          <ul>
-            <li>
-              Option 1: Full payment of PKR 25,000 (5% discount available)
-            </li>
-            <li>Option 2: Two installments of PKR 13,000</li>
-            <li>Option 3: Three installments of PKR 9,000</li>
-          </ul>
-          <p>
-            After payment, send your receipt to <b>info@codedmind.com</b> or
-            WhatsApp 0300-1234567 for registration confirmation.
-          </p>
+        <!-- Testimonials -->
+        <h2 class="section-title">Student Testimonials</h2>
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-body testimonial-card">
+                    <div class="testimonial-text">
+                        "This web development course transformed my career. I started with zero knowledge and within months I was building professional websites. The hands-on projects were incredibly valuable for my portfolio."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
+                        <div>
+                            <strong>Ahmed Raza</strong>
+                            <p>Frontend Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body testimonial-card">
+                    <div class="testimonial-text">
+                        "The instructors were knowledgeable and supportive. I appreciated how they balanced theory with practical application. The React module was particularly well-structured and comprehensive."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
+                        <div>
+                            <strong>Fatima Khan</strong>
+                            <p>UI Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body testimonial-card">
+                    <div class="testimonial-text">
+                        "The capstone project was the highlight for me. Building a complete application from scratch gave me the confidence to start freelancing. I've already completed several projects for clients!"
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
+                        <div>
+                            <strong>Bilal Ahmed</strong>
+                            <p>Freelance Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <!-- Jotform Registration -->
-      <h2 class="section-title">Register for This Course</h2>
-      <div class="form-container">
-        <iframe
-          id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c"
-          title="Sana: Registration Assistant"
-          onload="window.parent.scrollTo(0, 0)"
-          allowtransparency="true"
-          allow="geolocation; microphone; camera; fullscreen"
-          src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
-          frameborder="0"
-          class="inline-style-3"
-          scrolling="no"
-        >
-        </iframe>
-        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
-        <script>
-          window.jotformEmbedHandler(
-            "iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
-            "https://www.jotform.com",
-          );
-        </script>
-      </div>
+        <!-- Instructor Section -->
+        <h2 class="section-title">Meet Your Instructor</h2>
+        <div class="cards-container">
+            <div class="card instructor-card">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Instructor" class="instructor-image">
+                <div class="card-body">
+                    <h3>Ali Hassan</h3>
+                    <p>Senior Full Stack Developer</p>
+                    <p>With over 8 years of experience in web development, Ali has worked with major tech companies and startups. He specializes in React, Node.js, and cloud infrastructure. His teaching approach focuses on practical, real-world applications of web technologies and best practices in the industry.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Information -->
+        <h2 class="section-title" id="enroll">Payment Methods</h2>
+        <div class="payment-methods">
+            <div class="payment-option">
+                <h3>Bank Transfer</h3>
+                <p>Meezan Bank, Acc# 123456789, Title: Coded Mind Technology Incubator</p>
+            </div>
+            
+            <div class="payment-option">
+                <h3>EasyPaisa/JazzCash</h3>
+                <p>0300-1234567</p>
+            </div>
+            
+            <div class="payment-option">
+                <h3>Cash Payment</h3>
+                <p>Visit our office for cash payment</p>
+                <p><strong>Office Hours:</strong> Monday to Saturday, 9:00 AM to 6:00 PM</p>
+                <p><strong>Address:</strong> Katlang District Mardan kpk Pakistan</p>
+            </div>
+            
+            <div class="payment-option">
+                <h3>Installment Plan</h3>
+                <p>We offer flexible installment options:</p>
+                <ul>
+                    <li>Option 1: Full payment of PKR 25,000 (5% discount available)</li>
+                    <li>Option 2: Two installments of PKR 13,000</li>
+                    <li>Option 3: Three installments of PKR 9,000</li>
+                </ul>
+                <p>After payment, send your receipt to <b>info@codedmind.com</b> or WhatsApp 0300-1234567 for registration confirmation.</p>
+            </div>
+        </div>
+
+        <!-- Jotform Registration -->
+        <h2 class="section-title">Register for This Course</h2>
+        <div class="form-container">
+            <iframe id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c" title="Sana: Registration Assistant"
+                onload="window.parent.scrollTo(0,0)" allowtransparency="true"
+                allow="geolocation; microphone; camera; fullscreen"
+                src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
+                frameborder="0" style="
+                max-width:100%;
+                height:688px;
+                border:none;
+                width:100%;
+                " scrolling="no">
+            </iframe>
+            <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
+            <script>
+                window.jotformEmbedHandler("iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
+                "https://www.jotform.com")
+            </script>
+        </div>
     </div>
 
     <!-- Footer -->
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="footer-content">
+  <!-- Footer -->
+   <footer class="site-footer">
+    <div class="footer-content">
         <div class="footer-col">
-          <div class="footer-logo">
-            <img src="logo.png" alt="CMTI Logo" />
-            <h3>Coded Mind <span>Technology Incubator</span></h3>
-          </div>
-          <p class="footer-description">
-            Empowering the next generation of tech professionals through quality
-            education and hands-on training in cutting-edge technologies. Join
-            CMTI to gain cutting-Edge skills in technology and business. Our
-            expert-led courses prepare you for the digital future.
-          </p>
-          <div class="footer-social">
-            <h4>Follow Us</h4>
-            <div class="social-icons">
-              <a
-                href="https://www.facebook.com/people/Coded-Mind-Technology-Incubator/61578686665814/"
-                title="Facebook"
-                aria-label="Facebook"
-              >
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z"
-                  />
-                </svg>
-              </a>
-              <a href="#" title="Twitter" aria-label="Twitter">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10C2.38 10 2.38 10 2.38 10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.46 14.34 5.08 14.39 4.69 14.39C4.42 14.39 4.15 14.36 3.89 14.31C4.43 16 6 17.26 7.89 17.29C6.43 18.45 4.58 19.13 2.56 19.13C2.22 19.13 1.88 19.11 1.54 19.07C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z"
-                  />
-                </svg>
-              </a>
-              <a href="#" title="Instagram" aria-label="Instagram">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2C22 19.4 19.4 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2ZM7.6 4C5.6 4 4 5.6 4 7.6V16.4C4 18.4 5.6 20 7.6 20H16.4C18.4 20 20 18.4 20 16.4V7.6C20 5.6 18.4 4 16.4 4H7.6ZM12 7C14.8 7 17 9.2 17 12C17 14.8 14.8 17 12 17C9.2 17 7 14.8 7 12C7 9.2 9.2 7 12 7ZM12 9C10.3 9 9 10.3 9 12C9 13.7 10.3 15 12 15C13.7 15 15 13.7 15 12C15 10.3 13.7 9 12 9ZM17.5 6C18.1 6 18.5 5.6 18.5 5C18.5 4.4 18.1 4 17.5 4C16.9 4 16.5 4.4 16.5 5C16.5 5.6 16.9 6 17.5 6Z"
-                  />
-                </svg>
-              </a>
-              <a href="#" title="LinkedIn" aria-label="LinkedIn">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"
-                  />
-                </svg>
-              </a>
-              <a href="#" title="YouTube" aria-label="YouTube">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"
-                  />
-                </svg>
-              </a>
+            <div class="footer-logo">
+                <img src="logo.png" alt="CMTI Logo">
+                <h3> Coded Mind <n>Technology Incubator</n> </h3>
             </div>
-          </div>
+            <p class="footer-description">
+                Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
+                Join CMTI to gain cutting-Edge skills in technology and business. Our expert-led courses prepare you for the digital future.
+            </p>
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61578686665814" title="Facebook" aria-label="Facebook">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96C18.34 21.21 22 17.06 22 12.06C22 6.53 17.5 2.04 12 2.04Z"/>
+                        </svg>
+                    </a>
+                    <a href="#" title="Twitter" aria-label="Twitter">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10C2.38 10 2.38 10 2.38 10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.46 14.34 5.08 14.39 4.69 14.39C4.42 14.39 4.15 14.36 3.89 14.31C4.43 16 6 17.26 7.89 17.29C6.43 18.45 4.58 19.13 2.56 19.13C2.22 19.13 1.88 19.11 1.54 19.07C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z"/>
+                        </svg>
+                    </a>
+                    <a href="#" title="Instagram" aria-label="Instagram">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2C22 19.4 19.4 22 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2ZM7.6 4C5.6 4 4 5.6 4 7.6V16.4C4 18.4 5.6 20 7.6 20H16.4C18.4 20 20 18.4 20 16.4V7.6C20 5.6 18.4 4 16.4 4H7.6ZM12 7C14.8 7 17 9.2 17 12C17 14.8 14.8 17 12 17C9.2 17 7 14.8 7 12C7 9.2 9.2 7 12 7ZM12 9C10.3 9 9 10.3 9 12C9 13.7 10.3 15 12 15C13.7 15 15 13.7 15 12C15 10.3 13.7 9 12 9ZM17.5 6C18.1 6 18.5 5.6 18.5 5C18.5 4.4 18.1 4 17.5 4C16.9 4 16.5 4.4 16.5 5C16.5 5.6 16.9 6 17.5 6Z"/>
+                        </svg>
+                    </a>
+                    <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+                        </svg>
+                    </a>
+                    <a href="#" title="YouTube" aria-label="YouTube">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
         </div>
-
+                
+         <div class="footer-col">
+            <h3>Top Programs</h3>
+            <ul>
+                <li><a href="course-webdev.html">Web Development</a></li>
+                <li><a href="course-data-science.html">Data Science</a></li>
+                <li><a href="course-cyber-security.html">Cyber Security</a></li>
+                <li><a href="course-digital-marketing.html">Digital Marketing</a></li>
+                <li><a href="course-python.html">Python Programming</a></li>
+                <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
+            </ul>
+        </div>
+        
         <div class="footer-col">
-          <h3>Top Programs</h3>
-          <ul>
-            <li><a href="course-webdev.html">Web Development</a></li>
-            <li><a href="course-data-science.html">Data Science</a></li>
-            <li><a href="course-cyber-security.html">Cyber Security</a></li>
-            <li>
-              <a href="course-digital-marketing.html">Digital Marketing</a>
-            </li>
-            <li><a href="course-python.html">Python Programming</a></li>
-            <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
-          </ul>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">All programs</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="careers.html">Career Opportunities</a></li>
+            </ul>
         </div>
-
+        
         <div class="footer-col">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="courses.html">All programs</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            <li><a href="careers.html">Career Opportunities</a></li>
-          </ul>
+            <h3>Get In Touch!</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
+                    </svg>
+                    <span> Katlang District Mardan Pakistan</span>
+                </div>
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                    </svg>
+                    <span><a href="tel:+923488850059">+92 348 8850059</a></span>
+                   </div>
+                  <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/>
+                    </svg>
+                    <span><a href="tel:+923161098765">+92 316 1098765</a></span>
+                </div>
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6M20 6L12 11L4 6H20M20 18H4V8L12 13L20 8V18Z"/>
+                    </svg>
+                    <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
+                </div>
+                <div class="contact-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"/>
+                    </svg>
+                    <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
+                </div>
+            </div>
+            
+            <div class="newsletter">
+                <h4>Subscribe to Our Newsletter</h4>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
         </div>
-
-        <div class="footer-col">
-          <h3>Get In Touch!</h3>
-          <div class="contact-info">
-            <div class="contact-item">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"
-                />
-              </svg>
-              <span> Katlang District Mardan Pakistan</span>
-            </div>
-            <div class="contact-item">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"
-                />
-              </svg>
-              <span><a href="tel:+923488850059">+92 348 8850059</a></span>
-            </div>
-            <div class="contact-item">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"
-                />
-              </svg>
-              <span><a href="tel:+923161098765">+92 316 1098765</a></span>
-            </div>
-            <div class="contact-item">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6M20 6L12 11L4 6H20M20 18H4V8L12 13L20 8V18Z"
-                />
-              </svg>
-              <span
-                ><a href="mailto:info@codedmind.com"
-                  >info@codedmind.com</a
-                ></span
-              >
-            </div>
-            <div class="contact-item">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-              >
-                <path
-                  d="M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z"
-                />
-              </svg>
-              <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
-            </div>
-          </div>
-
-          <div class="newsletter">
-            <h4>Subscribe to Our Newsletter</h4>
-            <form class="newsletter-form">
-              <input type="email" placeholder="Your email address" required />
-              <button type="submit">Subscribe</button>
-            </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
+    </div>
+    
+    <div class="footer-bottom">
         <div class="footer-bottom-content">
-          <div class="copyright">
-            &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
-          </div>
-          <div class="legal-links">
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="terms.html">Terms of Service</a>
-            <a href="refund.html">Refund Policy</a>
-            <a href="https://aitoolsfreelance.blogspot.com"> Blogs</a>
-          </div>
+            <div class="copyright">
+                &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
+            </div>
+            <div class="legal-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="refund.html">Refund Policy</a>
+                <a href="https://aitoolsfreelance.blogspot.com"> Blogs</a>
+            </div>
         </div>
-      </div>
-    </footer>
-    <script src="codedmind-enhancements.js"></script>
-  </body>
+    </div>
+</footer>
+<script src="codedmind-enhancements.js"></script>
+</body>
 </html>

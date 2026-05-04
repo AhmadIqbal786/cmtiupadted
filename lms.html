@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <base href="https://cmti.pk/">
 <meta charset="UTF-8">
 <title>CMTI – Learning Management System</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -129,16 +128,16 @@ footer{
   <section id="section-login" class="active">
     <h2>Welcome! Please sign in or create an account.</h2>
 
-    <div class="inline-style-30">
+    <div style="max-width:400px;margin:auto;">
       <label>Email</label>
-      <input type="email" id="login-email" class="inline-style-31">
+      <input type="email" id="login-email" style="width:100%;padding:.5rem;margin-bottom:.5rem;">
       <label>Password</label>
-      <input type="password" id="login-pass" class="inline-style-32">
+      <input type="password" id="login-pass" style="width:100%;padding:.5rem;margin-bottom:1rem;">
 
-      <button id="btn-login" class="inline-style-33">Login</button>
-      <p class="inline-style-34">or</p>
-      <button id="btn-register" class="inline-style-35">Create Account</button>
-      <p id="login-msg" class="inline-style-36"></p>
+      <button id="btn-login" style="background:var(--primary);color:#fff;padding:.5rem 1rem;border:none;border-radius:4px;cursor:pointer;width:100%;">Login</button>
+      <p style="text-align:center;margin:1rem 0;">or</p>
+      <button id="btn-register" style="background:var(--accent);color:#fff;padding:.5rem 1rem;border:none;border-radius:4px;cursor:pointer;width:100%;">Create Account</button>
+      <p id="login-msg" style="color:red;margin-top:.5rem;"></p>
     </div>
   </section>
 
@@ -152,7 +151,7 @@ footer{
 
   <!-- ====================== COURSE VIEW ====================== -->
   <section id="section-course">
-    <button id="btn-back" class="inline-style-37">← Back to catalogue</button>
+    <button id="btn-back" style="margin-bottom:1rem;background:var(--primary);color:#fff;padding:.3rem .8rem;border:none;border-radius:4px;">← Back to catalogue</button>
     <div id="course-content"></div>
   </section>
 
@@ -160,9 +159,8 @@ footer{
   <section id="section-profile">
     <h2>Your Profile</h2>
     <p><strong>Email:</strong> <span id="profile-email"></span></p>
-    <p><strong>Enrolled courses:</strong></p>
-    <ul id="profile-courses"></ul>
-    <button id="btn-logout" class="inline-style-38">Logout</button>
+    <p><strong>Enrolled courses:</strong> <ul id="profile-courses"></ul></p>
+    <button id="btn-logout" style="background:#dc3545;color:#fff;padding:.5rem 1rem;border:none;border-radius:4px;cursor:pointer;">Logout</button>
   </section>
 
 </main>
@@ -299,7 +297,7 @@ function openCourse(courseId){
     <h2>${course.title}</h2>
     <div class="meta">Course ID: ${course.id}</div>
     <div class="progress"><div id="prog-bar"></div></div>
-    <div id="prog-text" class="inline-style-39">Progress: 0%</div>
+    <div id="prog-text" style="font-size:.9rem;margin-top:.3rem;">Progress: 0%</div>
   `;
   container.appendChild(header);
 
@@ -399,7 +397,7 @@ function renderProfile(){
       const c = demoCourses.find(x=>x.id===id);
       if(c){
         const li=document.createElement('li');
-        li.innerHTML=`<a href="#" data-id="${c.id}" class="inline-style-40">${c.title}</a>`;
+        li.innerHTML=`<a href="#" data-id="${c.id}" style="color:var(--primary);">${c.title}</a>`;
         list.appendChild(li);
       }
     });

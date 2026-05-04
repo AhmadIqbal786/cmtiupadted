@@ -58,7 +58,6 @@ body {
 /* Header Styles */
 .new-header {
     background: rgba(255, 255, 255, 0.8);
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--crystal-border);
@@ -332,7 +331,6 @@ body {
 /* Crystal Card Style */
 .crystal-card {
     background: var(--crystal-bg);
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--crystal-border);
@@ -431,7 +429,6 @@ body {
     top: 50%;
     transform: translateY(-50%);
     background: rgba(255, 255, 255, 0.2);
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     width: 50px;
@@ -785,7 +782,6 @@ body {
 .footer-col {
     margin-bottom: 30px;
     background: linear-gradient(to right, #4d6883, #4a6580);
-    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 20px;
@@ -840,7 +836,6 @@ body {
     border-radius: 50%;
     color: #fff;
     transition: all 0.3s ease;
-    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -943,7 +938,6 @@ body {
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
-    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -979,7 +973,6 @@ body {
     background: rgba(0, 0, 0, 0.2);
     padding: 20px 0;
     margin-top: 30px;
-    -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
 }
 

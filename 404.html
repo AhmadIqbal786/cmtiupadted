@@ -1,190 +1,30 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>404 - Page Not Found | Coded Mind Institute</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a365d 0%, #2d3748 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #333;
-        }
-
-        .error-container {
-            background: white;
-            border-radius: 12px;
-            padding: 60px 40px;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 600px;
-            animation: slideIn 0.6s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .error-code {
-            font-size: 5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #1a365d, #3182ce);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
-            line-height: 1;
-        }
-
-        h1 {
-            font-size: 2rem;
-            color: #1a365d;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        a, button {
-            padding: 12px 30px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #1a365d, #3182ce);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(26, 54, 93, 0.3);
-        }
-
-        .btn-secondary {
-            background: #f0f0f0;
-            color: #1a365d;
-            border: 2px solid #1a365d;
-        }
-
-        .btn-secondary:hover {
-            background: #1a365d;
-            color: white;
-        }
-
-        .search-box {
-            margin-top: 40px;
-            padding-top: 40px;
-            border-top: 2px solid #eee;
-        }
-
-        .search-box input {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .search-box input:focus {
-            outline: none;
-            border-color: #3182ce;
-        }
-
-        .search-box small {
-            display: block;
-            margin-top: 10px;
-            color: #999;
-        }
-
-        @media (max-width: 600px) {
-            .error-container {
-                padding: 40px 20px;
-            }
-
-            .error-code {
-                font-size: 3.5rem;
-            }
-
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-
-            .button-group {
-                flex-direction: column;
-            }
-
-            a, button {
-                width: 100%;
-            }
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Not Found - Coded Mind Technology Incubator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="error-container">
-        <div class="error-code">404</div>
-        <h1>Page Not Found</h1>
-        <p>Sorry, the page you're looking for doesn't exist or has been moved. Let's get you back on track!</p>
+    <!-- Header -->
+    <header class="site-header">
+        <!-- ...existing header code... -->
+    </header>
 
-        <div class="button-group">
-            <a href="/" class="btn-primary">← Back to Homepage</a>
-            <a href="/#courses" class="btn-secondary">Browse Courses</a>
-        </div>
-
-        <div class="search-box">
-            <p style="color: #666; margin-bottom: 15px;">Can't find what you're looking for?</p>
-            <input type="text" id="search" placeholder="Search for a course or page..." />
-            <small>Start typing to search our site content</small>
-        </div>
+    <div class="error-container" style="text-align:center;padding:100px 20px;">
+        <h1>404</h1>
+        <h2>Page Not Found</h2>
+        <p>The page you're looking for doesn't exist or has been moved.</p>
+        <a href="index.html" class="btn">Return to Homepage</a>
     </div>
 
-    <script>
-        // Simple search functionality
-        document.getElementById('search').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter' && this.value.trim()) {
-                window.location.href = '/?search=' + encodeURIComponent(this.value);
-            }
-        });
-    </script>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <!-- ...existing footer code... -->
+    </footer>
+    
+    <script src="scripts/app.js"></script>
+    <script src="scripts/error-handler.js"></script>
 </body>
 </html>
