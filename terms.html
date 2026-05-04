@@ -1,1073 +1,1182 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <base href="https://cmti.pk/">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <base href="https://cmti.pk/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terms & Conditions - Coded Mind Technology Incubator</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="logo.png" type="image/png">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" href="logo.png" type="image/png" />
     <style>
-        /* ===== CSS RESET & VARIABLES ===== */
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #7e22ce;
-            --accent: #06b6d4;
-            --light: #f8fafc;
-            --dark: #0f172a;
-            --gray: #64748b;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
-            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.15);
-            --border-radius: 12px;
-            --transition: all 0.3s ease;
-        }
+      /* ===== CSS RESET & VARIABLES ===== */
+      :root {
+        --primary: #2563eb;
+        --primary-dark: #1d4ed8;
+        --secondary: #7e22ce;
+        --accent: #06b6d4;
+        --light: #f8fafc;
+        --dark: #0f172a;
+        --gray: #64748b;
+        --success: #10b981;
+        --warning: #f59e0b;
+        --danger: #ef4444;
+        --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.15);
+        --border-radius: 12px;
+        --transition: all 0.3s ease;
+      }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        html {
-            scroll-behavior: smooth;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
-            overflow-x: hidden;
-        }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background-color: var(--light);
+        overflow-x: hidden;
+      }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
 
-        p {
-            margin-bottom: 1rem;
-        }
+      p {
+        margin-bottom: 1rem;
+      }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: var(--transition);
+      }
 
-        ul {
-            list-style: none;
-        }
+      ul {
+        list-style: none;
+      }
 
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
 
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .section-subtitle {
+        font-size: 1.2rem;
+        text-align: center;
+        color: var(--gray);
+        max-width: 700px;
+        margin: 0 auto 3rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 28px;
+        background: var(--gradient);
+        color: white;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+      }
+
+      .btn-outline:hover {
+        background: var(--primary);
+        color: white;
+      }
+
+      .crystal-card {
+        background: rgba(255, 255, 255, 0.8);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: var(--transition);
+        overflow: hidden;
+      }
+
+      .crystal-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      /* ===== HEADER ===== */
+      .new-header {
+        background: rgba(255, 255, 255, 0.95);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: var(--transition);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .logo-container img {
+        height: 50px;
+        width: auto;
+      }
+
+      .logo-text {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav-menu a {
+        font-weight: 600;
+        position: relative;
+      }
+
+      .nav-menu a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gradient);
+        transition: var(--transition);
+      }
+
+      .nav-menu a:hover::after,
+      .nav-menu a.active::after {
+        width: 100%;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: var(--dark);
+        margin: 3px 0;
+        transition: var(--transition);
+      }
+
+      .mobile-menu {
+        display: none;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .mobile-nav a {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        font-weight: 600;
+      }
+
+      /* ===== HERO SECTION ===== */
+      .terms-hero {
+        background: var(--gradient);
+        color: white;
+        padding: 150px 0 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-visual {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+
+      .floating-shape {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .shape-1 {
+        width: 200px;
+        height: 200px;
+        top: 10%;
+        left: 5%;
+        animation-delay: 0s;
+      }
+
+      .shape-2 {
+        width: 150px;
+        height: 150px;
+        top: 60%;
+        right: 10%;
+        animation-delay: 2s;
+      }
+
+      .shape-3 {
+        width: 100px;
+        height: 100px;
+        bottom: 10%;
+        left: 15%;
+        animation-delay: 4s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .terms-hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .hero-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        font-weight: 600;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background: linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
+        transition: all 0.3s ease;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+      }
+
+      .hero-description {
+        font-size: 1.3rem;
+        margin-bottom: 2.5rem;
+        opacity: 0.9;
+      }
+
+      /* ===== BREADCRUMB ===== */
+      .breadcrumb-section {
+        padding: 20px 0;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .breadcrumb-content {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .breadcrumb-content a {
+        color: var(--primary);
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .breadcrumb-content a:hover {
+        color: var(--secondary);
+      }
+
+      .breadcrumb-separator {
+        color: var(--gray);
+      }
+
+      .breadcrumb-current {
+        color: var(--gray);
+      }
+
+      /* ===== TERMS CONTENT ===== */
+      .terms-content {
+        padding: 80px 0;
+        background: white;
+      }
+
+      .terms-container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .terms-section {
+        margin-bottom: 3rem;
+      }
+
+      .terms-section h2 {
+        color: var(--primary);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--light);
+        font-size: 1.8rem;
+      }
+
+      .terms-section p {
+        margin-bottom: 1rem;
+        color: var(--dark);
+        line-height: 1.7;
+      }
+
+      .terms-section ul {
+        margin-left: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .terms-section li {
+        margin-bottom: 0.8rem;
+        position: relative;
+        padding-left: 25px;
+      }
+
+      .terms-section li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--primary);
+        font-size: 1.2rem;
+      }
+
+      .highlight-box {
+        background: rgba(37, 99, 235, 0.05);
+        padding: 25px;
+        border-left: 4px solid var(--primary);
+        margin: 1.5rem 0;
+        border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      }
+
+      /* ===== CONTACT BOX ===== */
+      .contact-box {
+        background: var(--gradient);
+        color: white;
+        padding: 40px;
+        border-radius: var(--border-radius);
+        margin: 3rem 0;
+        text-align: center;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .contact-box h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .contact-box p {
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+      }
+
+      /* ===== FOOTER ===== */
+      .site-footer {
+        background: linear-gradient(to right, #2c3e50, #4a6580);
+        color: #fff;
+        padding: 50px 0 0;
+        margin-top: 80px;
+        font-size: 14px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid var(--glass-border);
+      }
+
+      .site-footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(to right, #4d6883, #4a6580);
+        z-index: 2;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .footer-col {
+        margin-bottom: 30px;
+        background: linear-gradient(to right, #4d6883, #4a6580);
+        border-radius: 15px;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .footer-logo img {
+        height: 80px;
+        margin-right: 5px;
+      }
+
+      .footer-logo h3 {
+        font-size: 18px;
+        margin: 0;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .footer-description {
+        line-height: 1.6;
+        margin-bottom: 20px;
+        opacity: 0.9;
+        text-align: center;
+      }
+
+      .footer-social h4 {
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: #fff;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .social-icons a:hover {
+        background: var(--primary-gradient);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(110, 69, 226, 0.4);
+      }
+
+      .footer-col h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #ff7e5f;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-col h3::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background: linear-gradient(to right, #4d6883, #4a6580);
+      }
+
+      .footer-col ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-col ul li {
+        margin-bottom: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .footer-col ul li:hover {
+        transform: translateX(5px);
+      }
+
+      .footer-col ul li a {
+        color: #fff;
+        opacity: 0.9;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: block;
+        padding: 5px 0;
+      }
+
+      .footer-col ul li a:hover {
+        opacity: 1;
+        color: #88d3ce;
+        padding-left: 10px;
+      }
+
+      .contact-info {
+        margin-bottom: 25px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .contact-item svg {
+        margin-right: 10px;
+        opacity: 0.9;
+      }
+
+      .contact-item span a {
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.9;
+        transition: opacity 0.3s ease;
+      }
+
+      .contact-item span a:hover {
+        opacity: 1;
+        color: #88d3ce;
+      }
+
+      .newsletter h4 {
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      .newsletter-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .newsletter-form input {
+        padding: 12px 15px;
+        border: none;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .newsletter-form input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .newsletter-form input:focus {
+        outline: none;
+        border-color: #6e45e2;
+        box-shadow: 0 0 0 2px rgba(110, 69, 226, 0.2);
+      }
+
+      .newsletter-form button {
+        padding: 12px 15px;
+        border: none;
+        border-radius: 5px;
+        background: linear-gradient(to right, #4d6883, #4a6580);
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
+      }
+
+      .newsletter-form button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(110, 69, 226, 0.4);
+      }
+
+      .footer-bottom {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 20px 0;
+        margin-top: 30px;
+      }
+
+      .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .legal-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .legal-links a {
+        color: #fff;
+        opacity: 0.8;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.3s ease;
+      }
+
+      .legal-links a:hover {
+        opacity: 1;
+        color: #88d3ce;
+      }
+
+      .copyright {
+        opacity: 0.8;
+        font-size: 14px;
+      }
+
+      @media (max-width: 576px) {
         .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
+          width: 95%;
         }
 
         .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            text-align: center;
-            color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto 3rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background: var(--gradient);
-            color: white;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .crystal-card {
-            background: rgba(255, 255, 255, 0.8);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-            overflow: hidden;
-        }
-
-        .crystal-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* ===== HEADER ===== */
-        .new-header {
-            background: rgba(255, 255, 255, 0.95);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: var(--transition);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-container img {
-            height: 50px;
-            width: auto;
-        }
-
-        .logo-text {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-menu a {
-            font-weight: 600;
-            position: relative;
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            transition: var(--transition);
-        }
-
-        .nav-menu a:hover::after,
-        .nav-menu a.active::after {
-            width: 100%;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--dark);
-            margin: 3px 0;
-            transition: var(--transition);
-        }
-
-        .mobile-menu {
-            display: none;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .mobile-nav {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .mobile-nav a {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-            font-weight: 600;
-        }
-
-        /* ===== HERO SECTION ===== */
-        .terms-hero {
-            background: var(--gradient);
-            color: white;
-            padding: 150px 0 80px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-visual {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-
-        .floating-shape {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .shape-1 {
-            width: 200px;
-            height: 200px;
-            top: 10%;
-            left: 5%;
-            animation-delay: 0s;
-        }
-
-        .shape-2 {
-            width: 150px;
-            height: 150px;
-            top: 60%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-
-        .shape-3 {
-            width: 100px;
-            height: 100px;
-            bottom: 10%;
-            left: 15%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .terms-hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            font-weight: 600;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            background: linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
-            transition: all 0.3s ease;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            
+          font-size: 1.8rem;
         }
 
         .hero-title {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
-
-        .hero-description {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-        }
-
-        /* ===== BREADCRUMB ===== */
-        .breadcrumb-section {
-            padding: 20px 0;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .breadcrumb-content {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .breadcrumb-content a {
-            color: var(--primary);
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .breadcrumb-content a:hover {
-            color: var(--secondary);
-        }
-
-        .breadcrumb-separator {
-            color: var(--gray);
-        }
-
-        .breadcrumb-current {
-            color: var(--gray);
-        }
-
-        /* ===== TERMS CONTENT ===== */
-        .terms-content {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .terms-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .terms-section {
-            margin-bottom: 3rem;
+          font-size: 2rem;
         }
 
         .terms-section h2 {
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--light);
-            font-size: 1.8rem;
+          font-size: 1.5rem;
         }
-
-        .terms-section p {
-            margin-bottom: 1rem;
-            color: var(--dark);
-            line-height: 1.7;
-        }
-
-        .terms-section ul {
-            margin-left: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .terms-section li {
-            margin-bottom: 0.8rem;
-            position: relative;
-            padding-left: 25px;
-        }
-
-        .terms-section li:before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        .highlight-box {
-            background: rgba(37, 99, 235, 0.05);
-            padding: 25px;
-            border-left: 4px solid var(--primary);
-            margin: 1.5rem 0;
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
-        }
-
-        /* ===== CONTACT BOX ===== */
-        .contact-box {
-            background: var(--gradient);
-            color: white;
-            padding: 40px;
-            border-radius: var(--border-radius);
-            margin: 3rem 0;
-            text-align: center;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .contact-box h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-box p {
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
-        }
-
-        /* ===== FOOTER ===== */
-.site-footer {
-    background: linear-gradient(to right, #2c3e50, #4a6580);
-    color: #fff;
-    padding: 50px 0 0;
-    margin-top: 80px;
-    font-size: 14px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
-    border-top: 1px solid var(--glass-border);
-}
-
-.site-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(to right, #4d6883, #4a6580);
-    z-index: 2;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 1;
-}
-
-.footer-col {
-    margin-bottom: 30px;
-    background: linear-gradient(to right, #4d6883, #4a6580);
-    border-radius: 15px;
-    padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.footer-logo img {
-    height: 80px;
-    margin-right: 5px;
-}
-
-.footer-logo h3 {
-    font-size: 18px;
-    margin: 0;
-    background: var(--primary-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.footer-description {
-    line-height: 1.6;
-    margin-bottom: 20px;
-    opacity: 0.9;
-    text-align: center;
-}
-
-.footer-social h4 {
-    margin-bottom: 15px;
-    font-size: 16px;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    color: #fff;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.social-icons a:hover {
-    background: var(--primary-gradient);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(110, 69, 226, 0.4);
-}
-
-.footer-col h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #ff7e5f;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-col h3::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50px;
-    height: 2px;
-    background: linear-gradient(to right, #4d6883, #4a6580);
-}
-
-.footer-col ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-col ul li {
-    margin-bottom: 12px;
-    transition: all 0.3s ease;
-}
-
-.footer-col ul li:hover {
-    transform: translateX(5px);
-}
-
-.footer-col ul li a {
-    color: #fff;
-    opacity: 0.9;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: block;
-    padding: 5px 0;
-}
-
-.footer-col ul li a:hover {
-    opacity: 1;
-    color: #88d3ce;
-    padding-left: 10px;
-}
-
-.contact-info {
-    margin-bottom: 25px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.contact-item svg {
-    margin-right: 10px;
-    opacity: 0.9;
-}
-
-.contact-item span a {
-    color: #fff;
-    text-decoration: none;
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
-}
-
-.contact-item span a:hover {
-    opacity: 1;
-    color: #88d3ce;
-}
-
-.newsletter h4 {
-    margin-bottom: 15px;
-    font-size: 16px;
-}
-
-.newsletter-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.newsletter-form input {
-    padding: 12px 15px;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.newsletter-form input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.newsletter-form input:focus {
-    outline: none;
-    border-color: #6e45e2;
-    box-shadow: 0 0 0 2px rgba(110, 69, 226, 0.2);
-}
-
-.newsletter-form button {
-    padding: 12px 15px;
-    border: none;
-    border-radius: 5px;
-    background:linear-gradient(to right, #4d6883, #4a6580);
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
-}
-
-.newsletter-form button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(110, 69, 226, 0.4);
-}
-
-.footer-bottom {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 20px 0;
-    margin-top: 30px;
-    
-}
-
-.footer-bottom-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.legal-links {
-    display: flex;
-    gap: 20px;
-}
-
-.legal-links a {
-    color: #fff;
-    opacity: 0.8;
-    text-decoration: none;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
-
-.legal-links a:hover {
-    opacity: 1;
-    color: #88d3ce;
-}
-
-.copyright {
-    opacity: 0.8;
-    font-size: 14px;
-}
-
-        @media (max-width: 576px) {
-            .container {
-                width: 95%;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .terms-section h2 {
-                font-size: 1.5rem;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header class="new-header">
-        <div class="container">
-            <div class="header-container">
-                <div class="logo-container">
-                    <img src="logo.png" alt="CodedMind Logo">
-                    <div class="logo-text">Coded Mind <br>Technology Incubator</div>
-                </div>
-                
-                <nav>
-                    <ul class="nav-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="courses.html">Programs</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                    </ul>
-                </nav>
-                
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            
-            <div class="mobile-menu">
-                <ul class="mobile-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="courses.html">Programs</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                </ul>
-            </div>
+      <div class="container">
+        <div class="header-container">
+          <div class="logo-container">
+            <img src="logo.png" alt="CodedMind Logo" />
+            <div class="logo-text">Coded Mind <br />Technology Incubator</div>
+          </div>
+
+          <nav>
+            <ul class="nav-menu">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="courses.html">Programs</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="careers.html">Careers</a></li>
+            </ul>
+          </nav>
+
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
+
+        <div class="mobile-menu">
+          <ul class="mobile-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Programs</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </div>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section class="terms-hero">
-        <div class="hero-visual">
-            <div class="floating-shape shape-1"></div>
-            <div class="floating-shape shape-2"></div>
-            <div class="floating-shape shape-3"></div>
+      <div class="hero-visual">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+      </div>
+      <div class="container">
+        <div class="terms-hero-content">
+          <div class="hero-badge">Legal Document</div>
+          <h1 class="hero-title">Terms & Conditions</h1>
+          <p class="hero-description">
+            Please read these terms carefully before using our services. By
+            accessing our website and services, you agree to be bound by these
+            terms.
+          </p>
         </div>
-        <div class="container">
-            <div class="terms-hero-content">
-                <div class="hero-badge">Legal Document</div>
-                <h1 class="hero-title">Terms & Conditions</h1>
-                <p class="hero-description">Please read these terms carefully before using our services. By accessing our website and services, you agree to be bound by these terms.</p>
-            </div>
-        </div>
+      </div>
     </section>
 
     <!-- Breadcrumb -->
     <section class="breadcrumb-section">
-        <div class="container">
-            <div class="breadcrumb-content">
-                <a href="index.html">Home</a>
-                <span class="breadcrumb-separator">/</span>
-                <a href="#">Legal</a>
-                <span class="breadcrumb-separator">/</span>
-                <span class="breadcrumb-current">Terms & Conditions</span>
-            </div>
+      <div class="container">
+        <div class="breadcrumb-content">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-separator">/</span>
+          <a href="#">Legal</a>
+          <span class="breadcrumb-separator">/</span>
+          <span class="breadcrumb-current">Terms & Conditions</span>
         </div>
+      </div>
     </section>
 
     <!-- Terms Content -->
     <section class="terms-content">
-        <div class="container terms-container">
-            <div class="terms-section">
-                <h2>1. Acceptance of Terms</h2>
-                <p>By accessing or using any services provided by Coded Mind Technology Incubator ("we," "us," or "our"), you agree to be bound by these Terms and Conditions. If you do not agree to these terms, please do not use our services.</p>
-            </div>
-            
-            <div class="terms-section">
-                <h2>2. Services Description</h2>
-                <p>Coded Mind Technology Incubator provides technology education, incubation services, mentorship, and related resources. We reserve the right to modify, suspend, or discontinue any aspect of our services at any time.</p>
-            </div>
-            
-            <div class="terms-section">
-                <h2>3. User Accounts</h2>
-                <p>To access certain features, you may need to create an account. You are responsible for:</p>
-                <ul>
-                    <li>Maintaining the confidentiality of your account credentials</li>
-                    <li>All activities that occur under your account</li>
-                    <li>Providing accurate and complete information</li>
-                </ul>
-                <p>We reserve the right to suspend or terminate accounts that violate these terms.</p>
-            </div>
-            
-            <div class="terms-section">
-                <h2>4. Intellectual Property</h2>
-                <p>All content provided through our services, including but not limited to text, graphics, logos, images, course materials, and software, is the property of Coded Mind Technology Incubator or its content suppliers and protected by intellectual property laws.</p>
-                
-                <div class="highlight-box">
-                    <p>You may access and use our content for personal, non-commercial purposes only. Any other use, including reproduction, modification, distribution, or republication, without our prior written consent is strictly prohibited.</p>
-                </div>
-            </div>
-            
-            <div class="terms-section">
-                <h2>5. User Conduct</h2>
-                <p>While using our services, you agree not to:</p>
-                <ul>
-                    <li>Violate any applicable laws or regulations</li>
-                    <li>Infringe upon the rights of others</li>
-                    <li>Post or transmit any malicious code, spam, or unlawful material</li>
-                    <li>Interfere with or disrupt our services or servers</li>
-                    <li>Attempt to gain unauthorized access to any portion of our services</li>
-                </ul>
-            </div>
-            
-            <div class="terms-section">
-                <h2>6. Payments and Refunds</h2>
-                <p>Certain services require payment. You agree to pay all applicable fees as described when you purchase those services.</p>
-                <p>Refund policies vary by program and are detailed at the time of purchase. Generally, we offer:</p>
-                <ul>
-                    <li>Full refund within 14 days of purchase for most courses if no more than 20% of content has been accessed</li>
-                    <li>No refunds for customized incubation programs after work has commenced</li>
-                    <li>Pro-rated refunds in certain circumstances at our discretion</li>
-                </ul>
-            </div>
-            
-            <div class="terms-section">
-                <h2>7. Disclaimer of Warranties</h2>
-                <p>Our services are provided "as is" and "as available" without warranties of any kind, either express or implied. We do not guarantee that:</p>
-                <ul>
-                    <li>The services will meet all your requirements</li>
-                    <li>The services will be uninterrupted, timely, secure, or error-free</li>
-                    <li>The results obtained from using our services will be effective or reliable</li>
-                </ul>
-            </div>
-            
-            <div class="terms-section">
-                <h2>8. Limitation of Liability</h2>
-                <p>To the fullest extent permitted by law, Coded Mind Technology Incubator shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from:</p>
-                <ul>
-                    <li>Your access to or use of our services</li>
-                    <li>Any conduct or content of any third party on our services</li>
-                    <li>Unauthorized access to or use of our servers and/or any personal information</li>
-                    <li>Interruption or cessation of transmission to or from our services</li>
-                </ul>
-            </div>
-            
-            <div class="terms-section">
-                <h2>9. Privacy</h2>
-                <p>Your privacy is important to us. Our Privacy Policy explains how we collect, use, and protect your personal information and is incorporated into these Terms by reference.</p>
-            </div>
-            
-            <div class="terms-section">
-                <h2>10. Modifications to Terms</h2>
-                <p>We reserve the right to modify these Terms at any time. We will provide notice of significant changes through our website or by email. Continued use of our services after changes constitutes acceptance of the modified Terms.</p>
-            </div>
-            
-            <div class="terms-section">
-                <h2>11. Governing Law</h2>
-                <p>These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which Coded Mind Technology Incubator is established, without regard to its conflict of law provisions.</p>
-            </div>
-            
-            <div class="terms-section">
-                <h2>12. Contact Information</h2>
-                <p>If you have any questions about these Terms, please contact us:</p>
-                <ul>
-                    <li>Email: legal@codedmind.com</li>
-                    <li>Address: Katlang District Mardan kpk Pakistan</li>
-                    <li>Phone: 0348-8850059</li>
-                </ul>
-            </div>
-            
-            <div class="contact-box">
-                <h3>Have Questions About Our Terms?</h3>
-                <p>Our legal team is here to help clarify any part of our Terms and Conditions.</p>
-                <a href="contact.html" class="btn">Contact Us</a>
-            </div>
-            
-            <div class="highlight-box">
-                <p><strong>Last Updated:</strong> January 1, 2023</p>
-                <p>These Terms and Conditions supersede all previous versions.</p>
-            </div>
+      <div class="container terms-container">
+        <div class="terms-section">
+          <h2>1. Acceptance of Terms</h2>
+          <p>
+            By accessing or using any services provided by Coded Mind Technology
+            Incubator ("we," "us," or "our"), you agree to be bound by these
+            Terms and Conditions. If you do not agree to these terms, please do
+            not use our services.
+          </p>
         </div>
+
+        <div class="terms-section">
+          <h2>2. Services Description</h2>
+          <p>
+            Coded Mind Technology Incubator provides technology education,
+            incubation services, mentorship, and related resources. We reserve
+            the right to modify, suspend, or discontinue any aspect of our
+            services at any time.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h2>3. User Accounts</h2>
+          <p>
+            To access certain features, you may need to create an account. You
+            are responsible for:
+          </p>
+          <ul>
+            <li>Maintaining the confidentiality of your account credentials</li>
+            <li>All activities that occur under your account</li>
+            <li>Providing accurate and complete information</li>
+          </ul>
+          <p>
+            We reserve the right to suspend or terminate accounts that violate
+            these terms.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h2>4. Intellectual Property</h2>
+          <p>
+            All content provided through our services, including but not limited
+            to text, graphics, logos, images, course materials, and software, is
+            the property of Coded Mind Technology Incubator or its content
+            suppliers and protected by intellectual property laws.
+          </p>
+
+          <div class="highlight-box">
+            <p>
+              You may access and use our content for personal, non-commercial
+              purposes only. Any other use, including reproduction,
+              modification, distribution, or republication, without our prior
+              written consent is strictly prohibited.
+            </p>
+          </div>
+        </div>
+
+        <div class="terms-section">
+          <h2>5. User Conduct</h2>
+          <p>While using our services, you agree not to:</p>
+          <ul>
+            <li>Violate any applicable laws or regulations</li>
+            <li>Infringe upon the rights of others</li>
+            <li>
+              Post or transmit any malicious code, spam, or unlawful material
+            </li>
+            <li>Interfere with or disrupt our services or servers</li>
+            <li>
+              Attempt to gain unauthorized access to any portion of our services
+            </li>
+          </ul>
+        </div>
+
+        <div class="terms-section">
+          <h2>6. Payments and Refunds</h2>
+          <p>
+            Certain services require payment. You agree to pay all applicable
+            fees as described when you purchase those services.
+          </p>
+          <p>
+            Refund policies vary by program and are detailed at the time of
+            purchase. Generally, we offer:
+          </p>
+          <ul>
+            <li>
+              Full refund within 14 days of purchase for most courses if no more
+              than 20% of content has been accessed
+            </li>
+            <li>
+              No refunds for customized incubation programs after work has
+              commenced
+            </li>
+            <li>
+              Pro-rated refunds in certain circumstances at our discretion
+            </li>
+          </ul>
+        </div>
+
+        <div class="terms-section">
+          <h2>7. Disclaimer of Warranties</h2>
+          <p>
+            Our services are provided "as is" and "as available" without
+            warranties of any kind, either express or implied. We do not
+            guarantee that:
+          </p>
+          <ul>
+            <li>The services will meet all your requirements</li>
+            <li>
+              The services will be uninterrupted, timely, secure, or error-free
+            </li>
+            <li>
+              The results obtained from using our services will be effective or
+              reliable
+            </li>
+          </ul>
+        </div>
+
+        <div class="terms-section">
+          <h2>8. Limitation of Liability</h2>
+          <p>
+            To the fullest extent permitted by law, Coded Mind Technology
+            Incubator shall not be liable for any indirect, incidental, special,
+            consequential, or punitive damages resulting from:
+          </p>
+          <ul>
+            <li>Your access to or use of our services</li>
+            <li>Any conduct or content of any third party on our services</li>
+            <li>
+              Unauthorized access to or use of our servers and/or any personal
+              information
+            </li>
+            <li>
+              Interruption or cessation of transmission to or from our services
+            </li>
+          </ul>
+        </div>
+
+        <div class="terms-section">
+          <h2>9. Privacy</h2>
+          <p>
+            Your privacy is important to us. Our Privacy Policy explains how we
+            collect, use, and protect your personal information and is
+            incorporated into these Terms by reference.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h2>10. Modifications to Terms</h2>
+          <p>
+            We reserve the right to modify these Terms at any time. We will
+            provide notice of significant changes through our website or by
+            email. Continued use of our services after changes constitutes
+            acceptance of the modified Terms.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h2>11. Governing Law</h2>
+          <p>
+            These Terms shall be governed by and construed in accordance with
+            the laws of the jurisdiction in which Coded Mind Technology
+            Incubator is established, without regard to its conflict of law
+            provisions.
+          </p>
+        </div>
+
+        <div class="terms-section">
+          <h2>12. Contact Information</h2>
+          <p>If you have any questions about these Terms, please contact us:</p>
+          <ul>
+            <li>Email: legal@codedmind.com</li>
+            <li>Address: Katlang District Mardan kpk Pakistan</li>
+            <li>Phone: 0348-8850059</li>
+          </ul>
+        </div>
+
+        <div class="contact-box">
+          <h3>Have Questions About Our Terms?</h3>
+          <p>
+            Our legal team is here to help clarify any part of our Terms and
+            Conditions.
+          </p>
+          <a href="contact.html" class="btn">Contact Us</a>
+        </div>
+
+        <div class="highlight-box">
+          <p><strong>Last Updated:</strong> January 1, 2023</p>
+          <p>These Terms and Conditions supersede all previous versions.</p>
+        </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <img src="logo.png" alt="CMTI Logo">
-                        <h3>Coded Mind <n>Technology Incubator</n></h3>
-                    </div>
-                    <p class="footer-description">
-                        Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
-                        Join CMTI to gain cutting-Edge skills in technology and business. Our expert-led courses prepare you for the digital future.
-                    </p>
-                    <div class="footer-social">
-                        <h4>Follow Us</h4>
-                        <div class="social-icons">
-                            <a href="https://www.facebook.com/people/Coded-Mind-Technology-Incubator/61578686665814/" title="Facebook" aria-label="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" title="Twitter" aria-label="Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" title="Instagram" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" title="LinkedIn" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" title="YouTube" aria-label="YouTube">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                        
-                <div class="footer-col">
-                    <h3>Top Programs</h3>
-                    <ul>
-                        <li><a href="course-webdev.html">Web Development</a></li>
-                        <li><a href="course-data-science.html">Data Science</a></li>
-                        <li><a href="course-cyber-security.html">Cyber Security</a></li>
-                        <li><a href="course-digital-marketing.html">Digital Marketing</a></li>
-                        <li><a href="course-python.html">Python Programming</a></li>
-                        <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="courses.html">All programs</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="careers.html">Career Opportunities</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Get In Touch!</h3>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Katlang District Mardan Pakistan</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span><a href="tel:+923488850059">+92 348 8850059</a></span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span><a href="tel:+923161098765">+92 316 1098765</a></span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
-                        </div>
-                    </div>
-                    
-                    <div class="newsletter">
-                        <h4>Subscribe to Our Newsletter</h4>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Your email address" required>
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img src="logo.png" alt="CMTI Logo" />
+              <h3>Coded Mind <span>Technology Incubator</span></h3>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <div class="copyright">
-                        &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
-                    </div>
-                    <div class="legal-links">
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms of Service</a>
-                        <a href="refund.html">Refund Policy</a>
-                        <a href="https://aitoolsfreelance.blogspot.com">Blogs</a>
-                    </div>
-                </div>
+            <p class="footer-description">
+              Empowering the next generation of tech professionals through
+              quality education and hands-on training in cutting-edge
+              technologies. Join CMTI to gain cutting-Edge skills in technology
+              and business. Our expert-led courses prepare you for the digital
+              future.
+            </p>
+            <div class="footer-social">
+              <h4>Follow Us</h4>
+              <div class="social-icons">
+                <a
+                  href="https://www.facebook.com/people/Coded-Mind-Technology-Incubator/61578686665814/"
+                  title="Facebook"
+                  aria-label="Facebook"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" title="Twitter" aria-label="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" title="Instagram" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" title="YouTube" aria-label="YouTube">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
             </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Top Programs</h3>
+            <ul>
+              <li><a href="course-webdev.html">Web Development</a></li>
+              <li><a href="course-data-science.html">Data Science</a></li>
+              <li><a href="course-cyber-security.html">Cyber Security</a></li>
+              <li>
+                <a href="course-digital-marketing.html">Digital Marketing</a>
+              </li>
+              <li><a href="course-python.html">Python Programming</a></li>
+              <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="courses.html">All programs</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="careers.html">Career Opportunities</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Get In Touch!</h3>
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Katlang District Mardan Pakistan</span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span><a href="tel:+923488850059">+92 348 8850059</a></span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span><a href="tel:+923161098765">+92 316 1098765</a></span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span
+                  ><a href="mailto:info@codedmind.com"
+                    >info@codedmind.com</a
+                  ></span
+                >
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
+              </div>
+            </div>
+
+            <div class="newsletter">
+              <h4>Subscribe to Our Newsletter</h4>
+              <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required />
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+          </div>
         </div>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <div class="copyright">
+              &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
+            </div>
+            <div class="legal-links">
+              <a href="privacy.html">Privacy Policy</a>
+              <a href="terms.html">Terms of Service</a>
+              <a href="refund.html">Refund Policy</a>
+              <a href="https://aitoolsfreelance.blogspot.com">Blogs</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.new-header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-            }
-        });
-        
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+      // Mobile Menu Toggle
+      const hamburger = document.querySelector(".hamburger");
+      const mobileMenu = document.querySelector(".mobile-menu");
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileMenu.classList.toggle("active");
+      });
 
-        // Observe elements to animate
-        document.addEventListener('DOMContentLoaded', function() {
-            const elementsToAnimate = document.querySelectorAll('.terms-section, .highlight-box, .contact-box');
-            
-            elementsToAnimate.forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(el);
-            });
+      // Header scroll effect
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector(".new-header");
+        if (window.scrollY > 100) {
+          header.style.background = "rgba(255, 255, 255, 0.98)";
+          header.style.boxShadow = "0 5px 20px rgba(0, 0, 0, 0.1)";
+        } else {
+          header.style.background = "rgba(255, 255, 255, 0.95)";
+          header.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.1)";
+        }
+      });
+
+      // Animate elements on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
         });
+      }, observerOptions);
+
+      // Observe elements to animate
+      document.addEventListener("DOMContentLoaded", function () {
+        const elementsToAnimate = document.querySelectorAll(
+          ".terms-section, .highlight-box, .contact-box",
+        );
+
+        elementsToAnimate.forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(20px)";
+          el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+          observer.observe(el);
+        });
+      });
     </script>
-</body>
+  </body>
 </html>

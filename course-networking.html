@@ -1,1010 +1,1155 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <base href="https://cmti.pk/">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn web development at CMTI Pakistan. Comprehensive 3-month course covering HTML5, CSS3, JavaScript, React, Node.js, and more. Build your career in web development.">
-    <meta name="keywords" content="web development course, HTML5, CSS3, JavaScript, React, Node.js, full stack development, Pakistan, CMTI, Coded Mind Technology Incubator">
-    <meta name="author" content="Coded Mind Technology Incubator">
-    
+  <head>
+    <base href="https://cmti.pk/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn web development at CMTI Pakistan. Comprehensive 3-month course covering HTML5, CSS3, JavaScript, React, Node.js, and more. Build your career in web development."
+    />
+    <meta
+      name="keywords"
+      content="web development course, HTML5, CSS3, JavaScript, React, Node.js, full stack development, Pakistan, CMTI, Coded Mind Technology Incubator"
+    />
+    <meta name="author" content="Coded Mind Technology Incubator" />
+
     <!-- Open Graph Tags for Social Media -->
-    <meta property="og:title" content="Web Development Course - Coded Mind Technology Incubator">
-    <meta property="og:description" content="Learn web development at CMTI Pakistan. Comprehensive 3-month course covering HTML5, CSS3, JavaScript, React, Node.js, and more.">
-    <meta property="og:url" content="https://www.cmti.pk/courses/web-development">
-    <meta property="og:image" content="https://www.cmti.pk/assets/images/web-development-course.jpg">
-    <meta property="og:type" content="website">
-    
+    <meta
+      property="og:title"
+      content="Web Development Course - Coded Mind Technology Incubator"
+    />
+    <meta
+      property="og:description"
+      content="Learn web development at CMTI Pakistan. Comprehensive 3-month course covering HTML5, CSS3, JavaScript, React, Node.js, and more."
+    />
+    <meta
+      property="og:url"
+      content="https://www.cmti.pk/courses/web-development"
+    />
+    <meta
+      property="og:image"
+      content="https://www.cmti.pk/assets/images/web-development-course.jpg"
+    />
+    <meta property="og:type" content="website" />
+
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.cmti.pk/courses/web-development">
-    
-    <title>Web Development Course | Learn HTML5, CSS3, JavaScript, React | CMTI Pakistan</title>
-    
+    <link rel="canonical" href="https://www.cmti.pk/courses/web-development" />
+
+    <title>
+      Web Development Course | Learn HTML5, CSS3, JavaScript, React | CMTI
+      Pakistan
+    </title>
+
     <style>
-        /* Global Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f7fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        /* Header Styles */
-        .site-header {
-            background: linear-gradient(135deg, #0d47a1, #1565c0, #1976d2);
-            color: white;
-            padding: 15px 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
+      /* Global Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f5f7fa;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Header Styles */
+      .site-header {
+        background: linear-gradient(135deg, #0d47a1, #1565c0, #1976d2);
+        color: white;
+        padding: 15px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+      }
+
+      .logo {
+        height: 50px;
+        width: auto;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      nav a:hover,
+      nav a.active {
+        color: #ffd700;
+        border-bottom: 2px solid #ffd700;
+        padding-bottom: 5px;
+      }
+
+      /* Main Content */
+      .container {
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 0 20px;
+      }
+
+      .back-link {
+        display: inline-block;
+        margin: 20px;
+        color: #0d47a1;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .back-link:hover {
+        text-decoration: underline;
+      }
+
+      /* Hero Section */
+      .course-hero {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-bottom: 40px;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .course-image {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .course-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .course-intro {
+        flex: 1;
+        padding: 30px;
+        min-width: 300px;
+      }
+
+      .course-intro h1 {
+        color: #0d47a1;
+        margin-bottom: 15px;
+        font-size: 2.2rem;
+      }
+
+      .course-intro p {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+      }
+
+      .course-highlights {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin: 20px 0;
+      }
+
+      .highlight-card {
+        background: #e3f2fd;
+        padding: 15px;
+        border-radius: 8px;
+        flex: 1;
+        min-width: 150px;
+        text-align: center;
+      }
+
+      .highlight-card h3 {
+        color: #0d47a1;
+        margin-bottom: 5px;
+      }
+
+      .enroll-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #0d47a1, #1976d2);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 15px;
+        transition: all 0.3s ease;
+      }
+
+      .enroll-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Cards Section */
+      .section-title {
+        color: #2575fc;
+        margin: 40px 0 20px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(to right, #6a11cb, #2575fc);
+      }
+
+      .cards-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 25px;
+        margin-bottom: 40px;
+      }
+
+      .card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .card-header {
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        color: white;
+        padding: 15px 20px;
+      }
+
+      .card-body {
+        padding: 20px;
+      }
+
+      /* Course Outline */
+      .module-item {
+        margin-bottom: 15px;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .module-item::before {
+        content: "•";
+        color: #2575fc;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
+      /* Testimonials */
+      .testimonial-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .testimonial-text {
+        flex-grow: 1;
+        font-style: italic;
+        margin-bottom: 15px;
+      }
+
+      .testimonial-author {
+        display: flex;
+        align-items: center;
+      }
+
+      .author-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+        object-fit: cover;
+      }
+
+      /* Instructor */
+      .instructor-card {
+        text-align: center;
+      }
+
+      .instructor-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 15px;
+        border: 3px solid #0d47a1;
+      }
+
+      /* Payment Section */
+      .payment-methods {
+        background: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 40px;
+      }
+
+      .payment-option {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .payment-option:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      /* Jotform */
+      .form-container {
+        margin: 40px 0;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Career Opportunities */
+      .career-opportunities {
+        background: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        margin-bottom: 40px;
+      }
+
+      .career-item {
+        margin-bottom: 15px;
+        padding: 15px;
+        background: #e3f2fd;
+        border-radius: 8px;
+        border-left: 4px solid #1976d2;
+      }
+
+      /* ===== FOOTER ===== */
+      .site-footer {
+        background: linear-gradient(to right, #2c3e50, #4a6580);
+        color: #fff;
+        padding: 50px 0 0;
+        margin-top: 80px;
+        font-size: 14px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid var(--glass-border);
+      }
+
+      .site-footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(to right, #4d6883, #4a6580);
+        z-index: 2;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .footer-col {
+        margin-bottom: 30px;
+        background: linear-gradient(to right, #4d6883, #4a6580);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .footer-logo img {
+        height: 80px;
+        margin-right: 5px;
+      }
+
+      .footer-logo h3 {
+        font-size: 18px;
+        margin: 0;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .footer-description {
+        line-height: 1.6;
+        margin-bottom: 20px;
+        opacity: 0.9;
+        text-align: center;
+      }
+
+      .footer-social h4 {
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: #fff;
+        transition: all 0.3s ease;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .social-icons a:hover {
+        background: var(--primary-gradient);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(110, 69, 226, 0.4);
+      }
+
+      .footer-col h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #ff7e5f;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-col h3::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background: linear-gradient(to right, #4d6883, #4a6580);
+      }
+
+      .footer-col ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-col ul li {
+        margin-bottom: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .footer-col ul li:hover {
+        transform: translateX(5px);
+      }
+
+      .footer-col ul li a {
+        color: #fff;
+        opacity: 0.9;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: block;
+        padding: 5px 0;
+      }
+
+      .footer-col ul li a:hover {
+        opacity: 1;
+        color: #88d3ce;
+        padding-left: 10px;
+      }
+
+      .contact-info {
+        margin-bottom: 25px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .contact-item svg {
+        margin-right: 10px;
+        opacity: 0.9;
+      }
+
+      .contact-item span a {
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.9;
+        transition: opacity 0.3s ease;
+      }
+
+      .contact-item span a:hover {
+        opacity: 1;
+        color: #88d3ce;
+      }
+
+      .newsletter h4 {
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      .newsletter-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .newsletter-form input {
+        padding: 12px 15px;
+        border: none;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .newsletter-form input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .newsletter-form input:focus {
+        outline: none;
+        border-color: #6e45e2;
+        box-shadow: 0 0 0 2px rgba(110, 69, 226, 0.2);
+      }
+
+      .newsletter-form button {
+        padding: 12px 15px;
+        border: none;
+        border-radius: 5px;
+        background: linear-gradient(to right, #4d6883, #4a6580);
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
+      }
+
+      .newsletter-form button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(110, 69, 226, 0.4);
+      }
+
+      .footer-bottom {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 20px 0;
+        margin-top: 30px;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+      }
+
+      .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .legal-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .legal-links a {
+        color: #fff;
+        opacity: 0.8;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.3s ease;
+      }
+
+      .legal-links a:hover {
+        opacity: 1;
+        color: #88d3ce;
+      }
+
+      .copyright {
+        opacity: 0.8;
+        font-size: 14px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
         .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
+          flex-direction: column;
+          text-align: center;
         }
-        
-        .logo {
-            height: 50px;
-            width: auto;
+
+        nav {
+          margin-top: 15px;
         }
-        
+
         nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-            transition: all 0.3s ease;
+          margin: 0 10px;
         }
-        
-        nav a:hover, nav a.active {
-            color: #ffd700;
-            border-bottom: 2px solid #ffd700;
-            padding-bottom: 5px;
-        }
-        
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-        
-        .back-link {
-            display: inline-block;
-            margin: 20px;
-            color: #0d47a1;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        
-        /* Hero Section */
+
         .course-hero {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 40px;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+          flex-direction: column;
         }
-        
-        .course-image {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .course-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .course-intro {
-            flex: 1;
-            padding: 30px;
-            min-width: 300px;
-        }
-        
-        .course-intro h1 {
-            color: #0d47a1;
-            margin-bottom: 15px;
-            font-size: 2.2rem;
-        }
-        
-        .course-intro p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-        
-        .course-highlights {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 20px 0;
-        }
-        
-        .highlight-card {
-            background: #e3f2fd;
-            padding: 15px;
-            border-radius: 8px;
-            flex: 1;
-            min-width: 150px;
-            text-align: center;
-        }
-        
-        .highlight-card h3 {
-            color: #0d47a1;
-            margin-bottom: 5px;
-        }
-        
-        .enroll-btn {
-            display: inline-block;
-            background: linear-gradient(135deg, #0d47a1, #1976d2);
-            color: white;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            transition: all 0.3s ease;
-        }
-        
-        .enroll-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        
-        /* Cards Section */
-        .section-title {
-            color: #2575fc;
-            margin: 40px 0 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-        }
-        
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-        
-        .card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: transform 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .card-header {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            color: white;
-            padding: 15px 20px;
-        }
-        
-        .card-body {
-            padding: 20px;
-        }
-        
-        /* Course Outline */
-        .module-item {
-            margin-bottom: 15px;
-            padding-left: 20px;
-            position: relative;
-        }
-        
-        .module-item::before {
-            content: "•";
-            color: #2575fc;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-        
-        /* Testimonials */
-        .testimonial-card {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        
-        .testimonial-text {
-            flex-grow: 1;
-            font-style: italic;
-            margin-bottom: 15px;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-        
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-            object-fit: cover;
-        }
-        
-        /* Instructor */
-        .instructor-card {
-            text-align: center;
-        }
-        
-        .instructor-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin: 0 auto 15px;
-            border: 3px solid #0d47a1;
-        }
-        
-        /* Payment Section */
-        .payment-methods {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            margin-bottom: 40px;
-        }
-        
-        .payment-option {
-            margin-bottom: 20px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eee;
-        }
-        
-        .payment-option:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
-        /* Jotform */
-        .form-container {
-            margin: 40px 0;
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
-        
-        /* Career Opportunities */
-        .career-opportunities {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            margin-bottom: 40px;
-        }
-        
-        .career-item {
-            margin-bottom: 15px;
-            padding: 15px;
-            background: #e3f2fd;
-            border-radius: 8px;
-            border-left: 4px solid #1976d2;
-        }
-        
-       /* ===== FOOTER ===== */
-.site-footer {
-    background: linear-gradient(to right, #2c3e50, #4a6580);
-    color: #fff;
-    padding: 50px 0 0;
-    margin-top: 80px;
-    font-size: 14px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
-    border-top: 1px solid var(--glass-border);
-}
+      }
 
-.site-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(to right, #4d6883, #4a6580);
-    z-index: 2;
-}
+      /* CMTI Branding Updates */
+      .cmti-badge {
+        background: #ff9800;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        margin-left: 10px;
+      }
 
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    position: relative;
-    z-index: 1;
-}
+      .breadcrumb {
+        margin: 20px 0;
+        font-size: 0.9rem;
+      }
 
-.footer-col {
-    margin-bottom: 30px;
-    background: linear-gradient(to right, #4d6883, #4a6580);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
+      .breadcrumb a {
+        color: #0d47a1;
+        text-decoration: none;
+      }
 
-.footer-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.footer-logo img {
-    height: 80px;
-    margin-right: 5px;
-}
-
-.footer-logo h3 {
-    font-size: 18px;
-    margin: 0;
-    background: var(--primary-gradient);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.footer-description {
-    line-height: 1.6;
-    margin-bottom: 20px;
-    opacity: 0.9;
-    text-align: center;
-}
-
-.footer-social h4 {
-    margin-bottom: 15px;
-    font-size: 16px;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.social-icons a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    color: #fff;
-    transition: all 0.3s ease;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.social-icons a:hover {
-    background: var(--primary-gradient);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(110, 69, 226, 0.4);
-}
-
-.footer-col h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #ff7e5f;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-.footer-col h3::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 50px;
-    height: 2px;
-    background: linear-gradient(to right, #4d6883, #4a6580);
-}
-
-.footer-col ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-col ul li {
-    margin-bottom: 12px;
-    transition: all 0.3s ease;
-}
-
-.footer-col ul li:hover {
-    transform: translateX(5px);
-}
-
-.footer-col ul li a {
-    color: #fff;
-    opacity: 0.9;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: block;
-    padding: 5px 0;
-}
-
-.footer-col ul li a:hover {
-    opacity: 1;
-    color: #88d3ce;
-    padding-left: 10px;
-}
-
-.contact-info {
-    margin-bottom: 25px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.contact-item svg {
-    margin-right: 10px;
-    opacity: 0.9;
-}
-
-.contact-item span a {
-    color: #fff;
-    text-decoration: none;
-    opacity: 0.9;
-    transition: opacity 0.3s ease;
-}
-
-.contact-item span a:hover {
-    opacity: 1;
-    color: #88d3ce;
-}
-
-.newsletter h4 {
-    margin-bottom: 15px;
-    font-size: 16px;
-}
-
-.newsletter-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.newsletter-form input {
-    padding: 12px 15px;
-    border: none;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
-    color: #fff;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.newsletter-form input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
-}
-
-.newsletter-form input:focus {
-    outline: none;
-    border-color: #6e45e2;
-    box-shadow: 0 0 0 2px rgba(110, 69, 226, 0.2);
-}
-
-.newsletter-form button {
-    padding: 12px 15px;
-    border: none;
-    border-radius: 5px;
-    background:linear-gradient(to right, #4d6883, #4a6580);
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
-}
-
-.newsletter-form button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(110, 69, 226, 0.4);
-}
-
-.footer-bottom {
-    background: rgba(0, 0, 0, 0.2);
-    padding: 20px 0;
-    margin-top: 30px;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-}
-
-.footer-bottom-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.legal-links {
-    display: flex;
-    gap: 20px;
-}
-
-.legal-links a {
-    color: #fff;
-    opacity: 0.8;
-    text-decoration: none;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
-
-.legal-links a:hover {
-    opacity: 1;
-    color: #88d3ce;
-}
-
-.copyright {
-    opacity: 0.8;
-    font-size: 14px;
-}
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            nav {
-                margin-top: 15px;
-            }
-            
-            nav a {
-                margin: 0 10px;
-            }
-            
-            .course-hero {
-                flex-direction: column;
-            }
-        }
-        
-        /* CMTI Branding Updates */
-        .cmti-badge {
-            background: #ff9800;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            margin-left: 10px;
-        }
-        
-        .breadcrumb {
-            margin: 20px 0;
-            font-size: 0.9rem;
-        }
-        
-        .breadcrumb a {
-            color: #0d47a1;
-            text-decoration: none;
-        }
-        
-        .breadcrumb span {
-            color: #666;
-        }
+      .breadcrumb span {
+        color: #666;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header class="site-header">
-        <div class="header-content">
-            <div>
-                <img src="logo.png" alt="CMTI Logo" class="logo">
-            </div>
-            <nav>
-                <a href="https://www.cmti.pk">Home</a>
-                <a href="https://www.cmti.pk/courses" class="active">Courses</a>
-                <a href="https://www.cmti.pk/about">About</a>
-                <a href="https://www.cmti.pk/contact">Contact</a>
-                <a href="https://www.cmti.pk/careers">Careers</a>
-            </nav>
+      <div class="header-content">
+        <div>
+          <img src="logo.png" alt="CMTI Logo" class="logo" />
         </div>
+        <nav>
+          <a href="https://www.cmti.pk">Home</a>
+          <a href="https://www.cmti.pk/courses" class="active">Courses</a>
+          <a href="https://www.cmti.pk/about">About</a>
+          <a href="https://www.cmti.pk/contact">Contact</a>
+          <a href="https://www.cmti.pk/careers">Careers</a>
+        </nav>
+      </div>
     </header>
-    
+
     <div class="container">
-        <!-- Breadcrumb -->
-        <div class="breadcrumb">
-            <a href="https://www.cmti.pk">Home</a> &gt; 
-            <a href="https://www.cmti.pk/courses">Courses</a> &gt; 
-            <span>Web Development</span>
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="https://www.cmti.pk">Home</a> &gt;
+        <a href="https://www.cmti.pk/courses">Courses</a> &gt;
+        <span>Web Development</span>
+      </div>
+
+      <!-- Course Hero Section -->
+      <section class="course-hero">
+        <div class="course-image">
+          <img
+            src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=600&q=80"
+            alt="Web Development Course at CMTI Pakistan"
+          />
+        </div>
+        <div class="course-intro">
+          <h1>Web Development Course <span class="cmti-badge">CMTI</span></h1>
+          <p>
+            Master the art of building modern, responsive websites and web
+            applications. This comprehensive course covers front-end and
+            back-end development, preparing you for a successful career in web
+            development.
+          </p>
+
+          <div class="course-highlights">
+            <div class="highlight-card">
+              <h3>Duration</h3>
+              <p>3 Months</p>
+            </div>
+            <div class="highlight-card">
+              <h3>Fee</h3>
+              <p>PKR 18,000</p>
+            </div>
+            <div class="highlight-card">
+              <h3>Format</h3>
+              <p>Hybrid</p>
+            </div>
+            <div class="highlight-card">
+              <h3>Level</h3>
+              <p>Beginner to Advanced</p>
+            </div>
+          </div>
+          <a
+            href="https://form.jotform.com/252090931090451"
+            class="enroll-btn"
+            target="_blank"
+            rel="noopener"
+            >Enroll Now</a
+          >
+        </div>
+      </section>
+
+      <!-- Course Details Cards -->
+      <h2 class="section-title">Course Details</h2>
+      <div class="cards-container">
+        <div class="card">
+          <div class="card-header">
+            <h3>Course Overview</h3>
+          </div>
+          <div class="card-body">
+            <p>
+              Our Web Development course provides comprehensive training in both
+              front-end and back-end technologies. You'll learn to build
+              responsive websites, dynamic web applications, and understand the
+              full development lifecycle from concept to deployment.
+            </p>
+            <p>
+              This course combines theoretical knowledge with hands-on projects,
+              giving you practical experience with industry-standard tools and
+              frameworks. By the end, you'll have a portfolio of projects to
+              showcase to potential employers.
+            </p>
+          </div>
         </div>
 
-        <!-- Course Hero Section -->
-        <section class="course-hero">
-            <div class="course-image">
-                <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=600&q=80" alt="Web Development Course at CMTI Pakistan">
-            </div>
-            <div class="course-intro">
-                <h1>Web Development Course <span class="cmti-badge">CMTI</span></h1>
-                <p>Master the art of building modern, responsive websites and web applications. This comprehensive course covers front-end and back-end development, preparing you for a successful career in web development.</p>
-                
-                <div class="course-highlights">
-                    <div class="highlight-card">
-                        <h3>Duration</h3>
-                        <p>3 Months</p>
-                    </div>
-                    <div class="highlight-card">
-                        <h3>Fee</h3>
-                        <p>PKR 18,000</p>
-                    </div>
-                    <div class="highlight-card">
-                        <h3>Format</h3>
-                        <p>Hybrid</p>
-                    </div>
-                    <div class="highlight-card">
-                        <h3>Level</h3>
-                        <p>Beginner to Advanced</p>
-                    </div>
-                </div>
-                <a href="https://form.jotform.com/252090931090451" class="enroll-btn" target="_blank" rel="noopener">Enroll Now</a>
-            </div>
-        </section>
-
-        <!-- Course Details Cards -->
-        <h2 class="section-title">Course Details</h2>
-        <div class="cards-container">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Course Overview</h3>
-                </div>
-                <div class="card-body">
-                    <p>Our Web Development course provides comprehensive training in both front-end and back-end technologies. You'll learn to build responsive websites, dynamic web applications, and understand the full development lifecycle from concept to deployment.</p>
-                    <p>This course combines theoretical knowledge with hands-on projects, giving you practical experience with industry-standard tools and frameworks. By the end, you'll have a portfolio of projects to showcase to potential employers.</p>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h3>Learning Outcomes</h3>
-                </div>
-                <div class="card-body">
-                    <ul>
-                        <li>Build responsive websites using HTML5, CSS3, and JavaScript</li>
-                        <li>Create dynamic web applications with React.js</li>
-                        <li>Develop server-side applications with Node.js and Express</li>
-                        <li>Work with databases using MongoDB and SQL</li>
-                        <li>Implement authentication and authorization systems</li>
-                        <li>Deploy web applications to cloud platforms</li>
-                        <li>Use Git for version control and collaboration</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h3>Who Should Enroll?</h3>
-                </div>
-                <div class="card-body">
-                    <ul>
-                        <li>Beginners interested in starting a career in web development</li>
-                        <li>Designers looking to expand their technical skills</li>
-                        <li>IT professionals wanting to transition to web development</li>
-                        <li>Entrepreneurs who want to build their own web applications</li>
-                        <li>Students seeking practical web development skills</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="card">
+          <div class="card-header">
+            <h3>Learning Outcomes</h3>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>
+                Build responsive websites using HTML5, CSS3, and JavaScript
+              </li>
+              <li>Create dynamic web applications with React.js</li>
+              <li>Develop server-side applications with Node.js and Express</li>
+              <li>Work with databases using MongoDB and SQL</li>
+              <li>Implement authentication and authorization systems</li>
+              <li>Deploy web applications to cloud platforms</li>
+              <li>Use Git for version control and collaboration</li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Course Outline -->
-        <h2 class="section-title">Course Outline</h2>
-        <div class="cards-container">
-            <div class="card">
-                <div class="card-header">
-                    <h3>Module 1: Web Fundamentals</h3>
-                </div>
-                <div class="card-body">
-                    <div class="module-item">HTML5 & Semantic Markup</div>
-                    <div class="module-item">CSS3 & Modern Layouts (Flexbox, Grid)</div>
-                    <div class="module-item">Responsive Design Principles</div>
-                    <div class="module-item">Introduction to JavaScript</div>
-                    <div class="module-item">DOM Manipulation</div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h3>Module 2: Front-End Development</h3>
-                </div>
-                <div class="card-body">
-                    <div class="module-item">Advanced JavaScript (ES6+)</div>
-                    <div class="module-item">React.js Fundamentals</div>
-                    <div class="module-item">Component-Based Architecture</div>
-                    <div class="module-item">State Management with Hooks</div>
-                    <div class="module-item">API Integration</div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h3>Module 3: Back-End Development</h3>
-                </div>
-                <div class="card-body">
-                    <div class="module-item">Node.js & Express.js</div>
-                    <div class="module-item">RESTful API Design</div>
-                    <div class="module-item">Database Design & Management</div>
-                    <div class="module-item">MongoDB & Mongoose</div>
-                    <div class="module-item">SQL & MySQL</div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h3>Module 4: Authentication & Security</h3>
-                </div>
-                <div class="card-body">
-                    <div class="module-item">User Authentication Systems</div>
-                    <div class="module-item">JWT & Session Management</div>
-                    <div class="module-item">Password Hashing & Security</div>
-                    <div class="module-item">Web Security Best Practices</div>
-                    <div class="module-item">OAuth Integration</div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h3>Module 5: Development Tools & Deployment</h3>
-                </div>
-                <div class="card-body">
-                    <div class="module-item">Git & GitHub for Version Control</div>
-                    <div class="module-item">Package Management with npm</div>
-                    <div class="module-item">Build Tools & Task Runners</div>
-                    <div class="module-item">Deployment to Cloud Platforms</div>
-                    <div class="module-item">CI/CD Pipelines</div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <h3>Module 6: Capstone Project</h3>
-                </div>
-                <div class="card-body">
-                    <div class="module-item">Project Planning & Requirements</div>
-                    <div class="module-item">Full-Stack Application Development</div>
-                    <div class="module-item">Testing & Debugging</div>
-                    <div class="module-item">Performance Optimization</div>
-                    <div class="module-item">Final Project Presentation</div>
-                </div>
-            </div>
+        <div class="card">
+          <div class="card-header">
+            <h3>Who Should Enroll?</h3>
+          </div>
+          <div class="card-body">
+            <ul>
+              <li>
+                Beginners interested in starting a career in web development
+              </li>
+              <li>Designers looking to expand their technical skills</li>
+              <li>IT professionals wanting to transition to web development</li>
+              <li>
+                Entrepreneurs who want to build their own web applications
+              </li>
+              <li>Students seeking practical web development skills</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Outline -->
+      <h2 class="section-title">Course Outline</h2>
+      <div class="cards-container">
+        <div class="card">
+          <div class="card-header">
+            <h3>Module 1: Web Fundamentals</h3>
+          </div>
+          <div class="card-body">
+            <div class="module-item">HTML5 & Semantic Markup</div>
+            <div class="module-item">CSS3 & Modern Layouts (Flexbox, Grid)</div>
+            <div class="module-item">Responsive Design Principles</div>
+            <div class="module-item">Introduction to JavaScript</div>
+            <div class="module-item">DOM Manipulation</div>
+          </div>
         </div>
 
-        <!-- Career Opportunities -->
-        <h2 class="section-title">Career Opportunities</h2>
-        <div class="career-opportunities">
-            <div class="career-item">
-                <h3>Front-End Developer</h3>
-                <p>Create visually appealing and interactive user interfaces for websites and web applications.</p>
-            </div>
-            <div class="career-item">
-                <h3>Back-End Developer</h3>
-                <p>Develop server-side logic, databases, and APIs that power web applications.</p>
-            </div>
-            <div class="career-item">
-                <h3>Full-Stack Developer</h3>
-                <p>Work on both front-end and back-end aspects of web applications.</p>
-            </div>
-            <div class="career-item">
-                <h3>Web Application Developer</h3>
-                <p>Build dynamic web applications using modern frameworks and technologies.</p>
-            </div>
-            <div class="career-item">
-                <h3>UI/UX Developer</h3>
-                <p>Bridge the gap between design and implementation, creating user-friendly interfaces.</p>
-            </div>
+        <div class="card">
+          <div class="card-header">
+            <h3>Module 2: Front-End Development</h3>
+          </div>
+          <div class="card-body">
+            <div class="module-item">Advanced JavaScript (ES6+)</div>
+            <div class="module-item">React.js Fundamentals</div>
+            <div class="module-item">Component-Based Architecture</div>
+            <div class="module-item">State Management with Hooks</div>
+            <div class="module-item">API Integration</div>
+          </div>
         </div>
 
-        <!-- Testimonials -->
-        <h2 class="section-title">Student Testimonials</h2>
-        <div class="cards-container">
-            <div class="card">
-                <div class="card-body testimonial-card">
-                    <div class="testimonial-text">
-                        "This web development course completely transformed my career. I started with zero coding knowledge and now I'm working as a junior developer at a tech startup. The hands-on projects were especially valuable for building my portfolio."
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
-                        <div>
-                            <strong>Bilal Ahmed</strong>
-                            <p>Junior Web Developer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-body testimonial-card">
-                    <div class="testimonial-text">
-                        "The curriculum was perfectly balanced between theory and practice. I particularly appreciated the capstone project which gave me real-world experience. The instructors were knowledgeable and always available to help."
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
-                        <div>
-                            <strong>Sana Khan</strong>
-                            <p>Front-End Developer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-body testimonial-card">
-                    <div class="testimonial-text">
-                        "As a graphic designer, I wanted to expand my skills into web development. This course gave me the perfect foundation. Now I can not only design websites but also build them, which has made me much more valuable to clients."
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Student" class="author-avatar">
-                        <div>
-                            <strong>Zainab Ali</strong>
-                            <p>UI/UX Designer & Developer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="card">
+          <div class="card-header">
+            <h3>Module 3: Back-End Development</h3>
+          </div>
+          <div class="card-body">
+            <div class="module-item">Node.js & Express.js</div>
+            <div class="module-item">RESTful API Design</div>
+            <div class="module-item">Database Design & Management</div>
+            <div class="module-item">MongoDB & Mongoose</div>
+            <div class="module-item">SQL & MySQL</div>
+          </div>
         </div>
 
-        <!-- Instructor Section -->
-        <h2 class="section-title">Meet Your Instructor</h2>
-        <div class="cards-container">
-            <div class="card instructor-card">
-                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Instructor" class="instructor-image">
-                <div class="card-body">
-                    <h3>Sarah Khan</h3>
-                    <p>Full-Stack Developer & Tech Lead</p>
-                    <p>With over 8 years of experience in web development, Sarah has worked on projects ranging from small business websites to enterprise-level applications. She specializes in JavaScript frameworks and has mentored dozens of junior developers. Her practical approach to teaching ensures students gain real-world skills that are immediately applicable in the job market.</p>
-                </div>
-            </div>
+        <div class="card">
+          <div class="card-header">
+            <h3>Module 4: Authentication & Security</h3>
+          </div>
+          <div class="card-body">
+            <div class="module-item">User Authentication Systems</div>
+            <div class="module-item">JWT & Session Management</div>
+            <div class="module-item">Password Hashing & Security</div>
+            <div class="module-item">Web Security Best Practices</div>
+            <div class="module-item">OAuth Integration</div>
+          </div>
         </div>
 
-        <!-- Payment Information -->
-        <h2 class="section-title" id="enroll">Payment Methods</h2>
-        <div class="payment-methods">
-            <div class="payment-option">
-                <h3>Bank Transfer</h3>
-                <p>Meezan Bank, Acc# 123456789, Title: Coded Mind Technology Incubator</p>
-            </div>
-            
-            <div class="payment-option">
-                <h3>EasyPaisa/JazzCash</h3>
-                <p>0300-1234567</p>
-            </div>
-            
-            <div class="payment-option">
-                <h3>Cash Payment</h3>
-                <p>Visit our office for cash payment</p>
-                <p><strong>Office Hours:</strong> Monday to Saturday, 9:00 AM to 6:00 PM</p>
-                <p><strong>Address:</strong> 123 Tech Street, Lahore, Pakistan</p>
-            </div>
-            
-            <div class="payment-option">
-                <h3>Installment Plan</h3>
-                <p>We offer flexible installment options:</p>
-                <ul>
-                    <li>Option 1: Full payment of PKR 18,000 (5% discount available)</li>
-                    <li>Option 2: Two installments of PKR 9,500</li>
-                    <li>Option 3: Three installments of PKR 6,500</li>
-                </ul>
-                <p>After payment, send your receipt to <b>info@codedmind.com</b> or WhatsApp 0300-1234567 for registration confirmation.</p>
-            </div>
+        <div class="card">
+          <div class="card-header">
+            <h3>Module 5: Development Tools & Deployment</h3>
+          </div>
+          <div class="card-body">
+            <div class="module-item">Git & GitHub for Version Control</div>
+            <div class="module-item">Package Management with npm</div>
+            <div class="module-item">Build Tools & Task Runners</div>
+            <div class="module-item">Deployment to Cloud Platforms</div>
+            <div class="module-item">CI/CD Pipelines</div>
+          </div>
         </div>
 
-        <!-- Jotform Registration -->
-        <h2 class="section-title">Register for This Course</h2>
-        <div class="form-container">
-            <iframe id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c" title="Sana: Registration Assistant"
-                onload="window.parent.scrollTo(0,0)" allowtransparency="true"
-                allow="geolocation; microphone; camera; fullscreen"
-                src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
-                frameborder="0" class="inline-style-3" scrolling="no">
-            </iframe>
-            <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-            <script>
-                window.jotformEmbedHandler("iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
-                "https://www.jotform.com")
-            </script>
+        <div class="card">
+          <div class="card-header">
+            <h3>Module 6: Capstone Project</h3>
+          </div>
+          <div class="card-body">
+            <div class="module-item">Project Planning & Requirements</div>
+            <div class="module-item">Full-Stack Application Development</div>
+            <div class="module-item">Testing & Debugging</div>
+            <div class="module-item">Performance Optimization</div>
+            <div class="module-item">Final Project Presentation</div>
+          </div>
         </div>
+      </div>
+
+      <!-- Career Opportunities -->
+      <h2 class="section-title">Career Opportunities</h2>
+      <div class="career-opportunities">
+        <div class="career-item">
+          <h3>Front-End Developer</h3>
+          <p>
+            Create visually appealing and interactive user interfaces for
+            websites and web applications.
+          </p>
+        </div>
+        <div class="career-item">
+          <h3>Back-End Developer</h3>
+          <p>
+            Develop server-side logic, databases, and APIs that power web
+            applications.
+          </p>
+        </div>
+        <div class="career-item">
+          <h3>Full-Stack Developer</h3>
+          <p>
+            Work on both front-end and back-end aspects of web applications.
+          </p>
+        </div>
+        <div class="career-item">
+          <h3>Web Application Developer</h3>
+          <p>
+            Build dynamic web applications using modern frameworks and
+            technologies.
+          </p>
+        </div>
+        <div class="career-item">
+          <h3>UI/UX Developer</h3>
+          <p>
+            Bridge the gap between design and implementation, creating
+            user-friendly interfaces.
+          </p>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <h2 class="section-title">Student Testimonials</h2>
+      <div class="cards-container">
+        <div class="card">
+          <div class="card-body testimonial-card">
+            <div class="testimonial-text">
+              "This web development course completely transformed my career. I
+              started with zero coding knowledge and now I'm working as a junior
+              developer at a tech startup. The hands-on projects were especially
+              valuable for building my portfolio."
+            </div>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
+                alt="Student"
+                class="author-avatar"
+              />
+              <div>
+                <strong>Bilal Ahmed</strong>
+                <p>Junior Web Developer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body testimonial-card">
+            <div class="testimonial-text">
+              "The curriculum was perfectly balanced between theory and
+              practice. I particularly appreciated the capstone project which
+              gave me real-world experience. The instructors were knowledgeable
+              and always available to help."
+            </div>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
+                alt="Student"
+                class="author-avatar"
+              />
+              <div>
+                <strong>Sana Khan</strong>
+                <p>Front-End Developer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body testimonial-card">
+            <div class="testimonial-text">
+              "As a graphic designer, I wanted to expand my skills into web
+              development. This course gave me the perfect foundation. Now I can
+              not only design websites but also build them, which has made me
+              much more valuable to clients."
+            </div>
+            <div class="testimonial-author">
+              <img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
+                alt="Student"
+                class="author-avatar"
+              />
+              <div>
+                <strong>Zainab Ali</strong>
+                <p>UI/UX Designer & Developer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Instructor Section -->
+      <h2 class="section-title">Meet Your Instructor</h2>
+      <div class="cards-container">
+        <div class="card instructor-card">
+          <img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80"
+            alt="Instructor"
+            class="instructor-image"
+          />
+          <div class="card-body">
+            <h3>Sarah Khan</h3>
+            <p>Full-Stack Developer & Tech Lead</p>
+            <p>
+              With over 8 years of experience in web development, Sarah has
+              worked on projects ranging from small business websites to
+              enterprise-level applications. She specializes in JavaScript
+              frameworks and has mentored dozens of junior developers. Her
+              practical approach to teaching ensures students gain real-world
+              skills that are immediately applicable in the job market.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment Information -->
+      <h2 class="section-title" id="enroll">Payment Methods</h2>
+      <div class="payment-methods">
+        <div class="payment-option">
+          <h3>Bank Transfer</h3>
+          <p>
+            Meezan Bank, Acc# 123456789, Title: Coded Mind Technology Incubator
+          </p>
+        </div>
+
+        <div class="payment-option">
+          <h3>EasyPaisa/JazzCash</h3>
+          <p>0300-1234567</p>
+        </div>
+
+        <div class="payment-option">
+          <h3>Cash Payment</h3>
+          <p>Visit our office for cash payment</p>
+          <p>
+            <strong>Office Hours:</strong> Monday to Saturday, 9:00 AM to 6:00
+            PM
+          </p>
+          <p><strong>Address:</strong> 123 Tech Street, Lahore, Pakistan</p>
+        </div>
+
+        <div class="payment-option">
+          <h3>Installment Plan</h3>
+          <p>We offer flexible installment options:</p>
+          <ul>
+            <li>
+              Option 1: Full payment of PKR 18,000 (5% discount available)
+            </li>
+            <li>Option 2: Two installments of PKR 9,500</li>
+            <li>Option 3: Three installments of PKR 6,500</li>
+          </ul>
+          <p>
+            After payment, send your receipt to <b>info@codedmind.com</b> or
+            WhatsApp 0300-1234567 for registration confirmation.
+          </p>
+        </div>
+      </div>
+
+      <!-- Jotform Registration -->
+      <h2 class="section-title">Register for This Course</h2>
+      <div class="form-container">
+        <iframe
+          id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c"
+          title="Sana: Registration Assistant"
+          onload="window.parent.scrollTo(0, 0)"
+          allowtransparency="true"
+          allow="geolocation; microphone; camera; fullscreen"
+          src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
+          frameborder="0"
+          class="inline-style-3"
+          scrolling="no"
+        >
+        </iframe>
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script>
+          window.jotformEmbedHandler(
+            "iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
+            "https://www.jotform.com",
+          );
+        </script>
+      </div>
     </div>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="footer-content">
-            <div class="footer-col">
-                <h3>About CMTI</h3>
-                <p>Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.</p>
-                <div class="footer-social">
-                    <a href="https://www.facebook.com/cmti.pk">Facebook</a>
-                    <a href="https://www.twitter.com/cmti_pk">Twitter</a>
-                    <a href="https://www.instagram.com/cmti.pk">Instagram</a>
-                    <a href="https://www.linkedin.com/company/cmti">LinkedIn</a>
-                </div>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Top Programs</h3>
-                <ul>
-                    <li><a href="https://www.cmti.pk/courses/web-development">Web Development</a></li>
-                    <li><a href="https://www.cmti.pk/courses/data-science">Data Science</a></li>
-                    <li><a href="https://www.cmti.pk/courses/cyber-security">Cyber Security</a></li>
-                    <li><a href="https://www.cmti.pk/courses/digital-marketing">Digital Marketing</a></li>
-                    <li><a href="https://www.cmti.pk/courses/python-programming">Python Programming</a></li>
-                    <li><a href="https://www.cmti.pk/courses/ai-ml">AI & Machine Learning</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="https://www.cmti.pk">Home</a></li>
-                    <li><a href="https://www.cmti.pk/courses">All Courses</a></li>
-                    <li><a href="https://www.cmti.pk/about">About Us</a></li>
-                    <li><a href="https://www.cmti.pk/contact">Contact Us</a></li>
-                    <li><a href="https://www.cmti.pk/careers">Career Opportunities</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-col">
-                <h3>Contact Info</h3>
-                <ul>
-                    <li>Katlang District Mardan Pakistan</li>
-                    <li>+92 348 8850059</li>
-                    <li>+92 316 1098765</li>
-                    <li>info@codedmind.com</li>
-                    <li>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</li>
-                </ul>
-            </div>
+      <div class="footer-content">
+        <div class="footer-col">
+          <h3>About CMTI</h3>
+          <p>
+            Empowering the next generation of tech professionals through quality
+            education and hands-on training in cutting-edge technologies.
+          </p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/cmti.pk">Facebook</a>
+            <a href="https://www.twitter.com/cmti_pk">Twitter</a>
+            <a href="https://www.instagram.com/cmti.pk">Instagram</a>
+            <a href="https://www.linkedin.com/company/cmti">LinkedIn</a>
+          </div>
         </div>
-        
-        <div class="footer-bottom">
-            <p>&copy; 2025 Coded Mind Technology Incubator. All rights reserved.</p>
+
+        <div class="footer-col">
+          <h3>Top Programs</h3>
+          <ul>
+            <li>
+              <a href="https://www.cmti.pk/courses/web-development"
+                >Web Development</a
+              >
+            </li>
+            <li>
+              <a href="https://www.cmti.pk/courses/data-science"
+                >Data Science</a
+              >
+            </li>
+            <li>
+              <a href="https://www.cmti.pk/courses/cyber-security"
+                >Cyber Security</a
+              >
+            </li>
+            <li>
+              <a href="https://www.cmti.pk/courses/digital-marketing"
+                >Digital Marketing</a
+              >
+            </li>
+            <li>
+              <a href="https://www.cmti.pk/courses/python-programming"
+                >Python Programming</a
+              >
+            </li>
+            <li>
+              <a href="https://www.cmti.pk/courses/ai-ml"
+                >AI & Machine Learning</a
+              >
+            </li>
+          </ul>
         </div>
+
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="https://www.cmti.pk">Home</a></li>
+            <li><a href="https://www.cmti.pk/courses">All Courses</a></li>
+            <li><a href="https://www.cmti.pk/about">About Us</a></li>
+            <li><a href="https://www.cmti.pk/contact">Contact Us</a></li>
+            <li>
+              <a href="https://www.cmti.pk/careers">Career Opportunities</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contact Info</h3>
+          <ul>
+            <li>Katlang District Mardan Pakistan</li>
+            <li>+92 348 8850059</li>
+            <li>+92 316 1098765</li>
+            <li>info@codedmind.com</li>
+            <li>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Coded Mind Technology Incubator. All rights reserved.</p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>

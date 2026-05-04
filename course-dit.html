@@ -1,1726 +1,1878 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <base href="https://cmti.pk/">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <base href="https://cmti.pk/" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DIT Course | Coded Mind Technology Incubator</title>
-    <meta name="description" content="Comprehensive Diploma in Information Technology (DIT) course. Learn computer fundamentals, programming, web technologies, networking, and database management at CMTI.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta
+      name="description"
+      content="Comprehensive Diploma in Information Technology (DIT) course. Learn computer fundamentals, programming, web technologies, networking, and database management at CMTI."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
-        /* ===== CSS RESET & VARIABLES ===== */
-        :root {
-            --primary: #1a2a6c;
-            --primary-dark: #0d1a4a;
-            --secondary: #b21f1f;
-            --accent: #fdbb2d;
-            --light: #f8fafc;
-            --dark: #0f172a;
-            --gray: #64748b;
-            --success: #10b981;
-            --warning: #f59e0b;
-            --danger: #ef4444;
-            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
-            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.15);
-            --border-radius: 12px;
-            --transition: all 0.3s ease;
-        }
+      /* ===== CSS RESET & VARIABLES ===== */
+      :root {
+        --primary: #1a2a6c;
+        --primary-dark: #0d1a4a;
+        --secondary: #b21f1f;
+        --accent: #fdbb2d;
+        --light: #f8fafc;
+        --dark: #0f172a;
+        --gray: #64748b;
+        --success: #10b981;
+        --warning: #f59e0b;
+        --danger: #ef4444;
+        --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+        --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.15);
+        --border-radius: 12px;
+        --transition: all 0.3s ease;
+      }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        html {
-            scroll-behavior: smooth;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
-            overflow-x: hidden;
-        }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background-color: var(--light);
+        overflow-x: hidden;
+      }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
 
-        p {
-            margin-bottom: 1rem;
-        }
+      p {
+        margin-bottom: 1rem;
+      }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: var(--transition);
+      }
 
-        ul {
-            list-style: none;
-        }
+      ul {
+        list-style: none;
+      }
 
-        img {
-            max-width: 100%;
-            height: auto;
-        }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
 
+      .section-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .section-subtitle {
+        font-size: 1.2rem;
+        text-align: center;
+        color: var(--gray);
+        max-width: 700px;
+        margin: 0 auto 3rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 28px;
+        background: var(--gradient);
+        color: white;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+      }
+
+      .btn-outline:hover {
+        background: var(--primary);
+        color: white;
+      }
+
+      .crystal-card {
+        background: rgba(255, 255, 255, 0.8);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: var(--transition);
+        overflow: hidden;
+      }
+
+      .crystal-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      /* ===== HEADER ===== */
+      .new-header {
+        background: rgba(255, 255, 255, 0.95);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: var(--transition);
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .logo-container img {
+        height: 50px;
+        width: auto;
+      }
+
+      .logo-text {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .nav-menu {
+        display: flex;
+        gap: 30px;
+      }
+
+      .nav-menu a {
+        font-weight: 600;
+        position: relative;
+      }
+
+      .nav-menu a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gradient);
+        transition: var(--transition);
+      }
+
+      .nav-menu a:hover::after,
+      .nav-menu a.active::after {
+        width: 100%;
+      }
+
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: var(--dark);
+        margin: 3px 0;
+        transition: var(--transition);
+      }
+
+      .mobile-menu {
+        display: none;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .mobile-nav a {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        font-weight: 600;
+      }
+
+      /* ===== COURSE HERO SECTION ===== */
+      .course-hero {
+        background: var(--gradient);
+        color: white;
+        padding: 150px 0 80px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-visual {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+
+      .floating-shape {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .shape-1 {
+        width: 200px;
+        height: 200px;
+        top: 10%;
+        left: 5%;
+        animation-delay: 0s;
+      }
+
+      .shape-2 {
+        width: 150px;
+        height: 150px;
+        top: 60%;
+        right: 10%;
+        animation-delay: 2s;
+      }
+
+      .shape-3 {
+        width: 100px;
+        height: 100px;
+        bottom: 10%;
+        left: 15%;
+        animation-delay: 4s;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .course-hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .hero-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+      }
+
+      .hero-description {
+        font-size: 1.3rem;
+        margin-bottom: 2.5rem;
+        opacity: 0.9;
+      }
+
+      /* ===== COURSE OVERVIEW SECTION ===== */
+      .course-overview {
+        padding: 80px 0;
+        background: white;
+      }
+
+      .overview-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .overview-card {
+        padding: 30px;
+        text-align: center;
+      }
+
+      .overview-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 20px;
+        background: var(--gradient);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.8rem;
+      }
+
+      .overview-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+      }
+
+      /* ===== PROGRAM STRUCTURE SECTION ===== */
+      .program-structure {
+        padding: 80px 0;
+        background: #f8fafc;
+      }
+
+      .program-tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .program-tab {
+        padding: 15px 30px;
+        background: white;
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        font-weight: 600;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+      }
+
+      .program-tab.active {
+        background: var(--gradient);
+        color: white;
+      }
+
+      .term-content {
+        display: none;
+      }
+
+      .term-content.active {
+        display: block;
+      }
+
+      .term-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+        background: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .term-table th {
+        background: var(--gradient);
+        color: white;
+        padding: 15px;
+        text-align: left;
+      }
+
+      .term-table td {
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+      }
+
+      .term-table tr:last-child td {
+        border-bottom: none;
+      }
+
+      .term-table tr:nth-child(even) {
+        background: rgba(0, 0, 0, 0.02);
+      }
+
+      .term-highlight {
+        background: rgba(253, 187, 45, 0.1) !important;
+        font-weight: 600;
+      }
+
+      /* ===== COURSE MODULES SECTION ===== */
+      .course-modules {
+        padding: 80px 0;
+        background: white;
+      }
+
+      .modules-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+      }
+
+      .module-card {
+        overflow: hidden;
+      }
+
+      .module-header {
+        background: var(--gradient);
+        color: white;
+        padding: 20px;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+
+      .module-content {
+        padding: 25px;
+      }
+
+      .module-content ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .module-content li {
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        position: relative;
+        padding-left: 25px;
+      }
+
+      .module-content li:last-child {
+        border-bottom: none;
+      }
+
+      .module-content li:before {
+        content: "💻";
+        position: absolute;
+        left: 0;
+        top: 10px;
+      }
+
+      /* ===== INSTRUCTOR SECTION ===== */
+      .instructor-section {
+        padding: 80px 0;
+        background: #f8fafc;
+      }
+
+      .instructor-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .instructor-image {
+        flex: 1;
+        min-width: 300px;
+        text-align: center;
+      }
+
+      .instructor-image img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid var(--primary);
+        box-shadow: var(--shadow);
+      }
+
+      .instructor-info {
+        flex: 2;
+        min-width: 300px;
+      }
+
+      .instructor-info h3 {
+        font-size: 1.8rem;
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
+
+      /* ===== TESTIMONIALS SECTION ===== */
+      .testimonials-section {
+        padding: 80px 0;
+        background: white;
+      }
+
+      .testimonials-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .testimonial-card {
+        padding: 30px;
+        position: relative;
+      }
+
+      .testimonial-text {
+        font-style: italic;
+        margin-bottom: 20px;
+        position: relative;
+        padding-left: 20px;
+      }
+
+      .testimonial-text:before {
+        content: '"';
+        font-size: 3rem;
+        color: var(--primary);
+        position: absolute;
+        left: -10px;
+        top: -20px;
+        opacity: 0.3;
+      }
+
+      .testimonial-author {
+        font-weight: 600;
+        color: var(--gray);
+      }
+
+      /* ===== CAREER OPPORTUNITIES SECTION ===== */
+      .career-section {
+        padding: 80px 0;
+        background: #f8fafc;
+      }
+
+      .career-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .career-card {
+        padding: 25px;
+        border-left: 4px solid var(--primary);
+      }
+
+      .career-card h3 {
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+
+      /* ===== FAQ SECTION ===== */
+      .faq-section {
+        padding: 80px 0;
+        background: white;
+      }
+
+      .faq-container {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        margin-bottom: 15px;
+        overflow: hidden;
+      }
+
+      .faq-question {
+        padding: 20px;
+        background: rgba(26, 42, 108, 0.05);
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+      }
+
+      .faq-question:hover {
+        background: rgba(26, 42, 108, 0.1);
+      }
+
+      .faq-answer {
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .faq-active .faq-answer {
+        max-height: 200px;
+        padding: 20px;
+      }
+
+      /* ===== PAYMENT SECTION ===== */
+      .payment-section {
+        padding: 80px 0;
+        background: #f8fafc;
+      }
+
+      .payment-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .payment-card {
+        padding: 25px;
+      }
+
+      .payment-card h3 {
+        color: var(--primary);
+        margin-bottom: 15px;
+      }
+
+      /* ===== REGISTRATION SECTION ===== */
+      .registration-section {
+        padding: 80px 0;
+        background: var(--gradient);
+        color: white;
+        text-align: center;
+      }
+
+      .registration-section .section-title,
+      .registration-section .section-subtitle {
+        color: white;
+      }
+
+      .form-container {
+        background: white;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--shadow-lg);
+        margin-top: 30px;
+      }
+
+      /* ===== FOOTER ===== */
+      .site-footer {
+        background: linear-gradient(to right, #2c3e50, #4a6580);
+        color: #fff;
+        padding: 50px 0 0;
+        margin-top: 80px;
+        font-size: 14px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .site-footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(to right, #4d6883, #4a6580);
+        z-index: 2;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .footer-col {
+        margin-bottom: 30px;
+        background: linear-gradient(to right, #4d6883, #4a6580);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .footer-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .footer-logo img {
+        height: 80px;
+        margin-right: 5px;
+      }
+
+      .footer-logo h3 {
+        font-size: 18px;
+        margin: 0;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .footer-description {
+        line-height: 1.6;
+        margin-bottom: 20px;
+        opacity: 0.9;
+        text-align: center;
+      }
+
+      .footer-social h4 {
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: #fff;
+        transition: all 0.3s ease;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .social-icons a:hover {
+        background: var(--gradient);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(110, 69, 226, 0.4);
+      }
+
+      .footer-col h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #ff7e5f;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-col h3::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background: linear-gradient(to right, #4d6883, #4a6580);
+      }
+
+      .footer-col ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-col ul li {
+        margin-bottom: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .footer-col ul li:hover {
+        transform: translateX(5px);
+      }
+
+      .footer-col ul li a {
+        color: #fff;
+        opacity: 0.9;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: block;
+        padding: 5px 0;
+      }
+
+      .footer-col ul li a:hover {
+        opacity: 1;
+        color: #88d3ce;
+        padding-left: 10px;
+      }
+
+      .contact-info {
+        margin-bottom: 25px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .contact-item svg {
+        margin-right: 10px;
+        opacity: 0.9;
+      }
+
+      .contact-item span a {
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.9;
+        transition: opacity 0.3s ease;
+      }
+
+      .contact-item span a:hover {
+        opacity: 1;
+        color: #88d3ce;
+      }
+
+      .newsletter h4 {
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+
+      .newsletter-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .newsletter-form input {
+        padding: 12px 15px;
+        border: none;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .newsletter-form input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .newsletter-form input:focus {
+        outline: none;
+        border-color: #6e45e2;
+        box-shadow: 0 0 0 2px rgba(110, 69, 226, 0.2);
+      }
+
+      .newsletter-form button {
+        padding: 12px 15px;
+        border: none;
+        border-radius: 5px;
+        background: linear-gradient(to right, #4d6883, #4a6580);
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
+      }
+
+      .newsletter-form button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(110, 69, 226, 0.4);
+      }
+
+      .footer-bottom {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 20px 0;
+        margin-top: 30px;
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+      }
+
+      .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .legal-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .legal-links a {
+        color: #fff;
+        opacity: 0.8;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.3s ease;
+      }
+
+      .legal-links a:hover {
+        opacity: 1;
+        color: #88d3ce;
+      }
+
+      .copyright {
+        opacity: 0.8;
+        font-size: 14px;
+      }
+
+      /* ===== RESPONSIVE STYLES ===== */
+      @media (max-width: 992px) {
         .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .section-subtitle {
-            font-size: 1.2rem;
-            text-align: center;
-            color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto 3rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 28px;
-            background: var(--gradient);
-            color: white;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .crystal-card {
-            background: rgba(255, 255, 255, 0.8);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-            overflow: hidden;
-        }
-
-        .crystal-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        /* ===== HEADER ===== */
-        .new-header {
-            background: rgba(255, 255, 255, 0.95);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: var(--transition);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-container img {
-            height: 50px;
-            width: auto;
-        }
-
-        .logo-text {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-menu a {
-            font-weight: 600;
-            position: relative;
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            transition: var(--transition);
-        }
-
-        .nav-menu a:hover::after,
-        .nav-menu a.active::after {
-            width: 100%;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--dark);
-            margin: 3px 0;
-            transition: var(--transition);
-        }
-
-        .mobile-menu {
-            display: none;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .mobile-nav {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .mobile-nav a {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-            font-weight: 600;
-        }
-
-        /* ===== COURSE HERO SECTION ===== */
-        .course-hero {
-            background: var(--gradient);
-            color: white;
-            padding: 150px 0 80px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-visual {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-        }
-
-        .floating-shape {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .shape-1 {
-            width: 200px;
-            height: 200px;
-            top: 10%;
-            left: 5%;
-            animation-delay: 0s;
-        }
-
-        .shape-2 {
-            width: 150px;
-            height: 150px;
-            top: 60%;
-            right: 10%;
-            animation-delay: 2s;
-        }
-
-        .shape-3 {
-            width: 100px;
-            height: 100px;
-            bottom: 10%;
-            left: 15%;
-            animation-delay: 4s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .course-hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
+          font-size: 2.2rem;
         }
 
         .hero-title {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
+          font-size: 3rem;
+        }
+
+        .nav-menu {
+          display: none;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .mobile-menu.active {
+          display: block;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .hero-title {
+          font-size: 2.5rem;
         }
 
         .hero-description {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-        }
-
-        /* ===== COURSE OVERVIEW SECTION ===== */
-        .course-overview {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .overview-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .overview-card {
-            padding: 30px;
-            text-align: center;
-        }
-
-        .overview-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 20px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.8rem;
-        }
-
-        .overview-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-        }
-
-        /* ===== PROGRAM STRUCTURE SECTION ===== */
-        .program-structure {
-            padding: 80px 0;
-            background: #f8fafc;
-        }
-
-        .program-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 40px;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .program-tab {
-            padding: 15px 30px;
-            background: white;
-            border-radius: var(--border-radius);
-            cursor: pointer;
-            font-weight: 600;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-        }
-
-        .program-tab.active {
-            background: var(--gradient);
-            color: white;
-        }
-
-        .term-content {
-            display: none;
-        }
-
-        .term-content.active {
-            display: block;
-        }
-
-        .term-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 30px;
-            background: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-        }
-
-        .term-table th {
-            background: var(--gradient);
-            color: white;
-            padding: 15px;
-            text-align: left;
-        }
-
-        .term-table td {
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .term-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .term-table tr:nth-child(even) {
-            background: rgba(0, 0, 0, 0.02);
-        }
-
-        .term-highlight {
-            background: rgba(253, 187, 45, 0.1) !important;
-            font-weight: 600;
-        }
-
-        /* ===== COURSE MODULES SECTION ===== */
-        .course-modules {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .modules-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .module-card {
-            overflow: hidden;
-        }
-
-        .module-header {
-            background: var(--gradient);
-            color: white;
-            padding: 20px;
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-
-        .module-content {
-            padding: 25px;
-        }
-
-        .module-content ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .module-content li {
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            position: relative;
-            padding-left: 25px;
-        }
-
-        .module-content li:last-child {
-            border-bottom: none;
-        }
-
-        .module-content li:before {
-            content: '💻';
-            position: absolute;
-            left: 0;
-            top: 10px;
-        }
-
-        /* ===== INSTRUCTOR SECTION ===== */
-        .instructor-section {
-            padding: 80px 0;
-            background: #f8fafc;
+          font-size: 1.1rem;
         }
 
         .instructor-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .instructor-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-
-        .instructor-image img {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid var(--primary);
-            box-shadow: var(--shadow);
-        }
-
-        .instructor-info {
-            flex: 2;
-            min-width: 300px;
-        }
-
-        .instructor-info h3 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        /* ===== TESTIMONIALS SECTION ===== */
-        .testimonials-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .testimonials-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial-card {
-            padding: 30px;
-            position: relative;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .testimonial-text:before {
-            content: '"';
-            font-size: 3rem;
-            color: var(--primary);
-            position: absolute;
-            left: -10px;
-            top: -20px;
-            opacity: 0.3;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--gray);
-        }
-
-        /* ===== CAREER OPPORTUNITIES SECTION ===== */
-        .career-section {
-            padding: 80px 0;
-            background: #f8fafc;
-        }
-
-        .career-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .career-card {
-            padding: 25px;
-            border-left: 4px solid var(--primary);
-        }
-
-        .career-card h3 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        /* ===== FAQ SECTION ===== */
-        .faq-section {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            margin-bottom: 15px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 20px;
-            background: rgba(26, 42, 108, 0.05);
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-        }
-
-        .faq-question:hover {
-            background: rgba(26, 42, 108, 0.1);
-        }
-
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .faq-active .faq-answer {
-            max-height: 200px;
-            padding: 20px;
-        }
-
-        /* ===== PAYMENT SECTION ===== */
-        .payment-section {
-            padding: 80px 0;
-            background: #f8fafc;
-        }
-
-        .payment-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .payment-card {
-            padding: 25px;
-        }
-
-        .payment-card h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        /* ===== REGISTRATION SECTION ===== */
-        .registration-section {
-            padding: 80px 0;
-            background: var(--gradient);
-            color: white;
-            text-align: center;
-        }
-
-        .registration-section .section-title,
-        .registration-section .section-subtitle {
-            color: white;
-        }
-
-        .form-container {
-            background: white;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-            margin-top: 30px;
-        }
-
-        /* ===== FOOTER ===== */
-        .site-footer {
-            background: linear-gradient(to right, #2c3e50, #4a6580);
-            color: #fff;
-            padding: 50px 0 0;
-            margin-top: 80px;
-            font-size: 14px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .site-footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, #4d6883, #4a6580);
-            z-index: 2;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .footer-col {
-            margin-bottom: 30px;
-            background: linear-gradient(to right, #4d6883, #4a6580);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-logo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .footer-logo img {
-            height: 80px;
-            margin-right: 5px;
-        }
-
-        .footer-logo h3 {
-            font-size: 18px;
-            margin: 0;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-
-        .footer-description {
-            line-height: 1.6;
-            margin-bottom: 20px;
-            opacity: 0.9;
-            text-align: center;
-        }
-
-        .footer-social h4 {
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: #fff;
-            transition: all 0.3s ease;
-            -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .social-icons a:hover {
-            background: var(--gradient);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(110, 69, 226, 0.4);
-        }
-
-        .footer-col h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: #ff7e5f;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background: linear-gradient(to right, #4d6883, #4a6580);
-        }
-
-        .footer-col ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .footer-col ul li:hover {
-            transform: translateX(5px);
-        }
-
-        .footer-col ul li a {
-            color: #fff;
-            opacity: 0.9;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: block;
-            padding: 5px 0;
-        }
-
-        .footer-col ul li a:hover {
-            opacity: 1;
-            color: #88d3ce;
-            padding-left: 10px;
-        }
-
-        .contact-info {
-            margin-bottom: 25px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .contact-item svg {
-            margin-right: 10px;
-            opacity: 0.9;
-        }
-
-        .contact-item span a {
-            color: #fff;
-            text-decoration: none;
-            opacity: 0.9;
-            transition: opacity 0.3s ease;
-        }
-
-        .contact-item span a:hover {
-            opacity: 1;
-            color: #88d3ce;
-        }
-
-        .newsletter h4 {
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-
-        .newsletter-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .newsletter-form input {
-            padding: 12px 15px;
-            border: none;
-            border-radius: 5px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .newsletter-form input::placeholder {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .newsletter-form input:focus {
-            outline: none;
-            border-color: #6e45e2;
-            box-shadow: 0 0 0 2px rgba(110, 69, 226, 0.2);
-        }
-
-        .newsletter-form button {
-            padding: 12px 15px;
-            border: none;
-            border-radius: 5px;
-            background: linear-gradient(to right, #4d6883, #4a6580);
-            color: #fff;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(110, 69, 226, 0.3);
-        }
-
-        .newsletter-form button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(110, 69, 226, 0.4);
-        }
-
-        .footer-bottom {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 20px 0;
-            margin-top: 30px;
-            -webkit-backdrop-filter: blur(5px);
-            backdrop-filter: blur(5px);
+          flex-direction: column;
+          text-align: center;
         }
 
         .footer-bottom-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            flex-wrap: wrap;
-            gap: 15px;
+          flex-direction: column;
+          text-align: center;
         }
 
         .legal-links {
-            display: flex;
-            gap: 20px;
+          justify-content: center;
         }
 
-        .legal-links a {
-            color: #fff;
-            opacity: 0.8;
-            text-decoration: none;
-            font-size: 14px;
-            transition: all 0.3s ease;
+        .term-table {
+          display: block;
+          overflow-x: auto;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .container {
+          width: 95%;
         }
 
-        .legal-links a:hover {
-            opacity: 1;
-            color: #88d3ce;
+        .section-title {
+          font-size: 1.8rem;
         }
 
-        .copyright {
-            opacity: 0.8;
-            font-size: 14px;
+        .hero-title {
+          font-size: 2rem;
         }
 
-        /* ===== RESPONSIVE STYLES ===== */
-        @media (max-width: 992px) {
-            .section-title {
-                font-size: 2.2rem;
-            }
-            
-            .hero-title {
-                font-size: 3rem;
-            }
-            
-            .nav-menu {
-                display: none;
-            }
-            
-            .hamburger {
-                display: flex;
-            }
-            
-            .mobile-menu.active {
-                display: block;
-            }
+        .modules-container {
+          grid-template-columns: 1fr;
         }
-
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-description {
-                font-size: 1.1rem;
-            }
-            
-            .instructor-container {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .footer-bottom-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .legal-links {
-                justify-content: center;
-            }
-
-            .term-table {
-                display: block;
-                overflow-x: auto;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .container {
-                width: 95%;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .modules-container {
-                grid-template-columns: 1fr;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header class="new-header">
-        <div class="container">
-            <div class="header-container">
-                <div class="logo-container">
-                    <img src="logo.png" alt="CodedMind Logo">
-                    <div class="logo-text">Coded Mind <br>Technology Incubator</div>
-                </div>
-                
-                <nav>
-                    <ul class="nav-menu">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="courses.html">Programs</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                    </ul>
-                </nav>
-                
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-            
-            <div class="mobile-menu">
-                <ul class="mobile-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="courses.html">Programs</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                </ul>
-            </div>
+      <div class="container">
+        <div class="header-container">
+          <div class="logo-container">
+            <img src="logo.png" alt="CodedMind Logo" />
+            <div class="logo-text">Coded Mind <br />Technology Incubator</div>
+          </div>
+
+          <nav>
+            <ul class="nav-menu">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="courses.html">Programs</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="careers.html">Careers</a></li>
+            </ul>
+          </nav>
+
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </div>
+
+        <div class="mobile-menu">
+          <ul class="mobile-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Programs</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+          </ul>
+        </div>
+      </div>
     </header>
 
     <!-- Course Hero Section -->
     <section class="course-hero">
-        <div class="hero-visual">
-            <div class="floating-shape shape-1"></div>
-            <div class="floating-shape shape-2"></div>
-            <div class="floating-shape shape-3"></div>
+      <div class="hero-visual">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+      </div>
+      <div class="container">
+        <div class="course-hero-content">
+          <div class="hero-badge">Diploma Program</div>
+          <h1 class="hero-title">Diploma in Information Technology</h1>
+          <p class="hero-description">
+            The DIT course provides a comprehensive foundation in IT. Learn
+            computer basics, networking, programming, software applications, and
+            web technologies to prepare for a successful career in technology.
+          </p>
+          <a href="#registration" class="btn">Enroll Now</a>
         </div>
-        <div class="container">
-            <div class="course-hero-content">
-                <div class="hero-badge">Diploma Program</div>
-                <h1 class="hero-title">Diploma in Information Technology</h1>
-                <p class="hero-description">The DIT course provides a comprehensive foundation in IT. Learn computer basics, networking, programming, software applications, and web technologies to prepare for a successful career in technology.</p>
-                <a href="#registration" class="btn">Enroll Now</a>
-            </div>
-        </div>
+      </div>
     </section>
 
     <!-- Course Overview Section -->
     <section class="course-overview">
-        <div class="container">
-            <h2 class="section-title">Course Overview</h2>
-            
-            <div class="overview-container">
-                <div class="overview-card crystal-card">
-                    <div class="overview-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>What You'll Learn</h3>
-                    <p>From computer fundamentals to advanced programming concepts, this course covers everything you need to become proficient in information technology. Learn computer systems, office productivity, programming, web technologies, networking, and database management.</p>
-                </div>
-                
-                <div class="overview-card crystal-card">
-                    <div class="overview-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Who This Course Is For</h3>
-                    <p>High school graduates, office workers, career changers, small business owners, and anyone interested in understanding technology fundamentals. No prior IT experience required.</p>
-                </div>
-                
-                <div class="overview-card crystal-card">
-                    <div class="overview-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Course Format</h3>
-                    <p>Hybrid learning with video lessons, practical exercises, real-world projects, and live Q&A sessions. Accessible on all devices with dedicated support from IT experts.</p>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Course Overview</h2>
+
+        <div class="overview-container">
+          <div class="overview-card crystal-card">
+            <div class="overview-icon">
+              <i class="fas fa-graduation-cap"></i>
             </div>
+            <h3>What You'll Learn</h3>
+            <p>
+              From computer fundamentals to advanced programming concepts, this
+              course covers everything you need to become proficient in
+              information technology. Learn computer systems, office
+              productivity, programming, web technologies, networking, and
+              database management.
+            </p>
+          </div>
+
+          <div class="overview-card crystal-card">
+            <div class="overview-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Who This Course Is For</h3>
+            <p>
+              High school graduates, office workers, career changers, small
+              business owners, and anyone interested in understanding technology
+              fundamentals. No prior IT experience required.
+            </p>
+          </div>
+
+          <div class="overview-card crystal-card">
+            <div class="overview-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Course Format</h3>
+            <p>
+              Hybrid learning with video lessons, practical exercises,
+              real-world projects, and live Q&A sessions. Accessible on all
+              devices with dedicated support from IT experts.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Program Structure Section -->
     <section class="program-structure">
-        <div class="container">
-            <h2 class="section-title">Program Structure</h2>
-            <p class="section-subtitle">Diploma in Information Technology (DIT) is a one year course comprised of two terms duration of six months each. It is totally based on computer skills and knowledge. Major part of this course is practical based.</p>
-            
-            <div class="program-tabs">
-                <div class="program-tab active" data-tab="term1">Term I (6 Months)</div>
-                <div class="program-tab" data-tab="term2">Term II (6 Months)</div>
-            </div>
-            
-            <div class="term-content active" id="term1">
-                <table class="term-table">
-                    <thead>
-                        <tr>
-                            <th>S. No</th>
-                            <th>Subject</th>
-                            <th>Theory Marks</th>
-                            <th>Practical Marks</th>
-                            <th>Total Marks</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Introduction to Information and Communication Technology</td>
-                            <td>75</td>
-                            <td>25</td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Introduction to Programming Using Python</td>
-                            <td>75</td>
-                            <td>25</td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Operating Systems</td>
-                            <td>75</td>
-                            <td>25</td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Introduction to MS Office</td>
-                            <td>75</td>
-                            <td>25</td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Computer Networks</td>
-                            <td>75</td>
-                            <td>25</td>
-                            <td>100</td>
-                        </tr>
-                        <tr class="term-highlight">
-                            <td colspan="2">Total Marks</td>
-                            <td>375</td>
-                            <td>125</td>
-                            <td>500</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="term-content" id="term2">
-                <table class="term-table">
-                    <thead>
-                        <tr>
-                            <th>S. No</th>
-                            <th>Subject</th>
-                            <th>Theory Marks</th>
-                            <th>Practical Marks</th>
-                            <th>Total Marks</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Database Systems</td>
-                            <td>75</td>
-                            <td>25</td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Graphics Design</td>
-                            <td>75</td>
-                            <td>25</td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Video Editing</td>
-                            <td>75</td>
-                            <td>25</td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Web Development Essentials</td>
-                            <td>75</td>
-                            <td>25</td>
-                            <td>100</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Capstone Project</td>
-                            <td>-</td>
-                            <td>100</td>
-                            <td>100</td>
-                        </tr>
-                        <tr class="term-highlight">
-                            <td colspan="2">Total Marks</td>
-                            <td>300</td>
-                            <td>200</td>
-                            <td>500</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <div class="program-info crystal-card inline-style-4">
-                <h3 class="inline-style-5">DIT Examinations</h3>
-                <p>The DIT examinations are conducted by the Khyber Pakhtunkhwa Board of Technical Education, Peshawar twice in a year called First-Term exam and Second-Term Exam in the months of February and August respectively.</p>
-                
-                <h3 class="inline-style-6">Admissions</h3>
-                <p>Admissions in DIT program are offered twice in a year in the months of January and August. Admission forms can be received from and submitted to the office in duty hours.</p>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Program Structure</h2>
+        <p class="section-subtitle">
+          Diploma in Information Technology (DIT) is a one year course comprised
+          of two terms duration of six months each. It is totally based on
+          computer skills and knowledge. Major part of this course is practical
+          based.
+        </p>
+
+        <div class="program-tabs">
+          <div class="program-tab active" data-tab="term1">
+            Term I (6 Months)
+          </div>
+          <div class="program-tab" data-tab="term2">Term II (6 Months)</div>
         </div>
+
+        <div class="term-content active" id="term1">
+          <table class="term-table">
+            <thead>
+              <tr>
+                <th>S. No</th>
+                <th>Subject</th>
+                <th>Theory Marks</th>
+                <th>Practical Marks</th>
+                <th>Total Marks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  Introduction to Information and Communication Technology
+                </td>
+                <td>75</td>
+                <td>25</td>
+                <td>100</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Introduction to Programming Using Python</td>
+                <td>75</td>
+                <td>25</td>
+                <td>100</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Operating Systems</td>
+                <td>75</td>
+                <td>25</td>
+                <td>100</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Introduction to MS Office</td>
+                <td>75</td>
+                <td>25</td>
+                <td>100</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Computer Networks</td>
+                <td>75</td>
+                <td>25</td>
+                <td>100</td>
+              </tr>
+              <tr class="term-highlight">
+                <td colspan="2">Total Marks</td>
+                <td>375</td>
+                <td>125</td>
+                <td>500</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="term-content" id="term2">
+          <table class="term-table">
+            <thead>
+              <tr>
+                <th>S. No</th>
+                <th>Subject</th>
+                <th>Theory Marks</th>
+                <th>Practical Marks</th>
+                <th>Total Marks</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Database Systems</td>
+                <td>75</td>
+                <td>25</td>
+                <td>100</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Graphics Design</td>
+                <td>75</td>
+                <td>25</td>
+                <td>100</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Video Editing</td>
+                <td>75</td>
+                <td>25</td>
+                <td>100</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Web Development Essentials</td>
+                <td>75</td>
+                <td>25</td>
+                <td>100</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Capstone Project</td>
+                <td>-</td>
+                <td>100</td>
+                <td>100</td>
+              </tr>
+              <tr class="term-highlight">
+                <td colspan="2">Total Marks</td>
+                <td>300</td>
+                <td>200</td>
+                <td>500</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="program-info crystal-card inline-style-4">
+          <h3 class="inline-style-5">DIT Examinations</h3>
+          <p>
+            The DIT examinations are conducted by the Khyber Pakhtunkhwa Board
+            of Technical Education, Peshawar twice in a year called First-Term
+            exam and Second-Term Exam in the months of February and August
+            respectively.
+          </p>
+
+          <h3 class="inline-style-6">Admissions</h3>
+          <p>
+            Admissions in DIT program are offered twice in a year in the months
+            of January and August. Admission forms can be received from and
+            submitted to the office in duty hours.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- Course Modules Section -->
     <section class="course-modules">
-        <div class="container">
-            <h2 class="section-title">Course Modules</h2>
-            
-            <div class="modules-container">
-                <div class="module-card crystal-card">
-                    <div class="module-header">Module 1: Computer Fundamentals</div>
-                    <div class="module-content">
-                        <ul>
-                            <li>Introduction to Computers & Operating Systems</li>
-                            <li>Computer Hardware Components</li>
-                            <li>Software Installation and Management</li>
-                            <li>File Management and System Utilities</li>
-                            <li>Troubleshooting Common Computer Issues</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="module-card crystal-card">
-                    <div class="module-header">Module 2: Office Productivity</div>
-                    <div class="module-content">
-                        <ul>
-                            <li>MS Word: Document Creation and Formatting</li>
-                            <li>MS Excel: Spreadsheets and Data Analysis</li>
-                            <li>MS PowerPoint: Effective Presentations</li>
-                            <li>MS Access: Database Management</li>
-                            <li>Collaboration Tools and Techniques</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="module-card crystal-card">
-                    <div class="module-header">Module 3: Programming Fundamentals</div>
-                    <div class="module-content">
-                        <ul>
-                            <li>Introduction to Programming Concepts</li>
-                            <li>Python Programming Basics</li>
-                            <li>C++ Syntax and Structure</li>
-                            <li>Algorithm Development</li>
-                            <li>Debugging and Problem Solving</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="module-card crystal-card">
-                    <div class="module-header">Module 4: Web Technologies</div>
-                    <div class="module-content">
-                        <ul>
-                            <li>HTML5: Page Structure and Elements</li>
-                            <li>CSS3: Styling and Layouts</li>
-                            <li>Responsive Web Design Principles</li>
-                            <li>Basic JavaScript Introduction</li>
-                            <li>Web Project Development</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="module-card crystal-card">
-                    <div class="module-header">Module 5: Networking & Internet</div>
-                    <div class="module-content">
-                        <ul>
-                            <li>Internet & Email Usage</li>
-                            <li>Basics of Computer Networking</li>
-                            <li>Network Security Fundamentals</li>
-                            <li>Data Privacy and Protection</li>
-                            <li>Cloud Computing Overview</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="module-card crystal-card">
-                    <div class="module-header">Module 6: Database Fundamentals</div>
-                    <div class="module-content">
-                        <ul>
-                            <li>Introduction to Database Systems</li>
-                            <li>Relational Database Concepts</li>
-                            <li>SQL Basics: Queries and Management</li>
-                            <li>Data Normalization</li>
-                            <li>Database Design Principles</li>
-                        </ul>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Course Modules</h2>
+
+        <div class="modules-container">
+          <div class="module-card crystal-card">
+            <div class="module-header">Module 1: Computer Fundamentals</div>
+            <div class="module-content">
+              <ul>
+                <li>Introduction to Computers & Operating Systems</li>
+                <li>Computer Hardware Components</li>
+                <li>Software Installation and Management</li>
+                <li>File Management and System Utilities</li>
+                <li>Troubleshooting Common Computer Issues</li>
+              </ul>
             </div>
+          </div>
+
+          <div class="module-card crystal-card">
+            <div class="module-header">Module 2: Office Productivity</div>
+            <div class="module-content">
+              <ul>
+                <li>MS Word: Document Creation and Formatting</li>
+                <li>MS Excel: Spreadsheets and Data Analysis</li>
+                <li>MS PowerPoint: Effective Presentations</li>
+                <li>MS Access: Database Management</li>
+                <li>Collaboration Tools and Techniques</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="module-card crystal-card">
+            <div class="module-header">Module 3: Programming Fundamentals</div>
+            <div class="module-content">
+              <ul>
+                <li>Introduction to Programming Concepts</li>
+                <li>Python Programming Basics</li>
+                <li>C++ Syntax and Structure</li>
+                <li>Algorithm Development</li>
+                <li>Debugging and Problem Solving</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="module-card crystal-card">
+            <div class="module-header">Module 4: Web Technologies</div>
+            <div class="module-content">
+              <ul>
+                <li>HTML5: Page Structure and Elements</li>
+                <li>CSS3: Styling and Layouts</li>
+                <li>Responsive Web Design Principles</li>
+                <li>Basic JavaScript Introduction</li>
+                <li>Web Project Development</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="module-card crystal-card">
+            <div class="module-header">Module 5: Networking & Internet</div>
+            <div class="module-content">
+              <ul>
+                <li>Internet & Email Usage</li>
+                <li>Basics of Computer Networking</li>
+                <li>Network Security Fundamentals</li>
+                <li>Data Privacy and Protection</li>
+                <li>Cloud Computing Overview</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="module-card crystal-card">
+            <div class="module-header">Module 6: Database Fundamentals</div>
+            <div class="module-content">
+              <ul>
+                <li>Introduction to Database Systems</li>
+                <li>Relational Database Concepts</li>
+                <li>SQL Basics: Queries and Management</li>
+                <li>Data Normalization</li>
+                <li>Database Design Principles</li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Instructor Section -->
     <section class="instructor-section">
-        <div class="container">
-            <h2 class="section-title">About The Instructor</h2>
-            
-            <div class="instructor-container">
-                <div class="instructor-image">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Instructor Photo">
-                </div>
-                <div class="instructor-info">
-                    <h3>Prof. Aslam Malik</h3>
-                    <p>With over 15 years of experience in IT education and industry, Prof. Aslam brings a wealth of knowledge to the classroom. He holds multiple certifications including MCSE, CCNA, and Python Institute certifications.</p>
-                    <p>Prof. Aslam has trained thousands of students in IT fundamentals and advanced concepts. His teaching philosophy focuses on practical, hands-on learning that prepares students for real-world challenges and career opportunities.</p>
-                    <p>His practical approach to teaching combines theoretical foundations with real-world applications, ensuring students gain both knowledge and practical skills that can be immediately applied to their careers.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">About The Instructor</h2>
+
+        <div class="instructor-container">
+          <div class="instructor-image">
+            <img
+              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+              alt="Instructor Photo"
+            />
+          </div>
+          <div class="instructor-info">
+            <h3>Prof. Aslam Malik</h3>
+            <p>
+              With over 15 years of experience in IT education and industry,
+              Prof. Aslam brings a wealth of knowledge to the classroom. He
+              holds multiple certifications including MCSE, CCNA, and Python
+              Institute certifications.
+            </p>
+            <p>
+              Prof. Aslam has trained thousands of students in IT fundamentals
+              and advanced concepts. His teaching philosophy focuses on
+              practical, hands-on learning that prepares students for real-world
+              challenges and career opportunities.
+            </p>
+            <p>
+              His practical approach to teaching combines theoretical
+              foundations with real-world applications, ensuring students gain
+              both knowledge and practical skills that can be immediately
+              applied to their careers.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Career Opportunities Section -->
     <section class="career-section">
-        <div class="container">
-            <h2 class="section-title">Career Opportunities</h2>
-            
-            <div class="career-container">
-                <div class="career-card crystal-card">
-                    <h3>IT Support Specialist</h3>
-                    <p>Provide technical assistance and support for computer systems, hardware, and software.</p>
-                </div>
-                
-                <div class="career-card crystal-card">
-                    <h3>Computer Operator</h3>
-                    <p>Monitor and control computer systems, ensuring efficient operation and troubleshooting issues.</p>
-                </div>
-                
-                <div class="career-card crystal-card">
-                    <h3>Data Entry Operator</h3>
-                    <p>Enter, update, and verify data in computer systems while maintaining accuracy and confidentiality.</p>
-                </div>
-                
-                <div class="career-card crystal-card">
-                    <h3>Junior Web Developer</h3>
-                    <p>Assist in developing and maintaining websites using HTML, CSS, and basic JavaScript.</p>
-                </div>
-                
-                <div class="career-card crystal-card">
-                    <h3>Office Automation Assistant</h3>
-                    <p>Support office operations with advanced computer skills and productivity software expertise.</p>
-                </div>
-                
-                <div class="career-card crystal-card">
-                    <h3>Technical Support Representative</h3>
-                    <p>Assist customers with technical issues related to software, hardware, or services.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Career Opportunities</h2>
+
+        <div class="career-container">
+          <div class="career-card crystal-card">
+            <h3>IT Support Specialist</h3>
+            <p>
+              Provide technical assistance and support for computer systems,
+              hardware, and software.
+            </p>
+          </div>
+
+          <div class="career-card crystal-card">
+            <h3>Computer Operator</h3>
+            <p>
+              Monitor and control computer systems, ensuring efficient operation
+              and troubleshooting issues.
+            </p>
+          </div>
+
+          <div class="career-card crystal-card">
+            <h3>Data Entry Operator</h3>
+            <p>
+              Enter, update, and verify data in computer systems while
+              maintaining accuracy and confidentiality.
+            </p>
+          </div>
+
+          <div class="career-card crystal-card">
+            <h3>Junior Web Developer</h3>
+            <p>
+              Assist in developing and maintaining websites using HTML, CSS, and
+              basic JavaScript.
+            </p>
+          </div>
+
+          <div class="career-card crystal-card">
+            <h3>Office Automation Assistant</h3>
+            <p>
+              Support office operations with advanced computer skills and
+              productivity software expertise.
+            </p>
+          </div>
+
+          <div class="career-card crystal-card">
+            <h3>Technical Support Representative</h3>
+            <p>
+              Assist customers with technical issues related to software,
+              hardware, or services.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Testimonials Section -->
     <section class="testimonials-section">
-        <div class="container">
-            <h2 class="section-title">Student Testimonials</h2>
-            
-            <div class="testimonials-container">
-                <div class="testimonial-card crystal-card">
-                    <div class="testimonial-text">
-                        The DIT course completely transformed my career path. I had basic computer knowledge but this course gave me the structured learning I needed to secure a job as IT support specialist. The instructors were knowledgeable and supportive throughout.
-                    </div>
-                    <div class="testimonial-author">- Ahmed Raza, IT Support Specialist</div>
-                </div>
-                
-                <div class="testimonial-card crystal-card">
-                    <div class="testimonial-text">
-                        As a small business owner, I enrolled in DIT to better understand how to manage my company's technology needs. I not only achieved that goal but also discovered a passion for web development that I'm now pursuing further!
-                    </div>
-                    <div class="testimonial-author">- Fatima Khan, Business Owner</div>
-                </div>
-                
-                <div class="testimonial-card crystal-card">
-                    <div class="testimonial-text">
-                        The project-based approach helped me understand real-world applications of what we were learning. The course materials were comprehensive, and the instructors were always available to clarify concepts. Worth every penny!
-                    </div>
-                    <div class="testimonial-author">- Bilal Ahmed, Web Developer Trainee</div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Student Testimonials</h2>
+
+        <div class="testimonials-container">
+          <div class="testimonial-card crystal-card">
+            <div class="testimonial-text">
+              The DIT course completely transformed my career path. I had basic
+              computer knowledge but this course gave me the structured learning
+              I needed to secure a job as IT support specialist. The instructors
+              were knowledgeable and supportive throughout.
             </div>
+            <div class="testimonial-author">
+              - Ahmed Raza, IT Support Specialist
+            </div>
+          </div>
+
+          <div class="testimonial-card crystal-card">
+            <div class="testimonial-text">
+              As a small business owner, I enrolled in DIT to better understand
+              how to manage my company's technology needs. I not only achieved
+              that goal but also discovered a passion for web development that
+              I'm now pursuing further!
+            </div>
+            <div class="testimonial-author">- Fatima Khan, Business Owner</div>
+          </div>
+
+          <div class="testimonial-card crystal-card">
+            <div class="testimonial-text">
+              The project-based approach helped me understand real-world
+              applications of what we were learning. The course materials were
+              comprehensive, and the instructors were always available to
+              clarify concepts. Worth every penny!
+            </div>
+            <div class="testimonial-author">
+              - Bilal Ahmed, Web Developer Trainee
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="faq-section">
-        <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Do I need prior IT experience for this course?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        No prior IT experience is required. The course starts with computer fundamentals and gradually builds up to more advanced concepts. Basic familiarity with using a computer is helpful but not mandatory.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What software will I need for this course?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        You'll need a computer with internet access. We'll guide you through installing necessary software including Microsoft Office, Python, code editors, and other free tools. All software used in the course is either free or we provide access during the course.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Will I receive a certificate upon completion?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Yes, you will receive a verified diploma certificate of completion that you can share on LinkedIn and include in your resume. The certificate demonstrates your proficiency in information technology fundamentals.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How long will it take to complete the course?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        The course is designed to be completed in 6 months with part-time study. It includes approximately 80 hours of video content and another 50-60 hours of exercises and projects. However, you can learn at your own pace and have access to course materials for 12 months.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Is there any hands-on project work?
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        Yes! The course includes several practical projects including building a complete computer system setup guide, creating a business presentation, developing a simple website, writing Python programs, and designing a basic database.
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">
+              Do I need prior IT experience for this course?
+              <i class="fas fa-chevron-down"></i>
             </div>
+            <div class="faq-answer">
+              No prior IT experience is required. The course starts with
+              computer fundamentals and gradually builds up to more advanced
+              concepts. Basic familiarity with using a computer is helpful but
+              not mandatory.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              What software will I need for this course?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              You'll need a computer with internet access. We'll guide you
+              through installing necessary software including Microsoft Office,
+              Python, code editors, and other free tools. All software used in
+              the course is either free or we provide access during the course.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Will I receive a certificate upon completion?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Yes, you will receive a verified diploma certificate of completion
+              that you can share on LinkedIn and include in your resume. The
+              certificate demonstrates your proficiency in information
+              technology fundamentals.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              How long will it take to complete the course?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              The course is designed to be completed in 6 months with part-time
+              study. It includes approximately 80 hours of video content and
+              another 50-60 hours of exercises and projects. However, you can
+              learn at your own pace and have access to course materials for 12
+              months.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              Is there any hands-on project work?
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              Yes! The course includes several practical projects including
+              building a complete computer system setup guide, creating a
+              business presentation, developing a simple website, writing Python
+              programs, and designing a basic database.
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Payment Section -->
     <section class="payment-section">
-        <div class="container">
-            <h2 class="section-title">Payment Information</h2>
-            
-            <div class="payment-container">
-                <div class="payment-card crystal-card">
-                    <h3>Course Fee Structure</h3>
-                    <p><strong>Term I Fee: PKR 7,000</strong></p>
-                    <p><strong>Term II Fee: PKR 5,000</strong></p>
-                    <p><strong>Examination Fee: PKR 2,400 per term</strong></p>
-                    <p>Duration: 1 Year (Two Terms of 6 Months Each)</p>
-                </div>
-                
-                <div class="payment-card crystal-card">
-                    <h3>Payment Methods</h3>
-                    <p><strong>Bank Transfer:</strong> Meezan Bank, Acc# 123456789, Title: Coded Mind Technology Incubator</p>
-                    <p><strong>EasyPaisa/JazzCash:</strong> 0300-1234567</p>
-                    <p><strong>Cash Payment:</strong> Visit our office during business hours</p>
-                </div>
-                
-                <div class="payment-card crystal-card">
-                    <h3>Admission Schedule</h3>
-                    <p>Admissions are offered twice a year:</p>
-                    <ul>
-                        <li>January Intake (For February Term Exam)</li>
-                        <li>August Intake (For August Term Exam)</li>
-                    </ul>
-                    <p>After payment, send your receipt to <strong>info@codedmind.com</strong> or WhatsApp 0300-1234567 for registration confirmation.</p>
-                </div>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Payment Information</h2>
+
+        <div class="payment-container">
+          <div class="payment-card crystal-card">
+            <h3>Course Fee Structure</h3>
+            <p><strong>Term I Fee: PKR 7,000</strong></p>
+            <p><strong>Term II Fee: PKR 5,000</strong></p>
+            <p><strong>Examination Fee: PKR 2,400 per term</strong></p>
+            <p>Duration: 1 Year (Two Terms of 6 Months Each)</p>
+          </div>
+
+          <div class="payment-card crystal-card">
+            <h3>Payment Methods</h3>
+            <p>
+              <strong>Bank Transfer:</strong> Meezan Bank, Acc# 123456789,
+              Title: Coded Mind Technology Incubator
+            </p>
+            <p><strong>EasyPaisa/JazzCash:</strong> 0300-1234567</p>
+            <p>
+              <strong>Cash Payment:</strong> Visit our office during business
+              hours
+            </p>
+          </div>
+
+          <div class="payment-card crystal-card">
+            <h3>Admission Schedule</h3>
+            <p>Admissions are offered twice a year:</p>
+            <ul>
+              <li>January Intake (For February Term Exam)</li>
+              <li>August Intake (For August Term Exam)</li>
+            </ul>
+            <p>
+              After payment, send your receipt to
+              <strong>info@codedmind.com</strong> or WhatsApp 0300-1234567 for
+              registration confirmation.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Registration Section -->
     <section id="registration" class="registration-section">
-        <div class="container">
-            <h2 class="section-title">Register for DIT Course</h2>
-            <p class="section-subtitle">Start your journey in information technology today</p>
-            
-            <div class="form-container">
-                <iframe id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c" title="Sana: Registration Assistant"
-                    onload="window.parent.scrollTo(0,0)" allowtransparency="true"
-                    allow="geolocation; microphone; camera; fullscreen"
-                    src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
-                    frameborder="0" class="inline-style-3" scrolling="no">
-                </iframe>
-                <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-                <script>
-                    window.jotformEmbedHandler("iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
-                    "https://www.jotform.com")
-                </script>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Register for DIT Course</h2>
+        <p class="section-subtitle">
+          Start your journey in information technology today
+        </p>
+
+        <div class="form-container">
+          <iframe
+            id="JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c"
+            title="Sana: Registration Assistant"
+            onload="window.parent.scrollTo(0, 0)"
+            allowtransparency="true"
+            allow="geolocation; microphone; camera; fullscreen"
+            src="https://agent.jotform.com/01986076a3b17f7cb626047bf872e7a2c07c?embedMode=iframe&background=1&shadow=1"
+            frameborder="0"
+            class="inline-style-3"
+            scrolling="no"
+          >
+          </iframe>
+          <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+          <script>
+            window.jotformEmbedHandler(
+              "iframe[id='JotFormIFrame-01986076a3b17f7cb626047bf872e7a2c07c']",
+              "https://www.jotform.com",
+            );
+          </script>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <img src="logo.png" alt="CMTI Logo">
-                        <h3>Coded Mind <n>Technology Incubator</n></h3>
-                    </div>
-                    <p class="footer-description">
-                        Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
-                        Join CMTI to gain cutting-Edge skills in technology and business. Our expert-led courses prepare you for the digital future.
-                    </p>
-                    <div class="footer-social">
-                        <h4>Follow Us</h4>
-                        <div class="social-icons">
-                            <a href="https://www.facebook.com/people/Coded-Mind-Technology-Incubator/61578686665814/" title="Facebook" aria-label="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" title="Twitter" aria-label="Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" title="Instagram" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" title="LinkedIn" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" title="YouTube" aria-label="YouTube">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                        
-                <div class="footer-col">
-                    <h3>Top Programs</h3>
-                    <ul>
-                        <li><a href="course-webdev.html">Web Development</a></li>
-                        <li><a href="course-data-science.html">Data Science</a></li>
-                        <li><a href="course-cyber-security.html">Cyber Security</a></li>
-                        <li><a href="course-digital-marketing.html">Digital Marketing</a></li>
-                        <li><a href="course-python.html">Python Programming</a></li>
-                        <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="courses.html">All programs</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="careers.html">Career Opportunities</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Get In Touch!</h3>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Katlang District Mardan Pakistan</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span><a href="tel:+923488850059">+92 348 8850059</a></span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span><a href="tel:+923161098765">+92 316 1098765</a></span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
-                        </div>
-                    </div>
-                    
-                    <div class="newsletter">
-                        <h4>Subscribe to Our Newsletter</h4>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Your email address" required>
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img src="logo.png" alt="CMTI Logo" />
+              <h3>Coded Mind <span>Technology Incubator</span></h3>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <div class="copyright">
-                        &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
-                    </div>
-                    <div class="legal-links">
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms of Service</a>
-                        <a href="refund.html">Refund Policy</a>
-                        <a href="https://aitoolsfreelance.blogspot.com">Blogs</a>
-                    </div>
-                </div>
+            <p class="footer-description">
+              Empowering the next generation of tech professionals through
+              quality education and hands-on training in cutting-edge
+              technologies. Join CMTI to gain cutting-Edge skills in technology
+              and business. Our expert-led courses prepare you for the digital
+              future.
+            </p>
+            <div class="footer-social">
+              <h4>Follow Us</h4>
+              <div class="social-icons">
+                <a
+                  href="https://www.facebook.com/people/Coded-Mind-Technology-Incubator/61578686665814/"
+                  title="Facebook"
+                  aria-label="Facebook"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" title="Twitter" aria-label="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" title="Instagram" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" title="YouTube" aria-label="YouTube">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
             </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Top Programs</h3>
+            <ul>
+              <li><a href="course-webdev.html">Web Development</a></li>
+              <li><a href="course-data-science.html">Data Science</a></li>
+              <li><a href="course-cyber-security.html">Cyber Security</a></li>
+              <li>
+                <a href="course-digital-marketing.html">Digital Marketing</a>
+              </li>
+              <li><a href="course-python.html">Python Programming</a></li>
+              <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="courses.html">All programs</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="careers.html">Career Opportunities</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Get In Touch!</h3>
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Katlang District Mardan Pakistan</span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span><a href="tel:+923488850059">+92 348 8850059</a></span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span><a href="tel:+923161098765">+92 316 1098765</a></span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span
+                  ><a href="mailto:info@codedmind.com"
+                    >info@codedmind.com</a
+                  ></span
+                >
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
+              </div>
+            </div>
+
+            <div class="newsletter">
+              <h4>Subscribe to Our Newsletter</h4>
+              <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required />
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+          </div>
         </div>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <div class="copyright">
+              &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
+            </div>
+            <div class="legal-links">
+              <a href="privacy.html">Privacy Policy</a>
+              <a href="terms.html">Terms of Service</a>
+              <a href="refund.html">Refund Policy</a>
+              <a href="https://aitoolsfreelance.blogspot.com">Blogs</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const hamburger = document.querySelector('.hamburger');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-        
-        // FAQ Accordion
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.parentElement;
-                faqItem.classList.toggle('faq-active');
-                
-                // Close other FAQ items
-                faqQuestions.forEach(otherQuestion => {
-                    if (otherQuestion !== question) {
-                        otherQuestion.parentElement.classList.remove('faq-active');
-                    }
-                });
-            });
-        });
-        
-        // Program Tabs
-        const programTabs = document.querySelectorAll('.program-tab');
-        
-        programTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Remove active class from all tabs
-                programTabs.forEach(t => t.classList.remove('active'));
-                
-                // Add active class to clicked tab
-                tab.classList.add('active');
-                
-                // Hide all term content
-                document.querySelectorAll('.term-content').forEach(content => {
-                    content.classList.remove('active');
-                });
-                
-                // Show selected term content
-                const tabId = tab.getAttribute('data-tab');
-                document.getElementById(tabId).classList.add('active');
-            });
-        });
-        
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.new-header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(255, 255, 255, 0.98)';
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+      // Mobile Menu Toggle
+      const hamburger = document.querySelector(".hamburger");
+      const mobileMenu = document.querySelector(".mobile-menu");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileMenu.classList.toggle("active");
+      });
+
+      // FAQ Accordion
+      const faqQuestions = document.querySelectorAll(".faq-question");
+
+      faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+          const faqItem = question.parentElement;
+          faqItem.classList.toggle("faq-active");
+
+          // Close other FAQ items
+          faqQuestions.forEach((otherQuestion) => {
+            if (otherQuestion !== question) {
+              otherQuestion.parentElement.classList.remove("faq-active");
             }
+          });
         });
-        
-        // Animate elements on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+      });
 
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+      // Program Tabs
+      const programTabs = document.querySelectorAll(".program-tab");
 
-        // Observe elements to animate
-        document.addEventListener('DOMContentLoaded', function() {
-            const elementsToAnimate = document.querySelectorAll('.crystal-card, .section-title, .section-subtitle');
-            
-            elementsToAnimate.forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                observer.observe(el);
-            });
+      programTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          // Remove active class from all tabs
+          programTabs.forEach((t) => t.classList.remove("active"));
+
+          // Add active class to clicked tab
+          tab.classList.add("active");
+
+          // Hide all term content
+          document.querySelectorAll(".term-content").forEach((content) => {
+            content.classList.remove("active");
+          });
+
+          // Show selected term content
+          const tabId = tab.getAttribute("data-tab");
+          document.getElementById(tabId).classList.add("active");
         });
+      });
+
+      // Header scroll effect
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector(".new-header");
+        if (window.scrollY > 100) {
+          header.style.background = "rgba(255, 255, 255, 0.98)";
+          header.style.boxShadow = "0 5px 20px rgba(0, 0, 0, 0.1)";
+        } else {
+          header.style.background = "rgba(255, 255, 255, 0.95)";
+          header.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.1)";
+        }
+      });
+
+      // Animate elements on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements to animate
+      document.addEventListener("DOMContentLoaded", function () {
+        const elementsToAnimate = document.querySelectorAll(
+          ".crystal-card, .section-title, .section-subtitle",
+        );
+
+        elementsToAnimate.forEach((el) => {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(20px)";
+          el.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+          observer.observe(el);
+        });
+      });
     </script>
-</body>
+  </body>
 </html>

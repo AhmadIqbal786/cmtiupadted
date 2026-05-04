@@ -1,1825 +1,2085 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <base href="https://cmti.pk/">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <base href="https://cmti.pk/" />
+
     <!-- SEO Meta Tags -->
     <title>Coded Mind Institute – Best IT & Quran Academy in Mardan</title>
-    <meta name="description" content="Coded Mind Institute offers IT courses, Quran classes, and freelancing training in Katlang, Mardan. Learn practical skills from experts and grow your career.">
-    <meta name="keywords" content="Coded Mind Institute, Quran Academy, IT Courses, Freelancing Training, Forex Trading, Mardan, Katlang, Online Learning, Computer Courses">
-    <meta name="author" content="Coded Mind Institute of Science and Technology">
-    
+    <meta
+      name="description"
+      content="Coded Mind Institute offers IT courses, Quran classes, and freelancing training in Katlang, Mardan. Learn practical skills from experts and grow your career."
+    />
+    <meta
+      name="keywords"
+      content="Coded Mind Institute, Quran Academy, IT Courses, Freelancing Training, Forex Trading, Mardan, Katlang, Online Learning, Computer Courses"
+    />
+    <meta
+      name="author"
+      content="Coded Mind Institute of Science and Technology"
+    />
+
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="Coded Mind Institute – IT & Quran Academy in Mardan">
-    <meta property="og:description" content="Join Coded Mind Institute for professional IT training, Quran classes, and freelancing programs in Katlang, Mardan.">
-    <meta property="og:image" content="logo.png">
-    <meta property="og:url" content="https://cmti.pk/">
-    <meta property="og:type" content="website">
-    
+    <meta
+      property="og:title"
+      content="Coded Mind Institute – IT & Quran Academy in Mardan"
+    />
+    <meta
+      property="og:description"
+      content="Join Coded Mind Institute for professional IT training, Quran classes, and freelancing programs in Katlang, Mardan."
+    />
+    <meta property="og:image" content="logo.png" />
+    <meta property="og:url" content="https://cmti.pk/" />
+    <meta property="og:type" content="website" />
+
     <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Coded Mind Institute – IT & Quran Academy in Mardan">
-    <meta name="twitter:description" content="Learn IT, Quran, and freelancing skills from certified trainers in Mardan.">
-    <meta name="twitter:image" content="logo.png">
-    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Coded Mind Institute – IT & Quran Academy in Mardan"
+    />
+    <meta
+      name="twitter:description"
+      content="Learn IT, Quran, and freelancing skills from certified trainers in Mardan."
+    />
+    <meta name="twitter:image" content="logo.png" />
+
     <!-- Favicon -->
-    <link rel="icon" href="logo.png" type="image/png">
-    
+    <link rel="icon" href="logo.png" type="image/png" />
+
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <style>
-        /* ===== CSS RESET & VARIABLES ===== */
-        :root {
-            --primary: #1a365d;
-            --primary-dark: #0f1d38;
-            --secondary: #2d3748;
-            --accent: #3182ce;
-            --light: #f7fafc;
-            --dark: #1a202c;
-            --gray: #4a5568;
-            --success: #38a169;
-            --warning: #d69e2e;
-            --danger: #e53e3e;
-            --gradient: linear-gradient(135deg, var(--primary), var(--accent));
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
-            --border-radius: 12px;
-            --transition: all 0.3s ease;
-        }
+      /* ===== CSS RESET & VARIABLES ===== */
+      :root {
+        --primary: #1a365d;
+        --primary-dark: #0f1d38;
+        --secondary: #2d3748;
+        --accent: #3182ce;
+        --light: #f7fafc;
+        --dark: #1a202c;
+        --gray: #4a5568;
+        --success: #38a169;
+        --warning: #d69e2e;
+        --danger: #e53e3e;
+        --gradient: linear-gradient(135deg, var(--primary), var(--accent));
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+        --border-radius: 12px;
+        --transition: all 0.3s ease;
+      }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        html {
-            scroll-behavior: smooth;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
 
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
-            overflow-x: hidden;
-        }
+      body {
+        font-family:
+          "Segoe UI",
+          system-ui,
+          -apple-system,
+          sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background-color: var(--light);
+        overflow-x: hidden;
+      }
 
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
 
-        p {
-            margin-bottom: 1rem;
-        }
+      p {
+        margin-bottom: 1rem;
+      }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: var(--transition);
+      }
 
-        ul {
-            list-style: none;
-        }
+      ul {
+        list-style: none;
+      }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
 
-        .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: var(--primary);
-            position: relative;
-        }
+      .section-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: var(--primary);
+        position: relative;
+      }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--gradient);
-        }
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: var(--gradient);
+      }
 
-        .section-subtitle {
-            font-size: 1.2rem;
-            text-align: center;
-            color: var(--gray);
-            max-width: 700px;
-            margin: 2rem auto 3rem;
-            line-height: 1.6;
-        }
+      .section-subtitle {
+        font-size: 1.2rem;
+        text-align: center;
+        color: var(--gray);
+        max-width: 700px;
+        margin: 2rem auto 3rem;
+        line-height: 1.6;
+      }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 28px;
-            background: var(--gradient);
-            color: white;
-            border-radius: var(--border-radius);
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: var(--shadow);
-            gap: 8px;
-        }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 28px;
+        background: var(--gradient);
+        color: white;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        border: none;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: var(--shadow);
+        gap: 8px;
+      }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-            background: linear-gradient(135deg, var(--primary-dark), var(--accent));
-        }
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+        background: linear-gradient(135deg, var(--primary-dark), var(--accent));
+      }
 
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
+      .btn-outline {
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+      }
 
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
+      .btn-outline:hover {
+        background: var(--primary);
+        color: white;
+      }
 
-        .card {
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            overflow: hidden;
-            height: 100%;
-        }
+      .card {
+        background: white;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+        overflow: hidden;
+        height: 100%;
+      }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+      }
 
-        /* ===== HEADER ===== */
-        .header {
-            background: white;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            transition: var(--transition);
-        }
+      /* ===== HEADER ===== */
+      .header {
+        background: white;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: var(--transition);
+      }
 
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+      .logo-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
 
-        .logo-container img {
-            height: 50px;
-            width: auto;
-        }
+      .logo-container img {
+        height: 50px;
+        width: auto;
+      }
 
-        .logo-text {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--primary);
-            line-height: 1.3;
-        }
+      .logo-text {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--primary);
+        line-height: 1.3;
+      }
 
-        .nav-menu {
-            display: flex;
-            gap: 30px;
-        }
+      .nav-menu {
+        display: flex;
+        gap: 30px;
+      }
 
-        .nav-menu a {
-            font-weight: 600;
-            color: var(--dark);
-            position: relative;
-            padding: 5px 0;
-        }
+      .nav-menu a {
+        font-weight: 600;
+        color: var(--dark);
+        position: relative;
+        padding: 5px 0;
+      }
 
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            transition: var(--transition);
-        }
+      .nav-menu a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--gradient);
+        transition: var(--transition);
+      }
 
-        .nav-menu a:hover::after,
-        .nav-menu a.active::after {
-            width: 100%;
-        }
+      .nav-menu a:hover::after,
+      .nav-menu a.active::after {
+        width: 100%;
+      }
 
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 5px;
-        }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        background: none;
+        border: none;
+        padding: 5px;
+      }
 
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: var(--dark);
-            margin: 3px 0;
-            transition: var(--transition);
-            display: block;
-        }
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background: var(--dark);
+        margin: 3px 0;
+        transition: var(--transition);
+        display: block;
+      }
 
-        .mobile-menu {
-            display: none;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
+      .mobile-menu {
+        display: none;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
 
-        .mobile-menu.active {
-            display: block;
-        }
+      .mobile-menu.active {
+        display: block;
+      }
 
-        .mobile-nav {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+      .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
 
-        .mobile-nav a {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-            font-weight: 600;
-            color: var(--dark);
-        }
+      .mobile-nav a {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        font-weight: 600;
+        color: var(--dark);
+      }
 
-        /* ===== HERO SECTION ===== */
-        .hero {
-            background: var(--gradient);
-            color: white;
-            padding: 180px 0 100px;
-            position: relative;
-            overflow: hidden;
-        }
+      /* ===== HERO SECTION ===== */
+      .hero {
+        background: var(--gradient);
+        color: white;
+        padding: 180px 0 100px;
+        position: relative;
+        overflow: hidden;
+      }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
-            opacity: 0.1;
-        }
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")
+          center/cover;
+        opacity: 0.1;
+      }
 
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
 
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            font-weight: 500;
-        }
+      .hero-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        font-weight: 500;
+      }
 
-        .hero-title {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
+      .hero-title {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+      }
 
-        .hero-description {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-            line-height: 1.6;
-        }
+      .hero-description {
+        font-size: 1.3rem;
+        margin-bottom: 2.5rem;
+        opacity: 0.95;
+        line-height: 1.6;
+      }
 
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+      .hero-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
 
-        /* ===== STATS SECTION ===== */
-        .stats {
-            padding: 80px 0;
-            background: white;
-        }
+      /* ===== STATS SECTION ===== */
+      .stats {
+        padding: 80px 0;
+        background: white;
+      }
 
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
+      .stats-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+      }
 
-        .stat-card {
-            text-align: center;
-            padding: 40px 20px;
-            border: 1px solid #e2e8f0;
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-        }
+      .stat-card {
+        text-align: center;
+        padding: 40px 20px;
+        border: 1px solid #e2e8f0;
+        border-radius: var(--border-radius);
+        transition: var(--transition);
+      }
 
-        .stat-card:hover {
-            border-color: var(--accent);
-        }
+      .stat-card:hover {
+        border-color: var(--accent);
+      }
 
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
+      .stat-number {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
 
-        .stat-text {
-            color: var(--gray);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
+      .stat-text {
+        color: var(--gray);
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
 
-        /* ===== WHY JOIN US SECTION ===== */
-        .why-cmti {
-            padding: 100px 0;
-            background: #f8fafc;
-        }
+      /* ===== WHY JOIN US SECTION ===== */
+      .why-cmti {
+        padding: 100px 0;
+        background: #f8fafc;
+      }
 
-        .benefits-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
+      .benefits-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
 
-        .benefit-card {
-            padding: 40px 30px;
-            text-align: center;
-        }
+      .benefit-card {
+        padding: 40px 30px;
+        text-align: center;
+      }
 
-        .benefit-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 20px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.8rem;
-        }
+      .benefit-icon {
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 20px;
+        background: var(--gradient);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.8rem;
+      }
 
-        .benefit-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
+      .benefit-card h3 {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+        color: var(--primary);
+      }
 
-        /* ===== CEO MESSAGE SECTION ===== */
-        .ceo-message {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
+      /* ===== CEO MESSAGE SECTION ===== */
+      .ceo-message {
+        padding: 100px 0;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      }
 
+      .ceo-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 350px 1fr;
+      }
+
+      .ceo-image-wrapper {
+        position: relative;
+        background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 30px;
+        text-align: center;
+      }
+
+      .ceo-image-wrapper::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop")
+          center/cover;
+        opacity: 0.9;
+      }
+
+      .ceo-image-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(26, 54, 93, 0.9),
+          rgba(44, 82, 130, 0.7)
+        );
+      }
+
+      .ceo-image-content {
+        position: relative;
+        z-index: 2;
+        color: white;
+      }
+
+      .ceo-profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        object-fit: cover;
+        margin-bottom: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .ceo-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: white;
+      }
+
+      .ceo-title {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 0;
+      }
+
+      .ceo-content {
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .ceo-greeting {
+        font-size: 1.1rem;
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .ceo-heading {
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 25px;
+        line-height: 1.3;
+      }
+
+      .ceo-text {
+        color: var(--gray);
+        line-height: 1.8;
+        margin-bottom: 20px;
+        font-size: 1.05rem;
+      }
+
+      .ceo-signature {
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 2px solid #e2e8f0;
+      }
+
+      .ceo-signature h4 {
+        color: var(--primary);
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+      }
+
+      .ceo-signature p {
+        color: var(--gray);
+        margin-bottom: 0;
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 768px) {
         .ceo-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            display: grid;
-            grid-template-columns: 350px 1fr;
+          grid-template-columns: 1fr;
         }
 
         .ceo-image-wrapper {
-            position: relative;
-            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 30px;
-            text-align: center;
-        }
-
-        .ceo-image-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=500&fit=crop') center/cover;
-            opacity: 0.9;
-        }
-
-        .ceo-image-wrapper::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(26, 54, 93, 0.9), rgba(44, 82, 130, 0.7));
-        }
-
-        .ceo-image-content {
-            position: relative;
-            z-index: 2;
-            color: white;
-        }
-
-        .ceo-profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-            object-fit: cover;
-            margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .ceo-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: white;
-        }
-
-        .ceo-title {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 0;
+          padding: 60px 30px;
+          min-height: 300px;
         }
 
         .ceo-content {
-            padding: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .ceo-greeting {
-            font-size: 1.1rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+          padding: 40px 30px;
         }
 
         .ceo-heading {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 25px;
-            line-height: 1.3;
-        }
-
-        .ceo-text {
-            color: var(--gray);
-            line-height: 1.8;
-            margin-bottom: 20px;
-            font-size: 1.05rem;
-        }
-
-        .ceo-signature {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 2px solid #e2e8f0;
-        }
-
-        .ceo-signature h4 {
-            color: var(--primary);
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        .ceo-signature p {
-            color: var(--gray);
-            margin-bottom: 0;
-            font-size: 0.95rem;
-        }
-
-        @media (max-width: 768px) {
-            .ceo-container {
-                grid-template-columns: 1fr;
-            }
-
-            .ceo-image-wrapper {
-                padding: 60px 30px;
-                min-height: 300px;
-            }
-
-            .ceo-content {
-                padding: 40px 30px;
-            }
-
-            .ceo-heading {
-                font-size: 1.5rem;
-            }
-        }
-
-        /* ===== PROGRAMS SECTION ===== */
-        .programs {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .program-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .program-card {
-            padding: 40px 30px;
-            text-align: center;
-        }
-
-        .program-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background: var(--gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-        }
-
-        .program-title {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-
-        .program-explore {
-            margin-top: 20px;
-        }
-
-        /* ===== ADVERTISEMENT SECTION ===== */
-        .advertisement {
-            padding: 80px 0;
-            background: var(--gradient);
-            color: white;
-            text-align: center;
-            position: relative;
-        }
-
-        .advertisement::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
-            opacity: 0.1;
-        }
-
-        .ad-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .ad-title {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .ad-subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-
-        .ad-highlights {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .ad-highlight {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 25px 20px;
-            border-radius: var(--border-radius);
-            width: 200px;
-            text-align: center;
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-        }
-
-        .ad-highlight i {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: white;
-        }
-
-        /* ===== CTA SECTION ===== */
-        .cta-section {
-            padding: 100px 0;
-            background: #f8fafc;
-            text-align: center;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        /* ===== MOVING COURSES SECTION ===== */
-        .moving-courses {
-            padding: 100px 0;
-            background: white;
-            overflow: hidden;
-        }
-
-        .course-track-container {
-            overflow: hidden;
-            position: relative;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            background: white;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            margin-top: 40px;
-            padding: 20px;
-            max-width: 1000px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .course-track {
-            display: flex;
-            animation: scroll 30s linear infinite;
-            gap: 30px;
-            padding: 20px 0;
-        }
-
-        .course-track:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-350px * 5 - 30px * 5)); }
-        }
-
-        .course-card {
-            min-width: 350px;
-            overflow: hidden;
-        }
-
-        .course-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            background-color: #e2e8f0;
-        }
-
-        .card-content {
-            padding: 25px;
-        }
-
-        .course-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .course-desc {
-            color: var(--gray);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        /* ===== CULTURE SECTION ===== */
-        .culture {
-            padding: 100px 0;
-            background: #f8fafc;
-        }
-
-        .culture-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .culture-img {
-            height: 200px;
-            width: 100%;
-            object-fit: cover;
-            background-color: #e2e8f0;
-        }
-
-        /* ===== HIGHLIGHTS SECTION ===== */
-        .highlights {
-            padding: 100px 0;
-            background: white;
-        }
-
-        .quote-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .quote-card {
-            padding: 40px 30px;
-        }
-
-        .quote-text {
-            font-style: italic;
-            margin-bottom: 25px;
-            position: relative;
-            line-height: 1.7;
-            color: var(--dark);
-        }
-
-        .quote-text::before {
-            content: '"';
-            font-size: 4rem;
-            position: absolute;
-            top: -20px;
-            left: -10px;
-            color: rgba(0, 0, 0, 0.1);
-            font-family: Georgia, serif;
-        }
-
-        .quote-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .author-image {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: #e2e8f0;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .author-info h4 {
-            margin-bottom: 5px;
-            color: var(--primary);
-        }
-
-        .author-info p {
-            color: var(--gray);
-            margin-bottom: 0;
-        }
-
-        /* ===== FINAL CTA SECTION ===== */
-        .final-cta {
-            padding: 100px 0;
-            background: var(--gradient);
-            color: white;
-            text-align: center;
-            position: relative;
-        }
-
-        .final-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
-            opacity: 0.1;
-        }
-
-        .final-cta .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .final-cta .section-title {
-            color: white;
-        }
-
-        .final-cta .section-title::after {
-            background: white;
-        }
-
-        .final-cta .section-subtitle {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        .final-cta .btn-outline {
-            border-color: white;
-            color: white;
-        }
-
-        .final-cta .btn-outline:hover {
-            background: white;
-            color: var(--primary);
-        }
-
-        /* ===== FOOTER ===== */
-        .site-footer {
-            background: var(--primary-dark);
-            color: white;
-            padding: 60px 0 0;
-            margin-top: 80px;
-            font-size: 14px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .footer-col {
-            margin-bottom: 30px;
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-        }
-
-        .footer-logo img {
-            height: 60px;
-        }
-
-        .footer-logo h3 {
-            font-size: 1.2rem;
-            color: white;
-            line-height: 1.3;
-        }
-
-        .footer-description {
-            line-height: 1.6;
-            margin-bottom: 25px;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .footer-social h4 {
-            margin-bottom: 15px;
-            font-size: 1rem;
-            color: white;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            transition: var(--transition);
-        }
-
-        .social-icons a:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        .footer-col h3 {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: white;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 40px;
-            height: 2px;
-            background: var(--accent);
-        }
-
-        .footer-col ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-col ul li a {
-            color: rgba(255, 255, 255, 0.8);
-            transition: var(--transition);
-        }
-
-        .footer-col ul li a:hover {
-            color: var(--accent);
-            padding-left: 5px;
-        }
-
-        .contact-info {
-            margin-bottom: 25px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-            gap: 10px;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .contact-item i {
-            margin-top: 2px;
-            color: var(--accent);
-        }
-
-        .contact-item a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-        }
-
-        .contact-item a:hover {
-            color: var(--accent);
-        }
-
-        .newsletter h4 {
-            margin-bottom: 15px;
-            color: white;
-            font-size: 1rem;
-        }
-
-        .newsletter-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .newsletter-form input {
-            padding: 12px 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: var(--border-radius);
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-size: 14px;
-        }
-
-        .newsletter-form input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .newsletter-form input:focus {
-            outline: none;
-            border-color: var(--accent);
-        }
-
-        .newsletter-form button {
-            padding: 12px 15px;
-            border: none;
-            border-radius: var(--border-radius);
-            background: var(--gradient);
-            color: white;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .newsletter-form button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .footer-bottom {
-            background: rgba(0, 0, 0, 0.2);
-            padding: 25px 0;
-            margin-top: 60px;
+          font-size: 1.5rem;
+        }
+      }
+
+      /* ===== PROGRAMS SECTION ===== */
+      .programs {
+        padding: 100px 0;
+        background: white;
+      }
+
+      .program-categories {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .program-card {
+        padding: 40px 30px;
+        text-align: center;
+      }
+
+      .program-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 20px;
+        background: var(--gradient);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2rem;
+      }
+
+      .program-title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        color: var(--primary);
+      }
+
+      .program-explore {
+        margin-top: 20px;
+      }
+
+      /* ===== ADVERTISEMENT SECTION ===== */
+      .advertisement {
+        padding: 80px 0;
+        background: var(--gradient);
+        color: white;
+        text-align: center;
+        position: relative;
+      }
+
+      .advertisement::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")
+          center/cover;
+        opacity: 0.1;
+      }
+
+      .ad-content {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .ad-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .ad-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+        line-height: 1.6;
+      }
+
+      .ad-highlights {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+
+      .ad-highlight {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 25px 20px;
+        border-radius: var(--border-radius);
+        width: 200px;
+        text-align: center;
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }
+
+      .ad-highlight i {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        color: white;
+      }
+
+      /* ===== CTA SECTION ===== */
+      .cta-section {
+        padding: 100px 0;
+        background: #f8fafc;
+        text-align: center;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+
+      /* ===== MOVING COURSES SECTION ===== */
+      .moving-courses {
+        padding: 100px 0;
+        background: white;
+        overflow: hidden;
+      }
+
+      .course-track-container {
+        overflow: hidden;
+        position: relative;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        margin-top: 40px;
+        padding: 20px;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .course-track {
+        display: flex;
+        animation: scroll 30s linear infinite;
+        gap: 30px;
+        padding: 20px 0;
+      }
+
+      .course-track:hover {
+        animation-play-state: paused;
+      }
+
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(calc(-350px * 5 - 30px * 5));
+        }
+      }
+
+      .course-card {
+        min-width: 350px;
+        overflow: hidden;
+      }
+
+      .course-image {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+        background-color: #e2e8f0;
+      }
+
+      .card-content {
+        padding: 25px;
+      }
+
+      .course-title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: var(--primary);
+      }
+
+      .course-desc {
+        color: var(--gray);
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      /* ===== CULTURE SECTION ===== */
+      .culture {
+        padding: 100px 0;
+        background: #f8fafc;
+      }
+
+      .culture-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .culture-img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        background-color: #e2e8f0;
+      }
+
+      /* ===== HIGHLIGHTS SECTION ===== */
+      .highlights {
+        padding: 100px 0;
+        background: white;
+      }
+
+      .quote-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .quote-card {
+        padding: 40px 30px;
+      }
+
+      .quote-text {
+        font-style: italic;
+        margin-bottom: 25px;
+        position: relative;
+        line-height: 1.7;
+        color: var(--dark);
+      }
+
+      .quote-text::before {
+        content: '"';
+        font-size: 4rem;
+        position: absolute;
+        top: -20px;
+        left: -10px;
+        color: rgba(0, 0, 0, 0.1);
+        font-family: Georgia, serif;
+      }
+
+      .quote-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .author-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #e2e8f0;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .author-info h4 {
+        margin-bottom: 5px;
+        color: var(--primary);
+      }
+
+      .author-info p {
+        color: var(--gray);
+        margin-bottom: 0;
+      }
+
+      /* ===== FINAL CTA SECTION ===== */
+      .final-cta {
+        padding: 100px 0;
+        background: var(--gradient);
+        color: white;
+        text-align: center;
+        position: relative;
+      }
+
+      .final-cta::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")
+          center/cover;
+        opacity: 0.1;
+      }
+
+      .final-cta .container {
+        position: relative;
+        z-index: 1;
+      }
+
+      .final-cta .section-title {
+        color: white;
+      }
+
+      .final-cta .section-title::after {
+        background: white;
+      }
+
+      .final-cta .section-subtitle {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .final-cta .btn-outline {
+        border-color: white;
+        color: white;
+      }
+
+      .final-cta .btn-outline:hover {
+        background: white;
+        color: var(--primary);
+      }
+
+      /* ===== FOOTER ===== */
+      .site-footer {
+        background: var(--primary-dark);
+        color: white;
+        padding: 60px 0 0;
+        margin-top: 80px;
+        font-size: 14px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-col {
+        margin-bottom: 30px;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .footer-logo img {
+        height: 60px;
+      }
+
+      .footer-logo h3 {
+        font-size: 1.2rem;
+        color: white;
+        line-height: 1.3;
+      }
+
+      .footer-description {
+        line-height: 1.6;
+        margin-bottom: 25px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .footer-social h4 {
+        margin-bottom: 15px;
+        font-size: 1rem;
+        color: white;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+      }
+
+      .social-icons a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        transition: var(--transition);
+      }
+
+      .social-icons a:hover {
+        background: var(--accent);
+        transform: translateY(-3px);
+      }
+
+      .footer-col h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: white;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .footer-col h3::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 40px;
+        height: 2px;
+        background: var(--accent);
+      }
+
+      .footer-col ul li {
+        margin-bottom: 12px;
+      }
+
+      .footer-col ul li a {
+        color: rgba(255, 255, 255, 0.8);
+        transition: var(--transition);
+      }
+
+      .footer-col ul li a:hover {
+        color: var(--accent);
+        padding-left: 5px;
+      }
+
+      .contact-info {
+        margin-bottom: 25px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        gap: 10px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .contact-item i {
+        margin-top: 2px;
+        color: var(--accent);
+      }
+
+      .contact-item a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+      }
+
+      .contact-item a:hover {
+        color: var(--accent);
+      }
+
+      .newsletter h4 {
+        margin-bottom: 15px;
+        color: white;
+        font-size: 1rem;
+      }
+
+      .newsletter-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .newsletter-form input {
+        padding: 12px 15px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: var(--border-radius);
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 14px;
+      }
+
+      .newsletter-form input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .newsletter-form input:focus {
+        outline: none;
+        border-color: var(--accent);
+      }
+
+      .newsletter-form button {
+        padding: 12px 15px;
+        border: none;
+        border-radius: var(--border-radius);
+        background: var(--gradient);
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .newsletter-form button:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .footer-bottom {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 25px 0;
+        margin-top: 60px;
+      }
+
+      .footer-bottom-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .legal-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .legal-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        font-size: 14px;
+        transition: var(--transition);
+      }
+
+      .legal-links a:hover {
+        color: white;
+      }
+
+      .copyright {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 14px;
+      }
+
+      /* ===== RESPONSIVE STYLES ===== */
+      @media (max-width: 992px) {
+        .section-title {
+          font-size: 2.2rem;
+        }
+
+        .hero-title {
+          font-size: 3rem;
+        }
+
+        .nav-menu {
+          display: none;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .hero {
+          padding: 150px 0 80px;
+        }
+
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-description {
+          font-size: 1.1rem;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
         }
 
         .footer-bottom-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            flex-wrap: wrap;
-            gap: 15px;
+          flex-direction: column;
+          text-align: center;
         }
 
         .legal-links {
-            display: flex;
-            gap: 20px;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .container {
+          width: 95%;
         }
 
-        .legal-links a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            font-size: 14px;
-            transition: var(--transition);
+        .section-title {
+          font-size: 1.8rem;
         }
 
-        .legal-links a:hover {
-            color: white;
+        .hero-title {
+          font-size: 2rem;
         }
 
-        .copyright {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 14px;
+        .program-categories,
+        .benefits-container,
+        .culture-container,
+        .quote-cards {
+          grid-template-columns: 1fr;
         }
 
-        /* ===== RESPONSIVE STYLES ===== */
-        @media (max-width: 992px) {
-            .section-title {
-                font-size: 2.2rem;
-            }
-            
-            .hero-title {
-                font-size: 3rem;
-            }
-            
-            .nav-menu {
-                display: none;
-            }
-            
-            .hamburger {
-                display: flex;
-            }
+        .ad-highlights {
+          flex-direction: column;
+          align-items: center;
         }
 
-        @media (max-width: 768px) {
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .hero {
-                padding: 150px 0 80px;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-description {
-                font-size: 1.1rem;
-            }
-            
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .footer-bottom-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .legal-links {
-                justify-content: center;
-            }
+        .course-card {
+          min-width: 280px;
         }
-
-        @media (max-width: 576px) {
-            .container {
-                width: 95%;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .program-categories,
-            .benefits-container,
-            .culture-container,
-            .quote-cards {
-                grid-template-columns: 1fr;
-            }
-            
-            .ad-highlights {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .course-card {
-                min-width: 280px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header class="header">
-        <div class="container">
-            <div class="header-container">
-                <div class="logo-container">
-                    <img src="logo.png" alt="CMTI Logo" onerror="this.src='https://via.placeholder.com/50x50/1a365d/ffffff?text=CMTI'">
-                   <div class="logo-text">Coded Mind <br>Technology Incubator</div>
-                </div>
-                
-                <nav>
-                    <ul class="nav-menu">
-                        <li><a href="index.html" class="active">Home</a></li>
-                        <li><a href="courses.html">Programs</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="blogging.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                        <li><a href="careers.html">Careers</a></li>
-                        <li><a href="lms.html">LMS</a></li>
-                    </ul>
-                </nav>
-                
-                <button class="hamburger" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-            
-            <div class="mobile-menu">
-                <ul class="mobile-nav">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="courses.html">Programs</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="blogging.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="careers.html">Careers</a></li>
-                    <li><a href="lms.html">LMS</a></li>
-                </ul>
-            </div>
+      <div class="container">
+        <div class="header-container">
+          <div class="logo-container">
+            <img
+              src="logo.png"
+              alt="CMTI Logo"
+              onerror="
+                this.src =
+                  'https://via.placeholder.com/50x50/1a365d/ffffff?text=CMTI'
+              "
+            />
+            <div class="logo-text">Coded Mind <br />Technology Incubator</div>
+          </div>
+
+          <nav>
+            <ul class="nav-menu">
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="courses.html">Programs</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="blogging.html">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="lms.html">LMS</a></li>
+            </ul>
+          </nav>
+
+          <button class="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
+
+        <div class="mobile-menu">
+          <ul class="mobile-nav">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="courses.html">Programs</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blogging.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="lms.html">LMS</a></li>
+          </ul>
+        </div>
+      </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">Pakistan's Largest Tech Incubator</div>
-                <h1 class="hero-title">CODED MIND TECHNOLOGY INCUBATOR</h1>
-                <p class="hero-description">Transforming ideas into successful tech ventures through cutting-edge incubation programs, mentorship, and resources. Join Pakistan's premier technology ecosystem.</p>
-                <div class="hero-buttons">
-                    <a href="https://form.jotform.com/252090931090451" class="btn" target="_blank" rel="noopener">Enroll Now</a>
-                    <a href="about.html" class="btn btn-outline">Learn More</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">Pakistan's Largest Tech Incubator</div>
+          <h1 class="hero-title">CODED MIND TECHNOLOGY INCUBATOR</h1>
+          <p class="hero-description">
+            Transforming ideas into successful tech ventures through
+            cutting-edge incubation programs, mentorship, and resources. Join
+            Pakistan's premier technology ecosystem.
+          </p>
+          <div class="hero-buttons">
+            <a
+              href="https://form.jotform.com/252090931090451"
+              class="btn"
+              target="_blank"
+              rel="noopener"
+              >Enroll Now</a
+            >
+            <a href="about.html" class="btn btn-outline">Learn More</a>
+          </div>
         </div>
+      </div>
     </section>
-    
+
     <!-- CEO Message Section -->
     <section class="ceo-message">
-        <div class="container">
-            <div class="ceo-container">
-                <div class="ceo-image-wrapper">
-                    <div class="ceo-image-content">
-                        <img src="asdf.jpg" alt="Ahmad Iqbal - CEO" class="ceo-profile-img">
-                        <h3 class="ceo-name">Ahmad Iqbal</h3>
-                        <p class="ceo-title">Founder & CEO</p>
-                    </div>
-                </div>
-                <div class="ceo-content">
-                    <span class="ceo-greeting">Message from the CEO</span>
-                    <h2 class="ceo-heading">Welcome to Coded Mind Technology Incubator (CMTI)</h2>
-                    
-                    <p class="ceo-text">
-                        Our mission is to provide practical, career-focused education that empowers students with real-world skills in IT, freelancing, and digital technologies.
-                    </p>
-                    
-                    <p class="ceo-text">
-                        We believe education should lead to opportunity. At CMTI, we focus on skill development that helps students build careers, start freelancing, and achieve financial independence.
-                    </p>
-                    
-                    <p class="ceo-text">
-                        I invite you to join CMTI and become part of a future where learning leads to earning.
-                    </p>
-                    
-                    <div class="ceo-signature">
-                        <h4>Ahmad Iqbal</h4>
-                        <p>Founder & CEO<br>Coded Mind Technology Incubator (CMTI)</p>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="ceo-container">
+          <div class="ceo-image-wrapper">
+            <div class="ceo-image-content">
+              <img
+                src="asdf.jpg"
+                alt="Ahmad Iqbal - CEO"
+                class="ceo-profile-img"
+              />
+              <h3 class="ceo-name">Ahmad Iqbal</h3>
+              <p class="ceo-title">Founder & CEO</p>
             </div>
+          </div>
+          <div class="ceo-content">
+            <span class="ceo-greeting">Message from the CEO</span>
+            <h2 class="ceo-heading">
+              Welcome to Coded Mind Technology Incubator (CMTI)
+            </h2>
+
+            <p class="ceo-text">
+              Our mission is to provide practical, career-focused education that
+              empowers students with real-world skills in IT, freelancing, and
+              digital technologies.
+            </p>
+
+            <p class="ceo-text">
+              We believe education should lead to opportunity. At CMTI, we focus
+              on skill development that helps students build careers, start
+              freelancing, and achieve financial independence.
+            </p>
+
+            <p class="ceo-text">
+              I invite you to join CMTI and become part of a future where
+              learning leads to earning.
+            </p>
+
+            <div class="ceo-signature">
+              <h4>Ahmad Iqbal</h4>
+              <p>Founder & CEO<br />Coded Mind Technology Incubator (CMTI)</p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Stats Section -->
     <section class="stats">
-        <div class="container">
-            <div class="stats-container">
-                <div class="stat-card">
-                    <div class="stat-number">10,000+</div>
-                    <div class="stat-text">Students Trained</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">200+</div>
-                    <div class="stat-text">Startups Incubated</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">50+</div>
-                    <div class="stat-text">Expert Mentors</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-text">Cities Across Pakistan</div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-number">10,000+</div>
+            <div class="stat-text">Students Trained</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">200+</div>
+            <div class="stat-text">Startups Incubated</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">50+</div>
+            <div class="stat-text">Expert Mentors</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">15+</div>
+            <div class="stat-text">Cities Across Pakistan</div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Why Join Us Section -->
     <section class="why-cmti">
-        <div class="container">
-            <h2 class="section-title">Why Join Coded Mind?</h2>
-            <p class="section-subtitle">We're building a community of innovators, educators, and technology enthusiasts who are passionate about shaping the future of tech education.</p>
-            
-            <div class="benefits-container">
-                <div class="card benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <h3>Continuous Learning</h3>
-                    <p>Free access to all our courses and workshops to keep your skills sharp and up-to-date.</p>
-                </div>
-                
-                <div class="card benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Collaborative Environment</h3>
-                    <p>Work with like-minded professionals in a supportive and innovative atmosphere.</p>
-                </div>
-                
-                <div class="card benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Growth Opportunities</h3>
-                    <p>Clear career progression paths and opportunities to take on leadership roles.</p>
-                </div>
-                
-                <div class="card benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-balance-scale"></i>
-                    </div>
-                    <h3>Work-Life Balance</h3>
-                    <p>Flexible working hours and remote work options to maintain a healthy balance.</p>
-                </div>
-                
-                <div class="card benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Impactful Work</h3>
-                    <p>Make a real difference in students' lives and contribute to the tech ecosystem.</p>
-                </div>
-                
-                <div class="card benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3>Competitive Compensation</h3>
-                    <p>Attractive salary packages, performance bonuses, and comprehensive benefits.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+      <div class="container">
+        <h2 class="section-title">Why Join Coded Mind?</h2>
+        <p class="section-subtitle">
+          We're building a community of innovators, educators, and technology
+          enthusiasts who are passionate about shaping the future of tech
+          education.
+        </p>
 
-    
+        <div class="benefits-container">
+          <div class="card benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <h3>Continuous Learning</h3>
+            <p>
+              Free access to all our courses and workshops to keep your skills
+              sharp and up-to-date.
+            </p>
+          </div>
+
+          <div class="card benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Collaborative Environment</h3>
+            <p>
+              Work with like-minded professionals in a supportive and innovative
+              atmosphere.
+            </p>
+          </div>
+
+          <div class="card benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Growth Opportunities</h3>
+            <p>
+              Clear career progression paths and opportunities to take on
+              leadership roles.
+            </p>
+          </div>
+
+          <div class="card benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-balance-scale"></i>
+            </div>
+            <h3>Work-Life Balance</h3>
+            <p>
+              Flexible working hours and remote work options to maintain a
+              healthy balance.
+            </p>
+          </div>
+
+          <div class="card benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Impactful Work</h3>
+            <p>
+              Make a real difference in students' lives and contribute to the
+              tech ecosystem.
+            </p>
+          </div>
+
+          <div class="card benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-trophy"></i>
+            </div>
+            <h3>Competitive Compensation</h3>
+            <p>
+              Attractive salary packages, performance bonuses, and comprehensive
+              benefits.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Programs Section -->
     <section class="programs">
-        <div class="container">
-            <h2 class="section-title">Top Program Categories</h2>
-            <p class="section-subtitle">Explore our cutting-edge programs designed to launch your tech career</p>
-            
-            <div class="program-categories">
-                <div class="card program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-coins"></i>
-                    </div>
-                    <h3 class="program-title">Crypto Trading</h3>
-                    <p>Master the art of cryptocurrency trading and blockchain technology. Learn technical analysis, risk management, and trading strategies.</p>
-                    <a href="Cryptotrading.html" class="btn program-explore">Explore Programs</a>
-                </div>
-                
-                <div class="card program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3 class="program-title">Web Design & Development</h3>
-                    <p>Learn to create responsive, modern websites and web applications using the latest technologies and frameworks.</p>
-                    <a href="course-webdev.html" class="btn program-explore">Explore Programs</a>
-                </div>
-                
-                <div class="card program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="program-title">Artificial Intelligence</h3>
-                    <p>Dive into machine learning, neural networks, and AI applications. Build intelligent systems that can learn and adapt.</p>
-                    <a href="course-ai-ml.html" class="btn program-explore">Explore Programs</a>
-                </div>
-                
-                <div class="card program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-hashtag"></i>
-                    </div>
-                    <h3 class="program-title">Digital Media Marketing</h3>
-                    <p>Learn strategies to promote brands and products online effectively through social media, SEO, and content marketing.</p>
-                    <a href="course-digital-marketing.html" class="btn program-explore">Explore Programs</a>
-                </div>
-                
-                <div class="card program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <h3 class="program-title">App & Game Development</h3>
-                    <p>Create mobile applications and interactive games from concept to deployment. Learn programming, design, and monetization.</p>
-                    <a href="course-mobile-app.html" class="btn program-explore">Explore Programs</a>
-                </div>
-                
-                <div class="card program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h3 class="program-title">E-commerce</h3>
-                    <p>Build and manage successful online stores and marketplaces. Learn about payment systems, logistics, and customer acquisition.</p>
-                    <a href="course-amazon-ecommerce.html" class="btn program-explore">Explore Programs</a>
-                </div>
-                
-                <div class="card program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="program-title">Cyber Security</h3>
-                    <p>Protect systems and networks from digital attacks and threats. Learn ethical hacking, encryption, and security protocols.</p>
-                    <a href="course-cyber-security.html" class="btn program-explore">Explore Programs</a>
-                </div>
-                
-                <div class="card program-card">
-                    <div class="program-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3 class="program-title">Professional Development</h3>
-                    <p>Enhance your soft skills and advance your career in the tech industry. Learn communication, leadership, and project management.</p>
-                    <a href="course-data-science.html" class="btn program-explore">Explore Programs</a>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Top Program Categories</h2>
+        <p class="section-subtitle">
+          Explore our cutting-edge programs designed to launch your tech career
+        </p>
+
+        <div class="program-categories">
+          <div class="card program-card">
+            <div class="program-icon">
+              <i class="fas fa-coins"></i>
             </div>
-            
-            <div class="inline-style-19">
-                <a href="courses.html" class="btn">Explore All Categories</a>
+            <h3 class="program-title">Crypto Trading</h3>
+            <p>
+              Master the art of cryptocurrency trading and blockchain
+              technology. Learn technical analysis, risk management, and trading
+              strategies.
+            </p>
+            <a href="Cryptotrading.html" class="btn program-explore"
+              >Explore Programs</a
+            >
+          </div>
+
+          <div class="card program-card">
+            <div class="program-icon">
+              <i class="fas fa-laptop-code"></i>
             </div>
+            <h3 class="program-title">Web Design & Development</h3>
+            <p>
+              Learn to create responsive, modern websites and web applications
+              using the latest technologies and frameworks.
+            </p>
+            <a href="course-webdev.html" class="btn program-explore"
+              >Explore Programs</a
+            >
+          </div>
+
+          <div class="card program-card">
+            <div class="program-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3 class="program-title">Artificial Intelligence</h3>
+            <p>
+              Dive into machine learning, neural networks, and AI applications.
+              Build intelligent systems that can learn and adapt.
+            </p>
+            <a href="course-ai-ml.html" class="btn program-explore"
+              >Explore Programs</a
+            >
+          </div>
+
+          <div class="card program-card">
+            <div class="program-icon">
+              <i class="fas fa-hashtag"></i>
+            </div>
+            <h3 class="program-title">Digital Media Marketing</h3>
+            <p>
+              Learn strategies to promote brands and products online effectively
+              through social media, SEO, and content marketing.
+            </p>
+            <a href="course-digital-marketing.html" class="btn program-explore"
+              >Explore Programs</a
+            >
+          </div>
+
+          <div class="card program-card">
+            <div class="program-icon">
+              <i class="fas fa-gamepad"></i>
+            </div>
+            <h3 class="program-title">App & Game Development</h3>
+            <p>
+              Create mobile applications and interactive games from concept to
+              deployment. Learn programming, design, and monetization.
+            </p>
+            <a href="course-mobile-app.html" class="btn program-explore"
+              >Explore Programs</a
+            >
+          </div>
+
+          <div class="card program-card">
+            <div class="program-icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <h3 class="program-title">E-commerce</h3>
+            <p>
+              Build and manage successful online stores and marketplaces. Learn
+              about payment systems, logistics, and customer acquisition.
+            </p>
+            <a href="course-amazon-ecommerce.html" class="btn program-explore"
+              >Explore Programs</a
+            >
+          </div>
+
+          <div class="card program-card">
+            <div class="program-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="program-title">Cyber Security</h3>
+            <p>
+              Protect systems and networks from digital attacks and threats.
+              Learn ethical hacking, encryption, and security protocols.
+            </p>
+            <a href="course-cyber-security.html" class="btn program-explore"
+              >Explore Programs</a
+            >
+          </div>
+
+          <div class="card program-card">
+            <div class="program-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <h3 class="program-title">Professional Development</h3>
+            <p>
+              Enhance your soft skills and advance your career in the tech
+              industry. Learn communication, leadership, and project management.
+            </p>
+            <a href="course-data-science.html" class="btn program-explore"
+              >Explore Programs</a
+            >
+          </div>
         </div>
+
+        <div class="inline-style-19">
+          <a href="courses.html" class="btn">Explore All Categories</a>
+        </div>
+      </div>
     </section>
-<script src="https://jswidget.sketricgen.ai/widget-embed.js" data-agent-id="skflow_969f6c30-bfb0-4680-9a71-274acd95b0b4"></script>
+    <script
+      src="https://jswidget.sketricgen.ai/widget-embed.js"
+      data-agent-id="skflow_969f6c30-bfb0-4680-9a71-274acd95b0b4"
+    ></script>
     <!-- Advertisement Section -->
     <section class="advertisement">
-        <div class="container">
-            <div class="ad-content">
-                <h2 class="ad-title">Join Pakistan's #1 Tech Incubator</h2>
-                <p class="ad-subtitle">At Coded Mind, we don't just teach technology - we build the next generation of tech leaders, entrepreneurs, and innovators. Our comprehensive programs combine cutting-edge curriculum with real-world experience.</p>
-                <a href="https://form.jotform.com/252090931090451" class="btn" target="_blank" rel="noopener">Start Your Journey Today</a>
-                
-                <div class="ad-highlights">
-                    <div class="ad-highlight">
-                        <i class="fas fa-award"></i>
-                        <h4>Industry Recognized</h4>
-                        <p>Certifications valued by employers</p>
-                    </div>
-                    <div class="ad-highlight">
-                        <i class="fas fa-briefcase"></i>
-                        <h4>Job Placement</h4>
-                        <p>95% placement rate for graduates</p>
-                    </div>
-                    <div class="ad-highlight">
-                        <i class="fas fa-handshake"></i>
-                        <h4>Mentorship</h4>
-                        <p>Guidance from industry experts</p>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="ad-content">
+          <h2 class="ad-title">Join Pakistan's #1 Tech Incubator</h2>
+          <p class="ad-subtitle">
+            At Coded Mind, we don't just teach technology - we build the next
+            generation of tech leaders, entrepreneurs, and innovators. Our
+            comprehensive programs combine cutting-edge curriculum with
+            real-world experience.
+          </p>
+          <a
+            href="https://form.jotform.com/252090931090451"
+            class="btn"
+            target="_blank"
+            rel="noopener"
+            >Start Your Journey Today</a
+          >
+
+          <div class="ad-highlights">
+            <div class="ad-highlight">
+              <i class="fas fa-award"></i>
+              <h4>Industry Recognized</h4>
+              <p>Certifications valued by employers</p>
             </div>
+            <div class="ad-highlight">
+              <i class="fas fa-briefcase"></i>
+              <h4>Job Placement</h4>
+              <p>95% placement rate for graduates</p>
+            </div>
+            <div class="ad-highlight">
+              <i class="fas fa-handshake"></i>
+              <h4>Mentorship</h4>
+              <p>Guidance from industry experts</p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="section-title">Super Charge Your Career Potential</h2>
-                <p class="section-subtitle">Join thousands of students who have transformed their careers through CMTI programs</p>
-                
-                <div class="cta-buttons">
-                    <a href="https://form.jotform.com/252090931090451" class="btn" target="_blank" rel="noopener">How to Apply</a>
-                    <a href="about.html" class="btn btn-outline">More About CMTI</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="cta-content">
+          <h2 class="section-title">Super Charge Your Career Potential</h2>
+          <p class="section-subtitle">
+            Join thousands of students who have transformed their careers
+            through CMTI programs
+          </p>
+
+          <div class="cta-buttons">
+            <a
+              href="https://form.jotform.com/252090931090451"
+              class="btn"
+              target="_blank"
+              rel="noopener"
+              >How to Apply</a
+            >
+            <a href="about.html" class="btn btn-outline">More About CMTI</a>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Moving Courses Section -->
     <section class="moving-courses">
-        <div class="container">
-            <h2 class="section-title">Explore Possibilities</h2>
-            <p class="section-subtitle">Browse our most popular courses and find the perfect fit for your career goals</p>
-            
-            <div class="course-track-container">
-                <div class="course-track">
-                    <div class="card course-card">
-                        <div class="course-image inline-style-20"></div>
-                        <div class="card-content">
-                            <h3 class="course-title">Full Stack Web Development</h3>
-                            <p class="course-desc">Master front-end and back-end technologies to become a full-stack developer.</p>
-                            <a href="course-webdev.html" class="btn">Explore</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card course-card">
-                        <div class="course-image inline-style-21"></div>
-                        <div class="card-content">
-                            <h3 class="course-title">Data Science & Analytics</h3>
-                            <p class="course-desc">Learn to extract insights from data using statistical methods and machine learning.</p>
-                            <a href="course-data-science.html" class="btn">Explore</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card course-card">
-                        <div class="course-image inline-style-22"></div>
-                        <div class="card-content">
-                            <h3 class="course-title">UX/UI Design Mastery</h3>
-                            <p class="course-desc">Create intuitive and beautiful user interfaces that provide exceptional experiences.</p>
-                            <a href="course-graphic-design.html" class="btn">Explore</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card course-card">
-                        <div class="course-image inline-style-23"></div>
-                        <div class="card-content">
-                            <h3 class="course-title">Mobile App Development</h3>
-                            <p class="course-desc">Build cross-platform mobile applications using React Native and Flutter.</p>
-                            <a href="course-mobile-app.html" class="btn">Explore</a>
-                        </div>
-                    </div>
-                    
-                    <div class="card course-card">
-                        <div class="course-image inline-style-24"></div>
-                        <div class="card-content">
-                            <h3 class="course-title">Digital Marketing Strategy</h3>
-                            <p class="course-desc">Develop comprehensive digital marketing campaigns that drive growth and engagement.</p>
-                            <a href="course-digital-marketing.html" class="btn">Explore</a>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Explore Possibilities</h2>
+        <p class="section-subtitle">
+          Browse our most popular courses and find the perfect fit for your
+          career goals
+        </p>
+
+        <div class="course-track-container">
+          <div class="course-track">
+            <div class="card course-card">
+              <div class="course-image inline-style-20"></div>
+              <div class="card-content">
+                <h3 class="course-title">Full Stack Web Development</h3>
+                <p class="course-desc">
+                  Master front-end and back-end technologies to become a
+                  full-stack developer.
+                </p>
+                <a href="course-webdev.html" class="btn">Explore</a>
+              </div>
             </div>
-            
-            <div class="inline-style-19">
-                <a href="courses.html" class="btn">Explore All Programs</a>
+
+            <div class="card course-card">
+              <div class="course-image inline-style-21"></div>
+              <div class="card-content">
+                <h3 class="course-title">Data Science & Analytics</h3>
+                <p class="course-desc">
+                  Learn to extract insights from data using statistical methods
+                  and machine learning.
+                </p>
+                <a href="course-data-science.html" class="btn">Explore</a>
+              </div>
             </div>
+
+            <div class="card course-card">
+              <div class="course-image inline-style-22"></div>
+              <div class="card-content">
+                <h3 class="course-title">UX/UI Design Mastery</h3>
+                <p class="course-desc">
+                  Create intuitive and beautiful user interfaces that provide
+                  exceptional experiences.
+                </p>
+                <a href="course-graphic-design.html" class="btn">Explore</a>
+              </div>
+            </div>
+
+            <div class="card course-card">
+              <div class="course-image inline-style-23"></div>
+              <div class="card-content">
+                <h3 class="course-title">Mobile App Development</h3>
+                <p class="course-desc">
+                  Build cross-platform mobile applications using React Native
+                  and Flutter.
+                </p>
+                <a href="course-mobile-app.html" class="btn">Explore</a>
+              </div>
+            </div>
+
+            <div class="card course-card">
+              <div class="course-image inline-style-24"></div>
+              <div class="card-content">
+                <h3 class="course-title">Digital Marketing Strategy</h3>
+                <p class="course-desc">
+                  Develop comprehensive digital marketing campaigns that drive
+                  growth and engagement.
+                </p>
+                <a href="course-digital-marketing.html" class="btn">Explore</a>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="inline-style-19">
+          <a href="courses.html" class="btn">Explore All Programs</a>
+        </div>
+      </div>
     </section>
 
     <!-- Culture Section -->
     <section class="culture">
-        <div class="container">
-            <h2 class="section-title">Our Culture</h2>
-            <p class="section-subtitle">At Coded Mind, we believe that a positive and inclusive culture is the foundation of innovation and excellence.</p>
-            
-            <div class="culture-container">
-                <div class="card culture-card">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Team Collaboration" class="culture-img">
-                    <div class="card-content">
-                        <h3>Collaborative Spirit</h3>
-                        <p>We believe in the power of teamwork and regularly collaborate across departments to achieve our goals.</p>
-                    </div>
-                </div>
-                
-                <div class="card culture-card">
-                    <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=600&q=80" alt="Learning Environment" class="culture-img">
-                    <div class="card-content">
-                        <h3>Learning Environment</h3>
-                        <p>We're committed to continuous learning and encourage our team to explore new technologies and methodologies.</p>
-                    </div>
-                </div>
-                
-                <div class="card culture-card">
-                    <img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=600&q=80" alt="Innovation" class="culture-img">
-                    <div class="card-content">
-                        <h3>Innovation Focus</h3>
-                        <p>We encourage creative thinking and reward innovative solutions to challenges in education and technology.</p>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">Our Culture</h2>
+        <p class="section-subtitle">
+          At Coded Mind, we believe that a positive and inclusive culture is the
+          foundation of innovation and excellence.
+        </p>
+
+        <div class="culture-container">
+          <div class="card culture-card">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80"
+              alt="Team Collaboration"
+              class="culture-img"
+            />
+            <div class="card-content">
+              <h3>Collaborative Spirit</h3>
+              <p>
+                We believe in the power of teamwork and regularly collaborate
+                across departments to achieve our goals.
+              </p>
             </div>
+          </div>
+
+          <div class="card culture-card">
+            <img
+              src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?auto=format&fit=crop&w=600&q=80"
+              alt="Learning Environment"
+              class="culture-img"
+            />
+            <div class="card-content">
+              <h3>Learning Environment</h3>
+              <p>
+                We're committed to continuous learning and encourage our team to
+                explore new technologies and methodologies.
+              </p>
+            </div>
+          </div>
+
+          <div class="card culture-card">
+            <img
+              src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=600&q=80"
+              alt="Innovation"
+              class="culture-img"
+            />
+            <div class="card-content">
+              <h3>Innovation Focus</h3>
+              <p>
+                We encourage creative thinking and reward innovative solutions
+                to challenges in education and technology.
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Highlights Section -->
     <section class="highlights">
-        <div class="container">
-            <h2 class="section-title">CMTI Highlights</h2>
-            <p class="section-subtitle">Discover what makes CMTI the leading technology incubator in Pakistan</p>
-            
-            <div class="quote-cards">
-                <div class="card quote-card">
-                    <p class="quote-text">CMTI provided me with the resources, mentorship, and network I needed to turn my idea into a successful startup. The incubation program was a game-changer for my career.</p>
-                    <div class="quote-author">
-                        <div class="author-image inline-style-25"></div>
-                        <div class="author-info">
-                            <h4>Ahmed Raza</h4>
-                            <p>Founder, TechSolve</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card quote-card">
-                    <p class="quote-text">The quality of education and hands-on experience I gained at CMTI surpassed all my expectations. I landed my dream job at a top tech company even before graduating.</p>
-                    <div class="quote-author">
-                        <div class="author-image inline-style-26"></div>
-                        <div class="author-info">
-                            <h4>Fatima Ali</h4>
-                            <p>Software Engineer, Systems Ltd</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card quote-card">
-                    <p class="quote-text">As a mentor at CMTI, I'm constantly impressed by the talent and innovation I see. The incubator is playing a crucial role in developing Pakistan's tech ecosystem.</p>
-                    <div class="quote-author">
-                        <div class="author-image inline-style-27"></div>
-                        <div class="author-info">
-                            <h4>Omar Farooq</h4>
-                            <p>CTO, InnovateTech</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card quote-card">
-                    <p class="quote-text">The networking opportunities at CMTI are incredible. I've connected with investors, industry leaders, and like-minded entrepreneurs who have helped me grow my business.</p>
-                    <div class="quote-author">
-                        <div class="author-image inline-style-28"></div>
-                        <div class="author-info">
-                            <h4>Ayesha Khan</h4>
-                            <p>CEO, DevCraft</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="container">
+        <h2 class="section-title">CMTI Highlights</h2>
+        <p class="section-subtitle">
+          Discover what makes CMTI the leading technology incubator in Pakistan
+        </p>
+
+        <div class="quote-cards">
+          <div class="card quote-card">
+            <p class="quote-text">
+              CMTI provided me with the resources, mentorship, and network I
+              needed to turn my idea into a successful startup. The incubation
+              program was a game-changer for my career.
+            </p>
+            <div class="quote-author">
+              <div class="author-image inline-style-25"></div>
+              <div class="author-info">
+                <h4>Ahmed Raza</h4>
+                <p>Founder, TechSolve</p>
+              </div>
             </div>
+          </div>
+
+          <div class="card quote-card">
+            <p class="quote-text">
+              The quality of education and hands-on experience I gained at CMTI
+              surpassed all my expectations. I landed my dream job at a top tech
+              company even before graduating.
+            </p>
+            <div class="quote-author">
+              <div class="author-image inline-style-26"></div>
+              <div class="author-info">
+                <h4>Fatima Ali</h4>
+                <p>Software Engineer, Systems Ltd</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card quote-card">
+            <p class="quote-text">
+              As a mentor at CMTI, I'm constantly impressed by the talent and
+              innovation I see. The incubator is playing a crucial role in
+              developing Pakistan's tech ecosystem.
+            </p>
+            <div class="quote-author">
+              <div class="author-image inline-style-27"></div>
+              <div class="author-info">
+                <h4>Omar Farooq</h4>
+                <p>CTO, InnovateTech</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card quote-card">
+            <p class="quote-text">
+              The networking opportunities at CMTI are incredible. I've
+              connected with investors, industry leaders, and like-minded
+              entrepreneurs who have helped me grow my business.
+            </p>
+            <div class="quote-author">
+              <div class="author-image inline-style-28"></div>
+              <div class="author-info">
+                <h4>Ayesha Khan</h4>
+                <p>CEO, DevCraft</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Final CTA Section -->
     <section class="final-cta">
-        <div class="container">
-            <h2 class="section-title">Ready to become a change maker?</h2>
-            <p class="section-subtitle">Join Pakistan's largest technology incubator and start your journey towards innovation and success</p>
-            
-            <div class="cta-buttons">
-                <a href="about.html" class="btn btn-outline">LEARN ABOUT CMTI</a>
-                <a href="courses.html" class="btn btn-outline">EXPLORE ALL PROGRAMS</a>
-                <a href="https://form.jotform.com/252090931090451" class="btn" target="_blank" rel="noopener">CONTACT ADMISSIONS</a>
-            </div>
+      <div class="container">
+        <h2 class="section-title">Ready to become a change maker?</h2>
+        <p class="section-subtitle">
+          Join Pakistan's largest technology incubator and start your journey
+          towards innovation and success
+        </p>
+
+        <div class="cta-buttons">
+          <a href="about.html" class="btn btn-outline">LEARN ABOUT CMTI</a>
+          <a href="courses.html" class="btn btn-outline"
+            >EXPLORE ALL PROGRAMS</a
+          >
+          <a
+            href="https://form.jotform.com/252090931090451"
+            class="btn"
+            target="_blank"
+            rel="noopener"
+            >CONTACT ADMISSIONS</a
+          >
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <img src="logo.png" alt="CMTI Logo" onerror="this.src='https://via.placeholder.com/60x60/ffffff/1a365d?text=CMTI'">
-                        <h3>Coded Mind <br>Technology Incubator</h3>
-                    </div>
-                    <p class="footer-description">
-                        Empowering the next generation of tech professionals through quality education and hands-on training in cutting-edge technologies.
-                        Join CMTI to gain cutting-Edge skills in technology and business. Our expert-led courses prepare you for the digital future.
-                    </p>
-                    <div class="footer-social">
-                        <h4>Follow Us</h4>
-                        <div class="social-icons">
-                            <a href="https://www.facebook.com/people/Coded-Mind-Technology-Incubator/61578686665814/" title="Facebook" aria-label="Facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" title="Twitter" aria-label="Twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" title="Instagram" aria-label="Instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" title="LinkedIn" aria-label="LinkedIn">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#" title="YouTube" aria-label="YouTube">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Top Programs</h3>
-                    <ul>
-                        <li><a href="course-webdev.html">Web Development</a></li>
-                        <li><a href="course-data-science.html">Data Science</a></li>
-                        <li><a href="course-cyber-security.html">Cyber Security</a></li>
-                        <li><a href="course-digital-marketing.html">Digital Marketing</a></li>
-                        <li><a href="course-python.html">Python Programming</a></li>
-                        <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="courses.html">All programs</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="lms.html">LMS</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="careers.html">Career Opportunities</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-col">
-                    <h3>Get In Touch!</h3>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Katlang District Mardan Pakistan</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span><a href="tel:+923316717195">+92 331 6717195</a></span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span><a href="tel:+923316717195">+92 331 6717195</a></span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span><a href="mailto:info@codedmind.com">info@codedmind.com</a></span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
-                        </div>
-                    </div>
-                    
-                    <div class="newsletter">
-                        <h4>Subscribe to Our Newsletter</h4>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="Your email address" required>
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-col">
+            <div class="footer-logo">
+              <img
+                src="logo.png"
+                alt="CMTI Logo"
+                onerror="
+                  this.src =
+                    'https://via.placeholder.com/60x60/ffffff/1a365d?text=CMTI'
+                "
+              />
+              <h3>Coded Mind <br />Technology Incubator</h3>
             </div>
-            
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <div class="copyright">
-                        &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
-                    </div>
-                    <div class="legal-links">
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms of Service</a>
-                        <a href="refund.html">Refund Policy</a>
-                        <a href="https://aitoolsfreelance.blogspot.com">Blogs</a>
-                    </div>
-                </div>
+            <p class="footer-description">
+              Empowering the next generation of tech professionals through
+              quality education and hands-on training in cutting-edge
+              technologies. Join CMTI to gain cutting-Edge skills in technology
+              and business. Our expert-led courses prepare you for the digital
+              future.
+            </p>
+            <div class="footer-social">
+              <h4>Follow Us</h4>
+              <div class="social-icons">
+                <a
+                  href="https://www.facebook.com/people/Coded-Mind-Technology-Incubator/61578686665814/"
+                  title="Facebook"
+                  aria-label="Facebook"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" title="Twitter" aria-label="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" title="Instagram" aria-label="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" title="LinkedIn" aria-label="LinkedIn">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" title="YouTube" aria-label="YouTube">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </div>
             </div>
+          </div>
+
+          <div class="footer-col">
+            <h3>Top Programs</h3>
+            <ul>
+              <li><a href="course-webdev.html">Web Development</a></li>
+              <li><a href="course-data-science.html">Data Science</a></li>
+              <li><a href="course-cyber-security.html">Cyber Security</a></li>
+              <li>
+                <a href="course-digital-marketing.html">Digital Marketing</a>
+              </li>
+              <li><a href="course-python.html">Python Programming</a></li>
+              <li><a href="course-ai-ml.html">AI & Machine Learning</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="courses.html">All programs</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="lms.html">LMS</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="careers.html">Career Opportunities</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Get In Touch!</h3>
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Katlang District Mardan Pakistan</span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span><a href="tel:+923316717195">+92 331 6717195</a></span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span><a href="tel:+923316717195">+92 331 6717195</a></span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span
+                  ><a href="mailto:info@codedmind.com"
+                    >info@codedmind.com</a
+                  ></span
+                >
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-clock"></i>
+                <span>Mon-Fri: 9AM-6PM | Sat: 10AM-2PM</span>
+              </div>
+            </div>
+
+            <div class="newsletter">
+              <h4>Subscribe to Our Newsletter</h4>
+              <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required />
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+          </div>
         </div>
+
+        <div class="footer-bottom">
+          <div class="footer-bottom-content">
+            <div class="copyright">
+              &copy; 2025 Coded Mind Technology Incubator. All rights reserved.
+            </div>
+            <div class="legal-links">
+              <a href="privacy.html">Privacy Policy</a>
+              <a href="terms.html">Terms of Service</a>
+              <a href="refund.html">Refund Policy</a>
+              <a href="https://aitoolsfreelance.blogspot.com">Blogs</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            this.classList.toggle('active');
-            document.querySelector('.mobile-menu').classList.toggle('active');
+      // Mobile menu toggle
+      document
+        .querySelector(".hamburger")
+        .addEventListener("click", function () {
+          this.classList.toggle("active");
+          document.querySelector(".mobile-menu").classList.toggle("active");
         });
 
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('.header');
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-            }
+      // Header scroll effect
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector(".header");
+        if (window.scrollY > 100) {
+          header.style.boxShadow = "0 5px 20px rgba(0, 0, 0, 0.1)";
+        } else {
+          header.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.1)";
+        }
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", function (event) {
+        const mobileMenu = document.querySelector(".mobile-menu");
+        const hamburger = document.querySelector(".hamburger");
+
+        if (
+          !mobileMenu.contains(event.target) &&
+          !hamburger.contains(event.target) &&
+          mobileMenu.classList.contains("active")
+        ) {
+          mobileMenu.classList.remove("active");
+          hamburger.classList.remove("active");
+        }
+      });
+
+      // Newsletter form submission
+      document
+        .querySelector(".newsletter-form")
+        ?.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = this.querySelector('input[type="email"]').value;
+
+          // Simulate submission
+          this.innerHTML =
+            '<p class="inline-style-29">Thank you for subscribing!</p>';
+
+          // In a real application, you would send this to your server
+          console.log("Newsletter subscription:", email);
         });
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const hamburger = document.querySelector('.hamburger');
-            
-            if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target) && mobileMenu.classList.contains('active')) {
-                mobileMenu.classList.remove('active');
-                hamburger.classList.remove('active');
-            }
-        });
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          const href = this.getAttribute("href");
 
-        // Newsletter form submission
-        document.querySelector('.newsletter-form')?.addEventListener('submit', function(e) {
+          if (href === "#") {
             e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
-            
-            // Simulate submission
-            this.innerHTML = '<p class="inline-style-29">Thank you for subscribing!</p>';
-            
-            // In a real application, you would send this to your server
-            console.log('Newsletter subscription:', email);
-        });
+            return;
+          }
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                
-                if (href === '#') {
-                    e.preventDefault();
-                    return;
-                }
-                
-                if (href.startsWith('#') && href.length > 1) {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    
-                    if (target) {
-                        window.scrollTo({
-                            top: target.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
-                    }
-                }
-            });
-        });
+          if (href.startsWith("#") && href.length > 1) {
+            e.preventDefault();
+            const target = document.querySelector(href);
 
-        // Image error handling
-        document.querySelectorAll('img').forEach(img => {
-            img.addEventListener('error', function() {
-                this.src = 'https://via.placeholder.com/400x300/1a365d/ffffff?text=CMTI';
-                this.alt = 'Image not available';
-            });
+            if (target) {
+              window.scrollTo({
+                top: target.offsetTop - 80,
+                behavior: "smooth",
+              });
+            }
+          }
         });
+      });
+
+      // Image error handling
+      document.querySelectorAll("img").forEach((img) => {
+        img.addEventListener("error", function () {
+          this.src =
+            "https://via.placeholder.com/400x300/1a365d/ffffff?text=CMTI";
+          this.alt = "Image not available";
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
