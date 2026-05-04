@@ -1,0 +1,25 @@
+name: copy-of-cmti-smart-lms
+description: "Coded Mind Institute - IT & Quran Academy"
+version: 1.0.0
+runtime: nodejs20
+
+env:
+  VITE_GEMINI_API_KEY: null
+
+functions:
+  404.html: public/404.html
+
+routes:
+  - src: /(.*)
+    dest: /index.html
+    status: 200
+
+headers:
+  - key: X-Content-Type-Options
+    value: "nosniff"
+  - key: X-Frame-Options
+    value: "SAMEORIGIN"
+  - key: X-XSS-Protection
+    value: "1; mode=block"
+  - key: Referrer-Policy
+    value: "strict-origin-when-cross-origin"
