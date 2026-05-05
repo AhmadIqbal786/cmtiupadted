@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Main Pages -->
+    <url>
+        <loc>https://codedmind.netlify.app/</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/about.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/courses.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/contact.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/careers.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/lms.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Course Pages - High Priority -->
+    <url>
+        <loc>https://codedmind.netlify.app/course-webdev.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-ai-ml.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-data-science.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-cyber-security.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-digital-marketing.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-graphic-design.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-mobile-app.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-python.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-seo.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-wordpress.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-amazon-ecommerce.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-amazon-fba.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-cloud-computing.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-networking.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-video-editing.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-ms-office.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-english.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-cit.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/course-dit.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Additional Course Pages -->
+    <url>
+        <loc>https://codedmind.netlify.app/medicalbilling-course.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/Cryptotrading.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/forextrading.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/blockchain.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/blogging.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/ecomerce.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/daraz.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/etsy.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/Ebay.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/AhmadAcademy.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/Autocad.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Legal Pages -->
+    <url>
+        <loc>https://codedmind.netlify.app/privacy.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/terms.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://codedmind.netlify.app/refund.html</loc>
+        <lastmod>2024-05-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>
