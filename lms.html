@@ -1,9 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>CMTI – Learning Management System</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary SEO Meta Tags -->
+    <title>Free Online Document Converter Tools | PDF, Word, Excel, Image Converters | CMTI LMS</title>
+    <meta name="title" content="Free Online Document Converter Tools | PDF, Word, Excel, Image Converters | CMTI LMS">
+    <meta name="description" content="🛠️ Free online document converter tools! Convert PDF to Word, Word to PDF, Images to PDF, Excel to CSV, Text to Speech & more. 10 powerful tools, no registration required. Fast, secure, and easy to use.">
+    <meta name="keywords" content="online document converter, PDF to Word converter, Word to PDF, image to PDF converter, Excel to CSV, CSV to Excel, text to speech converter, free file converter, document conversion tools, PDF tools online">
+    <meta name="author" content="Coded Mind Institute of Science and Technology">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://codedmind.netlify.app/lms.html">
+
+    <!-- Geo Tags for Local SEO -->
+    <meta name="geo.region" content="PK-KP">
+    <meta name="geo.placename" content="Mardan">
+    <meta name="geo.position" content="34.1975;72.0497">
+    <meta name="ICBM" content="34.1975, 72.0497">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://codedmind.netlify.app/lms.html">
+    <meta property="og:title" content="Free Online Document Converter Tools | PDF, Word, Excel, Image Converters | CMTI LMS">
+    <meta property="og:description" content="🛠️ Free online document converter tools! Convert PDF to Word, Word to PDF, Images to PDF, Excel to CSV, Text to Speech & more. 10 powerful tools, no registration required.">
+    <meta property="og:image" content="https://codedmind.netlify.app/logo.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Free Online Document Converter Tools - CMTI LMS">
+    <meta property="og:site_name" content="Coded Mind Institute">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://codedmind.netlify.app/lms.html">
+    <meta property="twitter:title" content="Free Online Document Converter Tools | PDF, Word, Excel, Image Converters | CMTI LMS">
+    <meta property="twitter:description" content="🛠️ Free online document converter tools! Convert PDF to Word, Word to PDF, Images to PDF, Excel to CSV, Text to Speech & more.">
+    <meta property="twitter:image" content="https://codedmind.netlify.app/logo.png">
+    <meta property="twitter:image:alt" content="Free Online Document Converter Tools - CMTI LMS">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#0a4f9c">
+    <meta name="msapplication-TileColor" content="#0a4f9c">
+    <link rel="icon" href="logo.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <!-- Structured Data - WebApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "CMTI Document Converter Tools",
+        "url": "https://codedmind.netlify.app/lms.html",
+        "description": "Free online document conversion tools including PDF converters, image converters, Excel tools, and text-to-speech",
+        "applicationCategory": "Utility",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "PDF to Word Converter",
+            "Word to PDF Converter",
+            "Image to PDF Converter",
+            "PDF to Image Converter",
+            "Text to PDF Converter",
+            "HTML to PDF Converter",
+            "CSV to Excel Converter",
+            "Excel to CSV Converter",
+            "JSON to CSV Converter",
+            "Text to Speech Converter"
+        ],
+        "provider": {
+            "@type": "EducationalOrganization",
+            "name": "Coded Mind Institute",
+            "url": "https://codedmind.netlify.app"
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://codedmind.netlify.app/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "LMS Tools",
+                    "item": "https://codedmind.netlify.app/lms.html"
+                }
+            ]
+        }
+    }
+    </script>
+
+    <title>CMTI LMS - Free Document Converter Tools</title>
+
+    <!-- Document Converter Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.21/mammoth.browser.min.js"></script>
+
 <style>
 /* --------------------------------------------------------------
    CMTI colour palette
@@ -100,6 +206,92 @@ footer{
 }
 
 /* --------------------------------------------------------------
+   DOCUMENT CONVERTER TOOLS STYLES
+   -------------------------------------------------------------- */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.tool-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e5e9;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.tool-card h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.tool-card p {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.tool-card input[type="file"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px dashed #ddd;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.tool-card textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-family: monospace;
+  resize: vertical;
+}
+
+.tool-btn {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.tool-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(10, 79, 156, 0.3);
+}
+
+.tool-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+#text-to-speech-status {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 4px solid var(--accent);
+}
+
+/* --------------------------------------------------------------
    Mobile tweaks
    -------------------------------------------------------------- */
 @media(max-width:768px){
@@ -118,6 +310,7 @@ footer{
   <nav>
     <button id="nav-login" class="active">Login</button>
     <button id="nav-catalog">Courses</button>
+    <button id="nav-tools">Tools</button>
     <button id="nav-profile">Profile</button>
   </nav>
 </header>
@@ -161,6 +354,104 @@ footer{
     <p><strong>Email:</strong> <span id="profile-email"></span></p>
     <p><strong>Enrolled courses:</strong> <ul id="profile-courses"></ul></p>
     <button id="btn-logout" style="background:#dc3545;color:#fff;padding:.5rem 1rem;border:none;border-radius:4px;cursor:pointer;">Logout</button>
+  </section>
+
+  <!-- ====================== DOCUMENT CONVERTER TOOLS ====================== -->
+  <section id="section-tools">
+    <h1 style="text-align:center; color:var(--primary); margin-bottom:2rem;">🛠️ Free Document Converter Tools</h1>
+    <p style="text-align:center; margin-bottom:2rem; font-size:1.1rem;">Convert documents online for free! No registration required. Fast, secure, and easy to use.</p>
+
+    <div class="tools-grid">
+      <!-- Tool 1: PDF to Word -->
+      <div class="tool-card">
+        <h3>📄 PDF to Word</h3>
+        <p>Convert PDF files to editable Word documents</p>
+        <input type="file" id="pdf-to-word-input" accept=".pdf">
+        <button onclick="convertPdfToWord()" class="tool-btn">Convert</button>
+        <div id="pdf-to-word-status"></div>
+      </div>
+
+      <!-- Tool 2: Word to PDF -->
+      <div class="tool-card">
+        <h3>📝 Word to PDF</h3>
+        <p>Convert Word documents to PDF format</p>
+        <input type="file" id="word-to-pdf-input" accept=".doc,.docx">
+        <button onclick="convertWordToPdf()" class="tool-btn">Convert</button>
+        <div id="word-to-pdf-status"></div>
+      </div>
+
+      <!-- Tool 3: Image to PDF -->
+      <div class="tool-card">
+        <h3>🖼️ Image to PDF</h3>
+        <p>Convert images (JPG, PNG) to PDF</p>
+        <input type="file" id="image-to-pdf-input" accept="image/*" multiple>
+        <button onclick="convertImageToPdf()" class="tool-btn">Convert</button>
+        <div id="image-to-pdf-status"></div>
+      </div>
+
+      <!-- Tool 4: PDF to Image -->
+      <div class="tool-card">
+        <h3>📷 PDF to Image</h3>
+        <p>Convert PDF pages to images</p>
+        <input type="file" id="pdf-to-image-input" accept=".pdf">
+        <button onclick="convertPdfToImage()" class="tool-btn">Convert</button>
+        <div id="pdf-to-image-status"></div>
+      </div>
+
+      <!-- Tool 5: Text to PDF -->
+      <div class="tool-card">
+        <h3>📝 Text to PDF</h3>
+        <p>Convert plain text to PDF document</p>
+        <textarea id="text-to-pdf-input" placeholder="Enter your text here..." rows="4"></textarea>
+        <button onclick="convertTextToPdf()" class="tool-btn">Convert</button>
+        <div id="text-to-pdf-status"></div>
+      </div>
+
+      <!-- Tool 6: HTML to PDF -->
+      <div class="tool-card">
+        <h3>🌐 HTML to PDF</h3>
+        <p>Convert HTML content to PDF</p>
+        <textarea id="html-to-pdf-input" placeholder="Enter HTML code here..." rows="4"></textarea>
+        <button onclick="convertHtmlToPdf()" class="tool-btn">Convert</button>
+        <div id="html-to-pdf-status"></div>
+      </div>
+
+      <!-- Tool 7: CSV to Excel -->
+      <div class="tool-card">
+        <h3>📊 CSV to Excel</h3>
+        <p>Convert CSV files to Excel format</p>
+        <input type="file" id="csv-to-excel-input" accept=".csv">
+        <button onclick="convertCsvToExcel()" class="tool-btn">Convert</button>
+        <div id="csv-to-excel-status"></div>
+      </div>
+
+      <!-- Tool 8: Excel to CSV -->
+      <div class="tool-card">
+        <h3>📈 Excel to CSV</h3>
+        <p>Convert Excel files to CSV format</p>
+        <input type="file" id="excel-to-csv-input" accept=".xlsx,.xls">
+        <button onclick="convertExcelToCsv()" class="tool-btn">Convert</button>
+        <div id="excel-to-csv-status"></div>
+      </div>
+
+      <!-- Tool 9: JSON to CSV -->
+      <div class="tool-card">
+        <h3>🔄 JSON to CSV</h3>
+        <p>Convert JSON data to CSV format</p>
+        <textarea id="json-to-csv-input" placeholder='[{"name":"John","age":30},{"name":"Jane","age":25}]' rows="4"></textarea>
+        <button onclick="convertJsonToCsv()" class="tool-btn">Convert</button>
+        <div id="json-to-csv-status"></div>
+      </div>
+
+      <!-- Tool 10: Text to Speech -->
+      <div class="tool-card">
+        <h3>🔊 Text to Speech</h3>
+        <p>Convert text to speech audio</p>
+        <textarea id="text-to-speech-input" placeholder="Enter text to convert to speech..." rows="4"></textarea>
+        <button onclick="convertTextToSpeech()" class="tool-btn">Convert</button>
+        <div id="text-to-speech-status"></div>
+      </div>
+    </div>
   </section>
 
 </main>
@@ -470,6 +761,408 @@ function afterAuth(){
   show('section-catalog');
   activateNav('nav-catalog');
 }
+
+/* --------------------------------------------------------------
+   DOCUMENT CONVERTER TOOLS FUNCTIONS
+   -------------------------------------------------------------- */
+
+// Utility function to download file
+function downloadFile(data, filename, mimeType) {
+  const blob = new Blob([data], { type: mimeType });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+// 1. PDF to Word Converter
+async function convertPdfToWord() {
+  const input = document.getElementById('pdf-to-word-input');
+  const status = document.getElementById('pdf-to-word-status');
+
+  if (!input.files[0]) {
+    status.innerHTML = '<p style="color:red;">Please select a PDF file first.</p>';
+    return;
+  }
+
+  status.innerHTML = '<p style="color:blue;">Converting... Please wait.</p>';
+
+  try {
+    const file = input.files[0];
+    const arrayBuffer = await file.arrayBuffer();
+
+    // Load PDF
+    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+    let text = '';
+
+    // Extract text from all pages
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const textContent = await page.getTextContent();
+      text += textContent.items.map(item => item.str).join(' ') + '\n\n';
+    }
+
+    // Create Word document content
+    const wordContent = `
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Converted Document</title>
+</head>
+<body>
+    <pre>${text}</pre>
+</body>
+</html>`;
+
+    downloadFile(wordContent, 'converted-document.doc', 'application/msword');
+    status.innerHTML = '<p style="color:green;">✅ Conversion completed! File downloaded.</p>';
+  } catch (error) {
+    status.innerHTML = '<p style="color:red;">❌ Error converting file: ' + error.message + '</p>';
+  }
+}
+
+// 2. Word to PDF Converter
+async function convertWordToPdf() {
+  const input = document.getElementById('word-to-pdf-input');
+  const status = document.getElementById('word-to-pdf-status');
+
+  if (!input.files[0]) {
+    status.innerHTML = '<p style="color:red;">Please select a Word file first.</p>';
+    return;
+  }
+
+  status.innerHTML = '<p style="color:blue;">Converting... Please wait.</p>';
+
+  try {
+    const file = input.files[0];
+    const arrayBuffer = await file.arrayBuffer();
+
+    // Convert DOCX to HTML
+    const result = await mammoth.convertToHtml({ arrayBuffer });
+    const htmlContent = result.value;
+
+    // Create PDF
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
+
+    // Add HTML content to PDF
+    pdf.html(htmlContent, {
+      callback: function(pdf) {
+        pdf.save('converted-document.pdf');
+        status.innerHTML = '<p style="color:green;">✅ Conversion completed! PDF downloaded.</p>';
+      },
+      x: 10,
+      y: 10,
+      width: 180,
+      windowWidth: 650
+    });
+  } catch (error) {
+    status.innerHTML = '<p style="color:red;">❌ Error converting file: ' + error.message + '</p>';
+  }
+}
+
+// 3. Image to PDF Converter
+async function convertImageToPdf() {
+  const input = document.getElementById('image-to-pdf-input');
+  const status = document.getElementById('image-to-pdf-status');
+
+  if (!input.files.length) {
+    status.innerHTML = '<p style="color:red;">Please select image files first.</p>';
+    return;
+  }
+
+  status.innerHTML = '<p style="color:blue;">Converting... Please wait.</p>';
+
+  try {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
+
+    for (let i = 0; i < input.files.length; i++) {
+      const file = input.files[i];
+      const img = new Image();
+
+      await new Promise((resolve) => {
+        img.onload = resolve;
+        img.src = URL.createObjectURL(file);
+      });
+
+      if (i > 0) pdf.addPage();
+
+      const imgWidth = pdf.internal.pageSize.getWidth();
+      const imgHeight = (img.height * imgWidth) / img.width;
+
+      pdf.addImage(img, 'JPEG', 0, 0, imgWidth, imgHeight);
+    }
+
+    pdf.save('converted-images.pdf');
+    status.innerHTML = '<p style="color:green;">✅ Conversion completed! PDF downloaded.</p>';
+  } catch (error) {
+    status.innerHTML = '<p style="color:red;">❌ Error converting images: ' + error.message + '</p>';
+  }
+}
+
+// 4. PDF to Image Converter
+async function convertPdfToImage() {
+  const input = document.getElementById('pdf-to-image-input');
+  const status = document.getElementById('pdf-to-image-status');
+
+  if (!input.files[0]) {
+    status.innerHTML = '<p style="color:red;">Please select a PDF file first.</p>';
+    return;
+  }
+
+  status.innerHTML = '<p style="color:blue;">Converting... Please wait.</p>';
+
+  try {
+    const file = input.files[0];
+    const arrayBuffer = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const viewport = page.getViewport({ scale: 2.0 });
+      const canvas = document.createElement('canvas');
+      const context = canvas.getContext('2d');
+
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+
+      await page.render({
+        canvasContext: context,
+        viewport: viewport
+      }).promise;
+
+      canvas.toBlob((blob) => {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `page-${i}.png`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }, 'image/png');
+    }
+
+    status.innerHTML = '<p style="color:green;">✅ Conversion completed! Images downloaded.</p>';
+  } catch (error) {
+    status.innerHTML = '<p style="color:red;">❌ Error converting PDF: ' + error.message + '</p>';
+  }
+}
+
+// 5. Text to PDF Converter
+function convertTextToPdf() {
+  const input = document.getElementById('text-to-pdf-input');
+  const status = document.getElementById('text-to-pdf-status');
+
+  if (!input.value.trim()) {
+    status.innerHTML = '<p style="color:red;">Please enter some text first.</p>';
+    return;
+  }
+
+  status.innerHTML = '<p style="color:blue;">Converting... Please wait.</p>';
+
+  try {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
+
+    const text = input.value;
+    const lines = pdf.splitTextToSize(text, 180);
+
+    pdf.text(lines, 10, 20);
+    pdf.save('converted-text.pdf');
+
+    status.innerHTML = '<p style="color:green;">✅ Conversion completed! PDF downloaded.</p>';
+  } catch (error) {
+    status.innerHTML = '<p style="color:red;">❌ Error converting text: ' + error.message + '</p>';
+  }
+}
+
+// 6. HTML to PDF Converter
+function convertHtmlToPdf() {
+  const input = document.getElementById('html-to-pdf-input');
+  const status = document.getElementById('html-to-pdf-status');
+
+  if (!input.value.trim()) {
+    status.innerHTML = '<p style="color:red;">Please enter HTML code first.</p>';
+    return;
+  }
+
+  status.innerHTML = '<p style="color:blue;">Converting... Please wait.</p>';
+
+  try {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF();
+
+    pdf.html(input.value, {
+      callback: function(pdf) {
+        pdf.save('converted-html.pdf');
+        status.innerHTML = '<p style="color:green;">✅ Conversion completed! PDF downloaded.</p>';
+      },
+      x: 10,
+      y: 10,
+      width: 180,
+      windowWidth: 650
+    });
+  } catch (error) {
+    status.innerHTML = '<p style="color:red;">❌ Error converting HTML: ' + error.message + '</p>';
+  }
+}
+
+// 7. CSV to Excel Converter
+function convertCsvToExcel() {
+  const input = document.getElementById('csv-to-excel-input');
+  const status = document.getElementById('csv-to-excel-status');
+
+  if (!input.files[0]) {
+    status.innerHTML = '<p style="color:red;">Please select a CSV file first.</p>';
+    return;
+  }
+
+  status.innerHTML = '<p style="color:blue;">Converting... Please wait.</p>';
+
+  try {
+    const file = input.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+      const csvData = e.target.result;
+      const workbook = XLSX.utils.book_new();
+      const worksheet = XLSX.utils.aoa_to_sheet(
+        csvData.split('\n').map(row => row.split(','))
+      );
+
+      XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
+      XLSX.writeFile(workbook, 'converted-data.xlsx');
+
+      status.innerHTML = '<p style="color:green;">✅ Conversion completed! Excel file downloaded.</p>';
+    };
+
+    reader.readAsText(file);
+  } catch (error) {
+    status.innerHTML = '<p style="color:red;">❌ Error converting CSV: ' + error.message + '</p>';
+  }
+}
+
+// 8. Excel to CSV Converter
+function convertExcelToCsv() {
+  const input = document.getElementById('excel-to-csv-input');
+  const status = document.getElementById('excel-to-csv-status');
+
+  if (!input.files[0]) {
+    status.innerHTML = '<p style="color:red;">Please select an Excel file first.</p>';
+    return;
+  }
+
+  status.innerHTML = '<p style="color:blue;">Converting... Please wait.</p>';
+
+  try {
+    const file = input.files[0];
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+      const data = new Uint8Array(e.target.result);
+      const workbook = XLSX.read(data, { type: 'array' });
+      const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+      const csvData = XLSX.utils.sheet_to_csv(worksheet);
+
+      downloadFile(csvData, 'converted-data.csv', 'text/csv');
+      status.innerHTML = '<p style="color:green;">✅ Conversion completed! CSV file downloaded.</p>';
+    };
+
+    reader.readAsArrayBuffer(file);
+  } catch (error) {
+    status.innerHTML = '<p style="color:red;">❌ Error converting Excel: ' + error.message + '</p>';
+  }
+}
+
+// 9. JSON to CSV Converter
+function convertJsonToCsv() {
+  const input = document.getElementById('json-to-csv-input');
+  const status = document.getElementById('json-to-csv-status');
+
+  if (!input.value.trim()) {
+    status.innerHTML = '<p style="color:red;">Please enter JSON data first.</p>';
+    return;
+  }
+
+  status.innerHTML = '<p style="color:blue;">Converting... Please wait.</p>';
+
+  try {
+    const jsonData = JSON.parse(input.value);
+
+    if (!Array.isArray(jsonData) || jsonData.length === 0) {
+      throw new Error('JSON must be an array of objects');
+    }
+
+    const headers = Object.keys(jsonData[0]);
+    const csvRows = [headers.join(',')];
+
+    jsonData.forEach(row => {
+      const values = headers.map(header => {
+        const value = row[header];
+        return typeof value === 'string' ? `"${value.replace(/"/g, '""')}"` : value;
+      });
+      csvRows.push(values.join(','));
+    });
+
+    const csvContent = csvRows.join('\n');
+    downloadFile(csvContent, 'converted-data.csv', 'text/csv');
+
+    status.innerHTML = '<p style="color:green;">✅ Conversion completed! CSV file downloaded.</p>';
+  } catch (error) {
+    status.innerHTML = '<p style="color:red;">❌ Error converting JSON: ' + error.message + '</p>';
+  }
+}
+
+// 10. Text to Speech Converter
+function convertTextToSpeech() {
+  const input = document.getElementById('text-to-speech-input');
+  const status = document.getElementById('text-to-speech-status');
+
+  if (!input.value.trim()) {
+    status.innerHTML = '<p style="color:red;">Please enter text to convert to speech.</p>';
+    return;
+  }
+
+  if (!('speechSynthesis' in window)) {
+    status.innerHTML = '<p style="color:red;">❌ Text-to-speech is not supported in your browser.</p>';
+    return;
+  }
+
+  status.innerHTML = '<p style="color:blue;">Converting text to speech...</p>';
+
+  try {
+    const utterance = new SpeechSynthesisUtterance(input.value);
+
+    utterance.onstart = () => {
+      status.innerHTML = '<p style="color:green;">🔊 Playing audio...</p>';
+    };
+
+    utterance.onend = () => {
+      status.innerHTML = '<p style="color:green;">✅ Speech conversion completed!</p>';
+    };
+
+    utterance.onerror = (error) => {
+      status.innerHTML = '<p style="color:red;">❌ Error: ' + error.error + '</p>';
+    };
+
+    window.speechSynthesis.speak(utterance);
+  } catch (error) {
+    status.innerHTML = '<p style="color:red;">❌ Error converting text to speech: ' + error.message + '</p>';
+  }
+}
+
+// Add navigation for tools
+document.getElementById('nav-tools').addEventListener('click', function() {
+  show('section-tools');
+  activateNav('nav-tools');
+});
 </script>
 </body>
 </html>
